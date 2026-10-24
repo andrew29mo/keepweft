@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "run_id": "9beaeff8d7213078",
-  "recorded_at_utc": "2026-10-24T07:33:10.493039+00:00",
+  "run_id": "e8fedba95aa877d3",
+  "recorded_at_utc": "2026-10-24T07:46:28.017668+00:00",
   "source": {
     "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
     "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
@@ -11,11 +11,11 @@
     "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
     "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
     "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
-    "keepweft/view.py": "4c859d27d313af48b779b5d492e76d3365e135e4608edaddf7933bca7d138500",
+    "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
     "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
     "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
     "tests/test_core.py": "3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec",
-    "tests/test_readers.py": "f6c99961f112ffe35bd699b6b5c82ed9c6fa9c483513c69e20a42883e7d1847d",
+    "tests/test_readers.py": "6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb",
     "tests/test_requests.py": "5fd5f53535cba3a2fed7c30b4e16c0e143ada87b6204cb556f3e620d6de4704c",
     "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
@@ -24,102 +24,102 @@
     "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
     "tools/phase1_report.py": "8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca",
     "tools/phase1_validate.py": "fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1",
-    "tools/phase2_cases.py": "0bb4eabdd95463eede20b0abc22ec6aaaf89fba448279fbf4e23ff62d9465bb7",
-    "tools/phase2_report.py": "67c68750356c767b710f9d4f90e36d28d83b70e7373f64f3ab27bad681d2ea06",
+    "tools/phase2_cases.py": "a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3",
+    "tools/phase2_report.py": "b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d",
     "tools/phase2_validate.py": "b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c",
     "tools/report.py": "29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23",
     "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
     "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
   },
-  "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+  "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
   "source_changed": false,
   "stages": [
     {
       "name": "initial",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.22437425001407973
+      "seconds": 0.3936699580226559
     },
     {
       "name": "create",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 21.587644041981548
+      "seconds": 252.29153870799928
     },
     {
       "name": "dependencies",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 24.82706345798215
+      "seconds": 57.194203833001666
     },
     {
       "name": "upload",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.38293687501573004
+      "seconds": 0.3982395409839228
     },
     {
       "name": "runtime",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 13.338572292006575
+      "seconds": 13.363090541010024
     },
     {
       "name": "install",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3955447919724975
+      "seconds": 0.4782460000133142
     },
     {
       "name": "provenance",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.34819641601643525
+      "seconds": 0.31072649999987334
     },
     {
       "name": "native",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 19.829381707997527
+      "seconds": 22.947193708008854
     },
     {
       "name": "linux",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 17.814779707987327
+      "seconds": 20.386817791004432
     },
     {
       "name": "linux-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3678132919885684
+      "seconds": 0.25858454100671224
     },
     {
       "name": "explore",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 6.904421916988213
+      "seconds": 7.621376708993921
     },
     {
       "name": "guest-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.23102233398822136
+      "seconds": 0.2601589999976568
     },
     {
       "name": "delete",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.5950690830068197
+      "seconds": 1.4846993329992983
     },
     {
       "name": "final",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2080562080082018
+      "seconds": 0.19825645801029168
     }
   ],
-  "wheel_sha256": "73490edbb71b290a7e6af3666991883b9de1d23e066f24fb91992b82e42cfb00",
+  "wheel_sha256": "6cc93c5540955c62c44f4aea7d7ed05fcb8575df6f59ffa4dfaa0536a111b9a0",
   "wheel_product_matches": true,
   "host_mounts": "none",
   "fresh_profile": true,
@@ -145,7 +145,7 @@
       "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
       "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
       "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
-      "keepweft/view.py": "4c859d27d313af48b779b5d492e76d3365e135e4608edaddf7933bca7d138500",
+      "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
       "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
       "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
       "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
@@ -200,7 +200,7 @@
   },
   "native_unit": {
     "passed": true,
-    "count": 72,
+    "count": 74,
     "tests": [
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -233,6 +233,7 @@
       "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
       "test_core.CoreTests.test_wrong_source_uuid_rejected",
       "test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader",
+      "test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit",
       "test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release",
       "test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart",
       "test_readers.ReaderFailures.test_mismatching_query_is_not_ready",
@@ -242,6 +243,7 @@
       "test_readers.ServiceReaderCases.test_after_spawn",
       "test_readers.ServiceReaderCases.test_before_spawn",
       "test_readers.ServiceReaderCases.test_controller_orphan",
+      "test_readers.ServiceReaderCases.test_idle_header",
       "test_readers.ServiceReaderCases.test_missing_ready_crash",
       "test_readers.ServiceReaderCases.test_readiness_timeout",
       "test_readers.ServiceReaderCases.test_release_intent",
@@ -278,7 +280,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+    "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
     "platform": "Darwin",
     "runtime": {
       "python_sqlite": "3.53.1",
@@ -335,7 +337,7 @@
   },
   "linux_unit": {
     "passed": true,
-    "count": 72,
+    "count": 74,
     "tests": [
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -368,6 +370,7 @@
       "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
       "test_core.CoreTests.test_wrong_source_uuid_rejected",
       "test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader",
+      "test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit",
       "test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release",
       "test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart",
       "test_readers.ReaderFailures.test_mismatching_query_is_not_ready",
@@ -377,6 +380,7 @@
       "test_readers.ServiceReaderCases.test_after_spawn",
       "test_readers.ServiceReaderCases.test_before_spawn",
       "test_readers.ServiceReaderCases.test_controller_orphan",
+      "test_readers.ServiceReaderCases.test_idle_header",
       "test_readers.ServiceReaderCases.test_missing_ready_crash",
       "test_readers.ServiceReaderCases.test_readiness_timeout",
       "test_readers.ServiceReaderCases.test_release_intent",
@@ -413,7 +417,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+    "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
     "platform": "Linux",
     "runtime": {
       "python_sqlite": "3.54.1",
@@ -462,7 +466,7 @@
   },
   "guest": {
     "passed": true,
-    "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+    "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
     "runtime": {
       "python_sqlite": "3.54.1",
       "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
@@ -511,7 +515,7 @@
       {
         "name": "roundtrip",
         "passed": true,
-        "seconds": 0.17321037799999317,
+        "seconds": 0.18182877800001052,
         "details": {
           "count": 40,
           "hash_preserved": true,
@@ -520,16 +524,16 @@
           "release_refused_while_serving": true,
           "stale_revision_rejected_with_free_guard": true,
           "missing_token_rejected": true,
-          "start_to_query_seconds": 0.03428534299999342,
-          "reader_rss_kib": 21068,
+          "start_to_query_seconds": 0.051001058999986526,
+          "reader_rss_kib": 21072,
           "controller_rss_kib": 23948,
-          "managed_logical_bytes_while_serving": 427310
+          "managed_logical_bytes_while_serving": 427316
         }
       },
       {
         "name": "controller_orphan",
         "passed": true,
-        "seconds": 0.20082116100000746,
+        "seconds": 0.2019567959999904,
         "details": {
           "controller_sigkill": true,
           "global_controller_recovered": true,
@@ -544,7 +548,7 @@
       {
         "name": "before_spawn",
         "passed": true,
-        "seconds": 0.1586738849999989,
+        "seconds": 0.21600675299998784,
         "details": {
           "barrier_seen": "reader_before_spawn",
           "state_after_restart": "READY",
@@ -555,7 +559,7 @@
       {
         "name": "after_spawn",
         "passed": true,
-        "seconds": 0.19440851599999576,
+        "seconds": 0.22396586200000002,
         "details": {
           "barrier_seen": "reader_after_spawn",
           "state_after_restart": "ORPHAN_BUSY",
@@ -566,7 +570,7 @@
       {
         "name": "release_intent",
         "passed": true,
-        "seconds": 0.1659769559999944,
+        "seconds": 0.17910744400001022,
         "details": {
           "barrier_seen": "reader_release_intent",
           "copy_present_before_restart": true,
@@ -577,7 +581,7 @@
       {
         "name": "stop_timeout",
         "passed": true,
-        "seconds": 2.1815325160000043,
+        "seconds": 2.1439398620000247,
         "details": {
           "stop_timeout_not_exit": true,
           "pin_after_timeout": 1,
@@ -588,33 +592,49 @@
       {
         "name": "missing_ready_crash",
         "passed": true,
-        "seconds": 0.1914523039999949,
+        "seconds": 0.1754022609999879,
         "details": {
           "barrier_seen": "reader_before_ready",
           "ready_absent": true,
           "controller_crashed": true,
           "pin_before_exit": 1,
           "pin_after_release": 0,
-          "deadline_error": null
+          "deadline_error": null,
+          "deadline_guard_free_before_stop": null,
+          "deadline_pid_absent_before_stop": null
         }
       },
       {
         "name": "readiness_timeout",
         "passed": true,
-        "seconds": 3.1498719920000013,
+        "seconds": 3.1322842270000137,
         "details": {
           "barrier_seen": "reader_before_ready",
           "ready_absent": true,
           "controller_crashed": false,
           "pin_before_exit": 1,
           "pin_after_release": 0,
-          "deadline_error": "TimeoutError"
+          "deadline_error": "TimeoutError",
+          "deadline_guard_free_before_stop": true,
+          "deadline_pid_absent_before_stop": true
+        }
+      },
+      {
+        "name": "idle_header",
+        "passed": true,
+        "seconds": 0.6662348009999732,
+        "details": {
+          "incomplete_unauthenticated_header": true,
+          "reader_closed_idle_connection": true,
+          "query_after_idle": 40,
+          "pin_before_release": 1,
+          "pin_after_release": 0
         }
       },
       {
         "name": "readonly_release",
         "passed": true,
-        "seconds": 0.22024527099999602,
+        "seconds": 0.18414329300003374,
         "details": {
           "os_errno": 30,
           "pin_before_repair": 1,
@@ -630,7 +650,7 @@
       "reader_adoption_tested": false,
       "long_term_gc_tested": false
     },
-    "owned_service_count": 16,
+    "owned_service_count": 17,
     "owned_services_exited": true,
     "no_service_or_worker_processes_remaining": true
   },
@@ -639,6 +659,6 @@
   "preexisting_profiles_unchanged": true,
   "controls": {
     "passed": true,
-    "rejected": 26
+    "rejected": 29
   }
 }

@@ -1,7 +1,7 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft guarded restore</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: one restored copy and managed reader</h1><p>Passed: True</p><p>Installed service and reader in an isolated Linux VM. SIGKILL, SIGSTOP, spawn/release barriers, real EROFS and repair. VM timings/RSS are point observations, not native performance or an SLO. No VM reboot, sudden power loss, orphan adoption or long-term GC qualification.</p><pre>{
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft guarded restore</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: one restored copy and managed reader</h1><p>Passed: True</p><p>Installed service and reader in an isolated Linux VM. SIGKILL, SIGSTOP, spawn/release barriers, independent deadline exit proof, idle HTTP headers, real EROFS and repair. VM timings/RSS are point observations, not native performance or an SLO. No VM reboot, sudden power loss, orphan adoption or long-term GC qualification.</p><pre>{
   &quot;passed&quot;: true,
-  &quot;run_id&quot;: &quot;9beaeff8d7213078&quot;,
-  &quot;recorded_at_utc&quot;: &quot;2026-10-24T07:33:10.493039+00:00&quot;,
+  &quot;run_id&quot;: &quot;e8fedba95aa877d3&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T07:46:28.017668+00:00&quot;,
   &quot;source&quot;: {
     &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
     &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
@@ -11,11 +11,11 @@
     &quot;keepweft/reader.py&quot;: &quot;e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d&quot;,
     &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
     &quot;keepweft/service.py&quot;: &quot;c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe&quot;,
-    &quot;keepweft/view.py&quot;: &quot;4c859d27d313af48b779b5d492e76d3365e135e4608edaddf7933bca7d138500&quot;,
+    &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
     &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
     &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
     &quot;tests/test_core.py&quot;: &quot;3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec&quot;,
-    &quot;tests/test_readers.py&quot;: &quot;f6c99961f112ffe35bd699b6b5c82ed9c6fa9c483513c69e20a42883e7d1847d&quot;,
+    &quot;tests/test_readers.py&quot;: &quot;6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb&quot;,
     &quot;tests/test_requests.py&quot;: &quot;5fd5f53535cba3a2fed7c30b4e16c0e143ada87b6204cb556f3e620d6de4704c&quot;,
     &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
     &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
@@ -24,102 +24,102 @@
     &quot;tools/phase1_cases.py&quot;: &quot;dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45&quot;,
     &quot;tools/phase1_report.py&quot;: &quot;8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca&quot;,
     &quot;tools/phase1_validate.py&quot;: &quot;fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1&quot;,
-    &quot;tools/phase2_cases.py&quot;: &quot;0bb4eabdd95463eede20b0abc22ec6aaaf89fba448279fbf4e23ff62d9465bb7&quot;,
-    &quot;tools/phase2_report.py&quot;: &quot;67c68750356c767b710f9d4f90e36d28d83b70e7373f64f3ab27bad681d2ea06&quot;,
+    &quot;tools/phase2_cases.py&quot;: &quot;a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3&quot;,
+    &quot;tools/phase2_report.py&quot;: &quot;b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d&quot;,
     &quot;tools/phase2_validate.py&quot;: &quot;b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c&quot;,
     &quot;tools/report.py&quot;: &quot;29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23&quot;,
     &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
     &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
   },
-  &quot;source_sha256&quot;: &quot;a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787&quot;,
+  &quot;source_sha256&quot;: &quot;14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0&quot;,
   &quot;source_changed&quot;: false,
   &quot;stages&quot;: [
     {
       &quot;name&quot;: &quot;initial&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.22437425001407973
+      &quot;seconds&quot;: 0.3936699580226559
     },
     {
       &quot;name&quot;: &quot;create&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 21.587644041981548
+      &quot;seconds&quot;: 252.29153870799928
     },
     {
       &quot;name&quot;: &quot;dependencies&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 24.82706345798215
+      &quot;seconds&quot;: 57.194203833001666
     },
     {
       &quot;name&quot;: &quot;upload&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.38293687501573004
+      &quot;seconds&quot;: 0.3982395409839228
     },
     {
       &quot;name&quot;: &quot;runtime&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 13.338572292006575
+      &quot;seconds&quot;: 13.363090541010024
     },
     {
       &quot;name&quot;: &quot;install&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3955447919724975
+      &quot;seconds&quot;: 0.4782460000133142
     },
     {
       &quot;name&quot;: &quot;provenance&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.34819641601643525
+      &quot;seconds&quot;: 0.31072649999987334
     },
     {
       &quot;name&quot;: &quot;native&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 19.829381707997527
+      &quot;seconds&quot;: 22.947193708008854
     },
     {
       &quot;name&quot;: &quot;linux&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 17.814779707987327
+      &quot;seconds&quot;: 20.386817791004432
     },
     {
       &quot;name&quot;: &quot;linux-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3678132919885684
+      &quot;seconds&quot;: 0.25858454100671224
     },
     {
       &quot;name&quot;: &quot;explore&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 6.904421916988213
+      &quot;seconds&quot;: 7.621376708993921
     },
     {
       &quot;name&quot;: &quot;guest-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.23102233398822136
+      &quot;seconds&quot;: 0.2601589999976568
     },
     {
       &quot;name&quot;: &quot;delete&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 1.5950690830068197
+      &quot;seconds&quot;: 1.4846993329992983
     },
     {
       &quot;name&quot;: &quot;final&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.2080562080082018
+      &quot;seconds&quot;: 0.19825645801029168
     }
   ],
-  &quot;wheel_sha256&quot;: &quot;73490edbb71b290a7e6af3666991883b9de1d23e066f24fb91992b82e42cfb00&quot;,
+  &quot;wheel_sha256&quot;: &quot;6cc93c5540955c62c44f4aea7d7ed05fcb8575df6f59ffa4dfaa0536a111b9a0&quot;,
   &quot;wheel_product_matches&quot;: true,
   &quot;host_mounts&quot;: &quot;none&quot;,
   &quot;fresh_profile&quot;: true,
@@ -145,7 +145,7 @@
       &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
       &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
       &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
-      &quot;keepweft/view.py&quot;: &quot;4c859d27d313af48b779b5d492e76d3365e135e4608edaddf7933bca7d138500&quot;,
+      &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
       &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
       &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
       &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
@@ -200,7 +200,7 @@
   },
   &quot;native_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 72,
+    &quot;count&quot;: 74,
     &quot;tests&quot;: [
       &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
       &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
@@ -233,6 +233,7 @@
       &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
       &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;,
       &quot;test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader&quot;,
+      &quot;test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit&quot;,
       &quot;test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release&quot;,
       &quot;test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart&quot;,
       &quot;test_readers.ReaderFailures.test_mismatching_query_is_not_ready&quot;,
@@ -242,6 +243,7 @@
       &quot;test_readers.ServiceReaderCases.test_after_spawn&quot;,
       &quot;test_readers.ServiceReaderCases.test_before_spawn&quot;,
       &quot;test_readers.ServiceReaderCases.test_controller_orphan&quot;,
+      &quot;test_readers.ServiceReaderCases.test_idle_header&quot;,
       &quot;test_readers.ServiceReaderCases.test_missing_ready_crash&quot;,
       &quot;test_readers.ServiceReaderCases.test_readiness_timeout&quot;,
       &quot;test_readers.ServiceReaderCases.test_release_intent&quot;,
@@ -278,7 +280,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787&quot;,
+    &quot;source_sha256&quot;: &quot;14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0&quot;,
     &quot;platform&quot;: &quot;Darwin&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
@@ -335,7 +337,7 @@
   },
   &quot;linux_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 72,
+    &quot;count&quot;: 74,
     &quot;tests&quot;: [
       &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
       &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
@@ -368,6 +370,7 @@
       &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
       &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;,
       &quot;test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader&quot;,
+      &quot;test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit&quot;,
       &quot;test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release&quot;,
       &quot;test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart&quot;,
       &quot;test_readers.ReaderFailures.test_mismatching_query_is_not_ready&quot;,
@@ -377,6 +380,7 @@
       &quot;test_readers.ServiceReaderCases.test_after_spawn&quot;,
       &quot;test_readers.ServiceReaderCases.test_before_spawn&quot;,
       &quot;test_readers.ServiceReaderCases.test_controller_orphan&quot;,
+      &quot;test_readers.ServiceReaderCases.test_idle_header&quot;,
       &quot;test_readers.ServiceReaderCases.test_missing_ready_crash&quot;,
       &quot;test_readers.ServiceReaderCases.test_readiness_timeout&quot;,
       &quot;test_readers.ServiceReaderCases.test_release_intent&quot;,
@@ -413,7 +417,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787&quot;,
+    &quot;source_sha256&quot;: &quot;14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0&quot;,
     &quot;platform&quot;: &quot;Linux&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
@@ -462,7 +466,7 @@
   },
   &quot;guest&quot;: {
     &quot;passed&quot;: true,
-    &quot;source_sha256&quot;: &quot;a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787&quot;,
+    &quot;source_sha256&quot;: &quot;14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
       &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
@@ -511,7 +515,7 @@
       {
         &quot;name&quot;: &quot;roundtrip&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.17321037799999317,
+        &quot;seconds&quot;: 0.18182877800001052,
         &quot;details&quot;: {
           &quot;count&quot;: 40,
           &quot;hash_preserved&quot;: true,
@@ -520,16 +524,16 @@
           &quot;release_refused_while_serving&quot;: true,
           &quot;stale_revision_rejected_with_free_guard&quot;: true,
           &quot;missing_token_rejected&quot;: true,
-          &quot;start_to_query_seconds&quot;: 0.03428534299999342,
-          &quot;reader_rss_kib&quot;: 21068,
+          &quot;start_to_query_seconds&quot;: 0.051001058999986526,
+          &quot;reader_rss_kib&quot;: 21072,
           &quot;controller_rss_kib&quot;: 23948,
-          &quot;managed_logical_bytes_while_serving&quot;: 427310
+          &quot;managed_logical_bytes_while_serving&quot;: 427316
         }
       },
       {
         &quot;name&quot;: &quot;controller_orphan&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.20082116100000746,
+        &quot;seconds&quot;: 0.2019567959999904,
         &quot;details&quot;: {
           &quot;controller_sigkill&quot;: true,
           &quot;global_controller_recovered&quot;: true,
@@ -544,7 +548,7 @@
       {
         &quot;name&quot;: &quot;before_spawn&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.1586738849999989,
+        &quot;seconds&quot;: 0.21600675299998784,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_spawn&quot;,
           &quot;state_after_restart&quot;: &quot;READY&quot;,
@@ -555,7 +559,7 @@
       {
         &quot;name&quot;: &quot;after_spawn&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.19440851599999576,
+        &quot;seconds&quot;: 0.22396586200000002,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_after_spawn&quot;,
           &quot;state_after_restart&quot;: &quot;ORPHAN_BUSY&quot;,
@@ -566,7 +570,7 @@
       {
         &quot;name&quot;: &quot;release_intent&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.1659769559999944,
+        &quot;seconds&quot;: 0.17910744400001022,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_release_intent&quot;,
           &quot;copy_present_before_restart&quot;: true,
@@ -577,7 +581,7 @@
       {
         &quot;name&quot;: &quot;stop_timeout&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 2.1815325160000043,
+        &quot;seconds&quot;: 2.1439398620000247,
         &quot;details&quot;: {
           &quot;stop_timeout_not_exit&quot;: true,
           &quot;pin_after_timeout&quot;: 1,
@@ -588,33 +592,49 @@
       {
         &quot;name&quot;: &quot;missing_ready_crash&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.1914523039999949,
+        &quot;seconds&quot;: 0.1754022609999879,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
           &quot;ready_absent&quot;: true,
           &quot;controller_crashed&quot;: true,
           &quot;pin_before_exit&quot;: 1,
           &quot;pin_after_release&quot;: 0,
-          &quot;deadline_error&quot;: null
+          &quot;deadline_error&quot;: null,
+          &quot;deadline_guard_free_before_stop&quot;: null,
+          &quot;deadline_pid_absent_before_stop&quot;: null
         }
       },
       {
         &quot;name&quot;: &quot;readiness_timeout&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 3.1498719920000013,
+        &quot;seconds&quot;: 3.1322842270000137,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
           &quot;ready_absent&quot;: true,
           &quot;controller_crashed&quot;: false,
           &quot;pin_before_exit&quot;: 1,
           &quot;pin_after_release&quot;: 0,
-          &quot;deadline_error&quot;: &quot;TimeoutError&quot;
+          &quot;deadline_error&quot;: &quot;TimeoutError&quot;,
+          &quot;deadline_guard_free_before_stop&quot;: true,
+          &quot;deadline_pid_absent_before_stop&quot;: true
+        }
+      },
+      {
+        &quot;name&quot;: &quot;idle_header&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.6662348009999732,
+        &quot;details&quot;: {
+          &quot;incomplete_unauthenticated_header&quot;: true,
+          &quot;reader_closed_idle_connection&quot;: true,
+          &quot;query_after_idle&quot;: 40,
+          &quot;pin_before_release&quot;: 1,
+          &quot;pin_after_release&quot;: 0
         }
       },
       {
         &quot;name&quot;: &quot;readonly_release&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.22024527099999602,
+        &quot;seconds&quot;: 0.18414329300003374,
         &quot;details&quot;: {
           &quot;os_errno&quot;: 30,
           &quot;pin_before_repair&quot;: 1,
@@ -630,7 +650,7 @@
       &quot;reader_adoption_tested&quot;: false,
       &quot;long_term_gc_tested&quot;: false
     },
-    &quot;owned_service_count&quot;: 16,
+    &quot;owned_service_count&quot;: 17,
     &quot;owned_services_exited&quot;: true,
     &quot;no_service_or_worker_processes_remaining&quot;: true
   },
@@ -639,6 +659,6 @@
   &quot;preexisting_profiles_unchanged&quot;: true,
   &quot;controls&quot;: {
     &quot;passed&quot;: true,
-    &quot;rejected&quot;: 26
+    &quot;rejected&quot;: 29
   }
 }</pre></html>

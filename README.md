@@ -61,8 +61,8 @@ future work; reader mutations require explicit current epoch/revision tokens.
 
 ## Current results
 
-The guarded-reader slice passed **72 tests on each platform**, **9 Linux service
-scenarios** and **26 report corruption controls**; see [phase-two evidence](evidence/phase2/README.md).
+The guarded-reader slice passed **74 tests on each platform**, **10 Linux service
+scenarios** and **29 report corruption controls**; see [phase-two evidence](evidence/phase2/README.md).
 It tests controller crashes around spawn and release, paused readers, safe pin
 retention and real Linux readonly deletion/repair with the installed package.
 Unknown orphan processes are retained and never signalled by persisted PID.
@@ -94,6 +94,7 @@ disk-accounting values and full receipts are retained below.
 - [Retained exploration evidence](evidence/README.md) (historical four explorations)
 - [Phase-one implementation and qualification](docs/PHASE1.md) (historical slice)
 - [Guarded-reader implementation and qualification](docs/PHASE2.md)
+- [Reader review findings and repair](docs/PHASE2_REVIEW.md)
 - [Architecture and state machines](docs/ARCHITECTURE.md)
 - [Reviewed service design decisions](docs/MVP_DESIGN.md) (design only)
 - [Planned state machines and recovery matrix](docs/MVP_STATE_RECOVERY.md)

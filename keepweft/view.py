@@ -6,12 +6,17 @@ from pathlib import Path
 from .data import readonly,checkpoint
 import time
 
+READ_IDLE_SECONDS=.5
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--database',type=Path,required=True);p.add_argument('--ready',type=Path,required=True);p.add_argument('--guard-fd',type=int);p.add_argument('--instance-id');p.add_argument('--nonce');p.add_argument('--barriers',type=Path);a=p.parse_args()
     if a.guard_fd is not None:
         os.fstat(a.guard_fd)
         fcntl.flock(a.guard_fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
     class Handler(BaseHTTPRequestHandler):
+        # A silent local client must not monopolize the single reader before auth.
+        # This is an inactivity limit, not a total deadline or DoS guarantee.
+        timeout=READ_IDLE_SECONDS
         def do_GET(self):
             if a.guard_fd is not None and not hmac.compare_digest(self.headers.get('Authorization',''),'Bearer '+a.nonce):self.send_error(403);return
             if self.path!='/summary':self.send_error(404);return

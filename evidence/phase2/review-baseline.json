@@ -1,0 +1,30 @@
+{
+  "kind": "manual_sanitized_review_summary",
+  "qualification_receipt": false,
+  "baseline_commit": "ee60c401b5144cd6884be7c1b317ed797600b4a3",
+  "native_baseline": {
+    "tests": 72,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "idle_regression_before_fix": {
+    "tests": 17,
+    "errors": 1,
+    "fault": "Actual incomplete unauthenticated HTTP header; server did not close before client timeout"
+  },
+  "reader_regressions_after_fix": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0
+  },
+  "independent_kill_mutation": {
+    "scope": "Only Popen.kill in service process memory replaced by no-op; actual service/reader code and child still used",
+    "old_case": "incorrectly passed after later stop cleaned child",
+    "strengthened_case": "failed at independent guard/PID observation before any stop",
+    "observed_failure_seconds": 6.195,
+    "error": "TimeoutError: Scenario observation timed out"
+  },
+  "injection_limits": "No real uninterruptible kernel task, VM reboot or power loss was tested",
+  "raw_private_logs_uploaded": false
+}

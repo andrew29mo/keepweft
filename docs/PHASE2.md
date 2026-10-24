@@ -112,7 +112,11 @@ concurrent restore duplication. Release after RELEASED refuses without decrement
 The reader binds only loopback and requires its per-start bearer nonce, stored
 under the owner-only store; the controller supplies it. HTTP authentication is
 not a multi-user identity/RBAC boundary. There is no arbitrary SQL, write endpoint
-or external-network listener. Synchronous verification, stop and filesystem calls
+or external-network listener. Accepted HTTP connections have a 0.5-second socket
+inactivity limit, including incomplete headers before authentication. The reader
+closes idle requests so a silent local client cannot occupy it indefinitely. This
+is not a total request deadline, parallel-server claim or DoS guarantee: continuous
+slow input and repeated connections may still interfere. Synchronous verification, stop and filesystem calls
 can delay control responses; there is no universal status/cancel latency SLO.
 
 ## Fault acceptance and evidence
@@ -123,7 +127,11 @@ can delay control responses; there is no universal status/cancel latency SLO.
   the guard, controller recovers globally and retains ORPHAN_BUSY/pin.
 - Kill controller while the actual reader is held before writing readiness: no
   handshake still means ORPHAN_BUSY. A held readiness deadline returns TimeoutError,
-  reaps the owned child, preserves the pin and permits explicit stop/release.
+  preserves the pin and permits explicit stop/release. In the controlled successful
+  kill trial, a separate-FD free guard and absent owned PID must both be observed
+  **before any stop**, independently proving exit/reaping. A separate injected
+  ineffective-kill test retains the live child, busy guard, copy and pin; release
+  refuses until a later stop actually proves exit.
 - Serving reader survives controller SIGKILL and answers the fixed snapshot.
   Duplicate start/restore and live release reject. Stale epoch returns an explicit
   authority rejection; stale revision and missing token also reject with a **free**
@@ -133,14 +141,17 @@ can delay control responses; there is no universal status/cancel latency SLO.
 - Kill at durable release intent; recovery deletes and unpins once.
 - Real Linux readonly bind mount causes EROFS 30, keeps pin/copy, and prevents
   restart until repair. After unmount, formal recovery completes deletion/unpin.
-- Unit tests inject exec, wrong readiness query, unlink and parent-sync failures.
+- A real unauthenticated incomplete HTTP header must receive server EOF before
+  the test closes its socket; normal query/stop/release still work afterwards.
+- Unit tests inject exec, wrong readiness query, ineffective kill, unlink and parent-sync failures.
   Injection is labelled separately from actual VM filesystem fault evidence.
 - Logical-byte/receipt exhaustion must not require another admission slot to stop
   and release a known reader. Metadata/guards are conservatively retained; finite
   catalog/receipt exhaustion remains possible, not long-term rollover qualification.
 
 [Current JSON/HTML and measurements](../evidence/phase2/README.md). Timings include
-socket/process scheduling and real loopback query; RSS is a point sample from
+the test client’s preliminary status/token RPC, socket/process scheduling, and
+receipt of the start response after the real loopback readiness query; RSS is a point sample from
 Linux `/proc/.../status`, native test samples use `ps`. The published observations
 are isolated-VM-only, not peaks, long-run growth, native comparisons or guarantees.
 

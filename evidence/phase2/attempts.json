@@ -45,8 +45,20 @@
       "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
       "vm_deleted": true,
       "data_disk_removed": true,
+      "status": "superseded",
+      "reason": "Review found idle HTTP blocking and missing independent deadline exit proof; original receipt retained"
+    },
+    {
+      "attempt": 5,
+      "run_id": "e8fedba95aa877d3",
+      "passed": true,
+      "tests_per_platform": 74,
+      "vm_cases": 10,
+      "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
+      "vm_deleted": true,
+      "data_disk_removed": true,
       "status": "current",
-      "reason": "Final bounded status and reader qualification"
+      "reason": "Reviewed idle-header repair and independent deadline exit proof, including ineffective termination retention"
     }
   ]
 }

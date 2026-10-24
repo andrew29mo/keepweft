@@ -19,7 +19,12 @@ class ReaderFailures(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.p=Path(self.tmp.name).resolve();src=self.p/'source';uid=init_ledger(src,4)
         self.c=Controller(self.p/'store',src,uid);self.bid=self.c.backup()['id'];self.rid=self.c.restore(self.bid)['id']
-    def tearDown(self):self.c.close();self.tmp.cleanup()
+    def tearDown(self):
+        # Test cleanup of owned children occurs only after all assertions.
+        for proc in self.c.readers.values():
+            if proc.poll() is None:proc.kill()
+            proc.wait(timeout=3)
+        self.c.close();self.tmp.cleanup()
     def test_unlink_failure_keeps_pin_and_copy(self):
         with patch.object(reader.shutil,'rmtree',side_effect=OSError('injected unlink failure')):
             with self.assertRaises(OSError):self.c.release(self.rid)
@@ -73,3 +78,17 @@ class ReaderFailures(unittest.TestCase):
             self.assertIn(self.bid,[r['id'] for r in inventory['backups']])
             self.assertEqual(inventory['token'],self.c.token)
         finally:service.close()
+
+    def test_failed_deadline_kill_retains_unknown_reader_until_proven_exit(self):
+        barrier=self.p/'barriers';barrier.mkdir();(barrier/'reader_before_ready.arm').touch();self.c.barriers=barrier
+        with patch.object(reader.subprocess.Popen,'kill',return_value=None) as attempted:
+            with self.assertRaises(TimeoutError):reader.start(self.c,self.rid,self.c.token,timeout=.5)
+        attempted.assert_called_once()
+        self.assertTrue((barrier/'reader_before_ready.seen').exists())
+        proc=self.c.readers[self.rid];self.assertIsNone(proc.poll())
+        with self.assertRaises(Refused):self.c.release(self.rid)
+        self.assertTrue((self.c.root/'restores'/self.rid/'db.sqlite').exists())
+        self.assertEqual(self.c.status()['backups'][0]['pins'],1)
+        self.assertEqual(self.c.status()['restores'][0]['state'],'STOP_REQUESTED')
+        self.assertTrue(reader.stop(self.c,self.rid,self.c.token)['exit_proven'])
+        self.c.release(self.rid);self.assertEqual(self.c.status()['backups'][0]['pins'],0)

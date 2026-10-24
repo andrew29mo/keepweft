@@ -54,6 +54,21 @@ class Readers(Harness):
         self.test_pids.append((pid,rid));return pid
 
 
+def guard_free(h, rid):
+    fd=os.open(h.root/'guards'/rid,os.O_RDWR|os.O_NOFOLLOW)
+    try:
+        try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:return False
+        return True
+    finally:os.close(fd)
+
+
+def pid_absent(pid):
+    # A zombie is not absent: for an owned child, this also challenges reaping.
+    try:os.kill(pid,0)
+    except ProcessLookupError:return True
+    return False
+
 def rss(pid):
     if Path('/proc/'+str(pid)+'/status').exists():
         return int(next(line.split()[1] for line in Path('/proc/'+str(pid)+'/status').read_text().splitlines() if line.startswith('VmRSS:')))
@@ -159,8 +174,28 @@ def missing_ready(path,crash):
                     require(bool(chunk),'Timeout reply dropped');raw+=chunk
                 reply=json.loads(raw);require(reply['ok'] is False and reply['code']=='TimeoutError','Missing handshake accepted or unrelated failure')
                 require(h.pin(bid)==1 and h.inventory()['restores'][0]['state']=='STOP_REQUESTED','Deadline unpinned')
+                # No stop/terminate is allowed to repair a missing startup cleanup.
+                wait(lambda:guard_free(h,rid) and pid_absent(pid),timeout=1)
+                require(guard_free(h,rid) and pid_absent(pid),'Deadline did not independently reap child')
         wait(lambda:h.cmd('stop',rid)['exit_proven']);h.cmd('release',rid)
-        return dict(barrier_seen='reader_before_ready',ready_absent=True,controller_crashed=crash,pin_before_exit=1,pin_after_release=0,deadline_error=None if crash else 'TimeoutError')
+        return dict(barrier_seen='reader_before_ready',ready_absent=True,controller_crashed=crash,pin_before_exit=1,pin_after_release=0,deadline_error=None if crash else 'TimeoutError',deadline_guard_free_before_stop=None if crash else True,deadline_pid_absent_before_stop=None if crash else True)
+    finally:h.close()
+
+def idle_header(path):
+    h=Readers(path)
+    try:
+        h.start();bid,rid=h.setup_copy();h.cmd('start',rid);h.track(rid)
+        info=json.loads((h.root/'guards'/(rid+'.ready')).read_text())
+        with socket.create_connection(('127.0.0.1',info['port']),timeout=2) as slow:
+            slow.settimeout(2)
+            slow.sendall(b'GET /summary HTTP/1.1\r\n')
+            # The reader must close the unauthenticated idle request itself.
+            # We do not close it to make the subsequent query pass.
+            require(slow.recv(1)==b'','Idle request was not closed')
+            require(h.cmd('query',rid)['count']==40,'Idle client still blocks reader')
+        require(h.pin(bid)==1,'Idle request changed pin')
+        require(h.cmd('stop',rid)['exit_proven'],'Stop failed after idle client');h.cmd('release',rid)
+        return dict(incomplete_unauthenticated_header=True,reader_closed_idle_connection=True,query_after_idle=40,pin_before_release=1,pin_after_release=0)
     finally:h.close()
 
 def readonly_release(path):
@@ -183,7 +218,7 @@ def readonly_release(path):
         if mounted:subprocess.run(['umount',str(target)],check=True,timeout=10)
         h.close()
 
-CASES=(('roundtrip',roundtrip),('controller_orphan',orphan),('before_spawn',lambda p:spawn_crash(p,'reader_before_spawn')),('after_spawn',lambda p:spawn_crash(p,'reader_after_spawn')),('release_intent',release_crash),('stop_timeout',stopped_reader),('missing_ready_crash',lambda p:missing_ready(p,True)),('readiness_timeout',lambda p:missing_ready(p,False)))
+CASES=(('roundtrip',roundtrip),('controller_orphan',orphan),('before_spawn',lambda p:spawn_crash(p,'reader_before_spawn')),('after_spawn',lambda p:spawn_crash(p,'reader_after_spawn')),('release_intent',release_crash),('stop_timeout',stopped_reader),('missing_ready_crash',lambda p:missing_ready(p,True)),('readiness_timeout',lambda p:missing_ready(p,False)),('idle_header',idle_header))
 
 VM_CASES=CASES+(('readonly_release',readonly_release),)
 

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "count": 72,
+  "count": 74,
   "tests": [
     "test_core.CoreTests.test_artifact_limit_rejects",
     "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -33,6 +33,7 @@
     "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
     "test_core.CoreTests.test_wrong_source_uuid_rejected",
     "test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader",
+    "test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit",
     "test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release",
     "test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart",
     "test_readers.ReaderFailures.test_mismatching_query_is_not_ready",
@@ -42,6 +43,7 @@
     "test_readers.ServiceReaderCases.test_after_spawn",
     "test_readers.ServiceReaderCases.test_before_spawn",
     "test_readers.ServiceReaderCases.test_controller_orphan",
+    "test_readers.ServiceReaderCases.test_idle_header",
     "test_readers.ServiceReaderCases.test_missing_ready_crash",
     "test_readers.ServiceReaderCases.test_readiness_timeout",
     "test_readers.ServiceReaderCases.test_release_intent",
@@ -78,7 +80,7 @@
   "failures": 0,
   "errors": 0,
   "skipped": 0,
-  "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+  "source_sha256": "14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0",
   "platform": "Linux",
   "runtime": {
     "python_sqlite": "3.54.1",
