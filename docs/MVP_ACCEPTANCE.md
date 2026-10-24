@@ -1,5 +1,9 @@
 # MVP acceptance: exploration gates versus remaining delivery
 
+This document retains the broader historical service roadmap. The delivered
+bounded local MVP and current closeout acceptance are defined in [CLOSEOUT.md](CLOSEOUT.md).
+Unimplemented rows below are deferred; they are not claims about the current package.
+
 Four technical explorations are prerequisites, not a claim that the full MVP is
 finished. Actual receipts must name the installed core, source fingerprint,
 SQLite runtime, faults and limits. No stage may silently skip or turn timeout
@@ -81,3 +85,13 @@ versions fail preflight rather than silently continuing.
 Sudden power loss, VM reboot, physical storage/WAN behavior, disaster recovery
 from same-device copies, remote storage, encryption and point-in-time recovery
 are not qualified by these four gates.
+
+
+## Later bounded closeout
+
+The earlier qualification boundaries above remain historical and source-bound.
+[Bounded closeout](CLOSEOUT.md) defines the delivered local MVP, its installation
+workflow, policy-capacity and resource checks, and separate normal-VM-reboot
+qualification. Earlier scheduler, age-retention, general metadata GC and systemd
+packaging targets are deferred; they are not prerequisites added to this closeout.
+No sudden-power-loss, boot zero-gap or unlimited-longevity claim is made.

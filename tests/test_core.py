@@ -3,6 +3,7 @@ from pathlib import Path
 from unittest.mock import patch
 from keepweft.core import Controller,Busy,Degraded,usage
 from keepweft.data import Refused,init_ledger,append,readonly,inspect,verify_closed
+from tools.testing import owned_snapshot
 
 class CoreTests(unittest.TestCase):
     def setUp(self):
@@ -37,9 +38,9 @@ class CoreTests(unittest.TestCase):
         with self.controller() as c:
             t=c.token;c.backup()
             for q in (dict(epoch=t['epoch']-1,revision=c.token['revision']),dict(epoch=c.token['epoch'],revision=t['revision'])):
-                before=c.status()
+                before=owned_snapshot(c)
                 with self.assertRaises(Refused):c.backup(q)
-                self.assertEqual(before,c.status())
+                self.assertEqual(before,owned_snapshot(c))
         with self.controller() as c:
             with self.assertRaises(Refused):c.backup(dict(epoch=t['epoch'],revision=c.token['revision']))
     def test_retention_and_latest_protection(self):

@@ -1,8 +1,9 @@
 # Keepweft
 
 A local SQLite backup and validated-restore controller. This repository currently
-contains a **minimal implementation core, four technical explorations, a backup
-request service and one guarded restored reader**, not the complete operational MVP.
+contains a bounded MVP: **a backup request service, conservative capacity and
+retention handling, and one guarded validated restored reader**. Earlier broader
+service designs remain a roadmap, not delivered capabilities.
 
 The core takes a bounded read snapshot, creates a standalone backup through
 SQLite's Online Backup API, verifies a fixed application contract, and publishes
@@ -61,7 +62,30 @@ future work; reader mutations require explicit current epoch/revision tokens.
 
 ## Current results
 
-The guarded-reader slice passed **74 tests on each platform**, **10 Linux service
+The final bounded closeout passed **79 identical tests on each platform**, repeated
+**10 Linux reader/fault scenarios**, **four closeout scenarios** and **two normal
+VM reboots**, with **48 rejected report corruptions**. The clean no-host-mount VM
+installed the wheel and verified its module/runtime hashes before using it.
+
+Twenty-four complete cycles ran for **124.04 seconds** in one controller process,
+including at least five seconds of live reader dwell per cycle. Controller RSS was
+21,088 KiB initially, 28,488 KiB after the declared four-cycle warmup, and 29,396 KiB
+at the maximum/end: a **908-KiB post-warmup increase**, within the predeclared
+4,096-KiB allowance. This is sampled Linux VM RSS, not a flat-memory claim,
+continuous peak, native measurement or long-term bound. Quiescent FDs stayed at 7;
+remaining children, active restores, readers and pins were zero after every cycle.
+Metadata grew as expected; 24 fixed guards and 24 ready hints remain, alongside
+retained rows. There is no automatic guard/tombstone GC.
+
+Separate receipt and soft logical-capacity refusals preserved existing backups
+and allowed query/stop/release. Two normal reboots preserved the catalog and copy
+unchanged **after boot before controller startup**, then the formal service
+reconciled a formerly serving copy and an interrupted release respectively.
+This tests recovery when the service is explicitly started after boot; it is not
+a systemd-autostart, abrupt-power-loss or boot-zero-gap qualification.
+See [closeout evidence and retained failed/superseded attempts](evidence/closeout/README.md).
+
+The historical guarded-reader slice passed **74 tests on each platform**, **10 Linux service
 scenarios** and **29 report corruption controls**; see [phase-two evidence](evidence/phase2/README.md).
 It tests controller crashes around spawn and release, paused readers, safe pin
 retention and real Linux readonly deletion/repair with the installed package.
@@ -74,8 +98,7 @@ GC, cancellation on both sides of publication intent, and retention attribution
 after a crash use the actual service/worker implementation. A real Linux readonly
 mount challenges pending deletion and repair; injected fsync regressions stay
 separately labelled. See [phase-one
-JSON/HTML evidence](evidence/phase1/README.md). These results do not qualify the
-remaining full-service MVP.
+JSON/HTML evidence](evidence/phase1/README.md). These historical results qualify their source-bound slice only.
 
 The historical installed-core exploration passed all four probe groups. Native macOS
 and isolated Linux each passed the same **30 portable tests**, with **24 rejected
@@ -91,6 +114,7 @@ disk-accounting values and full receipts are retained below.
 
 ## Evidence and design
 
+- [Bounded closeout and operator workflow](docs/CLOSEOUT.md)
 - [Retained exploration evidence](evidence/README.md) (historical four explorations)
 - [Phase-one implementation and qualification](docs/PHASE1.md) (historical slice)
 - [Guarded-reader implementation and qualification](docs/PHASE2.md)
@@ -103,5 +127,5 @@ disk-accounting values and full receipts are retained below.
 
 An online snapshot is not a backup of external files, multiple ATTACHed databases
 or another host. Same-device copies do not protect against device loss. Abrupt
-power loss, VM reboot, physical storage behavior, encryption, remote storage,
+power loss, physical storage behavior, encryption, remote storage,
 point-in-time recovery and production service cutover are unqualified.

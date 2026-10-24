@@ -1,5 +1,9 @@
 # Reproduction and interpretation
 
+This document describes the historical four exploration probes. Later installed
+service, bounded-resource and normal-VM-reboot qualification is described in
+[CLOSEOUT.md](CLOSEOUT.md); historical receipts remain source-bound.
+
 ## Environment and prerequisites
 
 Use macOS, Python >=3.12 with a qualified linked SQLite, Colima/Lima and network
@@ -111,3 +115,13 @@ persistence, hard process-cleanup deadlines for stuck I/O, hostile same-UID
 isolation, long-term receipt capacity, arbitrary-schema recovery or production
 service cutover. Correctness of the fixed ledger profile is not evidence of
 correctness for all applications using SQLite.
+
+
+## Later bounded closeout
+
+The earlier qualification boundaries above remain historical and source-bound.
+[Bounded closeout](CLOSEOUT.md) defines the delivered local MVP, its installation
+workflow, policy-capacity and resource checks, and separate normal-VM-reboot
+qualification. Earlier scheduler, age-retention, general metadata GC and systemd
+packaging targets are deferred; they are not prerequisites added to this closeout.
+No sudden-power-loss, boot zero-gap or unlimited-longevity claim is made.

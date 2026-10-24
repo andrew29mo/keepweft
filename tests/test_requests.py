@@ -7,6 +7,7 @@ from keepweft.core import Controller
 from keepweft.data import init_ledger,Refused
 from keepweft.requests import Requests,ProtocolError
 from tools import phase1_cases
+from tools.testing import owned_snapshot
 
 class RequestTests(unittest.TestCase):
     def setUp(self):
@@ -15,13 +16,13 @@ class RequestTests(unittest.TestCase):
     def tearDown(self):self.c.close();self.tmp.cleanup()
     def env(self):return dict(**self.r.namespace,request_id=uuid.uuid4().hex,command=dict(kind='backup',timeout=10))
     def test_payload_conflict_has_no_side_effect(self):
-        e=self.env();a=self.r.submit(e);before=self.c.status()
+        e=self.env();a=self.r.submit(e);before=owned_snapshot(self.c)
         with self.assertRaises(ProtocolError):self.r.submit(dict(e,command=dict(kind='backup',timeout=9)))
-        self.assertEqual(before,self.c.status());self.assertEqual(a,self.r.submit(e))
+        self.assertEqual(before,owned_snapshot(self.c));self.assertEqual(a,self.r.submit(e))
     def test_queue_full_does_not_create_receipt(self):
-        self.r.submit(self.env());before=self.c.status()
+        self.r.submit(self.env());before=owned_snapshot(self.c)
         with self.assertRaises(ProtocolError):self.r.submit(self.env())
-        self.assertEqual(before,self.c.status());self.assertEqual(self.r.summary()['receipts'],1)
+        self.assertEqual(before,owned_snapshot(self.c));self.assertEqual(self.r.summary()['receipts'],1)
     def test_queued_cancel_needs_no_slot(self):
         e=self.env();self.r.submit(e);self.assertEqual(self.r.cancel(e)['outcome'],'CANCELLED');self.assertEqual(self.r.cancel(e)['outcome'],'CANCELLED')
     def test_generation_cannot_retire_queued_work(self):

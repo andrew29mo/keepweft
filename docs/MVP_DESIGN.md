@@ -1,5 +1,9 @@
 # Operational MVP architecture decisions
 
+This is the historical broader service design. See [CLOSEOUT.md](CLOSEOUT.md)
+for the delivered bounded MVP; scheduler, age retention, automatic metadata GC
+and systemd packaging remain deferred.
+
 Status: reviewed target architecture. The backup-request portion is implemented
 in [PHASE1.md](PHASE1.md); remaining service capabilities are not qualified here.
 This document governs the complete next MVP; ARCHITECTURE.md describes the
@@ -224,3 +228,12 @@ and fixed guard inodes under finite receipt/catalog caps; the monotonic allocato
 and guard/tombstone GC described above remain future targets. Reader mutations use
 explicit epoch/revision fencing, not backup-request receipt deduplication. Forced
 orphan adoption, service packaging and scheduling remain unimplemented.
+
+
+## Bounded delivery boundary
+
+[CLOSEOUT.md](CLOSEOUT.md) defines the current local MVP and its separate installed
+workflow, capacity, resource and normal reboot evidence. Broader scheduling,
+age-retention, automatic metadata GC and systemd packaging designs above are
+deferred targets, not implied delivered features. Abrupt power loss and boot
+zero-gap remain unqualified.

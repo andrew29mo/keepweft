@@ -1,0 +1,39 @@
+{
+  "kind": "manual_sanitized_development_record_not_vm_qualification",
+  "observations": [
+    {
+      "stage": "initial_native_scenario_probe",
+      "passed": false,
+      "error": "TypeError: duplicate max_receipts keyword in test configuration construction",
+      "repair": "Merge default and explicit test options without duplicate keyword arguments. No product change."
+    },
+    {
+      "stage": "native_capacity_probe",
+      "passed": false,
+      "error": "Actual backup refused because its 184320-byte snapshot exceeded the initial 65536-byte per-artifact test policy",
+      "repair": "Declare 262144-byte artifact cap, 65536-byte headroom and separate 1300000-byte logical-budget case before qualification. No product limit relaxed."
+    },
+    {
+      "stage": "first_vm_closeout",
+      "run_id": "c26dcb76f9c3c209",
+      "receipt": "attempt-01.json",
+      "outcome": "Passed its original contract but superseded for sustained-operation qualification",
+      "cycles": 24,
+      "cycle_trial_seconds": 2.6791408590000003,
+      "reason": "A 2.7-second repeated-operation trial is too short to support a sustained-operation conclusion. Retain original JSON/HTML unchanged; require five seconds of live reader dwell in each cycle for the final contract."
+    },
+    {
+      "stage": "second_vm_closeout_native_gate",
+      "run_id": "644240ce5abb35db",
+      "passed": false,
+      "receipt": "attempt-02.json",
+      "native_tests": 78,
+      "native_failures": 1,
+      "failed_test": "test_core.CoreTests.test_epoch_and_revision_independent",
+      "cause": "Full status equality incorrectly required unchanged free bytes for the whole host filesystem; the free-space observation changed by 12288 bytes while owned state was unchanged.",
+      "repair": "Compare all owned status fields including logical/allocated bytes and hashes of every managed file/directory; exclude only shared statvfs filesystem_free_bytes. Apply the same correction to two request-refusal tests. Add a control showing global free-space drift is ignored but real managed file mutation is detected.",
+      "vm_final": "Deleted",
+      "test_limits_relaxed": false
+    }
+  ]
+}

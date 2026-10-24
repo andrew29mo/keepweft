@@ -1,5 +1,9 @@
 # One restored copy and a managed read-only process
 
+The phase-two results below are historical source-bound qualification of this
+lifecycle. Later clean installation, capacity/resource and normal-VM-reboot
+receipts are described separately in [CLOSEOUT.md](CLOSEOUT.md).
+
 This slice delivers restore → start → query → stop → release for one `ledger-v1`
 copy and one reader. The existing request service and built package run the same
 core. It does not replace the live database or supervise arbitrary applications.
@@ -182,3 +186,13 @@ skip, failed assertion, missing case or cleanup failure never becomes a pass.
 VM reboot, sudden power loss, physical storage, production cutover, orphan
 adoption, arbitrary profiles, scheduler, age retention and long-term guard/metadata
 GC remain unqualified.
+
+
+## Later bounded closeout
+
+The earlier qualification boundaries above remain historical and source-bound.
+[Bounded closeout](CLOSEOUT.md) defines the delivered local MVP, its installation
+workflow, policy-capacity and resource checks, and separate normal-VM-reboot
+qualification. Earlier scheduler, age-retention, general metadata GC and systemd
+packaging targets are deferred; they are not prerequisites added to this closeout.
+No sudden-power-loss, boot zero-gap or unlimited-longevity claim is made.

@@ -133,3 +133,12 @@ writable startup must persist a new epoch and complete reconciliation. Read-only
 instance guard ownership, conservative orphan recovery and evidence. Older
 exploration descriptions of caller-managed readers are historical. No scheduling,
 forced orphan adoption or long-term guard GC is qualified by this slice.
+
+
+## Bounded delivery boundary
+
+[CLOSEOUT.md](CLOSEOUT.md) defines the current local MVP and its separate installed
+workflow, capacity, resource and normal reboot evidence. Broader scheduling,
+age-retention, automatic metadata GC and systemd packaging designs above are
+deferred targets, not implied delivered features. Abrupt power loss and boot
+zero-gap remain unqualified.

@@ -1,5 +1,9 @@
 # Planned service state machines and failure recovery
 
+This preserves the broader design and historical failure matrix. The implemented
+reader lifecycle is in [PHASE2.md](PHASE2.md), and the bounded delivery/reboot
+qualification is in [CLOSEOUT.md](CLOSEOUT.md).
+
 Target state machines. The first backup-request subset is implemented as described
 in PHASE1.md; restore-reader and full service transitions remain design only.
 These diagrams are not execution evidence.
@@ -108,3 +112,12 @@ One managed reader is implemented in PHASE2.md. Orphan adoption, generic profile
 and full service operation remain pending.
 Historical exploration receipts and measurements are unchanged; phase-one fixes
 and evidence are separate and do not imply those remaining capabilities passed.
+
+
+## Bounded delivery boundary
+
+[CLOSEOUT.md](CLOSEOUT.md) defines the current local MVP and its separate installed
+workflow, capacity, resource and normal reboot evidence. Broader scheduling,
+age-retention, automatic metadata GC and systemd packaging designs above are
+deferred targets, not implied delivered features. Abrupt power loss and boot
+zero-gap remain unqualified.

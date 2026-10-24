@@ -1,0 +1,191 @@
+{
+  "passed": false,
+  "run_id": "644240ce5abb35db",
+  "recorded_at_utc": "2026-10-24T08:16:54.721713+00:00",
+  "source": {
+    "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
+    "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+    "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
+    "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
+    "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+    "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
+    "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
+    "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
+    "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
+    "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+    "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
+    "tests/test_closeout.py": "09d59206d05b84a785ce25a6d3fc8d314640ada26814bc5bfd1f3c3bc1dfc04a",
+    "tests/test_core.py": "3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec",
+    "tests/test_readers.py": "6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb",
+    "tests/test_requests.py": "5fd5f53535cba3a2fed7c30b4e16c0e143ada87b6204cb556f3e620d6de4704c",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
+    "tools/closeout_cases.py": "719f0b6c94ca1cfaa9291396f86d5d611599fd17248568ee550d0063fd66f4bc",
+    "tools/closeout_report.py": "67d466bf83fa22e4adce7e0d6eff1527d26fa78a916371530090954188a7f412",
+    "tools/closeout_validate.py": "65cc31707467f3d685adb5aa7ce3e1bc5d1c5fcde94737d48a17dad63f82653f",
+    "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
+    "tools/explore.py": "123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a",
+    "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
+    "tools/phase1_report.py": "8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca",
+    "tools/phase1_validate.py": "fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1",
+    "tools/phase2_cases.py": "a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3",
+    "tools/phase2_report.py": "b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d",
+    "tools/phase2_validate.py": "b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c",
+    "tools/report.py": "29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23",
+    "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
+    "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
+  },
+  "source_sha256": "7b5243ea756caf73c0cc57fe1df51c7148d4de7ac82b919e853bd46fdbff8373",
+  "source_changed": false,
+  "stages": [
+    {
+      "name": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.1924516250146553
+    },
+    {
+      "name": "create",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 22.239043167006457
+    },
+    {
+      "name": "dependencies",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 28.944835625006817
+    },
+    {
+      "name": "upload",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.4570196660060901
+    },
+    {
+      "name": "runtime",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 17.401322166988393
+    },
+    {
+      "name": "install",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.5614179999975022
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.25329883297672495
+    },
+    {
+      "name": "native",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 25.92695733299479
+    },
+    {
+      "name": "failed-guest",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 0.30068024998763576
+    },
+    {
+      "name": "delete",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.435560957994312
+    },
+    {
+      "name": "final",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.18936587500502355
+    }
+  ],
+  "wheel_sha256": "56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d",
+  "wheel_product_matches": true,
+  "host_mounts": "none",
+  "fresh_profile": true,
+  "initial_disk_absent": true,
+  "sqlite_build": {
+    "url": "https://sqlite.org/2026/sqlite-amalgamation-3540100.zip",
+    "archive_sha256": "0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9",
+    "source_sha3_256": "e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81",
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-DSQLITE_THREADSAFE=1"
+    ]
+  },
+  "provenance": {
+    "location": "/usr/local/lib/python3.12/dist-packages/keepweft",
+    "modules": {
+      "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
+      "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
+      "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+      "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
+      "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+      "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
+      "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+      "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
+      "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
+      "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187"
+    },
+    "source_package_absent": true,
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab"
+  },
+  "error": "RuntimeError: native failed or timed out",
+  "vm_final": "Deleted",
+  "data_disk_removed": true,
+  "preexisting_profiles_unchanged": true
+}
