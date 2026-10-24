@@ -63,5 +63,5 @@ The previous final receipt is preserved as attempt 04 with its original contract
 Timings include the test client's preliminary status/token RPC and receipt of the
 start response after the real readiness query. RSS is a point observation; it is
 not peak memory or long-run growth qualification. Raw test logs, wheels, stores
-and VM images remain ignored. No project license has been selected; repository
-visibility remains Private.
+and VM images remain ignored. No project license had been selected at that review. The project is now
+[MIT licensed](../LICENSE); repository visibility remains Private.

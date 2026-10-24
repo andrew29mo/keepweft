@@ -3,8 +3,7 @@
 This slice implements backup requests only. It adds a persistent Unix-socket
 control service around the same Controller/worker used by the exploration CLI.
 Managed restore readers, scheduling, age retention, service installation/systemd
-and general object/tombstone GC remain future work. The project remains Private
-with no selected project license.
+and general object/tombstone GC remain future work. The project remains Private and is [MIT licensed](../LICENSE).
 
 ## Run and retry
 

@@ -1,7 +1,9 @@
 # Pre-publication review
 
 Review parent: `1145702ba65d5ac62a5efc2174d1ff9f14555ee5`. The repository stays
-Private with no selected project license. This review covers current runtime and
+Private with no selected project license at the time of that review. The project
+is now [MIT licensed](../LICENSE); see [adoption checks](LICENSE_ADOPTION.md).
+This historical review covers runtime and
 tests, README/design/evidence boundaries, package contents and tracked Git history.
 It does not authorize publication or add product features.
 
@@ -48,10 +50,10 @@ its manual observations. Raw local test data/logs and wheel stay ignored.
   venv. Linux instructions persist `LD_LIBRARY_PATH` for subsequent commands,
   matching the qualified library path selected explicitly by the runner. A
   one-command environment prefix is not presented as a persistent setup.
-- The rebuilt wheel contains only project Python modules and distribution metadata,
+- The pre-MIT rebuilt wheel contained only project Python modules and distribution metadata,
   no data, private settings, VM image, third-party runtime source/binary or license
   declaration. Runtime dependencies remain Python stdlib and external SQLite;
-  [third-party terms](THIRD_PARTY.md) are separate from the unselected project license.
+  [third-party terms](THIRD_PARTY.md) were separate from the then-unselected project license.
 
 ## Privacy and history scope
 
@@ -65,7 +67,7 @@ Current candidate files are checked again before commit; raw logs, source data,
 
 This is a targeted pattern scan plus artifact/content review, not proof that
 secret scanners can detect every possible sensitive value. No history rewrite,
-public visibility change, new collaborator or license grant is performed.
+public visibility change, new collaborator or license grant was performed by that review.
 
 ## Evidence interpretation
 
@@ -104,6 +106,6 @@ service startup, and old authority rejected without mutation. VM/data disk and
 product-process cleanup passed; preexisting profiles/statuses were unchanged.
 
 The review's local targeted history/artifact scan found no private-information
-candidate; project license remains unselected. No remote CI rerun, abrupt-power-loss,
+candidate; project license was unselected at that review. No remote CI rerun, abrupt-power-loss,
 autostart, physical-storage or zero-gap qualification is claimed. The historical
 resource failure with missing samples remains explicitly unresolved.

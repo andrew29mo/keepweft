@@ -78,7 +78,8 @@ and copy witnesses, require a different kernel boot ID, and compare the untouche
 catalog **after boot before starting the formal service**. Neither is a claim of
 systemd autostart, boot zero-gap or sudden-power-loss recovery. Software receipt
 and logical-budget rejection are not new physical ENOSPC/SQLITE_FULL evidence.
-No new product features or license grant are introduced; repository stays Private.
+That review introduced no product features or license grant. The project is now
+[MIT licensed](../LICENSE); repository stays Private.
 
 ## VM setup cleanup finding during rerun
 

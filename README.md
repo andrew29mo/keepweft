@@ -24,9 +24,10 @@ replaces the live source database.
 - One guarded read-only restored ledger: start, real query, stop and safe release;
   a live/unknown reader retains its copy and backup pin across controller crash.
 
-No selected license is granted for the project yet. The GitHub repository must
-remain Private. External Python/SQLite dependencies retain their own licenses;
-see [third-party scope](docs/THIRD_PARTY.md).
+Licensed under [MIT](LICENSE), copyright 2026 Andrew Yuan. The GitHub repository
+remains Private. External dependencies retain their own terms; see
+[third-party scope](docs/THIRD_PARTY.md) and the
+[license adoption checks](docs/LICENSE_ADOPTION.md).
 
 ## Run locally
 

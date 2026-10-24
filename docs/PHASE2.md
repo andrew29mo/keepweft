@@ -7,7 +7,7 @@ receipts are described separately in [CLOSEOUT.md](CLOSEOUT.md).
 This slice delivers restore → start → query → stop → release for one `ledger-v1`
 copy and one reader. The existing request service and built package run the same
 core. It does not replace the live database or supervise arbitrary applications.
-Private repository; no project license selected.
+Private repository; project-owned material is [MIT licensed](../LICENSE).
 
 ## Decisions and invariants
 

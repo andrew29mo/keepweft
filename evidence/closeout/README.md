@@ -164,4 +164,7 @@ parents. [Review](../../docs/PREPUBLIC_REVIEW.md) and [sanitized pre-fix probes]
 separate this defect from prior observer gaps. The older unexplained composite
 resource failure remains unresolved; it was not promoted to a pass. No systemd
 autostart, sudden-power-loss, boot-zero-gap or physical-storage capability is
-newly qualified. Project remains Private without a selected license.
+newly qualified. At that qualification, no project license had been selected.
+The project is now [MIT licensed](../../LICENSE) and remains Private;
+[adoption checks](../../docs/LICENSE_ADOPTION.md) explain the metadata-only
+source-fingerprint change without rewriting these historical receipts.

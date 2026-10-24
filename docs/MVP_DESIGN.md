@@ -9,7 +9,7 @@ in [PHASE1.md](PHASE1.md); remaining service capabilities are not qualified here
 This document governs the complete next MVP; ARCHITECTURE.md describes the
 exploration core. Historical exploration receipts qualify only that core;
 phase-one receipts qualify their declared backup-request subset. The repository
-remains Private with no project license selected. Design text is not a pass receipt.
+remains Private; project-owned material is now [MIT licensed](../LICENSE). Design text is not a pass receipt.
 
 ## Scope and invariants
 
