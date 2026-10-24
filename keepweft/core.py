@@ -297,8 +297,9 @@ class Controller:
             before = {r[0] for r in self.db.execute("select id from backups where state='AVAILABLE'")}
             try:self.prune(need_slot=True,operation_id=ident)
             finally:
-                after = {r[0] for r in self.db.execute("select id from backups where state='AVAILABLE'")}
-                deleted = sorted(before-after)
+                # Leaving AVAILABLE may only mean a failed DELETING intent.
+                # Completion requires both filesystem sync and the DELETED commit.
+                deleted = sorted(bid for bid in before if self.db.execute("select state from backups where id=?",(bid,)).fetchone()==('DELETED',))
             self._phase(ident,'RESERVED',dict(reserved=reserved,retention_deleted=deleted))
             self._barrier('admitted',deadline)
             stage.mkdir(mode=0o700)
@@ -415,7 +416,8 @@ class Controller:
             self.db.execute("update backups set state='DELETING' where id=?",(bid,));self._revision()
         self._barrier('delete_intent',deadline)
         p=self._directory('backups',bid)
-        if p.exists():shutil.rmtree(p);sync_dir(p.parent)
+        if p.exists():shutil.rmtree(p)
+        sync_dir(p.parent)
         self._barrier('after_unlink',deadline)
         with self.tx():
             self.db.execute("update backups set state='DELETED' where id=?",(bid,));self._revision()
@@ -445,7 +447,9 @@ class Controller:
         deadline=time.monotonic()+30
         for bid, in self.db.execute("select id from backups where state='DELETING'").fetchall():
             p=self._directory('backups',bid)
-            if p.exists():shutil.rmtree(p);sync_dir(p.parent)
+            if p.exists():shutil.rmtree(p)
+            # Absence is not proof that the parent directory entry was synced.
+            sync_dir(p.parent)
             with self.tx():self.db.execute("update backups set state='DELETED' where id=?",(bid,))
         for ident,bid,state in self.db.execute("select id,backup_id,state from restores where state not in ('READY','RELEASED')").fetchall():
             p=self._directory('restores',ident)

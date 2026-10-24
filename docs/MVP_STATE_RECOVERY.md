@@ -77,6 +77,7 @@ orphan to exit; remotely controlling an orphan needs separately qualified identi
 | Pin committed before copy/spawn | Retain/reconcile pin; acquire instance guard before cleanup | No release based on missing ready signal |
 | Spawn/exec before ready handshake | Busy guard => retain; real query needed for SERVING | Missing PID/handshake does not prove exit |
 | Controller dies, reader serves | Recover controller; ORPHAN_BUSY for instance | Reader must keep serving; no duplicate reader |
+| DELETING with unlink/sync failure | Keep attribution pending; sync parent even when files absent, then commit DELETED | File absence or leaving AVAILABLE does not prove completed deletion |
 | RELEASING interrupted before/after unlink | Acquire guard; finish sync and pin decrement once | Do not decrement pin twice |
 | ENOSPC/EROFS/SQLite FULL/fsync error | DEGRADED, stop mutations, retain uncertainty | Diagnose is not READY; no fake success |
 | Catalog missing/corrupt or unknown inventory | Refuse writable startup, preserve data | Never auto-create empty catalog |

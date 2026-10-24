@@ -136,20 +136,27 @@ def boundary(root, point, cancel_wins):
 
 def generation(root):
     with harness(root,cap=1) as h:
-        originals=[];counts=[]
+        originals=[];counts=[];replays=[]
+        def replay(e, expected):
+            before=h.files();looked=h.lookup(e);submitted=h.ok('submit',e)
+            require(looked['operation_id']==submitted['operation_id']==expected and looked['state']==submitted['state']=='AVAILABLE' and h.files()==before,'Retired receipt lost or retry executed new work')
+            replays.append(dict(epoch=e['epoch'],generation=e['generation'],request_id=e['request_id'],expected_operation=expected,lookup_operation=looked['operation_id'],submit_operation=submitted['operation_id'],state=submitted['state'],inventory_unchanged=True))
         for i in range(3):
-            e=h.envelope();h.ok('submit',e);require(h.terminal(e)['state']=='AVAILABLE','Backup failed');originals.append(e)
-            ns=h.ok('status',{})['namespace'];h.ok('rotate',ns);counts.append(h.ok('status',{})['receipts'])
+            e=h.envelope();h.ok('submit',e);done=h.terminal(e);require(done['state']=='AVAILABLE','Backup failed');originals.append(e)
+            ns=h.ok('status',{})['namespace'];h.ok('rotate',ns);counts.append(h.ok('status',{})['receipts']);replay(e,done['operation_id'])
         before=h.files();gone=call(h.root,'submit',originals[0]);lookup=call(h.root,'lookup',{k:originals[0][k] for k in ('epoch','generation','request_id')})
-        require(gone['code']=='RETIRED' and lookup['code']=='RESULT_GONE' and h.files()==before and max(counts)<=1,'GC replay or growth')
-        # Crash after namespace advance but before historical GC.
+        require(gone['code']=='RETIRED' and lookup['code']=='RESULT_GONE' and h.files()==before and counts==[1,1,1],'GC replay, over-eviction or growth')
+        # The generation retired at the crash must contain a receipt, not be empty.
+        latest=h.envelope();h.ok('submit',latest);done=h.terminal(latest);require(done['state']=='AVAILABLE','Fourth-generation backup failed');before=h.files()
         h.arm('generation_advanced');ns=h.ok('status',{})['namespace']
-        with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as s:
-            s.connect(str(h.root/'control.sock'));s.sendall((json.dumps(dict(action='rotate',args=ns))+'\n').encode());h.seen('generation_advanced');h.stop(kill=True)
-        h.release('generation_advanced');new=h.start()['namespace']
-        stale=call(h.root,'submit',originals[-1]);require(stale['code']=='RETIRED','Post-crash replay')
-        require(new['generation']==ns['generation']+1 and h.files()==before,'Generation did not persist')
-        return dict(completed_rollovers=4,retained_receipts_after_each=counts,forgotten_submit=gone['code'],forgotten_lookup=lookup['code'],crash_after_advance=True,old_key_after_crash=stale['code'],no_new_objects=True)
+        with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as sock:
+            sock.connect(str(h.root/'control.sock'));sock.sendall((json.dumps(dict(action='rotate',args=ns))+'\n').encode());h.seen('generation_advanced');h.stop(kill=True)
+        h.release('generation_advanced');new=h.start()['namespace'];replay(latest,done['operation_id'])
+        stale=call(h.root,'submit',dict(latest,request_id=uuid.uuid4().hex))
+        require(stale['code']=='RETIRED' and new['generation']==ns['generation']+1 and h.files()==before,'Generation did not persist or old namespace admitted')
+        expired=call(h.root,'lookup',{k:originals[-1][k] for k in ('epoch','generation','request_id')})
+        require(expired['code']=='RESULT_GONE','More than one retired generation retained')
+        return dict(completed_rollovers=4,retained_receipts_after_each=counts,retained_replays=replays,expired_prior_generation=expired['code'],forgotten_submit=gone['code'],forgotten_lookup=lookup['code'],crash_after_advance=True,old_key_after_crash=stale['code'],no_new_objects=True)
 
 
 def lost_response(root,point):
@@ -178,9 +185,9 @@ def cancelled_crash(root):
 
 def deadline(root):
     with harness(root) as h:
-        h.arm('before_publish');e=h.envelope(timeout=.5);h.ok('submit',e);r=h.terminal(e)
-        require(r['state']=='FAILED' and not h.files() and not list((h.root/'staging').iterdir()),'Timeout faked success')
-        return dict(state=r['state'],objects=0,staging_empty=True)
+        h.arm('before_publish');e=h.envelope(timeout=1);h.ok('submit',e);h.seen('before_publish');r=h.terminal(e)
+        require(r['state']=='FAILED' and r['error'].startswith('TimeoutError:') and not h.files() and not list((h.root/'staging').iterdir()),'Wrong failure labelled as deadline')
+        return dict(state=r['state'],objects=0,staging_empty=True,barrier_seen='before_publish',timeout_seconds=1,error=r['error'])
 
 def retention_crash(root):
     with harness(root) as h:
@@ -191,11 +198,43 @@ def retention_crash(root):
         require(r['state']=='FAILED' and r['retention_deleted']==[aid] and h.files()==[bid],'Retention attribution lost across crash')
         return dict(state='FAILED',deleted_attributed=True,latest_preserved=True,objects=1)
 
+def readonly_retention(root):
+    require(sys.platform=='linux' and os.geteuid()==0,'Readonly retention probe requires isolated Linux root')
+    with harness(root) as h:
+        a=h.envelope();h.ok('submit',a);aid=h.terminal(a)['operation_id']
+        b=h.envelope();h.ok('submit',b);bid=h.terminal(b)['operation_id']
+        previous_hash=hashlib.sha256((h.root/'backups'/bid/'db.sqlite').read_bytes()).hexdigest()
+        target=h.root/'backups'/aid;mounted=False;errno_seen=None
+        h.arm('retention_intent');e=h.envelope();h.ok('submit',e);h.seen('retention_intent')
+        try:
+            subprocess.run(['mount','--bind',str(target),str(target)],check=True,capture_output=True,timeout=5);mounted=True
+            subprocess.run(['mount','-o','remount,bind,ro',str(target)],check=True,capture_output=True,timeout=5)
+            try:(target/'db.sqlite').unlink()
+            except OSError as exc:errno_seen=exc.errno
+            require(errno_seen==30,'Readonly deletion fault not established')
+            h.release('retention_intent');failed=h.terminal(e)
+            require(failed['state']=='FAILED' and failed['retention_deleted']==[] and failed['retention_pending']==[aid] and (target/'db.sqlite').exists() and h.ok('status',{})['blocked'] is True,'Unfinished deletion misreported complete')
+            h.stop()
+            try:h.start()
+            except RuntimeError:startup_refused=True
+            else:startup_refused=False
+            h.stop();require(startup_refused,'Readonly pending deletion startup falsely ready')
+        finally:
+            if mounted:
+                try:h.stop()
+                finally:subprocess.run(['umount',str(target)],check=True,capture_output=True,timeout=5)
+        check=subprocess.run(['findmnt','--mountpoint',str(target)],capture_output=True,timeout=5)
+        require(check.returncode==1,'Readonly mount retained')
+        h.start();recovered=h.lookup(e);retry=h.ok('submit',e)
+        require(recovered['retention_deleted']==[aid] and recovered['retention_pending']==[] and retry['operation_id']==failed['operation_id'] and h.files()==[bid] and hashlib.sha256((h.root/'backups'/bid/'db.sqlite').read_bytes()).hexdigest()==previous_hash,'Repair/retry lost attribution or latest backup')
+        return dict(os_errno=errno_seen,state_before_repair=failed['state'],pending_before_repair=len(failed['retention_pending']),deleted_before_repair=len(failed['retention_deleted']),old_file_present=True,blocked_before_repair=True,startup_refused=startup_refused,pending_after_repair=len(recovered['retention_pending']),deleted_after_repair=len(recovered['retention_deleted']),latest_hash_preserved=True,same_operation_after_retry=True,readonly_mount_removed=True)
+
 CASES=(('dedup_restart',dedup),('receipt_refusal',capacity),('saturated_cancel',saturated_cancel),
        ('cancel_before_intent',lambda r:boundary(r,'before_publish',True)),
        ('cancel_after_intent',lambda r:boundary(r,'publish_intent',False)),('generation_gc',generation),
        ('lost_admission',lambda r:lost_response(r,'admitted')),('lost_rename',lambda r:lost_response(r,'after_rename')),
        ('lost_catalog',lambda r:lost_response(r,'after_catalog')),('cancel_crash',cancelled_crash),('deadline',deadline),('retention_crash',retention_crash))
+VM_CASES=CASES+(('readonly_retention',readonly_retention),)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--source-sha',required=True);a=p.parse_args()
@@ -203,7 +242,7 @@ def main():
     a.root.mkdir(parents=True);out=a.root/'evidence.json'
     v=dict(passed=False,source_sha256=a.source_sha,runtime=runtime(),cases=[],limits=dict(vm_reboot_tested=False,power_loss_tested=False,managed_reader_tested=False,scheduler_tested=False))
     try:
-        for name,fn in CASES:
+        for name,fn in VM_CASES:
             row=dict(name=name,passed=False);v['cases'].append(row);start=time.monotonic()
             try:row['details']=fn(a.root/name);row['passed']=True
             finally:row['seconds']=time.monotonic()-start;out.write_text(json.dumps(v,indent=2)+'\n')

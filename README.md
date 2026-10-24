@@ -59,10 +59,12 @@ MVP work; the service currently accepts backup requests only.
 
 ## Current results
 
-The current backup-request slice passed **55 tests on each platform**, **12 Linux
-fault scenarios** and **21 report corruption controls**. Exact retries, generation
+The current backup-request slice passed **57 tests on each platform**, **13 Linux
+fault scenarios** and **27 report corruption controls**. Exact retries, generation
 GC, cancellation on both sides of publication intent, and retention attribution
-after a crash use the actual service/worker implementation. See [phase-one
+after a crash use the actual service/worker implementation. A real Linux readonly
+mount challenges pending deletion and repair; injected fsync regressions stay
+separately labelled. See [phase-one
 JSON/HTML evidence](evidence/phase1/README.md). These results do not qualify the
 remaining full-service MVP.
 

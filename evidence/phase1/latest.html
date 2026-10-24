@@ -1,120 +1,120 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft phase one</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft phase one: requests, generations and cancellation</h1><p>Passed: True</p><p>Actual installed service/worker processes in a fresh isolated Linux VM. Controlled SIGKILL and scheduling barriers, not VM reboot or power loss. Timings are observations, not performance/SLO claims. Managed readers and scheduling remain unimplemented. Historical four-exploration evidence is separate.</p><pre>{
   &quot;passed&quot;: true,
-  &quot;run_id&quot;: &quot;9b856c9e245eac41&quot;,
-  &quot;recorded_at_utc&quot;: &quot;2026-10-24T06:16:22.319717+00:00&quot;,
+  &quot;run_id&quot;: &quot;0f179d56578d7b8f&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T06:28:20.348788+00:00&quot;,
   &quot;source&quot;: {
     &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
     &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
     &quot;keepweft/client.py&quot;: &quot;7f2044107daf2c29d8cf40b73fb25d5764c26c41181f8f519df353f96928ee22&quot;,
-    &quot;keepweft/core.py&quot;: &quot;953829cf727c275fd7c0f83a0ca977a0f649f34a512287d07bb548004e0ad876&quot;,
+    &quot;keepweft/core.py&quot;: &quot;54a15c403caf5e13af1fb02b517e3b4ff1486ca6deb9e89fd10c3cd7e755b3d0&quot;,
     &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
-    &quot;keepweft/requests.py&quot;: &quot;13ea205d545fd320b854daaea87a4a2339180063990b8a4f4d1317f3a85f45ba&quot;,
+    &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
     &quot;keepweft/service.py&quot;: &quot;5027affcc6645873622e195091f0c68103a9380d59216b891c485b7ded47de7c&quot;,
     &quot;keepweft/view.py&quot;: &quot;40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308&quot;,
     &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
     &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
     &quot;tests/test_core.py&quot;: &quot;3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec&quot;,
-    &quot;tests/test_requests.py&quot;: &quot;680097c7f7adfccaa3a9fe13e3659ccc7d8d5e344c2db989bf4732a1e3e9d9ca&quot;,
+    &quot;tests/test_requests.py&quot;: &quot;5fd5f53535cba3a2fed7c30b4e16c0e143ada87b6204cb556f3e620d6de4704c&quot;,
     &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
     &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
     &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
     &quot;tools/explore.py&quot;: &quot;123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a&quot;,
-    &quot;tools/phase1_cases.py&quot;: &quot;dc9f884226e88f01565c54fd1e8053e3bb4f03bcc7ce83527bd7852eda7f9c8f&quot;,
-    &quot;tools/phase1_report.py&quot;: &quot;16b40ee8289fc82221cb1f8b3a3f823c99b99cbf83a1802bf6a3ca5393416ea4&quot;,
+    &quot;tools/phase1_cases.py&quot;: &quot;dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45&quot;,
+    &quot;tools/phase1_report.py&quot;: &quot;8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca&quot;,
     &quot;tools/phase1_validate.py&quot;: &quot;fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1&quot;,
     &quot;tools/report.py&quot;: &quot;29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23&quot;,
     &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
     &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
   },
-  &quot;source_sha256&quot;: &quot;04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda&quot;,
+  &quot;source_sha256&quot;: &quot;3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894&quot;,
   &quot;source_changed&quot;: false,
   &quot;stages&quot;: [
     {
       &quot;name&quot;: &quot;initial&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.2900837080087513
+      &quot;seconds&quot;: 0.36766837499453686
     },
     {
       &quot;name&quot;: &quot;create&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 20.777176959003555
+      &quot;seconds&quot;: 22.08428941699094
     },
     {
       &quot;name&quot;: &quot;dependencies&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 26.410558042000048
+      &quot;seconds&quot;: 27.79263737500878
     },
     {
       &quot;name&quot;: &quot;upload&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.360201874980703
+      &quot;seconds&quot;: 0.37260045800940134
     },
     {
       &quot;name&quot;: &quot;runtime&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 12.682642375002615
+      &quot;seconds&quot;: 13.240493291988969
     },
     {
       &quot;name&quot;: &quot;install&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.4747375839797314
+      &quot;seconds&quot;: 0.401807500020368
     },
     {
       &quot;name&quot;: &quot;provenance&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3257255419739522
+      &quot;seconds&quot;: 0.24327350000385195
     },
     {
       &quot;name&quot;: &quot;native&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 10.938008458004333
+      &quot;seconds&quot;: 11.805099124991102
     },
     {
       &quot;name&quot;: &quot;linux&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 9.799782667018007
+      &quot;seconds&quot;: 10.976106374990195
     },
     {
       &quot;name&quot;: &quot;linux-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.2635888749791775
+      &quot;seconds&quot;: 0.28088312500040047
     },
     {
       &quot;name&quot;: &quot;explore&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 2.8277084169967566
+      &quot;seconds&quot;: 3.5585436249966733
     },
     {
       &quot;name&quot;: &quot;guest-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3260491660039406
+      &quot;seconds&quot;: 0.3432732079818379
     },
     {
       &quot;name&quot;: &quot;delete&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 1.5476879170164466
+      &quot;seconds&quot;: 1.5534573330078274
     },
     {
       &quot;name&quot;: &quot;final&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.1898059580125846
+      &quot;seconds&quot;: 0.1950295830029063
     }
   ],
-  &quot;wheel_sha256&quot;: &quot;ed583fa5a85378eb607a709443499269ff38e240968d7963811770d4c152dbbd&quot;,
+  &quot;wheel_sha256&quot;: &quot;db40ab71f4175da83bbff78f976f4a37345498d789ccee111e5f6ef38653fd5e&quot;,
   &quot;wheel_product_matches&quot;: true,
   &quot;host_mounts&quot;: &quot;none&quot;,
   &quot;fresh_profile&quot;: true,
@@ -137,11 +137,11 @@
     &quot;modules&quot;: {
       &quot;keepweft/service.py&quot;: &quot;5027affcc6645873622e195091f0c68103a9380d59216b891c485b7ded47de7c&quot;,
       &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
-      &quot;keepweft/core.py&quot;: &quot;953829cf727c275fd7c0f83a0ca977a0f649f34a512287d07bb548004e0ad876&quot;,
+      &quot;keepweft/core.py&quot;: &quot;54a15c403caf5e13af1fb02b517e3b4ff1486ca6deb9e89fd10c3cd7e755b3d0&quot;,
       &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
       &quot;keepweft/view.py&quot;: &quot;40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308&quot;,
       &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
-      &quot;keepweft/requests.py&quot;: &quot;13ea205d545fd320b854daaea87a4a2339180063990b8a4f4d1317f3a85f45ba&quot;,
+      &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
       &quot;keepweft/client.py&quot;: &quot;7f2044107daf2c29d8cf40b73fb25d5764c26c41181f8f519df353f96928ee22&quot;,
       &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;
     },
@@ -194,7 +194,7 @@
   },
   &quot;native_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 55,
+    &quot;count&quot;: 57,
     &quot;tests&quot;: [
       &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
       &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
@@ -239,6 +239,8 @@
       &quot;test_requests.RequestTests.test_queued_cancel_needs_no_slot&quot;,
       &quot;test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision&quot;,
       &quot;test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying&quot;,
+      &quot;test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync&quot;,
+      &quot;test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion&quot;,
       &quot;test_requests.ServiceCases.test_cancel_after_intent&quot;,
       &quot;test_requests.ServiceCases.test_cancel_before_intent&quot;,
       &quot;test_requests.ServiceCases.test_cancel_crash&quot;,
@@ -255,7 +257,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda&quot;,
+    &quot;source_sha256&quot;: &quot;3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894&quot;,
     &quot;platform&quot;: &quot;Darwin&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
@@ -312,7 +314,7 @@
   },
   &quot;linux_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 55,
+    &quot;count&quot;: 57,
     &quot;tests&quot;: [
       &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
       &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
@@ -357,6 +359,8 @@
       &quot;test_requests.RequestTests.test_queued_cancel_needs_no_slot&quot;,
       &quot;test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision&quot;,
       &quot;test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying&quot;,
+      &quot;test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync&quot;,
+      &quot;test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion&quot;,
       &quot;test_requests.ServiceCases.test_cancel_after_intent&quot;,
       &quot;test_requests.ServiceCases.test_cancel_before_intent&quot;,
       &quot;test_requests.ServiceCases.test_cancel_crash&quot;,
@@ -373,7 +377,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda&quot;,
+    &quot;source_sha256&quot;: &quot;3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894&quot;,
     &quot;platform&quot;: &quot;Linux&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
@@ -422,7 +426,7 @@
   },
   &quot;guest&quot;: {
     &quot;passed&quot;: true,
-    &quot;source_sha256&quot;: &quot;04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda&quot;,
+    &quot;source_sha256&quot;: &quot;3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
       &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
@@ -479,7 +483,7 @@
           &quot;old_epoch_new_key&quot;: &quot;RETIRED&quot;,
           &quot;restart_replay_readonly&quot;: true
         },
-        &quot;seconds&quot;: 0.14572161799999606
+        &quot;seconds&quot;: 0.15090168400000437
       },
       {
         &quot;name&quot;: &quot;receipt_refusal&quot;,
@@ -490,7 +494,7 @@
           &quot;hashes_preserved&quot;: true,
           &quot;refusal_before_prune&quot;: true
         },
-        &quot;seconds&quot;: 0.07461541699998975
+        &quot;seconds&quot;: 0.07392955099999199
       },
       {
         &quot;name&quot;: &quot;saturated_cancel&quot;,
@@ -500,14 +504,14 @@
           &quot;receipt_limit&quot;: 2,
           &quot;full_code&quot;: &quot;RECEIPT_FULL&quot;,
           &quot;rotation&quot;: &quot;BUSY&quot;,
-          &quot;status_seconds&quot;: 0.03466740200001084,
+          &quot;status_seconds&quot;: 0.03726077500000713,
           &quot;queued_cancel&quot;: &quot;CANCELLED&quot;,
           &quot;active_cancel&quot;: &quot;CANCEL_ACCEPTED&quot;,
           &quot;terminal&quot;: &quot;CANCELLED&quot;,
           &quot;objects&quot;: 0,
           &quot;staging_empty&quot;: true
         },
-        &quot;seconds&quot;: 0.42197314900001004
+        &quot;seconds&quot;: 0.44034722199999976
       },
       {
         &quot;name&quot;: &quot;cancel_before_intent&quot;,
@@ -519,7 +523,7 @@
           &quot;objects&quot;: 0,
           &quot;restart_after_intent&quot;: false
         },
-        &quot;seconds&quot;: 0.13131074799998999
+        &quot;seconds&quot;: 0.13055632500000058
       },
       {
         &quot;name&quot;: &quot;cancel_after_intent&quot;,
@@ -531,7 +535,7 @@
           &quot;objects&quot;: 1,
           &quot;restart_after_intent&quot;: true
         },
-        &quot;seconds&quot;: 0.15672054700000615
+        &quot;seconds&quot;: 0.16908770599999912
       },
       {
         &quot;name&quot;: &quot;generation_gc&quot;,
@@ -543,13 +547,56 @@
             1,
             1
           ],
+          &quot;retained_replays&quot;: [
+            {
+              &quot;epoch&quot;: 1,
+              &quot;generation&quot;: 1,
+              &quot;request_id&quot;: &quot;aad0840e3ca541a7b6a182c851da1451&quot;,
+              &quot;expected_operation&quot;: &quot;6744cb1e187c4fb288d402e4fd3bec26&quot;,
+              &quot;lookup_operation&quot;: &quot;6744cb1e187c4fb288d402e4fd3bec26&quot;,
+              &quot;submit_operation&quot;: &quot;6744cb1e187c4fb288d402e4fd3bec26&quot;,
+              &quot;state&quot;: &quot;AVAILABLE&quot;,
+              &quot;inventory_unchanged&quot;: true
+            },
+            {
+              &quot;epoch&quot;: 1,
+              &quot;generation&quot;: 2,
+              &quot;request_id&quot;: &quot;ce51819303b44cef9e6dac395adbbbe3&quot;,
+              &quot;expected_operation&quot;: &quot;30c44e015d54459e86f0d75e77f50efd&quot;,
+              &quot;lookup_operation&quot;: &quot;30c44e015d54459e86f0d75e77f50efd&quot;,
+              &quot;submit_operation&quot;: &quot;30c44e015d54459e86f0d75e77f50efd&quot;,
+              &quot;state&quot;: &quot;AVAILABLE&quot;,
+              &quot;inventory_unchanged&quot;: true
+            },
+            {
+              &quot;epoch&quot;: 1,
+              &quot;generation&quot;: 3,
+              &quot;request_id&quot;: &quot;a5cd9fd0231045edad0b771bc031d633&quot;,
+              &quot;expected_operation&quot;: &quot;d24b96d6c9514bcdb9c8480bfe8d5595&quot;,
+              &quot;lookup_operation&quot;: &quot;d24b96d6c9514bcdb9c8480bfe8d5595&quot;,
+              &quot;submit_operation&quot;: &quot;d24b96d6c9514bcdb9c8480bfe8d5595&quot;,
+              &quot;state&quot;: &quot;AVAILABLE&quot;,
+              &quot;inventory_unchanged&quot;: true
+            },
+            {
+              &quot;epoch&quot;: 1,
+              &quot;generation&quot;: 4,
+              &quot;request_id&quot;: &quot;cbbf3b2132ce48adb5c3ff5324cf1bf4&quot;,
+              &quot;expected_operation&quot;: &quot;3f87c0f9fb88445d9fa8eab4532b34ac&quot;,
+              &quot;lookup_operation&quot;: &quot;3f87c0f9fb88445d9fa8eab4532b34ac&quot;,
+              &quot;submit_operation&quot;: &quot;3f87c0f9fb88445d9fa8eab4532b34ac&quot;,
+              &quot;state&quot;: &quot;AVAILABLE&quot;,
+              &quot;inventory_unchanged&quot;: true
+            }
+          ],
+          &quot;expired_prior_generation&quot;: &quot;RESULT_GONE&quot;,
           &quot;forgotten_submit&quot;: &quot;RETIRED&quot;,
           &quot;forgotten_lookup&quot;: &quot;RESULT_GONE&quot;,
           &quot;crash_after_advance&quot;: true,
           &quot;old_key_after_crash&quot;: &quot;RETIRED&quot;,
           &quot;no_new_objects&quot;: true
         },
-        &quot;seconds&quot;: 0.20866668100001107
+        &quot;seconds&quot;: 0.2743024610000049
       },
       {
         &quot;name&quot;: &quot;lost_admission&quot;,
@@ -561,7 +608,7 @@
           &quot;state&quot;: &quot;FAILED&quot;,
           &quot;objects&quot;: 0
         },
-        &quot;seconds&quot;: 0.11792140600000778
+        &quot;seconds&quot;: 0.11685155099999633
       },
       {
         &quot;name&quot;: &quot;lost_rename&quot;,
@@ -573,7 +620,7 @@
           &quot;state&quot;: &quot;AVAILABLE&quot;,
           &quot;objects&quot;: 1
         },
-        &quot;seconds&quot;: 0.1576248960000015
+        &quot;seconds&quot;: 0.15327428499999485
       },
       {
         &quot;name&quot;: &quot;lost_catalog&quot;,
@@ -585,7 +632,7 @@
           &quot;state&quot;: &quot;AVAILABLE&quot;,
           &quot;objects&quot;: 1
         },
-        &quot;seconds&quot;: 0.15642866500000707
+        &quot;seconds&quot;: 0.15394450700000561
       },
       {
         &quot;name&quot;: &quot;cancel_crash&quot;,
@@ -595,7 +642,7 @@
           &quot;state&quot;: &quot;CANCELLED&quot;,
           &quot;objects&quot;: 0
         },
-        &quot;seconds&quot;: 0.14217239699999595
+        &quot;seconds&quot;: 0.14703827300000682
       },
       {
         &quot;name&quot;: &quot;deadline&quot;,
@@ -603,9 +650,12 @@
         &quot;details&quot;: {
           &quot;state&quot;: &quot;FAILED&quot;,
           &quot;objects&quot;: 0,
-          &quot;staging_empty&quot;: true
+          &quot;staging_empty&quot;: true,
+          &quot;barrier_seen&quot;: &quot;before_publish&quot;,
+          &quot;timeout_seconds&quot;: 1,
+          &quot;error&quot;: &quot;TimeoutError: Fault barrier deadline&quot;
         },
-        &quot;seconds&quot;: 0.588645593999999
+        &quot;seconds&quot;: 1.0712006139999914
       },
       {
         &quot;name&quot;: &quot;retention_crash&quot;,
@@ -616,7 +666,26 @@
           &quot;latest_preserved&quot;: true,
           &quot;objects&quot;: 1
         },
-        &quot;seconds&quot;: 0.18006041900000014
+        &quot;seconds&quot;: 0.18534719299999836
+      },
+      {
+        &quot;name&quot;: &quot;readonly_retention&quot;,
+        &quot;passed&quot;: true,
+        &quot;details&quot;: {
+          &quot;os_errno&quot;: 30,
+          &quot;state_before_repair&quot;: &quot;FAILED&quot;,
+          &quot;pending_before_repair&quot;: 1,
+          &quot;deleted_before_repair&quot;: 0,
+          &quot;old_file_present&quot;: true,
+          &quot;blocked_before_repair&quot;: true,
+          &quot;startup_refused&quot;: true,
+          &quot;pending_after_repair&quot;: 0,
+          &quot;deleted_after_repair&quot;: 1,
+          &quot;latest_hash_preserved&quot;: true,
+          &quot;same_operation_after_retry&quot;: true,
+          &quot;readonly_mount_removed&quot;: true
+        },
+        &quot;seconds&quot;: 0.231708857000001
       }
     ],
     &quot;limits&quot;: {
@@ -626,7 +695,7 @@
       &quot;scheduler_tested&quot;: false
     },
     &quot;owned_services_exited&quot;: true,
-    &quot;owned_service_count&quot;: 19,
+    &quot;owned_service_count&quot;: 22,
     &quot;no_service_or_worker_processes_remaining&quot;: true
   },
   &quot;vm_final&quot;: &quot;Deleted&quot;,
@@ -634,6 +703,6 @@
   &quot;preexisting_profiles_unchanged&quot;: true,
   &quot;controls&quot;: {
     &quot;passed&quot;: true,
-    &quot;rejected&quot;: 21
+    &quot;rejected&quot;: 27
   }
 }</pre></html>

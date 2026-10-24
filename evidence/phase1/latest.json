@@ -1,120 +1,120 @@
 {
   "passed": true,
-  "run_id": "9b856c9e245eac41",
-  "recorded_at_utc": "2026-10-24T06:16:22.319717+00:00",
+  "run_id": "0f179d56578d7b8f",
+  "recorded_at_utc": "2026-10-24T06:28:20.348788+00:00",
   "source": {
     "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
     "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
     "keepweft/client.py": "7f2044107daf2c29d8cf40b73fb25d5764c26c41181f8f519df353f96928ee22",
-    "keepweft/core.py": "953829cf727c275fd7c0f83a0ca977a0f649f34a512287d07bb548004e0ad876",
+    "keepweft/core.py": "54a15c403caf5e13af1fb02b517e3b4ff1486ca6deb9e89fd10c3cd7e755b3d0",
     "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
-    "keepweft/requests.py": "13ea205d545fd320b854daaea87a4a2339180063990b8a4f4d1317f3a85f45ba",
+    "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
     "keepweft/service.py": "5027affcc6645873622e195091f0c68103a9380d59216b891c485b7ded47de7c",
     "keepweft/view.py": "40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308",
     "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
     "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
     "tests/test_core.py": "3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec",
-    "tests/test_requests.py": "680097c7f7adfccaa3a9fe13e3659ccc7d8d5e344c2db989bf4732a1e3e9d9ca",
+    "tests/test_requests.py": "5fd5f53535cba3a2fed7c30b4e16c0e143ada87b6204cb556f3e620d6de4704c",
     "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
     "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
     "tools/explore.py": "123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a",
-    "tools/phase1_cases.py": "dc9f884226e88f01565c54fd1e8053e3bb4f03bcc7ce83527bd7852eda7f9c8f",
-    "tools/phase1_report.py": "16b40ee8289fc82221cb1f8b3a3f823c99b99cbf83a1802bf6a3ca5393416ea4",
+    "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
+    "tools/phase1_report.py": "8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca",
     "tools/phase1_validate.py": "fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1",
     "tools/report.py": "29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23",
     "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
     "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
   },
-  "source_sha256": "04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda",
+  "source_sha256": "3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894",
   "source_changed": false,
   "stages": [
     {
       "name": "initial",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2900837080087513
+      "seconds": 0.36766837499453686
     },
     {
       "name": "create",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 20.777176959003555
+      "seconds": 22.08428941699094
     },
     {
       "name": "dependencies",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 26.410558042000048
+      "seconds": 27.79263737500878
     },
     {
       "name": "upload",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.360201874980703
+      "seconds": 0.37260045800940134
     },
     {
       "name": "runtime",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 12.682642375002615
+      "seconds": 13.240493291988969
     },
     {
       "name": "install",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.4747375839797314
+      "seconds": 0.401807500020368
     },
     {
       "name": "provenance",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3257255419739522
+      "seconds": 0.24327350000385195
     },
     {
       "name": "native",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 10.938008458004333
+      "seconds": 11.805099124991102
     },
     {
       "name": "linux",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 9.799782667018007
+      "seconds": 10.976106374990195
     },
     {
       "name": "linux-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2635888749791775
+      "seconds": 0.28088312500040047
     },
     {
       "name": "explore",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 2.8277084169967566
+      "seconds": 3.5585436249966733
     },
     {
       "name": "guest-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3260491660039406
+      "seconds": 0.3432732079818379
     },
     {
       "name": "delete",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.5476879170164466
+      "seconds": 1.5534573330078274
     },
     {
       "name": "final",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.1898059580125846
+      "seconds": 0.1950295830029063
     }
   ],
-  "wheel_sha256": "ed583fa5a85378eb607a709443499269ff38e240968d7963811770d4c152dbbd",
+  "wheel_sha256": "db40ab71f4175da83bbff78f976f4a37345498d789ccee111e5f6ef38653fd5e",
   "wheel_product_matches": true,
   "host_mounts": "none",
   "fresh_profile": true,
@@ -137,11 +137,11 @@
     "modules": {
       "keepweft/service.py": "5027affcc6645873622e195091f0c68103a9380d59216b891c485b7ded47de7c",
       "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
-      "keepweft/core.py": "953829cf727c275fd7c0f83a0ca977a0f649f34a512287d07bb548004e0ad876",
+      "keepweft/core.py": "54a15c403caf5e13af1fb02b517e3b4ff1486ca6deb9e89fd10c3cd7e755b3d0",
       "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
       "keepweft/view.py": "40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308",
       "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
-      "keepweft/requests.py": "13ea205d545fd320b854daaea87a4a2339180063990b8a4f4d1317f3a85f45ba",
+      "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
       "keepweft/client.py": "7f2044107daf2c29d8cf40b73fb25d5764c26c41181f8f519df353f96928ee22",
       "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187"
     },
@@ -194,7 +194,7 @@
   },
   "native_unit": {
     "passed": true,
-    "count": 55,
+    "count": 57,
     "tests": [
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -239,6 +239,8 @@
       "test_requests.RequestTests.test_queued_cancel_needs_no_slot",
       "test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision",
       "test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying",
+      "test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync",
+      "test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
       "test_requests.ServiceCases.test_cancel_after_intent",
       "test_requests.ServiceCases.test_cancel_before_intent",
       "test_requests.ServiceCases.test_cancel_crash",
@@ -255,7 +257,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda",
+    "source_sha256": "3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894",
     "platform": "Darwin",
     "runtime": {
       "python_sqlite": "3.53.1",
@@ -312,7 +314,7 @@
   },
   "linux_unit": {
     "passed": true,
-    "count": 55,
+    "count": 57,
     "tests": [
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -357,6 +359,8 @@
       "test_requests.RequestTests.test_queued_cancel_needs_no_slot",
       "test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision",
       "test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying",
+      "test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync",
+      "test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
       "test_requests.ServiceCases.test_cancel_after_intent",
       "test_requests.ServiceCases.test_cancel_before_intent",
       "test_requests.ServiceCases.test_cancel_crash",
@@ -373,7 +377,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda",
+    "source_sha256": "3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894",
     "platform": "Linux",
     "runtime": {
       "python_sqlite": "3.54.1",
@@ -422,7 +426,7 @@
   },
   "guest": {
     "passed": true,
-    "source_sha256": "04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda",
+    "source_sha256": "3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894",
     "runtime": {
       "python_sqlite": "3.54.1",
       "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
@@ -479,7 +483,7 @@
           "old_epoch_new_key": "RETIRED",
           "restart_replay_readonly": true
         },
-        "seconds": 0.14572161799999606
+        "seconds": 0.15090168400000437
       },
       {
         "name": "receipt_refusal",
@@ -490,7 +494,7 @@
           "hashes_preserved": true,
           "refusal_before_prune": true
         },
-        "seconds": 0.07461541699998975
+        "seconds": 0.07392955099999199
       },
       {
         "name": "saturated_cancel",
@@ -500,14 +504,14 @@
           "receipt_limit": 2,
           "full_code": "RECEIPT_FULL",
           "rotation": "BUSY",
-          "status_seconds": 0.03466740200001084,
+          "status_seconds": 0.03726077500000713,
           "queued_cancel": "CANCELLED",
           "active_cancel": "CANCEL_ACCEPTED",
           "terminal": "CANCELLED",
           "objects": 0,
           "staging_empty": true
         },
-        "seconds": 0.42197314900001004
+        "seconds": 0.44034722199999976
       },
       {
         "name": "cancel_before_intent",
@@ -519,7 +523,7 @@
           "objects": 0,
           "restart_after_intent": false
         },
-        "seconds": 0.13131074799998999
+        "seconds": 0.13055632500000058
       },
       {
         "name": "cancel_after_intent",
@@ -531,7 +535,7 @@
           "objects": 1,
           "restart_after_intent": true
         },
-        "seconds": 0.15672054700000615
+        "seconds": 0.16908770599999912
       },
       {
         "name": "generation_gc",
@@ -543,13 +547,56 @@
             1,
             1
           ],
+          "retained_replays": [
+            {
+              "epoch": 1,
+              "generation": 1,
+              "request_id": "aad0840e3ca541a7b6a182c851da1451",
+              "expected_operation": "6744cb1e187c4fb288d402e4fd3bec26",
+              "lookup_operation": "6744cb1e187c4fb288d402e4fd3bec26",
+              "submit_operation": "6744cb1e187c4fb288d402e4fd3bec26",
+              "state": "AVAILABLE",
+              "inventory_unchanged": true
+            },
+            {
+              "epoch": 1,
+              "generation": 2,
+              "request_id": "ce51819303b44cef9e6dac395adbbbe3",
+              "expected_operation": "30c44e015d54459e86f0d75e77f50efd",
+              "lookup_operation": "30c44e015d54459e86f0d75e77f50efd",
+              "submit_operation": "30c44e015d54459e86f0d75e77f50efd",
+              "state": "AVAILABLE",
+              "inventory_unchanged": true
+            },
+            {
+              "epoch": 1,
+              "generation": 3,
+              "request_id": "a5cd9fd0231045edad0b771bc031d633",
+              "expected_operation": "d24b96d6c9514bcdb9c8480bfe8d5595",
+              "lookup_operation": "d24b96d6c9514bcdb9c8480bfe8d5595",
+              "submit_operation": "d24b96d6c9514bcdb9c8480bfe8d5595",
+              "state": "AVAILABLE",
+              "inventory_unchanged": true
+            },
+            {
+              "epoch": 1,
+              "generation": 4,
+              "request_id": "cbbf3b2132ce48adb5c3ff5324cf1bf4",
+              "expected_operation": "3f87c0f9fb88445d9fa8eab4532b34ac",
+              "lookup_operation": "3f87c0f9fb88445d9fa8eab4532b34ac",
+              "submit_operation": "3f87c0f9fb88445d9fa8eab4532b34ac",
+              "state": "AVAILABLE",
+              "inventory_unchanged": true
+            }
+          ],
+          "expired_prior_generation": "RESULT_GONE",
           "forgotten_submit": "RETIRED",
           "forgotten_lookup": "RESULT_GONE",
           "crash_after_advance": true,
           "old_key_after_crash": "RETIRED",
           "no_new_objects": true
         },
-        "seconds": 0.20866668100001107
+        "seconds": 0.2743024610000049
       },
       {
         "name": "lost_admission",
@@ -561,7 +608,7 @@
           "state": "FAILED",
           "objects": 0
         },
-        "seconds": 0.11792140600000778
+        "seconds": 0.11685155099999633
       },
       {
         "name": "lost_rename",
@@ -573,7 +620,7 @@
           "state": "AVAILABLE",
           "objects": 1
         },
-        "seconds": 0.1576248960000015
+        "seconds": 0.15327428499999485
       },
       {
         "name": "lost_catalog",
@@ -585,7 +632,7 @@
           "state": "AVAILABLE",
           "objects": 1
         },
-        "seconds": 0.15642866500000707
+        "seconds": 0.15394450700000561
       },
       {
         "name": "cancel_crash",
@@ -595,7 +642,7 @@
           "state": "CANCELLED",
           "objects": 0
         },
-        "seconds": 0.14217239699999595
+        "seconds": 0.14703827300000682
       },
       {
         "name": "deadline",
@@ -603,9 +650,12 @@
         "details": {
           "state": "FAILED",
           "objects": 0,
-          "staging_empty": true
+          "staging_empty": true,
+          "barrier_seen": "before_publish",
+          "timeout_seconds": 1,
+          "error": "TimeoutError: Fault barrier deadline"
         },
-        "seconds": 0.588645593999999
+        "seconds": 1.0712006139999914
       },
       {
         "name": "retention_crash",
@@ -616,7 +666,26 @@
           "latest_preserved": true,
           "objects": 1
         },
-        "seconds": 0.18006041900000014
+        "seconds": 0.18534719299999836
+      },
+      {
+        "name": "readonly_retention",
+        "passed": true,
+        "details": {
+          "os_errno": 30,
+          "state_before_repair": "FAILED",
+          "pending_before_repair": 1,
+          "deleted_before_repair": 0,
+          "old_file_present": true,
+          "blocked_before_repair": true,
+          "startup_refused": true,
+          "pending_after_repair": 0,
+          "deleted_after_repair": 1,
+          "latest_hash_preserved": true,
+          "same_operation_after_retry": true,
+          "readonly_mount_removed": true
+        },
+        "seconds": 0.231708857000001
       }
     ],
     "limits": {
@@ -626,7 +695,7 @@
       "scheduler_tested": false
     },
     "owned_services_exited": true,
-    "owned_service_count": 19,
+    "owned_service_count": 22,
     "no_service_or_worker_processes_remaining": true
   },
   "vm_final": "Deleted",
@@ -634,6 +703,6 @@
   "preexisting_profiles_unchanged": true,
   "controls": {
     "passed": true,
-    "rejected": 21
+    "rejected": 27
   }
 }

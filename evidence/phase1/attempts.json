@@ -20,8 +20,18 @@
     "scope": "54 tests/platform, 12 scenarios; before harness-timeout cleanup control"
   },
   {
+    "file": "attempt-04.json",
+    "status": "SUPERSEDED_PASS",
+    "scope": "55 tests/platform, 12 scenarios, 21 controls; reviewed source fd30ef0; replaced after retention and assertion fixes"
+  },
+  {
+    "file": "review-baseline.json",
+    "status": "EXPECTED_REGRESSION_FAILURE_THEN_REPAIR",
+    "scope": "Manual aggregate of two injected unlink/fsync tests failing before repair and passing after; not VM qualification"
+  },
+  {
     "file": "latest.json",
     "status": "CURRENT_PASS",
-    "scope": "55 tests/platform, 12 scenarios, 21 report corruption controls"
+    "scope": "57 tests/platform, 13 VM scenarios, 27 report controls; actual EROFS retention repair and retained-generation witnesses"
   }
 ]

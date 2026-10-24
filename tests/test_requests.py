@@ -111,3 +111,41 @@ class HarnessCleanupTests(unittest.TestCase):
             with self.assertRaises(subprocess.TimeoutExpired):h.close()
             self.assertIsNotNone(h.proc.poll());self.assertIsNone(h.log)
             with Controller(h.root) as c:self.assertFalse(c.blocked)
+
+class RetentionFailureTests(unittest.TestCase):
+    def exercise(self, fsync_failure):
+        import errno
+        from unittest.mock import patch
+        from keepweft import core
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp).resolve();src=p/'live.sqlite';uid=init_ledger(src,12);root=p/'store'
+            with Controller(root,src,uid) as c:
+                a=c.backup()['id'];b=c.backup()['id'];r=Requests(c)
+                env=dict(**r.namespace,request_id=uuid.uuid4().hex,command=dict(kind='backup',timeout=10));r.submit(env)
+                real_sync=core.sync_dir;real_remove=core.shutil.rmtree
+                def fail_sync(path):
+                    if Path(path)==root/'backups':raise OSError(errno.EIO,'injected directory sync failure')
+                    return real_sync(path)
+                def fail_remove(path,*args,**kwargs):
+                    if Path(path)==root/'backups'/a:raise PermissionError(errno.EACCES,'injected unlink refusal')
+                    return real_remove(path,*args,**kwargs)
+                with patch('keepweft.core.sync_dir',side_effect=fail_sync) if fsync_failure else patch('keepweft.core.shutil.rmtree',side_effect=fail_remove):r.dispatch()
+                receipt=r.lookup(env['epoch'],env['generation'],env['request_id'])
+                self.assertEqual(receipt['state'],'FAILED');self.assertEqual(receipt['retention_deleted'],[])
+                self.assertEqual(receipt['retention_pending'],[a]);self.assertTrue(c.blocked)
+                self.assertEqual((root/'backups'/a/'db.sqlite').exists(),not fsync_failure)
+                self.assertTrue((root/'backups'/b/'db.sqlite').exists())
+            if fsync_failure:
+                # Even if the files are absent, recovery must sync the parent before
+                # committing DELETED. A repeated sync error must refuse startup.
+                with patch('keepweft.core.sync_dir',side_effect=fail_sync):
+                    with self.assertRaises(OSError):Controller(root)
+            calls=[]
+            def observe(path):calls.append(Path(path));return real_sync(path)
+            with patch('keepweft.core.sync_dir',side_effect=observe):
+                with Controller(root) as c:
+                    r=Requests(c);receipt=r.lookup(env['epoch'],env['generation'],env['request_id'])
+                    self.assertEqual(receipt['retention_deleted'],[a]);self.assertEqual(receipt['retention_pending'],[])
+                    self.assertIn(root/'backups',calls)
+    def test_unlink_refusal_is_pending_not_completed_deletion(self):self.exercise(False)
+    def test_parent_fsync_failure_remains_pending_until_recovery_sync(self):self.exercise(True)

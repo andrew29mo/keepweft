@@ -1,0 +1,18 @@
+{
+  "kind": "manual_sanitized_regression_summary",
+  "base_commit": "fd30ef02a59016c285d27c97526147091ec5a745",
+  "tests": [
+    "RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
+    "RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync"
+  ],
+  "baseline_result": {
+    "count": 2,
+    "failures": 2,
+    "reason": "Receipt included DELETING candidate in retention_deleted"
+  },
+  "corrected_result": {
+    "count": 2,
+    "failures": 0
+  },
+  "scope": "Targeted formal Controller/Requests tests; deterministic injected unlink/fsync failures, not actual hardware I/O failure or VM qualification"
+}

@@ -64,12 +64,14 @@ class Requests:
             code='RESULT_GONE' if epoch<ns['epoch'] or generation<ns['generation'] else 'NOT_FOUND'
             raise ProtocolError(code,'No retained result; this is not permission to resubmit under new identity')
         ident,digest,cancel,state,details=row;d=json.loads(details)
-        deleted=set(d.get('retention_deleted',[]))
-        for bid in d.get('retention_planned',[]):
-            r=self.db.execute('select state from backups where id=?',(bid,)).fetchone()
-            if r and r[0]=='DELETED':deleted.add(bid)
+        candidates=set(d.get('retention_deleted',[])) | set(d.get('retention_planned',[]))
+        deleted=[];pending=[]
+        for bid in sorted(candidates):
+            item=self.db.execute('select state from backups where id=?',(bid,)).fetchone()
+            if item and item[0]=='DELETED':deleted.append(bid)
+            elif item and item[0]=='DELETING':pending.append(bid)
         return dict(operation_id=ident,digest=digest,state='CANCEL_REQUESTED' if cancel and state not in TERMINAL and state not in ('PUBLISHING','CLEANUP_PENDING') else state,
-                    cancel_requested=bool(cancel),retention_deleted=sorted(deleted),
+                    cancel_requested=bool(cancel),retention_deleted=deleted,retention_pending=pending,
                     error=d.get('error',d.get('reason')),result_id=ident if state=='AVAILABLE' else None,
                     reserved=d.get('reserved',0))
 

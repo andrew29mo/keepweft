@@ -25,7 +25,9 @@ Prepare uses exclusive file creation, fsync of file and parent directory, and se
 no backup. Keep this exact envelope after lost responses. Repeating submit returns
 the existing operation when retained; changing its command conflicts. Do not create
 a new envelope automatically after RETIRED / RESULT_GONE. A new envelope is a new
-user intention, not deduplication of an old one. Envelope paths are outside the
+user intention, not deduplication of an old one. Receipt state records the
+operation outcome; it does not resurrect an artifact later removed by retention.
+Envelope paths are outside the
 managed store. CLI errors/transport disconnects are not proof of no side effects.
 
 The owner-only store and socket grant access to trusted same-UID processes. The
@@ -102,9 +104,11 @@ prune. Dispatch capacity refusal creates a FAILED receipt without pruning.
 
 Accepted work may delete eligible older backups then fail later; this is not an
 atomic rollback of retention. Latest/pinned objects remain protected. The receipt
-lists retention_deleted on success, failure or recovery. Pruning attribution is
+lists retention_deleted only after catalog-committed DELETED, and
+retention_pending while deletion/sync remains unfinished. Pruning attribution is
 persisted before deletion and reconciled against the backup catalog, including a
-crash immediately after deletion. Receipt-full rejection
+crash immediately after deletion. Recovery syncs the parent even when the files
+are already absent; a repeated sync error must refuse startup. Receipt-full rejection
 must preserve old files and contents; tests explicitly cover keep=2/max_receipts=2.
 
 ## Evidence scope and reproduction
@@ -142,9 +146,9 @@ The original four-exploration receipts remain historical, source-bound evidence.
 
 ## Current qualification
 
-Run `9b856c9e245eac41`: 55 identical tests on macOS/Linux, 12 Linux real-process
-scenarios and 21 rejected report corruptions. The stopped-service harness control
+Run `0f179d56578d7b8f`: 57 identical tests on macOS/Linux, 13 Linux real-process
+scenarios and 27 rejected report corruptions. The stopped-service harness control
 proves timeout propagates after forced reaping, not graceful-success relabelling.
-See [receipts and retained attempts](../evidence/phase1/README.md). No new throughput
+See [review and repair](PHASE1_REVIEW.md), [receipts and retained attempts](../evidence/phase1/README.md). No new throughput
 comparison, RSS bound, scheduler, reader-lease, reboot or power-loss qualification
 is claimed. Historical four-exploration measurements remain source-bound history.

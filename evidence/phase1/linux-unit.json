@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "count": 55,
+  "count": 57,
   "tests": [
     "test_core.CoreTests.test_artifact_limit_rejects",
     "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
@@ -45,6 +45,8 @@
     "test_requests.RequestTests.test_queued_cancel_needs_no_slot",
     "test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision",
     "test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying",
+    "test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync",
+    "test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
     "test_requests.ServiceCases.test_cancel_after_intent",
     "test_requests.ServiceCases.test_cancel_before_intent",
     "test_requests.ServiceCases.test_cancel_crash",
@@ -61,7 +63,7 @@
   "failures": 0,
   "errors": 0,
   "skipped": 0,
-  "source_sha256": "04e92c3b370f3d4de049db26cb23d2f593c50c0de1ab24d044bb5f9a3af0ffda",
+  "source_sha256": "3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894",
   "platform": "Linux",
   "runtime": {
     "python_sqlite": "3.54.1",
