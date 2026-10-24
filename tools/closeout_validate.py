@@ -4,10 +4,19 @@ from pathlib import Path
 from .evidence import ROOT,manifest,fingerprint
 from .closeout_report import verify,controls,render
 
+def check_socket_path(colima_home,profile):
+    # Lima reports UNIX_PATH_MAX=104 on the macOS qualification host. Include
+    # its temporary socket suffix, not merely the shorter final ssh.sock.
+    path=Path(colima_home).resolve()/'_lima'/('colima-'+profile)/'ssh.sock.1234567890123456'
+    if len(os.fsencode(path))>=104:raise ValueError('Dedicated VM socket path too long; use a shorter profile or Colima home')
+
+
 def main():
     if not __debug__:raise RuntimeError('Validation requires normal Python')
     p=argparse.ArgumentParser();p.add_argument('--colima-home',type=Path,required=True);p.add_argument('--toolchain',type=Path,required=True);p.add_argument('--profile',required=True);p.add_argument('--wheel',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     if not a.profile.startswith('keepweft-exp-') or not all(c.isalnum() or c=='-' for c in a.profile):p.error('Dedicated keepweft-exp-* profile required')
+    try:check_socket_path(a.colima_home,a.profile)
+    except ValueError as exc:p.error(str(exc))
     out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
     if any(out.iterdir()):p.error('Fresh output directory required')
     logs=out/'private-logs';logs.mkdir();source=manifest();wheel=a.wheel.resolve()
@@ -89,12 +98,19 @@ def main():
     except BaseException as exc:
         v['error']=type(exc).__name__+': '+str(exc).replace(str(ROOT),'<checkout>')
         if created:
+            for label,path in [('failed_closeout','closeout/receipt.json'),('failure_observations','closeout/bounded_cycles/resource-observations.json')]:
+                try:v[label]=json.loads(ssh(label,['sudo','cat',remote+'/'+path]))
+                except BaseException:pass
             try:v['guest']=json.loads(ssh('failed-guest',['sudo','cat',remote+'/cases/evidence.json']))
             except BaseException:pass
     finally:
         if created:
             try:
                 execute('delete',[colima,'delete',a.profile,'--data','--force'],timeout=150)
+                if disk.exists():
+                    # Fresh-profile/disk-absent proof above grants ownership only
+                    # of this name. Lima refuses deletion if the disk is in use.
+                    execute('delete-detached-disk',['env','LIMA_HOME='+str(a.colima_home.resolve()/'_lima'),a.toolchain.resolve()/'limactl','--tty=false','disk','delete','colima-'+a.profile],timeout=30)
                 final=[json.loads(line) for line in execute('final',[colima,'list','--json']).splitlines()]
                 v['vm_final']='Deleted' if not any(r['name']==a.profile for r in final) else 'Retained';v['data_disk_removed']=not disk.exists()
                 v['preexisting_profiles_unchanged']=all(any(q['name']==r['name'] and q['status']==r['status'] for q in final) for r in initial)

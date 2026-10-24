@@ -34,6 +34,25 @@
       "repair": "Compare all owned status fields including logical/allocated bytes and hashes of every managed file/directory; exclude only shared statvfs filesystem_free_bytes. Apply the same correction to two request-refusal tests. Add a control showing global free-space drift is ignored but real managed file mutation is detected.",
       "vm_final": "Deleted",
       "test_limits_relaxed": false
+    },
+    {
+      "stage": "independent_review",
+      "original_run_id": "6cd302fed9c0ea83",
+      "original_receipt": "attempt-03.json",
+      "findings": [
+        "Capacity observer accepted manifest corruption after a real service refusal in both modes because it compared only db.sqlite hashes and receipt count.",
+        "Copied reports with negative PID/FD/RSS/bytes or zero RSS passed the original numeric checker. Original actual values remain valid.",
+        "Old reboot token had stale epoch and revision together; new formal-service tests isolate each dimension."
+      ],
+      "repair": "Full owned-state witness and six real-service corruption controls; exact numeric type/range validation and report controls; independent reader authority fences. Product unchanged."
+    },
+    {
+      "stage": "review_vm_setup",
+      "receipt": "attempt-04.json",
+      "passed": false,
+      "reason": "Profile name produced a 107-byte Lima temporary SSH socket path, over macOS limit 104",
+      "cleanup": "Original receipt records retained detached disk; formal Lima disk-delete then removed only the newly created empty owned disk. Separate sanitized cleanup receipt retained.",
+      "repair": "Preflight temporary socket path before VM creation; refuse too-long names with no side effects; after owned profile deletion, remove a remaining owned detached disk through Lima, without force or touching other names."
     }
   ]
 }

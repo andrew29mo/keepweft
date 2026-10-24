@@ -1,0 +1,13 @@
+{
+  "kind": "manual_sanitized_cleanup_observation_not_product_qualification",
+  "attempt": "attempt-04.json",
+  "vm_never_created": true,
+  "reason": "Lima temporary SSH socket path exceeded macOS UNIX_PATH_MAX=104",
+  "data_disk_initially_absent": true,
+  "detached_disk_left_after_colima_delete": true,
+  "allocated_bytes_observed_before_manual_cleanup": 0,
+  "cleanup_tool": "limactl --tty=false disk delete <owned-profile-disk>",
+  "cleanup_exit_code": 0,
+  "owned_data_disk_absent_after_cleanup": true,
+  "original_failed_receipt_preserved": true
+}

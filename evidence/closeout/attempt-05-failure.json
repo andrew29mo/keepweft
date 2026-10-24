@@ -1,0 +1,20 @@
+{
+  "kind": "manual_sanitized_failure_record_not_new_qualification",
+  "run_id": "58b4c4c7220a76f5",
+  "receipt": "attempt-05.json",
+  "passed": false,
+  "native_count": 81,
+  "linux_count": 81,
+  "baseline_vm_cases_passed": 10,
+  "failing_stage": "closeout",
+  "stage_seconds": 125.10784662500373,
+  "error": "ValueError: FD/child/pin/reader leak",
+  "raw_log_sha256": "ccd62cdfefb59cff5d18a355f7fadc0a08c3a6ae039e0fd59b148105ac2b5b92",
+  "failing_samples_saved": false,
+  "root_cause": "Unresolved: the old composite assertion did not persist its failing samples.",
+  "hypothesis_not_proven": "Sampling FDs immediately after a status RPC may overlap its accepted-socket close.",
+  "vm_deleted": true,
+  "data_disk_removed": true,
+  "preexisting_profiles_unchanged": true,
+  "repair": "Persist every resource observation before validation, fetch failed artifacts before VM cleanup, and explicitly observe kernel socket quiescence without waiting for a preferred FD count. Original across-cycle baseline equality, RSS allowance and dwell remain unchanged."
+}

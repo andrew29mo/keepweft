@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "run_id": "6cd302fed9c0ea83",
-  "recorded_at_utc": "2026-10-24T08:19:58.810026+00:00",
+  "run_id": "9933e02c1ba18673",
+  "recorded_at_utc": "2026-10-24T10:55:40.039018+00:00",
   "source": {
     "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
     "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
@@ -14,15 +14,15 @@
     "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
     "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
     "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
-    "tests/test_closeout.py": "b60440597cca4772eeda7489ec651d25b0b199e605736355697af1badbdce94b",
+    "tests/test_closeout.py": "989b09b1173aa74a9ee353f229740313fe474c428f55ce0b4707b2e97db62d10",
     "tests/test_core.py": "0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a",
     "tests/test_readers.py": "6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb",
     "tests/test_requests.py": "fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc",
     "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
-    "tools/closeout_cases.py": "719f0b6c94ca1cfaa9291396f86d5d611599fd17248568ee550d0063fd66f4bc",
-    "tools/closeout_report.py": "69f878730e8fe6adfea04d7bce3e0eebbec68ab6edf7bea65525f25c5a64eaeb",
-    "tools/closeout_validate.py": "65cc31707467f3d685adb5aa7ce3e1bc5d1c5fcde94737d48a17dad63f82653f",
+    "tools/closeout_cases.py": "aa3f269de6dd4b2f2857fd33176deb1d0096106998bd3b4fda54b3201959e94c",
+    "tools/closeout_report.py": "de880132e29efefd1ab6cee5340bcad3185d6fc26dddb9270239509a3aa3bc88",
+    "tools/closeout_validate.py": "78aec32937715421dd9413d84f51ac21f10693f98837f1e558716b180315ef44",
     "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
     "tools/explore.py": "123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a",
     "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
@@ -36,170 +36,170 @@
     "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
     "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
   },
-  "source_sha256": "e569a10c87b30e6f5edfe2d7d58ebcf1b3523e672629a5339bddd6250f589249",
+  "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
   "source_changed": false,
   "stages": [
     {
       "name": "initial",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3231395420152694
+      "seconds": 0.3759549169917591
     },
     {
       "name": "create",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 21.85089025000343
+      "seconds": 22.619183458999032
     },
     {
       "name": "dependencies",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 28.365772874996765
+      "seconds": 27.774543042003643
     },
     {
       "name": "upload",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3035152500087861
+      "seconds": 0.3698715420032386
     },
     {
       "name": "runtime",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 13.57885758401244
+      "seconds": 13.880837959004566
     },
     {
       "name": "install",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.4880197919846978
+      "seconds": 0.8084998340054881
     },
     {
       "name": "provenance",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.23376333300257102
+      "seconds": 0.34358987500309013
     },
     {
       "name": "native",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 25.3547608749941
+      "seconds": 27.051729625003645
     },
     {
       "name": "linux",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 22.121774415980326
+      "seconds": 24.489162625017343
     },
     {
       "name": "linux-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3586965420108754
+      "seconds": 0.26933329200255685
     },
     {
       "name": "explore",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 7.757885749975685
+      "seconds": 7.710015125019709
     },
     {
       "name": "guest-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2395312919979915
+      "seconds": 0.27160374997765757
     },
     {
       "name": "closeout",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 125.23966358302278
+      "seconds": 125.68501858299715
     },
     {
       "name": "closeout-read",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3009470420074649
+      "seconds": 0.39752274999045767
     },
     {
       "name": "prepare-serving",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3946524169878103
+      "seconds": 0.46911470900522545
     },
     {
       "name": "prepare-read-serving",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.22364524999284185
+      "seconds": 0.27409387499210425
     },
     {
       "name": "schedule-serving",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3043372909887694
+      "seconds": 0.26320987500366755
     },
     {
       "name": "finish-serving",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.4456234580138698
+      "seconds": 0.40191395801957697
     },
     {
       "name": "finish-read-serving",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2168500830011908
+      "seconds": 0.23178470798302442
     },
     {
       "name": "prepare-release_intent",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.5735576660081279
+      "seconds": 0.4080588750075549
     },
     {
       "name": "prepare-read-release_intent",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.27155741601018235
+      "seconds": 0.2336272920074407
     },
     {
       "name": "schedule-release_intent",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.21814208300202154
+      "seconds": 0.23281733397743665
     },
     {
       "name": "finish-release_intent",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.3261439590132795
+      "seconds": 0.3092595410125796
     },
     {
       "name": "finish-read-release_intent",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.30123904198990203
+      "seconds": 0.21453525000833906
     },
     {
       "name": "closeout-cleanup",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.2613810829934664
+      "seconds": 0.24615783299668692
     },
     {
       "name": "delete",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 1.4459790000109933
+      "seconds": 1.4437228329770733
     },
     {
       "name": "final",
       "exit_code": 0,
       "timed_out": false,
-      "seconds": 0.19827525000437163
+      "seconds": 0.1965782500046771
     }
   ],
   "wheel_sha256": "56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d",
@@ -283,13 +283,15 @@
   },
   "native_unit": {
     "passed": true,
-    "count": 79,
+    "count": 81,
     "tests": [
       "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
       "test_closeout.CloseoutCases.test_documented_cli",
       "test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space",
       "test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release",
       "test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation",
+      "test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects",
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
       "test_core.CoreTests.test_epoch_and_revision_independent",
@@ -368,7 +370,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "e569a10c87b30e6f5edfe2d7d58ebcf1b3523e672629a5339bddd6250f589249",
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
     "platform": "Darwin",
     "runtime": {
       "python_sqlite": "3.53.1",
@@ -425,13 +427,15 @@
   },
   "linux_unit": {
     "passed": true,
-    "count": 79,
+    "count": 81,
     "tests": [
       "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
       "test_closeout.CloseoutCases.test_documented_cli",
       "test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space",
       "test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release",
       "test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation",
+      "test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects",
       "test_core.CoreTests.test_artifact_limit_rejects",
       "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
       "test_core.CoreTests.test_epoch_and_revision_independent",
@@ -510,7 +514,7 @@
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "source_sha256": "e569a10c87b30e6f5edfe2d7d58ebcf1b3523e672629a5339bddd6250f589249",
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
     "platform": "Linux",
     "runtime": {
       "python_sqlite": "3.54.1",
@@ -559,7 +563,7 @@
   },
   "guest": {
     "passed": true,
-    "source_sha256": "e569a10c87b30e6f5edfe2d7d58ebcf1b3523e672629a5339bddd6250f589249",
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
     "runtime": {
       "python_sqlite": "3.54.1",
       "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
@@ -608,7 +612,7 @@
       {
         "name": "roundtrip",
         "passed": true,
-        "seconds": 0.2074882419999966,
+        "seconds": 0.1705001100000061,
         "details": {
           "count": 40,
           "hash_preserved": true,
@@ -617,16 +621,16 @@
           "release_refused_while_serving": true,
           "stale_revision_rejected_with_free_guard": true,
           "missing_token_rejected": true,
-          "start_to_query_seconds": 0.036215404999992984,
-          "reader_rss_kib": 21068,
-          "controller_rss_kib": 23936,
+          "start_to_query_seconds": 0.034644427000003475,
+          "reader_rss_kib": 21060,
+          "controller_rss_kib": 23952,
           "managed_logical_bytes_while_serving": 427316
         }
       },
       {
         "name": "controller_orphan",
         "passed": true,
-        "seconds": 0.21854824399999018,
+        "seconds": 0.207120909000011,
         "details": {
           "controller_sigkill": true,
           "global_controller_recovered": true,
@@ -641,7 +645,7 @@
       {
         "name": "before_spawn",
         "passed": true,
-        "seconds": 0.15921084900000437,
+        "seconds": 0.16361697100001038,
         "details": {
           "barrier_seen": "reader_before_spawn",
           "state_after_restart": "READY",
@@ -652,7 +656,7 @@
       {
         "name": "after_spawn",
         "passed": true,
-        "seconds": 0.18302617999999882,
+        "seconds": 0.169061506999995,
         "details": {
           "barrier_seen": "reader_after_spawn",
           "state_after_restart": "ORPHAN_BUSY",
@@ -663,7 +667,7 @@
       {
         "name": "release_intent",
         "passed": true,
-        "seconds": 0.1535295290000107,
+        "seconds": 0.1595775889999942,
         "details": {
           "barrier_seen": "reader_release_intent",
           "copy_present_before_restart": true,
@@ -674,7 +678,7 @@
       {
         "name": "stop_timeout",
         "passed": true,
-        "seconds": 2.210989557000005,
+        "seconds": 2.1773351740000066,
         "details": {
           "stop_timeout_not_exit": true,
           "pin_after_timeout": 1,
@@ -685,7 +689,7 @@
       {
         "name": "missing_ready_crash",
         "passed": true,
-        "seconds": 0.1946503619999902,
+        "seconds": 0.19956790700000226,
         "details": {
           "barrier_seen": "reader_before_ready",
           "ready_absent": true,
@@ -700,7 +704,7 @@
       {
         "name": "readiness_timeout",
         "passed": true,
-        "seconds": 3.1516860060000056,
+        "seconds": 3.2028224050000063,
         "details": {
           "barrier_seen": "reader_before_ready",
           "ready_absent": true,
@@ -715,7 +719,7 @@
       {
         "name": "idle_header",
         "passed": true,
-        "seconds": 0.7239235600000029,
+        "seconds": 0.707755438999996,
         "details": {
           "incomplete_unauthenticated_header": true,
           "reader_closed_idle_connection": true,
@@ -727,7 +731,7 @@
       {
         "name": "readonly_release",
         "passed": true,
-        "seconds": 0.20465997499999844,
+        "seconds": 0.21983451900000262,
         "details": {
           "os_errno": 30,
           "pin_before_repair": 1,
@@ -803,14 +807,18 @@
           "query_count": 40,
           "pin_after_release": 0,
           "socket_mode": "0600",
-          "socket_removed": true
+          "socket_removed": true,
+          "independent_stale_fences": true
         },
-        "seconds": 0.32144335200000285
+        "seconds": 0.3348938419999996
       },
       {
         "name": "receipt_capacity",
         "passed": true,
         "details": {
+          "refusal_witness_before_sha256": "2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96",
+          "refusal_witness_after_sha256": "2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96",
+          "all_backup_files_and_catalog_compared": true,
           "kind": "receipts",
           "options": {
             "artifact_bytes": 262144,
@@ -843,14 +851,17 @@
           "pin_before_stop": 1,
           "stop_exit_proven": true,
           "pin_after_release": 0,
-          "logical_bytes_after_release": 797773
+          "logical_bytes_after_release": 797777
         },
-        "seconds": 0.31482488800000397
+        "seconds": 0.5192792029999964
       },
       {
         "name": "logical_capacity",
         "passed": true,
         "details": {
+          "refusal_witness_before_sha256": "c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2",
+          "refusal_witness_after_sha256": "c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2",
+          "all_backup_files_and_catalog_compared": true,
           "kind": "logical_bytes",
           "options": {
             "artifact_bytes": 262144,
@@ -881,12 +892,13 @@
           "pin_after_release": 0,
           "logical_bytes_after_release": 612687
         },
-        "seconds": 0.25760753200000863
+        "seconds": 0.3006764340000103
       },
       {
         "name": "bounded_cycles",
         "passed": true,
         "details": {
+          "fd_quiescence_seconds": 0.25,
           "cycles": 24,
           "reader_dwell_seconds": 5,
           "ledger_rows": 40,
@@ -895,10 +907,47 @@
           "rss_drift_allowance_kib": 4096,
           "samples": [
             {
-              "cycle": 0,
-              "pid": 3957,
-              "rss_kib": 21088,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00024148200000695397,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010590247000010322,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 0,
+              "pid": 3992,
+              "rss_kib": 21088,
               "children": 0,
               "rows": {
                 "ops": 0,
@@ -917,10 +966,47 @@
               "allocated_bytes": 61440
             },
             {
-              "cycle": 1,
-              "pid": 3957,
-              "rss_kib": 24980,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003233419999872922,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010937692999988258,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 1,
+              "pid": 3992,
+              "rss_kib": 24912,
               "children": 0,
               "rows": {
                 "ops": 2,
@@ -939,10 +1025,47 @@
               "allocated_bytes": 258048
             },
             {
-              "cycle": 2,
-              "pid": 3957,
-              "rss_kib": 26652,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00031219199999554803,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01057870799999705,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 2,
+              "pid": 3992,
+              "rss_kib": 26580,
               "children": 0,
               "rows": {
                 "ops": 4,
@@ -961,10 +1084,47 @@
               "allocated_bytes": 454656
             },
             {
-              "cycle": 3,
-              "pid": 3957,
-              "rss_kib": 26660,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00027921199998104385,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01072353199998588,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 3,
+              "pid": 3992,
+              "rss_kib": 26592,
               "children": 0,
               "rows": {
                 "ops": 6,
@@ -983,10 +1143,47 @@
               "allocated_bytes": 458752
             },
             {
-              "cycle": 4,
-              "pid": 3957,
-              "rss_kib": 28488,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00036178299998823604,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010772627999983797,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 4,
+              "pid": 3992,
+              "rss_kib": 28424,
               "children": 0,
               "rows": {
                 "ops": 8,
@@ -1001,14 +1198,51 @@
               "files": 16,
               "catalog_bytes": 57344,
               "log_bytes": 0,
-              "logical_bytes": 427814,
+              "logical_bytes": 427816,
               "allocated_bytes": 462848
             },
             {
-              "cycle": 5,
-              "pid": 3957,
-              "rss_kib": 28492,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00034167100000104256,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010730617000007214,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 5,
+              "pid": 3992,
+              "rss_kib": 28428,
               "children": 0,
               "rows": {
                 "ops": 10,
@@ -1027,10 +1261,47 @@
               "allocated_bytes": 466944
             },
             {
-              "cycle": 6,
-              "pid": 3957,
-              "rss_kib": 28496,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003825869999900533,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011402539999977535,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 6,
+              "pid": 3992,
+              "rss_kib": 28432,
               "children": 0,
               "rows": {
                 "ops": 12,
@@ -1045,14 +1316,51 @@
               "files": 20,
               "catalog_bytes": 65536,
               "log_bytes": 0,
-              "logical_bytes": 436154,
+              "logical_bytes": 436150,
               "allocated_bytes": 479232
             },
             {
-              "cycle": 7,
-              "pid": 3957,
-              "rss_kib": 28500,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003254810000044017,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010993613000010782,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 7,
+              "pid": 3992,
+              "rss_kib": 28440,
               "children": 0,
               "rows": {
                 "ops": 14,
@@ -1067,14 +1375,51 @@
               "files": 22,
               "catalog_bytes": 65536,
               "log_bytes": 0,
-              "logical_bytes": 436227,
+              "logical_bytes": 436225,
               "allocated_bytes": 483328
             },
             {
-              "cycle": 8,
-              "pid": 3957,
-              "rss_kib": 28504,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004008059999875968,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01161467199997901,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 8,
+              "pid": 3992,
+              "rss_kib": 28440,
               "children": 0,
               "rows": {
                 "ops": 16,
@@ -1093,10 +1438,47 @@
               "allocated_bytes": 503808
             },
             {
-              "cycle": 9,
-              "pid": 3957,
-              "rss_kib": 29352,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00038618900001097245,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011244048000008888,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 9,
+              "pid": 3992,
+              "rss_kib": 29288,
               "children": 0,
               "rows": {
                 "ops": 18,
@@ -1115,10 +1497,47 @@
               "allocated_bytes": 507904
             },
             {
-              "cycle": 10,
-              "pid": 3957,
-              "rss_kib": 29352,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.000371612000009236,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010650759000014887,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 10,
+              "pid": 3992,
+              "rss_kib": 29288,
               "children": 0,
               "rows": {
                 "ops": 20,
@@ -1137,10 +1556,47 @@
               "allocated_bytes": 512000
             },
             {
-              "cycle": 11,
-              "pid": 3957,
-              "rss_kib": 29360,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003956959999982246,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011836611999996194,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 11,
+              "pid": 3992,
+              "rss_kib": 29296,
               "children": 0,
               "rows": {
                 "ops": 22,
@@ -1159,10 +1615,47 @@
               "allocated_bytes": 520192
             },
             {
-              "cycle": 12,
-              "pid": 3957,
-              "rss_kib": 29360,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00024600999998369844,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01093965699999444,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 12,
+              "pid": 3992,
+              "rss_kib": 29296,
               "children": 0,
               "rows": {
                 "ops": 24,
@@ -1181,10 +1674,47 @@
               "allocated_bytes": 524288
             },
             {
-              "cycle": 13,
-              "pid": 3957,
-              "rss_kib": 29368,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0002513020000094457,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011314615999992839,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 13,
+              "pid": 3992,
+              "rss_kib": 29304,
               "children": 0,
               "rows": {
                 "ops": 26,
@@ -1203,10 +1733,47 @@
               "allocated_bytes": 528384
             },
             {
-              "cycle": 14,
-              "pid": 3957,
-              "rss_kib": 29368,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00036741599998890706,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011643766999981153,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 14,
+              "pid": 3992,
+              "rss_kib": 29304,
               "children": 0,
               "rows": {
                 "ops": 28,
@@ -1225,10 +1792,47 @@
               "allocated_bytes": 532480
             },
             {
-              "cycle": 15,
-              "pid": 3957,
-              "rss_kib": 29372,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0002684279999982664,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010928153000008933,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 15,
+              "pid": 3992,
+              "rss_kib": 29304,
               "children": 0,
               "rows": {
                 "ops": 30,
@@ -1243,14 +1847,51 @@
               "files": 38,
               "catalog_bytes": 94208,
               "log_bytes": 0,
-              "logical_bytes": 465481,
+              "logical_bytes": 465479,
               "allocated_bytes": 544768
             },
             {
-              "cycle": 16,
-              "pid": 3957,
-              "rss_kib": 29376,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00029625999999893793,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011749734000005674,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 16,
+              "pid": 3992,
+              "rss_kib": 29304,
               "children": 0,
               "rows": {
                 "ops": 32,
@@ -1265,14 +1906,51 @@
               "files": 40,
               "catalog_bytes": 98304,
               "log_bytes": 0,
-              "logical_bytes": 469650,
+              "logical_bytes": 469648,
               "allocated_bytes": 552960
             },
             {
-              "cycle": 17,
-              "pid": 3957,
-              "rss_kib": 29380,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00026043099998673824,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010512363000003688,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 17,
+              "pid": 3992,
+              "rss_kib": 29316,
               "children": 0,
               "rows": {
                 "ops": 34,
@@ -1287,14 +1965,51 @@
               "files": 42,
               "catalog_bytes": 98304,
               "log_bytes": 0,
-              "logical_bytes": 469721,
+              "logical_bytes": 469723,
               "allocated_bytes": 557056
             },
             {
-              "cycle": 18,
-              "pid": 3957,
-              "rss_kib": 29380,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00034817299999190254,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011787390999984382,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 18,
+              "pid": 3992,
+              "rss_kib": 29316,
               "children": 0,
               "rows": {
                 "ops": 36,
@@ -1309,14 +2024,51 @@
               "files": 44,
               "catalog_bytes": 98304,
               "log_bytes": 0,
-              "logical_bytes": 469794,
+              "logical_bytes": 469792,
               "allocated_bytes": 561152
             },
             {
-              "cycle": 19,
-              "pid": 3957,
-              "rss_kib": 29384,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00038829499999337713,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010953882999984899,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 19,
+              "pid": 3992,
+              "rss_kib": 29320,
               "children": 0,
               "rows": {
                 "ops": 38,
@@ -1331,14 +2083,51 @@
               "files": 46,
               "catalog_bytes": 98304,
               "log_bytes": 0,
-              "logical_bytes": 469871,
+              "logical_bytes": 469863,
               "allocated_bytes": 565248
             },
             {
-              "cycle": 20,
-              "pid": 3957,
-              "rss_kib": 29392,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004092110000044613,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011196632999997291,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 20,
+              "pid": 3992,
+              "rss_kib": 29324,
               "children": 0,
               "rows": {
                 "ops": 40,
@@ -1353,14 +2142,51 @@
               "files": 48,
               "catalog_bytes": 98304,
               "log_bytes": 0,
-              "logical_bytes": 469944,
+              "logical_bytes": 469940,
               "allocated_bytes": 569344
             },
             {
-              "cycle": 21,
-              "pid": 3957,
-              "rss_kib": 29396,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003529740000089987,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011544603000004372,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 21,
+              "pid": 3992,
+              "rss_kib": 29332,
               "children": 0,
               "rows": {
                 "ops": 42,
@@ -1379,10 +2205,47 @@
               "allocated_bytes": 577536
             },
             {
-              "cycle": 22,
-              "pid": 3957,
-              "rss_kib": 29396,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004004829999928461,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010920006999981524,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 22,
+              "pid": 3992,
+              "rss_kib": 29332,
               "children": 0,
               "rows": {
                 "ops": 44,
@@ -1397,14 +2260,51 @@
               "files": 52,
               "catalog_bytes": 110592,
               "log_bytes": 0,
-              "logical_bytes": 482378,
+              "logical_bytes": 482376,
               "allocated_bytes": 589824
             },
             {
-              "cycle": 23,
-              "pid": 3957,
-              "rss_kib": 29396,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003135139999983494,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011658218000007992,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 23,
+              "pid": 3992,
+              "rss_kib": 29332,
               "children": 0,
               "rows": {
                 "ops": 46,
@@ -1419,14 +2319,51 @@
               "files": 54,
               "catalog_bytes": 110592,
               "log_bytes": 0,
-              "logical_bytes": 482451,
+              "logical_bytes": 482449,
               "allocated_bytes": 593920
             },
             {
-              "cycle": 24,
-              "pid": 3957,
-              "rss_kib": 29396,
               "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00031145700000934085,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010573222999994414,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 24,
+              "pid": 3992,
+              "rss_kib": 29340,
               "children": 0,
               "rows": {
                 "ops": 48,
@@ -1441,41 +2378,41 @@
               "files": 56,
               "catalog_bytes": 118784,
               "log_bytes": 0,
-              "logical_bytes": 490714,
+              "logical_bytes": 490716,
               "allocated_bytes": 606208
             }
           ],
           "cycle_seconds": [
-            5.141528225000002,
-            5.137223100999989,
-            5.161539719999993,
-            5.154604492999994,
-            5.161618422000004,
-            5.159155344999988,
-            5.268361507000009,
-            5.197796922000009,
-            5.161426351000017,
-            5.160460092999983,
-            5.182451651000008,
-            5.175344137999986,
-            5.186972977000011,
-            5.156952535000016,
-            5.157301746000002,
-            5.138612026000004,
-            5.148954169000007,
-            5.15136320000002,
-            5.149768303000002,
-            5.175776762999988,
-            5.170440517000003,
-            5.165710713999999,
-            5.15886498399999,
-            5.138703711000005
+            5.138287098000006,
+            5.128613415999993,
+            5.138280152999982,
+            5.161957412999982,
+            5.160075053000014,
+            5.149675845000019,
+            5.146252860999994,
+            5.148249827000001,
+            5.214296173000008,
+            5.160836877999998,
+            5.175953852000021,
+            5.145434925000018,
+            5.169613771999991,
+            5.160477060000005,
+            5.154397751999994,
+            5.167887573000002,
+            5.141860019000006,
+            5.192579804000019,
+            5.166930100000002,
+            5.168202381000015,
+            5.154899141000016,
+            5.1547383109999885,
+            5.144888242999997,
+            5.150473419999997
           ],
-          "seconds": 124.04095781500001,
+          "seconds": 124.16347359,
           "retained_metadata_explained": true,
           "long_term_qualification": false
         },
-        "seconds": 124.10545791700001
+        "seconds": 124.22912487500001
       }
     ]
   },
@@ -1486,97 +2423,212 @@
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.22106979100499302
+          "seconds": 0.30626862499048
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.3326220420130994
+          "seconds": 0.25933850000728853
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.2763565000204835
+          "seconds": 0.3167869170138147
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.2756369999842718
+          "seconds": 0.30975379201117903
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.35409070798777975
+          "seconds": 0.3709216249990277
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.29528491699602455
+          "seconds": 0.24254808298428543
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.36372491699876264
+          "seconds": 0.26555329200346023
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.34581095798057504
+          "seconds": 0.24209799998789094
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.3285270420019515
+          "seconds": 0.26067641598638147
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.27878900000359863
+          "seconds": 0.2830141670128796
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.3061943329812493
+          "seconds": 0.2492962499964051
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.2630864589882549
+          "seconds": 0.24246933398535475
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.27677387499716133
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2418160840170458
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.35299020798993297
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3359908330021426
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.31386766699142754
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.23072133399546146
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2615773339930456
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3597900829918217
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26773550000507385
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2688313329999801
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.24227399998926558
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2783012919826433
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.31220675000804476
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3393892500025686
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3006746250030119
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.32141470900387503
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2548490420158487
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.35218770799110644
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.301286333007738
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2650273329927586
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26958379201823846
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.32047308300388977
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.33668554201722145
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.33289954098290764
         },
         {
           "exit_code": 1,
           "timed_out": false,
-          "seconds": 0.4539553750073537
-        },
-        {
-          "exit_code": 1,
-          "timed_out": false,
-          "seconds": 1.2388767499942333
+          "seconds": 0.27823762499610893
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.32610045801266097
+          "seconds": 3.310210708004888
         }
       ],
       "boot_changed": true,
       "details": {
         "kind": "serving",
-        "boot_before": "b302d6ee-013b-4f5c-94c4-60b2398c81da",
-        "boot_after": "b2ee4c41-7663-4d35-b2de-62a28a4ac7e6",
+        "boot_before": "a41c53cd-3208-40e1-b861-ec1ed13ac517",
+        "boot_after": "19c2cd0e-7afb-42cd-a826-f62e19b6f954",
         "journal_before": {
-          "sha256": "f99852b56d4033410ed914d7cec6b07d2b99d2344601ec70097137436bac8a75",
+          "sha256": "ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33",
           "rows": {
             "restores": [
               [
-                "bdb105448926439db1422aabf95027ae",
-                "0e069cc0e88a4714897b202584753ebb",
+                "722a813ccc8840d596ba2d052d683052",
+                "e2ece8deaf9a45b0af06de229dab4188",
                 "SERVING"
               ]
             ],
             "pins": [
               [
-                "0e069cc0e88a4714897b202584753ebb",
+                "e2ece8deaf9a45b0af06de229dab4188",
                 1
               ]
             ],
@@ -1589,18 +2641,18 @@
           }
         },
         "journal_after_before_controller": {
-          "sha256": "f99852b56d4033410ed914d7cec6b07d2b99d2344601ec70097137436bac8a75",
+          "sha256": "ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33",
           "rows": {
             "restores": [
               [
-                "bdb105448926439db1422aabf95027ae",
-                "0e069cc0e88a4714897b202584753ebb",
+                "722a813ccc8840d596ba2d052d683052",
+                "e2ece8deaf9a45b0af06de229dab4188",
                 "SERVING"
               ]
             ],
             "pins": [
               [
-                "0e069cc0e88a4714897b202584753ebb",
+                "e2ece8deaf9a45b0af06de229dab4188",
                 1
               ]
             ],
@@ -1616,6 +2668,9 @@
         "controller_killed_before_reboot": true,
         "state_after_recovery": "READY",
         "old_epoch_rejected": true,
+        "stale_epoch_only_rejected": true,
+        "stale_revision_only_rejected": true,
+        "stale_rejections_preserved_state": true,
         "query_count": 40,
         "pin_after_release": 0
       }
@@ -1626,47 +2681,42 @@
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.21067679199040867
+          "seconds": 0.29730075001134537
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.24637016700580716
-        },
-        {
-          "exit_code": 0,
-          "timed_out": false,
-          "seconds": 0.26641804198152386
+          "seconds": 0.34229908301495016
         },
         {
           "exit_code": 1,
           "timed_out": false,
-          "seconds": 1.2343249169935007
+          "seconds": 3.300194042007206
         },
         {
           "exit_code": 0,
           "timed_out": false,
-          "seconds": 0.3560381249990314
+          "seconds": 0.38449704201775603
         }
       ],
       "boot_changed": true,
       "details": {
         "kind": "release_intent",
-        "boot_before": "b2ee4c41-7663-4d35-b2de-62a28a4ac7e6",
-        "boot_after": "cc56ffb7-8d06-409c-b16e-0044224cb5eb",
+        "boot_before": "19c2cd0e-7afb-42cd-a826-f62e19b6f954",
+        "boot_after": "379bc633-c886-4f26-8d74-32a60603411f",
         "journal_before": {
-          "sha256": "9d5974b68c02cd457164b014fa2d7416e9a26a829c4af2f12088e425456d51c4",
+          "sha256": "908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565",
           "rows": {
             "restores": [
               [
-                "61bef541a365418bbf8df581e823c922",
-                "463f0a428cb64fab8af46acb1b2ca43d",
+                "f18acad1d7e74833bf0b4914f58c3d33",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
                 "RELEASING"
               ]
             ],
             "pins": [
               [
-                "463f0a428cb64fab8af46acb1b2ca43d",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
                 1
               ]
             ],
@@ -1679,18 +2729,18 @@
           }
         },
         "journal_after_before_controller": {
-          "sha256": "9d5974b68c02cd457164b014fa2d7416e9a26a829c4af2f12088e425456d51c4",
+          "sha256": "908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565",
           "rows": {
             "restores": [
               [
-                "61bef541a365418bbf8df581e823c922",
-                "463f0a428cb64fab8af46acb1b2ca43d",
+                "f18acad1d7e74833bf0b4914f58c3d33",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
                 "RELEASING"
               ]
             ],
             "pins": [
               [
-                "463f0a428cb64fab8af46acb1b2ca43d",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
                 1
               ]
             ],
@@ -1706,6 +2756,9 @@
         "controller_killed_before_reboot": true,
         "state_after_recovery": "RELEASED",
         "old_epoch_rejected": true,
+        "stale_epoch_only_rejected": true,
+        "stale_revision_only_rejected": true,
+        "stale_rejections_preserved_state": true,
         "query_count": null,
         "pin_after_release": 0
       }
@@ -1725,7 +2778,7 @@
   "preexisting_profiles_unchanged": true,
   "controls": {
     "passed": true,
-    "rejected": 19,
+    "rejected": 33,
     "baseline_rejected": 29
   }
 }

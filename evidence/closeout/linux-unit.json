@@ -1,12 +1,14 @@
 {
   "passed": true,
-  "count": 79,
+  "count": 81,
   "tests": [
     "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
+    "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
     "test_closeout.CloseoutCases.test_documented_cli",
     "test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space",
     "test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release",
     "test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation",
+    "test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects",
     "test_core.CoreTests.test_artifact_limit_rejects",
     "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
     "test_core.CoreTests.test_epoch_and_revision_independent",
@@ -85,7 +87,7 @@
   "failures": 0,
   "errors": 0,
   "skipped": 0,
-  "source_sha256": "e569a10c87b30e6f5edfe2d7d58ebcf1b3523e672629a5339bddd6250f589249",
+  "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
   "platform": "Linux",
   "runtime": {
     "python_sqlite": "3.54.1",

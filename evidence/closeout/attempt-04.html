@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft bounded closeout</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: installed workflow, capacity and normal reboot</h1><p>Passed: False</p><p>Fresh isolated Linux VM, installed wheel with source imports removed. Documented CLI, separate receipt/soft-byte rejection, 24 same-controller cycles with 5-second reader dwell each, and two normal guest reboots. Persistent catalog is compared before reboot and after boot before controller recovery. RSS is sampled Linux VM process RSS, not peak/physical/native performance. Metadata intentionally grows with retained tombstones/guards; no unlimited endurance, automated GC, systemd packaging, sudden-power-loss or boot zero-gap qualification. Historical phase-two case-group flags apply only to that case group.</p><pre>{
+  &quot;passed&quot;: false,
+  &quot;run_id&quot;: &quot;15be6d5f7bbe2045&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T10:41:27.494796+00:00&quot;,
+  &quot;source&quot;: {
+    &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
+    &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+    &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
+    &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
+    &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+    &quot;keepweft/reader.py&quot;: &quot;e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d&quot;,
+    &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
+    &quot;keepweft/service.py&quot;: &quot;c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe&quot;,
+    &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
+    &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
+    &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
+    &quot;tests/test_closeout.py&quot;: &quot;b4a706ab2338fe96cb686d71fc558c543ed4884705f6c889d14f74b71541f437&quot;,
+    &quot;tests/test_core.py&quot;: &quot;0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a&quot;,
+    &quot;tests/test_readers.py&quot;: &quot;6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb&quot;,
+    &quot;tests/test_requests.py&quot;: &quot;fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc&quot;,
+    &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
+    &quot;tools/closeout_cases.py&quot;: &quot;148ccc301da3bf9d3e6ef7d00255f8f16ad770024b1d5689edf2f6aa7130fedf&quot;,
+    &quot;tools/closeout_report.py&quot;: &quot;ea555e59378ce256315d7433255105a92bbcd0c3dc157f8f47a5e142cb37b495&quot;,
+    &quot;tools/closeout_validate.py&quot;: &quot;65cc31707467f3d685adb5aa7ce3e1bc5d1c5fcde94737d48a17dad63f82653f&quot;,
+    &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
+    &quot;tools/explore.py&quot;: &quot;123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a&quot;,
+    &quot;tools/phase1_cases.py&quot;: &quot;dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45&quot;,
+    &quot;tools/phase1_report.py&quot;: &quot;8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca&quot;,
+    &quot;tools/phase1_validate.py&quot;: &quot;fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1&quot;,
+    &quot;tools/phase2_cases.py&quot;: &quot;a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3&quot;,
+    &quot;tools/phase2_report.py&quot;: &quot;b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d&quot;,
+    &quot;tools/phase2_validate.py&quot;: &quot;b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c&quot;,
+    &quot;tools/report.py&quot;: &quot;29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23&quot;,
+    &quot;tools/testing.py&quot;: &quot;f8f35a5652fb714dace42f501bd554e6db58452716ec0afe8df812866f0d6cbd&quot;,
+    &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
+    &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
+  },
+  &quot;source_sha256&quot;: &quot;62cfd4cd1f3584060b9c77a58902153557a86d9e285f9c35b05fe04527b69c5c&quot;,
+  &quot;source_changed&quot;: false,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;initial&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.6070550000004005
+    },
+    {
+      &quot;name&quot;: &quot;create&quot;,
+      &quot;exit_code&quot;: 1,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.6040498749935068
+    },
+    {
+      &quot;name&quot;: &quot;failed-guest&quot;,
+      &quot;exit_code&quot;: 1,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.20861450000666082
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.4849599579756614
+    },
+    {
+      &quot;name&quot;: &quot;final&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.23563558398745954
+    }
+  ],
+  &quot;wheel_sha256&quot;: &quot;56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d&quot;,
+  &quot;wheel_product_matches&quot;: true,
+  &quot;host_mounts&quot;: &quot;none&quot;,
+  &quot;fresh_profile&quot;: true,
+  &quot;initial_disk_absent&quot;: true,
+  &quot;error&quot;: &quot;RuntimeError: create failed or timed out&quot;,
+  &quot;vm_final&quot;: &quot;Deleted&quot;,
+  &quot;data_disk_removed&quot;: false,
+  &quot;preexisting_profiles_unchanged&quot;: true
+}</pre></html>

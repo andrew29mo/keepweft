@@ -1,0 +1,82 @@
+{
+  "passed": false,
+  "run_id": "15be6d5f7bbe2045",
+  "recorded_at_utc": "2026-10-24T10:41:27.494796+00:00",
+  "source": {
+    "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
+    "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+    "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
+    "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
+    "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+    "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
+    "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
+    "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
+    "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
+    "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+    "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
+    "tests/test_closeout.py": "b4a706ab2338fe96cb686d71fc558c543ed4884705f6c889d14f74b71541f437",
+    "tests/test_core.py": "0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a",
+    "tests/test_readers.py": "6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb",
+    "tests/test_requests.py": "fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
+    "tools/closeout_cases.py": "148ccc301da3bf9d3e6ef7d00255f8f16ad770024b1d5689edf2f6aa7130fedf",
+    "tools/closeout_report.py": "ea555e59378ce256315d7433255105a92bbcd0c3dc157f8f47a5e142cb37b495",
+    "tools/closeout_validate.py": "65cc31707467f3d685adb5aa7ce3e1bc5d1c5fcde94737d48a17dad63f82653f",
+    "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
+    "tools/explore.py": "123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a",
+    "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
+    "tools/phase1_report.py": "8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca",
+    "tools/phase1_validate.py": "fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1",
+    "tools/phase2_cases.py": "a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3",
+    "tools/phase2_report.py": "b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d",
+    "tools/phase2_validate.py": "b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c",
+    "tools/report.py": "29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23",
+    "tools/testing.py": "f8f35a5652fb714dace42f501bd554e6db58452716ec0afe8df812866f0d6cbd",
+    "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
+    "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
+  },
+  "source_sha256": "62cfd4cd1f3584060b9c77a58902153557a86d9e285f9c35b05fe04527b69c5c",
+  "source_changed": false,
+  "stages": [
+    {
+      "name": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.6070550000004005
+    },
+    {
+      "name": "create",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 0.6040498749935068
+    },
+    {
+      "name": "failed-guest",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 0.20861450000666082
+    },
+    {
+      "name": "delete",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.4849599579756614
+    },
+    {
+      "name": "final",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.23563558398745954
+    }
+  ],
+  "wheel_sha256": "56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d",
+  "wheel_product_matches": true,
+  "host_mounts": "none",
+  "fresh_profile": true,
+  "initial_disk_absent": true,
+  "error": "RuntimeError: create failed or timed out",
+  "vm_final": "Deleted",
+  "data_disk_removed": false,
+  "preexisting_profiles_unchanged": true
+}

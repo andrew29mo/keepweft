@@ -6,7 +6,7 @@ import math
 from .evidence import require
 from . import phase2_report
 from .report import STAGES as BASE_STAGES
-from .closeout_cases import validate_samples,CYCLES,RSS_DRIFT_KIB,READER_DWELL_SECONDS
+from .closeout_cases import validate_samples,CYCLES,RSS_DRIFT_KIB,READER_DWELL_SECONDS,FD_QUIESCENCE_SECONDS
 EXTRA=('closeout','closeout-read',*(s+'-'+k for k in ('serving','release_intent') for s in ('prepare','prepare-read','schedule','finish','finish-read')),'closeout-cleanup')
 STAGES=BASE_STAGES[:-2]+EXTRA+BASE_STAGES[-2:]
 
@@ -18,16 +18,17 @@ def verify(v):
     require(tuple(s['name'] for s in v['stages'])==STAGES,'Missing closeout stage')
     require(all(s['exit_code']==0 and s['timed_out'] is False and not s.get('interrupted',False) and math.isfinite(s['seconds']) and s['seconds']>=0 for s in v['stages']),'Closeout failure/timeout')
     for k in ('native_unit','linux_unit'):
-        require(v[k]['count']>=79 and all('test_closeout.CloseoutCases.'+name in v[k]['tests'] for name in ('test_documented_cli','test_receipt_exhaustion_preserves_stop_release','test_byte_exhaustion_preserves_stop_release','test_resource_checks_reject_restart_leaks_and_missing_observation','test_owned_snapshot_ignores_only_shared_free_space')),'Closeout portable tests missing')
+        require(v[k]['count']>=81 and all('test_closeout.CloseoutCases.'+name in v[k]['tests'] for name in ('test_documented_cli','test_receipt_exhaustion_preserves_stop_release','test_byte_exhaustion_preserves_stop_release','test_resource_checks_reject_restart_leaks_and_missing_observation','test_owned_snapshot_ignores_only_shared_free_space','test_capacity_observer_detects_manifest_catalog_and_receipt_mutation','test_vm_socket_path_preflight_no_side_effects')),'Closeout portable tests missing')
     c=v['closeout'];require(c['passed'] is True and c['runtime']==v['provenance']['runtime'],'Closeout/runtime failed')
     require(tuple(x['name'] for x in c['cases'])==('documented_cli','receipt_capacity','logical_capacity','bounded_cycles') and all(x['passed'] is True and math.isfinite(x['seconds']) and x['seconds']>=0 for x in c['cases']),'Missing case')
     d={x['name']:x['details'] for x in c['cases']}
-    require(d['documented_cli']==dict(installed_cli=True,barriers=False,query_count=40,pin_after_release=0,socket_mode='0600',socket_removed=True),'Documented workflow failed')
+    require(d['documented_cli']==dict(installed_cli=True,barriers=False,query_count=40,pin_after_release=0,socket_mode='0600',socket_removed=True,independent_stale_fences=True),'Documented workflow failed')
     for name,kind,code in [('receipt_capacity','receipts','RECEIPT_FULL'),('logical_capacity','logical_bytes','Refused')]:
         r=d[name];require(r['kind']==kind and r['refusal_code']==code and r['attempts'][-1]==dict(ok=False,code=code) and len(r['attempts'])>=2 and all(x==dict(ok=True,code=None) for x in r['attempts'][:-1]),'Wrong capacity challenge')
         require(r['inventory_preserved_on_refusal'] is r['receipts_preserved_on_refusal'] is r['stop_exit_proven'] is True and r['query_at_full']==40 and r['pin_before_stop']==1 and r['pin_after_release']==0 and r['logical_bytes_after_release']>0,'Unsafe refusal/cleanup')
+        require(r['all_backup_files_and_catalog_compared'] is True and len(r['refusal_witness_before_sha256'])==64 and r['refusal_witness_before_sha256']==r['refusal_witness_after_sha256'],'Incomplete capacity witness')
         require(r['options']==dict(artifact_bytes=262144,headroom_bytes=65536,keep=8,**(dict(max_receipts=4) if kind=='receipts' else dict(budget_bytes=1300000))),'Undeclared capacity policy')
-    r=d['bounded_cycles'];require(r['cycles']==CYCLES and r['reader_dwell_seconds']==READER_DWELL_SECONDS and r['restarts']==0 and r['warmup_cycles']==4 and r['rss_drift_allowance_kib']==RSS_DRIFT_KIB and r['retained_metadata_explained'] is True and r['long_term_qualification'] is False and r['ledger_rows']==40,'Unsupported endurance claim')
+    r=d['bounded_cycles'];require(r['fd_quiescence_seconds']==FD_QUIESCENCE_SECONDS and r['cycles']==CYCLES and r['reader_dwell_seconds']==READER_DWELL_SECONDS and r['restarts']==0 and r['warmup_cycles']==4 and r['rss_drift_allowance_kib']==RSS_DRIFT_KIB and r['retained_metadata_explained'] is True and r['long_term_qualification'] is False and r['ledger_rows']==40,'Unsupported endurance claim')
     validate_samples(r['samples'])
     require(len(r['cycle_seconds'])==CYCLES and all(math.isfinite(s) and s>=READER_DWELL_SECONDS for s in r['cycle_seconds']) and math.isfinite(r['seconds']) and r['seconds']>=sum(r['cycle_seconds']),'Invalid cycle timings')
     require([r['kind'] for r in v['reboots']]==['serving','release_intent'],'Missing reboot')
@@ -36,7 +37,7 @@ def verify(v):
         d=r['details'];require(d['kind']==r['kind'] and d['boot_before']!=d['boot_after'] and len(d['boot_before'])==len(d['boot_after'])==36,'Boot identity not changed')
         require(d['journal_before']==d['journal_after_before_controller'] and len(d['journal_before']['sha256'])==64,'Shutdown cleanup masqueraded as recovery')
         before=d['journal_before']['rows'];require(len(before['restores'])==len(before['pins'])==1 and before['pins'][0][1]==1 and before['restores'][0][2]==('SERVING' if r['kind']=='serving' else 'RELEASING'),'Wrong preserved state')
-        require(d['copy_hash_preserved_before_recovery'] is d['controller_killed_before_reboot'] is d['old_epoch_rejected'] is True and d['pin_after_release']==0 and d['state_after_recovery']==('READY' if r['kind']=='serving' else 'RELEASED') and d['query_count']==(40 if r['kind']=='serving' else None),'Formal recovery not proven')
+        require(d['copy_hash_preserved_before_recovery'] is d['controller_killed_before_reboot'] is d['old_epoch_rejected'] is d['stale_epoch_only_rejected'] is d['stale_revision_only_rejected'] is d['stale_rejections_preserved_state'] is True and d['pin_after_release']==0 and d['state_after_recovery']==('READY' if r['kind']=='serving' else 'RELEASED') and d['query_count']==(40 if r['kind']=='serving' else None),'Formal recovery not proven')
     require(v['closeout_cleanup']==dict(no_product_processes_remaining=True),'Closeout processes retained')
     require(v['limits']==dict(normal_vm_reboot_tested=True,power_loss_tested=False,long_term_gc_tested=False,systemd_package_tested=False),'Unsupported scope')
     return True
@@ -44,6 +45,10 @@ def verify(v):
 def controls(v):
     mutations=[lambda x:x['stages'].pop(12),lambda x:x['stages'][12].update(timed_out=True),lambda x:x['closeout'].update(passed=False),lambda x:x['closeout']['cases'].pop(),lambda x:x['closeout']['cases'][0]['details'].update(installed_cli=False),lambda x:x['closeout']['cases'][1]['details'].update(pin_after_release=1),lambda x:x['closeout']['cases'][2]['details'].update(inventory_preserved_on_refusal=False),lambda x:x['closeout']['cases'][3]['details'].update(restarts=1),lambda x:x['closeout']['cases'][3]['details']['samples'].pop(),lambda x:x['closeout']['cases'][3]['details']['samples'][-1].update(rss_kib=999999),lambda x:x['closeout']['cases'][3]['details']['samples'][-1].update(children=1),lambda x:x['reboots'][0]['details'].update(boot_after=x['reboots'][0]['details']['boot_before']),lambda x:x['reboots'][0]['details']['journal_after_before_controller'].update(sha256='0'*64),lambda x:x['reboots'][1]['details']['journal_before']['rows']['restores'][0].__setitem__(2,'RELEASED'),lambda x:x['reboots'][1]['details'].update(old_epoch_rejected=False),lambda x:x['closeout_cleanup'].update(no_product_processes_remaining=False),lambda x:x['limits'].update(power_loss_tested=True)]
     mutations += [lambda x:x['closeout']['cases'][3]['details'].update(reader_dwell_seconds=0),lambda x:x['closeout']['cases'][3]['details']['cycle_seconds'].__setitem__(0,.1)]
+    mutations += [lambda x:x['closeout']['cases'][1]['details'].update(refusal_witness_after_sha256='0'*64),lambda x:x['closeout']['cases'][2]['details'].update(all_backup_files_and_catalog_compared=False),lambda x:x['reboots'][0]['details'].update(stale_epoch_only_rejected=False),lambda x:x['reboots'][1]['details'].update(stale_revision_only_rejected=False)]
+    for field,value in [('pid',-1),('fds',-1),('rss_kib',-1),('rss_kib',0),('rss_kib',float('nan')),('rss_kib',True),('logical_bytes',-1),('catalog_bytes',-1)]:
+        mutations.append(lambda x,field=field,value=value:[s.update({field:value}) for s in x['closeout']['cases'][3]['details']['samples']])
+    mutations += [lambda x:x['closeout']['cases'][3]['details']['samples'][-1].update(fd_quiescent=False),lambda x:x['closeout']['cases'][3]['details']['samples'][-1]['fd_observations'][-1].update(non_listener_sockets=1)]
     for mutate in mutations:
         b=copy.deepcopy(v);mutate(b)
         try:verify(b)

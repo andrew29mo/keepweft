@@ -62,28 +62,36 @@ future work; reader mutations require explicit current epoch/revision tokens.
 
 ## Current results
 
-The final bounded closeout passed **79 identical tests on each platform**, repeated
+The final bounded closeout passed **81 identical tests on each platform**, repeated
 **10 Linux reader/fault scenarios**, **four closeout scenarios** and **two normal
-VM reboots**, with **48 rejected report corruptions**. The clean no-host-mount VM
+VM reboots**, with **62 rejected report corruptions**. The clean no-host-mount VM
 installed the wheel and verified its module/runtime hashes before using it.
 
-Twenty-four complete cycles ran for **124.04 seconds** in one controller process,
+Twenty-four complete cycles ran for **124.16 seconds** in one controller process,
 including at least five seconds of live reader dwell per cycle. Controller RSS was
-21,088 KiB initially, 28,488 KiB after the declared four-cycle warmup, and 29,396 KiB
-at the maximum/end: a **908-KiB post-warmup increase**, within the predeclared
+21,088 KiB initially, 28,424 KiB after the declared four-cycle warmup, and 29,340 KiB
+at the maximum/end: a **916-KiB post-warmup increase**, within the predeclared
 4,096-KiB allowance. This is sampled Linux VM RSS, not a flat-memory claim,
-continuous peak, native measurement or long-term bound. Quiescent FDs stayed at 7;
+continuous peak, native measurement or long-term bound. FD quiescence is observed
+within 250 ms using retained kernel socket flags; all raw and quiescent FD counts
+in this run stayed at 7;
 remaining children, active restores, readers and pins were zero after every cycle.
 Metadata grew as expected; 24 fixed guards and 24 ready hints remain, alongside
 retained rows. There is no automatic guard/tombstone GC.
 
-Separate receipt and soft logical-capacity refusals preserved existing backups
-and allowed query/stop/release. Two normal reboots preserved the catalog and copy
+Separate receipt and soft logical-capacity refusals left backup files, catalog
+and receipt contents unchanged, and allowed query/stop/release. Two normal reboots preserved the catalog and copy
 unchanged **after boot before controller startup**, then the formal service
 reconciled a formerly serving copy and an interrupted release respectively.
+Old epoch/current revision and current epoch/old revision independently reject
+without changing the catalog/status and backup-file witness.
 This tests recovery when the service is explicitly started after boot; it is not
 a systemd-autostart, abrupt-power-loss or boot-zero-gap qualification.
-See [closeout evidence and retained failed/superseded attempts](evidence/closeout/README.md).
+An earlier review rerun failed a composite resource check without saving its
+offending samples; its exact cause remains unknown. The new sampler persists
+every cycle before validation, and this bounded pass does not explain that older
+failure. See [review findings](docs/CLOSEOUT_REVIEW.md) and
+[closeout evidence and retained failed/superseded attempts](evidence/closeout/README.md).
 
 The historical guarded-reader slice passed **74 tests on each platform**, **10 Linux service
 scenarios** and **29 report corruption controls**; see [phase-two evidence](evidence/phase2/README.md).
@@ -114,6 +122,7 @@ disk-accounting values and full receipts are retained below.
 
 ## Evidence and design
 
+- [Closeout review and repaired validation gaps](docs/CLOSEOUT_REVIEW.md)
 - [Bounded closeout and operator workflow](docs/CLOSEOUT.md)
 - [Retained exploration evidence](evidence/README.md) (historical four explorations)
 - [Phase-one implementation and qualification](docs/PHASE1.md) (historical slice)

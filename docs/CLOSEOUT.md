@@ -93,16 +93,27 @@ fully stopped deployment.
   logical budget with 262,144-byte artifact cap / 65,536-byte headroom. They fill
   the declared policies using actual backups while a reader remains live. The
   rejected request must not prune backups, change their hashes or consume a
-  receipt; query/stop/release must still work. These are software admission
+  receipt; query/stop/release must still work. The refusal witness compares all
+  backup files/manifests, full catalog rows and status (only global free space is
+  excluded); only the two witness hashes are exported and must match. Corruption
+  controls modify manifest, backup state and receipt contents for both modes.
+  These are software admission
   limits, not new physical ENOSPC or SQLITE_FULL qualification.
 - Exactly 24 backup/restore/start/query/stop/release cycles, 40 source entries,
   at least 5 seconds of reader dwell with queries on both sides per cycle (at
   least 120 seconds total),
   one unchanged controller PID and no restarts. Sample Linux process RSS, FD and
-  child counts after each complete cycle. From cycle 4 onward, maximum sampled
+  child counts after each complete cycle. After status RPC, FD observation must
+  reach two consecutive equal counts with no owned non-listener socket within
+  250 ms; all raw FD targets/socket flags are retained. It does not select a
+  minimum count; every quiescent count must still equal cycle 0. Unknown socket
+  inodes remain pending. Every cycle is atomically saved before final validation
+  so a later failure keeps its observations. From cycle 4 onward, maximum sampled
   RSS may be at most 4,096 KiB above cycle-4 RSS. Require stable quiescent FDs,
   zero remaining children/active restores/pins/readers, zero service-log bytes,
   exact expected metadata counts, logical bytes <=64 MiB and catalog <=8 MiB.
+  Numeric fields are checked for exact integer types and legal ranges before
+  bounds (PID/RSS/FD/catalog positive; counts/other bytes nonnegative).
   Thresholds are declared before execution; sampled RSS is not a continuous peak.
 - Retained metadata is **expected to grow**: each cycle keeps two operation rows,
   one backup/restore/request row and two guard-directory files (fixed lock + ready
@@ -116,7 +127,9 @@ fully stopped deployment.
   pin=1 and copy hash. After boot, before launching any controller, require a new
   kernel boot ID and byte-identical catalog plus unchanged copy. Only then start
   the installed formal service, check READY or RELEASED, reject old authority,
-  query the recovered READY copy and release exactly once. The intent case uses
+  reject old epoch/current revision and current epoch/old revision separately,
+  require unchanged catalog/status and backup files, query the recovered READY copy and release
+  exactly once. The intent case uses
   an explicit scheduling barrier; the serving case has no barriers.
 
 The first 10 phase-two VM scenarios are repeated against the current installed
@@ -137,7 +150,9 @@ normal reboots. Neither group qualifies sudden power loss or boot zero-gap.
   --output results/closeout-UNIQUE
 ```
 
-Fresh profile, retained data disk and output directory are required. Each stage
+The profile name and Colima home must also fit the macOS temporary SSH socket
+path limit (<104 bytes); overly long paths refuse before any VM resources are
+created. Fresh profile, absent retained data disk and fresh output directory are required. Each stage
 has a hard harness bound; failures, timeouts, missing observations and cleanup
 errors remain failures. Expected SSH outages are recorded as reboot transport
 polls, not relabelled test passes; success requires a different observed boot ID
@@ -148,3 +163,6 @@ match byte-for-byte after rendering and carry source/runtime fingerprints.
 superseded attempts. A passing bounded closeout supports this scoped local MVP;
 it does not certify arbitrary schemas, physical storage durability, production
 cutover, long-term guard GC, abrupt power loss or continuous boot protection.
+
+[Closeout review and repaired counterexamples](CLOSEOUT_REVIEW.md) distinguish
+validation gaps from actual product failures and retain the original measurements.
