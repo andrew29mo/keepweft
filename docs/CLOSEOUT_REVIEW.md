@@ -79,7 +79,7 @@ catalog **after boot before starting the formal service**. Neither is a claim of
 systemd autostart, boot zero-gap or sudden-power-loss recovery. Software receipt
 and logical-budget rejection are not new physical ENOSPC/SQLITE_FULL evidence.
 That review introduced no product features or license grant. The project is now
-[MIT licensed](../LICENSE); repository stays Private.
+[MIT licensed](../LICENSE); repository is now Public.
 
 ## VM setup cleanup finding during rerun
 

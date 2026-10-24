@@ -1,7 +1,7 @@
 # MIT license adoption
 
 Keepweft adopts [MIT](../LICENSE), copyright 2026 Andrew Yuan. Repository
-visibility remains Private. README, current workflow documents and package
+visibility remained Private at adoption; it is now Public. README, workflow documents and package
 metadata agree; historical reviews explicitly retain their pre-MIT context.
 [Third-party scope](THIRD_PARTY.md) records upstream terms and distribution scope.
 

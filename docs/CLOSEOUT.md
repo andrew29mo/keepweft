@@ -4,7 +4,7 @@ The delivery boundary is a local, trusted-same-UID, single-source `ledger-v1`
 backup request service with one validated restored copy and one managed read-only
 reader. It is a bounded MVP, not the entire earlier service roadmap. Scheduling,
 age retention, automatic guard/tombstone GC, systemd packaging and live production
-replacement are deferred. The repository remains Private and is [MIT licensed](../LICENSE).
+replacement are deferred. The repository is Public and [MIT licensed](../LICENSE).
 
 ## Clean Linux installation used by qualification
 

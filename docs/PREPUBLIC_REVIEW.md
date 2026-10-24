@@ -2,7 +2,7 @@
 
 Review parent: `1145702ba65d5ac62a5efc2174d1ff9f14555ee5`. The repository stays
 Private with no selected project license at the time of that review. The project
-is now [MIT licensed](../LICENSE); see [adoption checks](LICENSE_ADOPTION.md).
+is now Public and [MIT licensed](../LICENSE); see [adoption checks](LICENSE_ADOPTION.md).
 This historical review covers runtime and
 tests, README/design/evidence boundaries, package contents and tracked Git history.
 It does not authorize publication or add product features.

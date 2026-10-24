@@ -25,7 +25,7 @@ replaces the live source database.
   a live/unknown reader retains its copy and backup pin across controller crash.
 
 Licensed under [MIT](LICENSE), copyright 2026 Andrew Yuan. The GitHub repository
-remains Private. External dependencies retain their own terms; see
+is Public. External dependencies retain their own terms; see
 [third-party scope](docs/THIRD_PARTY.md) and the
 [license adoption checks](docs/LICENSE_ADOPTION.md).
 
@@ -132,6 +132,8 @@ disk-accounting values and full receipts are retained below.
 
 ## Evidence and design
 
+- [Public repository and security verification](docs/PUBLICATION.md)
+- [Security reporting](SECURITY.md)
 - [Pre-publication review and application correctness repair](docs/PREPUBLIC_REVIEW.md)
 - [Closeout review and repaired validation gaps](docs/CLOSEOUT_REVIEW.md)
 - [Bounded closeout and operator workflow](docs/CLOSEOUT.md)
