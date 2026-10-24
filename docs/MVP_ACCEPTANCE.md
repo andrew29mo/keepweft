@@ -42,7 +42,7 @@ Design authority: [decisions](MVP_DESIGN.md), [states/recovery](MVP_STATE_RECOVE
 The following remain full-MVP acceptance targets. The backup-request subset is
 implemented and separately qualified in [PHASE1.md](PHASE1.md); a subset pass does
 not mark the broader row complete. Existing 30-test/platform exploration receipts
-do not qualify a persistent service. Scheduling, managed readers, time retention,
+do not qualify a persistent service. One guarded reader is separately qualified in [PHASE2.md](PHASE2.md). Scheduling, time retention,
 artifact GC and installation/systemd remain pending. Source/config mutations are
 unsupported; phase one does not qualify dynamic source prevalidation before prune.
 

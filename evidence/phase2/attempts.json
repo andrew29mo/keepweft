@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "run_id": "8890a36569756eb8",
+      "passed": true,
+      "tests_per_platform": 69,
+      "vm_cases": 7,
+      "source_sha256": "dd0b1ee4e32ccc55af6d59b263d63a28bfcfe645d504793ac5d32f02fde1a8c3",
+      "vm_deleted": true,
+      "data_disk_removed": true,
+      "status": "superseded",
+      "reason": "Strengthened missing-readiness crash and deadline tests"
+    },
+    {
+      "attempt": 2,
+      "run_id": "788397d25eee3199",
+      "passed": true,
+      "tests_per_platform": 71,
+      "vm_cases": 9,
+      "source_sha256": "443c80edb8332a5552d436515c5aa085c63ad7efcd659367d44b8b4fa2e810de",
+      "vm_deleted": true,
+      "data_disk_removed": true,
+      "status": "superseded",
+      "reason": "Made stale-authority rejection independent of busy guard"
+    },
+    {
+      "attempt": 3,
+      "run_id": "63e69f635bc1730c",
+      "passed": true,
+      "tests_per_platform": 71,
+      "vm_cases": 9,
+      "source_sha256": "9df52db6ba4d5003f8dd813f63c9b3831d52b73cbaea35bd0480815f07f7fefd",
+      "vm_deleted": true,
+      "data_disk_removed": true,
+      "status": "superseded",
+      "reason": "Bounded service status history to preserve stop/release access"
+    },
+    {
+      "attempt": 4,
+      "run_id": "9beaeff8d7213078",
+      "passed": true,
+      "tests_per_platform": 72,
+      "vm_cases": 9,
+      "source_sha256": "a6848abeb0e3d52e4c34dba2a063be924dc0953cf9198b7ee7e4d1a09a19f787",
+      "vm_deleted": true,
+      "data_disk_removed": true,
+      "status": "current",
+      "reason": "Final bounded status and reader qualification"
+    }
+  ]
+}

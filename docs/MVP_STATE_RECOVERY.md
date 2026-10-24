@@ -95,14 +95,16 @@ new runtime test or proof that the service exists.
   Phase one repairs and regression-tests this ordering; see PHASE1.md. Durable
   admission and predictable feasibility checks precede pruning; retention belongs
   to the accepted operation and its attribution survives controller death.
-- Current release/recover can remove restore copies without a managed-reader guard.
-  This remains the exploration's caller-stop contract, not future service safety.
+- The pre-phase-two release/recover used a caller-stop contract. Phase two now
+  requires a separate lifetime reader guard for release/recovery; legacy live
+  restores without guards refuse automatic reconciliation. See PHASE2.md.
 - Existing global revisions change with operation phases. Do not reuse admission
   revision as a blanket dispatch precondition.
 - Historical exploration receipts do not qualify API dedup/GC or durable API
   cancel-vs-publish behavior; phase-one evidence qualifies that new subset separately.
 - Generic schema support is deferred. Existing ledger evidence cannot qualify it.
 
-Managed readers, generic profiles and full service operation remain pending.
+One managed reader is implemented in PHASE2.md. Orphan adoption, generic profiles
+and full service operation remain pending.
 Historical exploration receipts and measurements are unchanged; phase-one fixes
 and evidence are separate and do not imply those remaining capabilities passed.

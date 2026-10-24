@@ -1,0 +1,35 @@
+{
+  "kind": "manual_sanitized_development_summary",
+  "qualification_receipt": false,
+  "observations": [
+    {
+      "tests": 12,
+      "errors": 3,
+      "issues": [
+        "readiness file incorrectly inside sealed restore artifact",
+        "stopped process test needed an application SIGTERM handler"
+      ]
+    },
+    {
+      "tests": 12,
+      "errors": 1,
+      "issues": [
+        "two-second operation consumed socket idle budget and dropped reply"
+      ]
+    },
+    {
+      "tests": 69,
+      "errors": 1,
+      "issues": [
+        "same response timeout regression in full suite before repair"
+      ]
+    },
+    {
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "scope": "targeted reader regression suite after repairs; final full receipts retained separately"
+    }
+  ],
+  "raw_logs_uploaded": false
+}

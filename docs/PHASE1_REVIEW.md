@@ -59,3 +59,7 @@ is retained as attempt-04, not rewritten as a pass under this stronger contract.
 See [current evidence](../evidence/phase1/README.md) and [reproduction](PHASE1.md).
 No managed reader, scheduler, long-term artifact GC, VM reboot, power loss,
 physical storage fault or boot-zero-gap qualification is added.
+
+This review records the historical phase-one source and evidence. The later
+single-reader implementation and qualification are described in [PHASE2.md](PHASE2.md);
+this phase-one receipt is not relabelled as evidence for that newer source.

@@ -1,6 +1,6 @@
 # Phase-one request-service qualification
 
-Current run: `0f179d56578d7b8f`, 2026-10-24. Current source fingerprint:
+Historical phase-one final run: `0f179d56578d7b8f`, 2026-10-24. Recorded source fingerprint:
 `3274d3ea67f2bfa7d2a9ac2c9d29761e9bfd7f43dde2735fd2fb2a6f0390d894`.
 
 - [Complete JSON](latest.json) and [matching HTML](latest.html).
@@ -58,8 +58,10 @@ filesystem/catalog syscalls can still stall the service.
 [Review findings and repair](../../docs/PHASE1_REVIEW.md) describes the changes.
 
 Historical successful runs use their own recorded source/contract, not the current
-stricter verifier. Current qualification must use latest.json and the current
-source fingerprint. [Reproduce](../../docs/PHASE1.md#evidence-scope-and-reproduction).
+stricter verifier. This directory qualifies only the recorded phase-one source; newer reader
+qualification is retained separately in ../phase2/. [Reproduce](../../docs/PHASE1.md#evidence-scope-and-reproduction).
 No service installation/systemd, managed reader, scheduler, long-term metadata
 rollover, VM reboot, abrupt power loss or boot-zero-gap claim is established.
 Original four-exploration evidence and measurements remain separately historical.
+
+The guarded reader added later is separately qualified in [phase two](../phase2/README.md).

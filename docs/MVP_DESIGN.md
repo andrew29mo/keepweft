@@ -215,3 +215,12 @@ bounded scheduler/retention/metadata lifecycle; packaged service and fault tests
 Review each gate against MVP_ACCEPTANCE.md before broadening functionality. No VM
 reboot, sudden power loss, boot-zero-gap, physical-storage or long-term-growth claim
 follows from architecture review or the existing four exploration receipts.
+
+## Qualified subset after phase two
+
+PHASE2.md is authoritative for the implemented one-reader subset. READY is its
+READY_STOPPED equivalent. It conservatively retains UUID identities, restore rows
+and fixed guard inodes under finite receipt/catalog caps; the monotonic allocator
+and guard/tombstone GC described above remain future targets. Reader mutations use
+explicit epoch/revision fencing, not backup-request receipt deduplication. Forced
+orphan adoption, service packaging and scheduling remain unimplemented.

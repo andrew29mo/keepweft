@@ -1,8 +1,8 @@
 # Keepweft
 
 A local SQLite backup and validated-restore controller. This repository currently
-contains a **minimal production core, four technical explorations and the first
-request-service slice**, not the complete operational MVP.
+contains a **minimal implementation core, four technical explorations, a backup
+request service and one guarded restored reader**, not the complete operational MVP.
 
 The core takes a bounded read snapshot, creates a standalone backup through
 SQLite's Online Backup API, verifies a fixed application contract, and publishes
@@ -18,7 +18,8 @@ replaces the live source database.
   live worker blocks takeover; uncertain occupancy never becomes free capacity.
 - Actual epoch/revision rejection and crash reconciliation in the same core used
   by the CLI. Same-UID processes are trusted; this is not a hostile-worker sandbox.
-- A fixed read-only HTTP application endpoint for querying a restored ledger.
+- One guarded read-only restored ledger: start, real query, stop and safe release;
+  a live/unknown reader retains its copy and backup pin across controller crash.
 
 No selected license is granted for the project yet. The GitHub repository must
 remain Private. External Python/SQLite dependencies retain their own licenses;
@@ -54,12 +55,20 @@ python -m keepweft.cli diagnose --root /absolute/path/store
 Each exploration CLI invocation acquires a new authority epoch and is synchronous.
 For durable backup request deduplication, bounded generation history and
 cancellation/publication semantics, use the separate [phase-one service and
-saved-envelope CLI](docs/PHASE1.md). Scheduling and managed readers remain future
-MVP work; the service currently accepts backup requests only.
+saved-envelope CLI](docs/PHASE1.md). For restore/start/query/stop/release, use the
+[guarded-reader workflow](docs/PHASE2.md) on the same service. Scheduling remains
+future work; reader mutations require explicit current epoch/revision tokens.
 
 ## Current results
 
-The current backup-request slice passed **57 tests on each platform**, **13 Linux
+The guarded-reader slice passed **72 tests on each platform**, **9 Linux service
+scenarios** and **26 report corruption controls**; see [phase-two evidence](evidence/phase2/README.md).
+It tests controller crashes around spawn and release, paused readers, safe pin
+retention and real Linux readonly deletion/repair with the installed package.
+Unknown orphan processes are retained and never signalled by persisted PID.
+
+
+The historical phase-one backup-request slice passed **57 tests on each platform**, **13 Linux
 fault scenarios** and **27 report corruption controls**. Exact retries, generation
 GC, cancellation on both sides of publication intent, and retention attribution
 after a crash use the actual service/worker implementation. A real Linux readonly
@@ -83,7 +92,8 @@ disk-accounting values and full receipts are retained below.
 ## Evidence and design
 
 - [Retained exploration evidence](evidence/README.md) (historical four explorations)
-- [Phase-one implementation and qualification](docs/PHASE1.md)
+- [Phase-one implementation and qualification](docs/PHASE1.md) (historical slice)
+- [Guarded-reader implementation and qualification](docs/PHASE2.md)
 - [Architecture and state machines](docs/ARCHITECTURE.md)
 - [Reviewed service design decisions](docs/MVP_DESIGN.md) (design only)
 - [Planned state machines and recovery matrix](docs/MVP_STATE_RECOVERY.md)

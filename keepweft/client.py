@@ -8,9 +8,15 @@ from .service import call
 from .data import sync_dir
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['status','prepare','submit','lookup','cancel','rotate']);p.add_argument('--root',type=Path,required=True);p.add_argument('--envelope',type=Path);p.add_argument('--timeout',type=float,default=10)
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['status','prepare','submit','lookup','cancel','rotate','reader']);p.add_argument('--root',type=Path,required=True);p.add_argument('--envelope',type=Path);p.add_argument('--timeout',type=float,default=10)
+    p.add_argument('--command',choices=['restore','start','query','stop','release']);p.add_argument('--id');p.add_argument('--token',type=Path)
     a=p.parse_args()
-    if a.action=='status':reply=call(a.root,'status',{})
+    if a.action=='reader':
+        if not a.command or not a.id:p.error('--command and --id required')
+        if a.command!='query' and a.token is None:p.error('--token file with explicit epoch/revision required')
+        token=json.loads(a.token.read_text()) if a.token else None
+        reply=call(a.root,'reader',dict(command=a.command,id=a.id,token=token),timeout=15)
+    elif a.action=='status':reply=call(a.root,'status',{})
     elif a.action=='prepare':
         if a.envelope is None:p.error('--envelope required')
         status=call(a.root,'status',{})

@@ -152,3 +152,9 @@ proves timeout propagates after forced reaping, not graceful-success relabelling
 See [review and repair](PHASE1_REVIEW.md), [receipts and retained attempts](../evidence/phase1/README.md). No new throughput
 comparison, RSS bound, scheduler, reader-lease, reboot or power-loss qualification
 is claimed. Historical four-exploration measurements remain source-bound history.
+
+## Later guarded-reader slice
+
+The backup protocol/evidence above is the historical phase-one qualification.
+The same service now also supports the separate [guarded reader workflow](PHASE2.md).
+Earlier statements that readers are future work describe the phase-one boundary.

@@ -66,6 +66,7 @@ class Controller:
             raise Refused('Store must be owner-only')
         self.fd = os.open(self.root/'.lock', os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW, 0o600)
         self.db = None
+        self.readers = {}
         self.barriers = barriers
         self.blocked = False
         self.progress = lambda: None
@@ -113,6 +114,12 @@ class Controller:
                 if options and any(cfg.get(k) != v for k,v in options.items()):
                     raise Refused('Implicit policy change rejected')
             self.cfg = cfg
+            # Fixed guard inodes outlive instances. Never unlink/recreate a guard.
+            guards=self.root/'guards'
+            if guards.is_symlink():raise Degraded('Unsafe guard directory')
+            guards.mkdir(mode=0o700,exist_ok=True)
+            self.db.execute('create table if not exists readers(id text primary key, info text not null)')
+            sync_dir(self.root)
             self.db.execute('pragma max_page_count='+str(cfg['catalog_pages']))
             with self.tx():
                 self.db.execute('update authority set epoch=epoch+1, revision=revision+1 where id=1')
@@ -374,12 +381,15 @@ class Controller:
             self.db.execute('update backups set pins=pins+1 where id=?',(bid,))
             self.db.execute('insert into restores values(?,?,?,?)',(ident,bid,'MATERIALIZING',json.dumps(m)))
             self._revision()
+        from .reader import create_guard
+        create_guard(self,ident)
         target.mkdir(mode=0o700)
         try:
             shutil.copyfile(origin/'db.sqlite',target/'db.sqlite')
             actual=verify_closed(target,m['expected'],self.cfg['artifact_bytes'],deadline)
             if actual['sha256'] != m['sha256']:raise Refused('Restore hash mismatch')
-            dump(target/'manifest.json',m);sync_dir(target)
+            with open(target/'db.sqlite','rb') as f:os.fsync(f.fileno())
+            dump(target/'manifest.json',m);sync_dir(target);sync_dir(target.parent)
             self._barrier('restore_materialized',deadline)
             # This fixed application query is the same contract served by view.py.
             with contextlib.closing(readonly(target/'db.sqlite')) as c:observed=c.execute('select count(*),coalesce(max(seq),0) from tx').fetchone()
@@ -394,16 +404,8 @@ class Controller:
             raise
 
     def release(self, ident, token=None):
-        self._check(token)
-        row=self.db.execute('select backup_id,state from restores where id=?',(ident,)).fetchone()
-        if row is None or row[1]=='RELEASED':raise Refused('Restore unavailable')
-        with self.tx():
-            self.db.execute("update restores set state='RELEASING' where id=?",(ident,));self._revision()
-        p=self._directory('restores',ident)
-        if p.exists():shutil.rmtree(p);sync_dir(p.parent)
-        with self.tx():
-            self.db.execute("update restores set state='RELEASED' where id=?",(ident,))
-            self.db.execute('update backups set pins=pins-1 where id=? and pins>0',(row[0],));self._revision()
+        from .reader import release
+        return release(self,ident,token)
 
     def delete(self, bid, token=None, deadline=None):
         self._check(token);deadline=deadline or time.monotonic()+10
@@ -451,12 +453,8 @@ class Controller:
             # Absence is not proof that the parent directory entry was synced.
             sync_dir(p.parent)
             with self.tx():self.db.execute("update backups set state='DELETED' where id=?",(bid,))
-        for ident,bid,state in self.db.execute("select id,backup_id,state from restores where state not in ('READY','RELEASED')").fetchall():
-            p=self._directory('restores',ident)
-            if p.exists():shutil.rmtree(p);sync_dir(p.parent)
-            with self.tx():
-                self.db.execute("update restores set state='RELEASED' where id=?",(ident,))
-                self.db.execute('update backups set pins=pins-1 where id=? and pins>0',(bid,))
+        from .reader import recover
+        recover(self)
         for ident,kind,state,details in self.db.execute("select id,kind,state,details from ops where state not in ('AVAILABLE','READY','FAILED','CANCELLED','INTERRUPTED')").fetchall():
             d=json.loads(details)
             if state=='QUEUED':
@@ -485,7 +483,7 @@ class Controller:
         if any((self.root/'staging').iterdir()):raise Degraded('Unknown staging retained')
         for bid, in self.db.execute("select id from backups where state='AVAILABLE'"):
             self._validated(bid,deadline)
-        for rid,bid,m in self.db.execute("select id,backup_id,manifest from restores where state='READY'"):
+        for rid,bid,m in self.db.execute("select id,backup_id,manifest from restores where state in ('READY','ORPHAN_BUSY')"):
             m=json.loads(m);p=self._directory('restores',rid)
             if verify_closed(p,m['expected'],self.cfg['artifact_bytes'],deadline)['sha256']!=m['sha256']:
                 raise Degraded('Restored instance mismatch')

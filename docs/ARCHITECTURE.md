@@ -126,3 +126,10 @@ explicit stale-age warnings and persistent scheduling remain intended MVP work.
 A SQLite/catalog error retires that controller from further mutation. A new
 writable startup must persist a new epoch and complete reconciliation. Read-only
 `diagnose` is explicitly not a readiness/recovery-success claim.
+
+## Guarded reader slice
+
+[PHASE2.md](PHASE2.md) describes the implemented single-copy reader lifecycle,
+instance guard ownership, conservative orphan recovery and evidence. Older
+exploration descriptions of caller-managed readers are historical. No scheduling,
+forced orphan adoption or long-term guard GC is qualified by this slice.
