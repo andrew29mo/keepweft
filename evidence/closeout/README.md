@@ -86,7 +86,7 @@ summary records this uncertainty, and the new sampler retains all raw FD/socket
 observations before validation. See the review document; no failed run is promoted.
 
 
-## Current reviewed outcome
+## Previous reviewed outcome (before application-relation repair)
 
 Run `9933e02c1ba18673`, source fingerprint
 `cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9`:
@@ -97,7 +97,7 @@ The installed wheel's product modules are unchanged by this review; only tests,
 qualification/observation tools and documentation changed. Source module/library
 hashes and raw logs were independently cross-checked against the exported fields.
 
-| Current Linux VM observation | Start | Cycle 4 warmup | Maximum | End |
+| Prior Linux VM observation | Start | Cycle 4 warmup | Maximum | End |
 |---|---:|---:|---:|---:|
 | Sampled controller RSS (KiB) | 21,088 | 28,424 | 29,340 | 29,340 |
 | Quiescent controller FDs | 7 | 7 | 7 | 7 |
@@ -128,3 +128,40 @@ without changing owned catalog/status/backup state. Final pin count was zero.
 VM/data disk deletion and product-process cleanup passed; preexisting profiles
 and their statuses were unchanged. No systemd-autostart, sudden-power-loss,
 boot-zero-gap or physical-storage claim is made.
+
+
+## Current pre-publication outcome
+
+Run `21c52afcecce99d5`, source fingerprint
+`2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478`:
+83 identical tests on each platform, zero failures/errors/skips; 10 baseline Linux
+cases, four closeout cases and two normal VM reboots passed. Thirty-four closeout
+plus 29 baseline report corruptions were rejected. The installed wheel includes
+the parent/item relation repair and its required formal-backup negative tests;
+module/library hashes match. The previous reviewed run is preserved byte-for-byte
+as `attempt-06.json/html` and does not qualify this changed product module.
+
+| Current Linux VM observation | Start | Cycle 4 warmup | Maximum | End |
+|---|---:|---:|---:|---:|
+| Sampled controller RSS (KiB) | 21,096 | 28,424 | 30,244 | 30,244 |
+| Quiescent controller FDs | 7 | 7 | 7 | 7 |
+| Managed logical bytes | 57,344 | 427,810 | 490,714 | 490,714 |
+| Allocated bytes | 57,344 | 458,752 | 606,208 | 606,208 |
+| Catalog bytes | 57,344 | 57,344 | 118,784 | 118,784 |
+
+The 24-cycle observation lasted 124.69 seconds without a controller restart.
+Post-warmup sampled RSS increased 1,820 KiB within the unchanged 4,096-KiB
+allowance; all raw and quiescent FD counts were 7. Every cycle ended with zero
+children, active restores, pins and reader metadata; expected retained rows and
+guards grow. No continuous-peak, flat-memory or long-term-GC claim follows.
+Capacity before/after full-state hashes matched. Both normal reboots preserved
+catalog rows/hash and copy content before controller startup, then reconciled
+READY / RELEASED and independently rejected old epoch/revision without mutation.
+VM/data disk/product-process cleanup passed; existing profiles/statuses unchanged.
+
+The pre-publication review repaired actual false acceptance of NULL/orphan item
+parents. [Review](../../docs/PREPUBLIC_REVIEW.md) and [sanitized pre-fix probes](../prepublic/review.json)
+separate this defect from prior observer gaps. The older unexplained composite
+resource failure remains unresolved; it was not promoted to a pass. No systemd
+autostart, sudden-power-loss, boot-zero-gap or physical-storage capability is
+newly qualified. Project remains Private without a selected license.

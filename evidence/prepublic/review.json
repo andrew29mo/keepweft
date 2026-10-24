@@ -1,0 +1,57 @@
+{
+  "kind": "manual_sanitized_prepublication_review_record",
+  "reviewed_parent": "1145702ba65d5ac62a5efc2174d1ff9f14555ee5",
+  "pre_fix_formal_probes": [
+    {
+      "invalid_ledger_accepted": true,
+      "published_count": 3
+    },
+    {
+      "canonical_schema_null_items_accepted": true,
+      "foreign_key_errors": [],
+      "published_count": 3
+    }
+  ],
+  "pre_fix_core_tests": {
+    "count": 32,
+    "failures": 2,
+    "errors": 0
+  },
+  "post_fix_core_tests": {
+    "count": 32,
+    "failures": 0,
+    "errors": 0
+  },
+  "repair": "inspect() now independently requires every item.seq to join an actual tx.seq. It rejects SQL NULL child keys and orphan rows even when SQLite foreign_key_check is empty. Both negative cases run formal Controller.backup and actual worker; they require specific refusal and empty backup/staging inventories.",
+  "scope": "Fixed ledger-v1 semantic relations only; not general schema certification, new application profiles or production replacement.",
+  "history_scan_at_parent": {
+    "commits": 7,
+    "unique_blobs": 171,
+    "blob_bytes": 2396323,
+    "private_path_or_credential_candidates": 0,
+    "forbidden_artifact_paths": 0,
+    "non_noreply_git_identities": 0
+  },
+  "report_pair_checks": {
+    "json_html_pairs": 21,
+    "source_fingerprints": 21,
+    "disagreements": 0
+  },
+  "other_repair": "Quickstart output moved under ignored results/; historical root results-unit.json is ignored. Project license unchanged. Quickstart also installs declared build tools, activates the venv, and Linux instructions persist the qualified library path per shell, matching runner command environments.",
+  "qualification": {
+    "receipt": "../closeout/latest.json",
+    "run_id": "21c52afcecce99d5",
+    "source_sha256": "2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478",
+    "native_tests": 83,
+    "linux_tests": 83,
+    "report_corruptions": 63,
+    "vm_cases": 10,
+    "closeout_cases": 4,
+    "normal_vm_reboots": 2,
+    "resource_seconds": 124.687208338,
+    "post_warmup_rss_increase_kib": 1820,
+    "vm_deleted": true,
+    "data_disk_removed": true,
+    "power_loss_tested": false
+  }
+}

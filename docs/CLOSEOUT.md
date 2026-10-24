@@ -23,8 +23,13 @@ sudo python3 -I -c 'import importlib.util; assert importlib.util.find_spec("keep
 sudo python3 -m pip install --break-system-packages --no-deps --no-index \
   /opt/keepweft/keepweft-0.1.0-py3-none-any.whl
 sudo mv /opt/keepweft/source/keepweft /opt/keepweft/retired-product-source
-LD_LIBRARY_PATH=/opt/keepweft/runtime python3 -I -m keepweft.cli runtime
+export LD_LIBRARY_PATH=/opt/keepweft/runtime
+python3 -I -m keepweft.cli runtime
 ```
+
+Keep this environment in each shell that runs the service/client; a prefix on
+one command does not configure later shells. The qualification runner explicitly
+sets the same library path for each guest command.
 
 The build helper verifies official SQLite source before compiling. Actual loaded
 library mapping/hash and installed module hashes are independently checked. No

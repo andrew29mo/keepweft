@@ -13,3 +13,6 @@ AGENTS.md
 *.pem
 *.log
 .DS_Store
+
+# Historical quickstart output; current guide writes under results/.
+/results-unit.json

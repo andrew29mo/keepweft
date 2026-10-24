@@ -1,0 +1,2784 @@
+{
+  "passed": true,
+  "run_id": "9933e02c1ba18673",
+  "recorded_at_utc": "2026-10-24T10:55:40.039018+00:00",
+  "source": {
+    "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
+    "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+    "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
+    "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
+    "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+    "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
+    "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
+    "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
+    "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
+    "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+    "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
+    "tests/test_closeout.py": "989b09b1173aa74a9ee353f229740313fe474c428f55ce0b4707b2e97db62d10",
+    "tests/test_core.py": "0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a",
+    "tests/test_readers.py": "6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb",
+    "tests/test_requests.py": "fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
+    "tools/closeout_cases.py": "aa3f269de6dd4b2f2857fd33176deb1d0096106998bd3b4fda54b3201959e94c",
+    "tools/closeout_report.py": "de880132e29efefd1ab6cee5340bcad3185d6fc26dddb9270239509a3aa3bc88",
+    "tools/closeout_validate.py": "78aec32937715421dd9413d84f51ac21f10693f98837f1e558716b180315ef44",
+    "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
+    "tools/explore.py": "123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a",
+    "tools/phase1_cases.py": "dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45",
+    "tools/phase1_report.py": "8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca",
+    "tools/phase1_validate.py": "fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1",
+    "tools/phase2_cases.py": "a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3",
+    "tools/phase2_report.py": "b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d",
+    "tools/phase2_validate.py": "b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c",
+    "tools/report.py": "29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23",
+    "tools/testing.py": "f8f35a5652fb714dace42f501bd554e6db58452716ec0afe8df812866f0d6cbd",
+    "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
+    "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
+  },
+  "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
+  "source_changed": false,
+  "stages": [
+    {
+      "name": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3759549169917591
+    },
+    {
+      "name": "create",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 22.619183458999032
+    },
+    {
+      "name": "dependencies",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 27.774543042003643
+    },
+    {
+      "name": "upload",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3698715420032386
+    },
+    {
+      "name": "runtime",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 13.880837959004566
+    },
+    {
+      "name": "install",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.8084998340054881
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.34358987500309013
+    },
+    {
+      "name": "native",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 27.051729625003645
+    },
+    {
+      "name": "linux",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 24.489162625017343
+    },
+    {
+      "name": "linux-read",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.26933329200255685
+    },
+    {
+      "name": "explore",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 7.710015125019709
+    },
+    {
+      "name": "guest-read",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.27160374997765757
+    },
+    {
+      "name": "closeout",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 125.68501858299715
+    },
+    {
+      "name": "closeout-read",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.39752274999045767
+    },
+    {
+      "name": "prepare-serving",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.46911470900522545
+    },
+    {
+      "name": "prepare-read-serving",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.27409387499210425
+    },
+    {
+      "name": "schedule-serving",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.26320987500366755
+    },
+    {
+      "name": "finish-serving",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.40191395801957697
+    },
+    {
+      "name": "finish-read-serving",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.23178470798302442
+    },
+    {
+      "name": "prepare-release_intent",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.4080588750075549
+    },
+    {
+      "name": "prepare-read-release_intent",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.2336272920074407
+    },
+    {
+      "name": "schedule-release_intent",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.23281733397743665
+    },
+    {
+      "name": "finish-release_intent",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.3092595410125796
+    },
+    {
+      "name": "finish-read-release_intent",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.21453525000833906
+    },
+    {
+      "name": "closeout-cleanup",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.24615783299668692
+    },
+    {
+      "name": "delete",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.4437228329770733
+    },
+    {
+      "name": "final",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.1965782500046771
+    }
+  ],
+  "wheel_sha256": "56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d",
+  "wheel_product_matches": true,
+  "host_mounts": "none",
+  "fresh_profile": true,
+  "initial_disk_absent": true,
+  "sqlite_build": {
+    "url": "https://sqlite.org/2026/sqlite-amalgamation-3540100.zip",
+    "archive_sha256": "0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9",
+    "source_sha3_256": "e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81",
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-DSQLITE_THREADSAFE=1"
+    ]
+  },
+  "provenance": {
+    "location": "/usr/local/lib/python3.12/dist-packages/keepweft",
+    "modules": {
+      "keepweft/reader.py": "e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d",
+      "keepweft/service.py": "c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe",
+      "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+      "keepweft/core.py": "e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541",
+      "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+      "keepweft/view.py": "3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947",
+      "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+      "keepweft/requests.py": "9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836",
+      "keepweft/client.py": "c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0",
+      "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187"
+    },
+    "source_package_absent": true,
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab"
+  },
+  "native_unit": {
+    "passed": true,
+    "count": 81,
+    "tests": [
+      "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
+      "test_closeout.CloseoutCases.test_documented_cli",
+      "test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space",
+      "test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation",
+      "test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects",
+      "test_core.CoreTests.test_artifact_limit_rejects",
+      "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
+      "test_core.CoreTests.test_epoch_and_revision_independent",
+      "test_core.CoreTests.test_foreign_key_error_rejected",
+      "test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed",
+      "test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation",
+      "test_core.CoreTests.test_metadata_failure_prevents_worker_start",
+      "test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory",
+      "test_core.CoreTests.test_missing_source_does_not_create",
+      "test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock",
+      "test_core.CoreTests.test_one_restored_instance",
+      "test_core.CoreTests.test_pin_blocks_deletion_and_rotation",
+      "test_core.CoreTests.test_pin_corruption_not_silently_repaired",
+      "test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready",
+      "test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction",
+      "test_core.CoreTests.test_restored_copy_is_distinct_and_does_not_read_new_source",
+      "test_core.CoreTests.test_retention_and_latest_protection",
+      "test_core.CoreTests.test_rollback_failure_still_retires_and_preserves_original_error",
+      "test_core.CoreTests.test_roundtrip_and_restart",
+      "test_core.CoreTests.test_schema_change_rejected",
+      "test_core.CoreTests.test_second_writer_is_busy",
+      "test_core.CoreTests.test_soft_capacity_refusal_preserves_backup",
+      "test_core.CoreTests.test_source_cannot_be_inside_store",
+      "test_core.CoreTests.test_symlink_store_and_object_rejected",
+      "test_core.CoreTests.test_timeout_and_deadline_validation",
+      "test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted",
+      "test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified",
+      "test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure",
+      "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
+      "test_core.CoreTests.test_wrong_source_uuid_rejected",
+      "test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader",
+      "test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit",
+      "test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release",
+      "test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart",
+      "test_readers.ReaderFailures.test_mismatching_query_is_not_ready",
+      "test_readers.ReaderFailures.test_missing_copy_still_requires_parent_sync_before_unpin",
+      "test_readers.ReaderFailures.test_service_status_bounds_history_and_keeps_active_reference",
+      "test_readers.ReaderFailures.test_unlink_failure_keeps_pin_and_copy",
+      "test_readers.ServiceReaderCases.test_after_spawn",
+      "test_readers.ServiceReaderCases.test_before_spawn",
+      "test_readers.ServiceReaderCases.test_controller_orphan",
+      "test_readers.ServiceReaderCases.test_idle_header",
+      "test_readers.ServiceReaderCases.test_missing_ready_crash",
+      "test_readers.ServiceReaderCases.test_readiness_timeout",
+      "test_readers.ServiceReaderCases.test_release_intent",
+      "test_readers.ServiceReaderCases.test_roundtrip",
+      "test_readers.ServiceReaderCases.test_stop_timeout",
+      "test_requests.ClientTests.test_prepare_is_durable_and_never_overwrites_retry_identity",
+      "test_requests.HarnessCleanupTests.test_stopped_service_timeout_kills_child_and_is_not_success",
+      "test_requests.RecoveryTests.test_queued_restart_is_interrupted_not_replayed",
+      "test_requests.RecoveryTests.test_retention_side_effect_is_reported_even_when_new_backup_fails",
+      "test_requests.RequestTests.test_catalog_error_prevents_admission",
+      "test_requests.RequestTests.test_dispatch_capacity_failure_terminalizes_without_prune",
+      "test_requests.RequestTests.test_generation_cannot_retire_queued_work",
+      "test_requests.RequestTests.test_nonfinite_boolean_and_unknown_commands_refused",
+      "test_requests.RequestTests.test_payload_conflict_has_no_side_effect",
+      "test_requests.RequestTests.test_queue_full_does_not_create_receipt",
+      "test_requests.RequestTests.test_queued_cancel_needs_no_slot",
+      "test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision",
+      "test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying",
+      "test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync",
+      "test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
+      "test_requests.ServiceCases.test_cancel_after_intent",
+      "test_requests.ServiceCases.test_cancel_before_intent",
+      "test_requests.ServiceCases.test_cancel_crash",
+      "test_requests.ServiceCases.test_deadline",
+      "test_requests.ServiceCases.test_dedup_restart",
+      "test_requests.ServiceCases.test_generation_gc",
+      "test_requests.ServiceCases.test_lost_admission",
+      "test_requests.ServiceCases.test_lost_catalog",
+      "test_requests.ServiceCases.test_lost_rename",
+      "test_requests.ServiceCases.test_receipt_refusal",
+      "test_requests.ServiceCases.test_retention_crash",
+      "test_requests.ServiceCases.test_saturated_cancel"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
+    "platform": "Darwin",
+    "runtime": {
+      "python_sqlite": "3.53.1",
+      "source_id": "2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=clang-22.1.3",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "ENABLE_DBSTAT_VTAB",
+        "ENABLE_FTS3",
+        "ENABLE_FTS3_PARENTHESIS",
+        "ENABLE_FTS4",
+        "ENABLE_FTS5",
+        "ENABLE_GEOPOLY",
+        "ENABLE_MATH_FUNCTIONS",
+        "ENABLE_PERCENTILE",
+        "ENABLE_RTREE",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    }
+  },
+  "linux_unit": {
+    "passed": true,
+    "count": 81,
+    "tests": [
+      "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
+      "test_closeout.CloseoutCases.test_documented_cli",
+      "test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space",
+      "test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release",
+      "test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation",
+      "test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects",
+      "test_core.CoreTests.test_artifact_limit_rejects",
+      "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
+      "test_core.CoreTests.test_epoch_and_revision_independent",
+      "test_core.CoreTests.test_foreign_key_error_rejected",
+      "test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed",
+      "test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation",
+      "test_core.CoreTests.test_metadata_failure_prevents_worker_start",
+      "test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory",
+      "test_core.CoreTests.test_missing_source_does_not_create",
+      "test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock",
+      "test_core.CoreTests.test_one_restored_instance",
+      "test_core.CoreTests.test_pin_blocks_deletion_and_rotation",
+      "test_core.CoreTests.test_pin_corruption_not_silently_repaired",
+      "test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready",
+      "test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction",
+      "test_core.CoreTests.test_restored_copy_is_distinct_and_does_not_read_new_source",
+      "test_core.CoreTests.test_retention_and_latest_protection",
+      "test_core.CoreTests.test_rollback_failure_still_retires_and_preserves_original_error",
+      "test_core.CoreTests.test_roundtrip_and_restart",
+      "test_core.CoreTests.test_schema_change_rejected",
+      "test_core.CoreTests.test_second_writer_is_busy",
+      "test_core.CoreTests.test_soft_capacity_refusal_preserves_backup",
+      "test_core.CoreTests.test_source_cannot_be_inside_store",
+      "test_core.CoreTests.test_symlink_store_and_object_rejected",
+      "test_core.CoreTests.test_timeout_and_deadline_validation",
+      "test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted",
+      "test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified",
+      "test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure",
+      "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
+      "test_core.CoreTests.test_wrong_source_uuid_rejected",
+      "test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader",
+      "test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit",
+      "test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release",
+      "test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart",
+      "test_readers.ReaderFailures.test_mismatching_query_is_not_ready",
+      "test_readers.ReaderFailures.test_missing_copy_still_requires_parent_sync_before_unpin",
+      "test_readers.ReaderFailures.test_service_status_bounds_history_and_keeps_active_reference",
+      "test_readers.ReaderFailures.test_unlink_failure_keeps_pin_and_copy",
+      "test_readers.ServiceReaderCases.test_after_spawn",
+      "test_readers.ServiceReaderCases.test_before_spawn",
+      "test_readers.ServiceReaderCases.test_controller_orphan",
+      "test_readers.ServiceReaderCases.test_idle_header",
+      "test_readers.ServiceReaderCases.test_missing_ready_crash",
+      "test_readers.ServiceReaderCases.test_readiness_timeout",
+      "test_readers.ServiceReaderCases.test_release_intent",
+      "test_readers.ServiceReaderCases.test_roundtrip",
+      "test_readers.ServiceReaderCases.test_stop_timeout",
+      "test_requests.ClientTests.test_prepare_is_durable_and_never_overwrites_retry_identity",
+      "test_requests.HarnessCleanupTests.test_stopped_service_timeout_kills_child_and_is_not_success",
+      "test_requests.RecoveryTests.test_queued_restart_is_interrupted_not_replayed",
+      "test_requests.RecoveryTests.test_retention_side_effect_is_reported_even_when_new_backup_fails",
+      "test_requests.RequestTests.test_catalog_error_prevents_admission",
+      "test_requests.RequestTests.test_dispatch_capacity_failure_terminalizes_without_prune",
+      "test_requests.RequestTests.test_generation_cannot_retire_queued_work",
+      "test_requests.RequestTests.test_nonfinite_boolean_and_unknown_commands_refused",
+      "test_requests.RequestTests.test_payload_conflict_has_no_side_effect",
+      "test_requests.RequestTests.test_queue_full_does_not_create_receipt",
+      "test_requests.RequestTests.test_queued_cancel_needs_no_slot",
+      "test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision",
+      "test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying",
+      "test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync",
+      "test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion",
+      "test_requests.ServiceCases.test_cancel_after_intent",
+      "test_requests.ServiceCases.test_cancel_before_intent",
+      "test_requests.ServiceCases.test_cancel_crash",
+      "test_requests.ServiceCases.test_deadline",
+      "test_requests.ServiceCases.test_dedup_restart",
+      "test_requests.ServiceCases.test_generation_gc",
+      "test_requests.ServiceCases.test_lost_admission",
+      "test_requests.ServiceCases.test_lost_catalog",
+      "test_requests.ServiceCases.test_lost_rename",
+      "test_requests.ServiceCases.test_receipt_refusal",
+      "test_requests.ServiceCases.test_retention_crash",
+      "test_requests.ServiceCases.test_saturated_cancel"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
+    "platform": "Linux",
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    }
+  },
+  "guest": {
+    "passed": true,
+    "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "cases": [
+      {
+        "name": "roundtrip",
+        "passed": true,
+        "seconds": 0.1705001100000061,
+        "details": {
+          "count": 40,
+          "hash_preserved": true,
+          "pin_while_serving": 1,
+          "pin_after_release": 0,
+          "release_refused_while_serving": true,
+          "stale_revision_rejected_with_free_guard": true,
+          "missing_token_rejected": true,
+          "start_to_query_seconds": 0.034644427000003475,
+          "reader_rss_kib": 21060,
+          "controller_rss_kib": 23952,
+          "managed_logical_bytes_while_serving": 427316
+        }
+      },
+      {
+        "name": "controller_orphan",
+        "passed": true,
+        "seconds": 0.207120909000011,
+        "details": {
+          "controller_sigkill": true,
+          "global_controller_recovered": true,
+          "orphan_state": "ORPHAN_BUSY",
+          "reader_query_after_restart": 40,
+          "paused_reader_retained": true,
+          "stale_release_rejected": true,
+          "unknown_pid_not_signalled": true,
+          "pin_after_proven_exit": 0
+        }
+      },
+      {
+        "name": "before_spawn",
+        "passed": true,
+        "seconds": 0.16361697100001038,
+        "details": {
+          "barrier_seen": "reader_before_spawn",
+          "state_after_restart": "READY",
+          "pin_after_restart": 1,
+          "pin_after_release": 0
+        }
+      },
+      {
+        "name": "after_spawn",
+        "passed": true,
+        "seconds": 0.169061506999995,
+        "details": {
+          "barrier_seen": "reader_after_spawn",
+          "state_after_restart": "ORPHAN_BUSY",
+          "pin_after_restart": 1,
+          "pin_after_release": 0
+        }
+      },
+      {
+        "name": "release_intent",
+        "passed": true,
+        "seconds": 0.1595775889999942,
+        "details": {
+          "barrier_seen": "reader_release_intent",
+          "copy_present_before_restart": true,
+          "state_after_restart": "RELEASED",
+          "pin_after_restart": 0
+        }
+      },
+      {
+        "name": "stop_timeout",
+        "passed": true,
+        "seconds": 2.1773351740000066,
+        "details": {
+          "stop_timeout_not_exit": true,
+          "pin_after_timeout": 1,
+          "release_refused": true,
+          "pin_after_exit": 0
+        }
+      },
+      {
+        "name": "missing_ready_crash",
+        "passed": true,
+        "seconds": 0.19956790700000226,
+        "details": {
+          "barrier_seen": "reader_before_ready",
+          "ready_absent": true,
+          "controller_crashed": true,
+          "pin_before_exit": 1,
+          "pin_after_release": 0,
+          "deadline_error": null,
+          "deadline_guard_free_before_stop": null,
+          "deadline_pid_absent_before_stop": null
+        }
+      },
+      {
+        "name": "readiness_timeout",
+        "passed": true,
+        "seconds": 3.2028224050000063,
+        "details": {
+          "barrier_seen": "reader_before_ready",
+          "ready_absent": true,
+          "controller_crashed": false,
+          "pin_before_exit": 1,
+          "pin_after_release": 0,
+          "deadline_error": "TimeoutError",
+          "deadline_guard_free_before_stop": true,
+          "deadline_pid_absent_before_stop": true
+        }
+      },
+      {
+        "name": "idle_header",
+        "passed": true,
+        "seconds": 0.707755438999996,
+        "details": {
+          "incomplete_unauthenticated_header": true,
+          "reader_closed_idle_connection": true,
+          "query_after_idle": 40,
+          "pin_before_release": 1,
+          "pin_after_release": 0
+        }
+      },
+      {
+        "name": "readonly_release",
+        "passed": true,
+        "seconds": 0.21983451900000262,
+        "details": {
+          "os_errno": 30,
+          "pin_before_repair": 1,
+          "restart_refused": true,
+          "pin_after_repair": 0,
+          "readonly_mount_removed": true
+        }
+      }
+    ],
+    "limits": {
+      "vm_reboot_tested": false,
+      "power_loss_tested": false,
+      "reader_adoption_tested": false,
+      "long_term_gc_tested": false
+    },
+    "owned_service_count": 17,
+    "owned_services_exited": true,
+    "no_service_or_worker_processes_remaining": true
+  },
+  "closeout": {
+    "passed": true,
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "cases": [
+      {
+        "name": "documented_cli",
+        "passed": true,
+        "details": {
+          "installed_cli": true,
+          "barriers": false,
+          "query_count": 40,
+          "pin_after_release": 0,
+          "socket_mode": "0600",
+          "socket_removed": true,
+          "independent_stale_fences": true
+        },
+        "seconds": 0.3348938419999996
+      },
+      {
+        "name": "receipt_capacity",
+        "passed": true,
+        "details": {
+          "refusal_witness_before_sha256": "2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96",
+          "refusal_witness_after_sha256": "2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96",
+          "all_backup_files_and_catalog_compared": true,
+          "kind": "receipts",
+          "options": {
+            "artifact_bytes": 262144,
+            "headroom_bytes": 65536,
+            "keep": 8,
+            "max_receipts": 4
+          },
+          "attempts": [
+            {
+              "ok": true,
+              "code": null
+            },
+            {
+              "ok": true,
+              "code": null
+            },
+            {
+              "ok": true,
+              "code": null
+            },
+            {
+              "ok": false,
+              "code": "RECEIPT_FULL"
+            }
+          ],
+          "refusal_code": "RECEIPT_FULL",
+          "inventory_preserved_on_refusal": true,
+          "receipts_preserved_on_refusal": true,
+          "query_at_full": 40,
+          "pin_before_stop": 1,
+          "stop_exit_proven": true,
+          "pin_after_release": 0,
+          "logical_bytes_after_release": 797777
+        },
+        "seconds": 0.5192792029999964
+      },
+      {
+        "name": "logical_capacity",
+        "passed": true,
+        "details": {
+          "refusal_witness_before_sha256": "c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2",
+          "refusal_witness_after_sha256": "c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2",
+          "all_backup_files_and_catalog_compared": true,
+          "kind": "logical_bytes",
+          "options": {
+            "artifact_bytes": 262144,
+            "headroom_bytes": 65536,
+            "keep": 8,
+            "budget_bytes": 1300000
+          },
+          "attempts": [
+            {
+              "ok": true,
+              "code": null
+            },
+            {
+              "ok": true,
+              "code": null
+            },
+            {
+              "ok": false,
+              "code": "Refused"
+            }
+          ],
+          "refusal_code": "Refused",
+          "inventory_preserved_on_refusal": true,
+          "receipts_preserved_on_refusal": true,
+          "query_at_full": 40,
+          "pin_before_stop": 1,
+          "stop_exit_proven": true,
+          "pin_after_release": 0,
+          "logical_bytes_after_release": 612687
+        },
+        "seconds": 0.3006764340000103
+      },
+      {
+        "name": "bounded_cycles",
+        "passed": true,
+        "details": {
+          "fd_quiescence_seconds": 0.25,
+          "cycles": 24,
+          "reader_dwell_seconds": 5,
+          "ledger_rows": 40,
+          "restarts": 0,
+          "warmup_cycles": 4,
+          "rss_drift_allowance_kib": 4096,
+          "samples": [
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00024148200000695397,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010590247000010322,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 0,
+              "pid": 3992,
+              "rss_kib": 21088,
+              "children": 0,
+              "rows": {
+                "ops": 0,
+                "requests": 0,
+                "backups": 0,
+                "restores": 0,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 0,
+              "files": 2,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 57344,
+              "allocated_bytes": 61440
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003233419999872922,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010937692999988258,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 1,
+              "pid": 3992,
+              "rss_kib": 24912,
+              "children": 0,
+              "rows": {
+                "ops": 2,
+                "requests": 1,
+                "backups": 1,
+                "restores": 1,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 2,
+              "files": 7,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 242507,
+              "allocated_bytes": 258048
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00031219199999554803,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01057870799999705,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 2,
+              "pid": 3992,
+              "rss_kib": 26580,
+              "children": 0,
+              "rows": {
+                "ops": 4,
+                "requests": 2,
+                "backups": 2,
+                "restores": 2,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 4,
+              "files": 12,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 427670,
+              "allocated_bytes": 454656
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00027921199998104385,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01072353199998588,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 3,
+              "pid": 3992,
+              "rss_kib": 26592,
+              "children": 0,
+              "rows": {
+                "ops": 6,
+                "requests": 3,
+                "backups": 3,
+                "restores": 3,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 6,
+              "files": 14,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 427743,
+              "allocated_bytes": 458752
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00036178299998823604,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010772627999983797,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 4,
+              "pid": 3992,
+              "rss_kib": 28424,
+              "children": 0,
+              "rows": {
+                "ops": 8,
+                "requests": 4,
+                "backups": 4,
+                "restores": 4,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 8,
+              "files": 16,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 427816,
+              "allocated_bytes": 462848
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00034167100000104256,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010730617000007214,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 5,
+              "pid": 3992,
+              "rss_kib": 28428,
+              "children": 0,
+              "rows": {
+                "ops": 10,
+                "requests": 5,
+                "backups": 5,
+                "restores": 5,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 10,
+              "files": 18,
+              "catalog_bytes": 57344,
+              "log_bytes": 0,
+              "logical_bytes": 427887,
+              "allocated_bytes": 466944
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003825869999900533,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011402539999977535,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 6,
+              "pid": 3992,
+              "rss_kib": 28432,
+              "children": 0,
+              "rows": {
+                "ops": 12,
+                "requests": 6,
+                "backups": 6,
+                "restores": 6,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 12,
+              "files": 20,
+              "catalog_bytes": 65536,
+              "log_bytes": 0,
+              "logical_bytes": 436150,
+              "allocated_bytes": 479232
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003254810000044017,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010993613000010782,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 7,
+              "pid": 3992,
+              "rss_kib": 28440,
+              "children": 0,
+              "rows": {
+                "ops": 14,
+                "requests": 7,
+                "backups": 7,
+                "restores": 7,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 14,
+              "files": 22,
+              "catalog_bytes": 65536,
+              "log_bytes": 0,
+              "logical_bytes": 436225,
+              "allocated_bytes": 483328
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004008059999875968,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01161467199997901,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 8,
+              "pid": 3992,
+              "rss_kib": 28440,
+              "children": 0,
+              "rows": {
+                "ops": 16,
+                "requests": 8,
+                "backups": 8,
+                "restores": 8,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 16,
+              "files": 24,
+              "catalog_bytes": 81920,
+              "log_bytes": 0,
+              "logical_bytes": 452684,
+              "allocated_bytes": 503808
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00038618900001097245,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011244048000008888,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 9,
+              "pid": 3992,
+              "rss_kib": 29288,
+              "children": 0,
+              "rows": {
+                "ops": 18,
+                "requests": 9,
+                "backups": 9,
+                "restores": 9,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 18,
+              "files": 26,
+              "catalog_bytes": 81920,
+              "log_bytes": 0,
+              "logical_bytes": 452757,
+              "allocated_bytes": 507904
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.000371612000009236,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010650759000014887,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 10,
+              "pid": 3992,
+              "rss_kib": 29288,
+              "children": 0,
+              "rows": {
+                "ops": 20,
+                "requests": 10,
+                "backups": 10,
+                "restores": 10,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 20,
+              "files": 28,
+              "catalog_bytes": 81920,
+              "log_bytes": 0,
+              "logical_bytes": 452830,
+              "allocated_bytes": 512000
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003956959999982246,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011836611999996194,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 11,
+              "pid": 3992,
+              "rss_kib": 29296,
+              "children": 0,
+              "rows": {
+                "ops": 22,
+                "requests": 11,
+                "backups": 11,
+                "restores": 11,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 22,
+              "files": 30,
+              "catalog_bytes": 86016,
+              "log_bytes": 0,
+              "logical_bytes": 456999,
+              "allocated_bytes": 520192
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00024600999998369844,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.01093965699999444,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 12,
+              "pid": 3992,
+              "rss_kib": 29296,
+              "children": 0,
+              "rows": {
+                "ops": 24,
+                "requests": 12,
+                "backups": 12,
+                "restores": 12,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 24,
+              "files": 32,
+              "catalog_bytes": 86016,
+              "log_bytes": 0,
+              "logical_bytes": 457072,
+              "allocated_bytes": 524288
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0002513020000094457,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011314615999992839,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 13,
+              "pid": 3992,
+              "rss_kib": 29304,
+              "children": 0,
+              "rows": {
+                "ops": 26,
+                "requests": 13,
+                "backups": 13,
+                "restores": 13,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 26,
+              "files": 34,
+              "catalog_bytes": 86016,
+              "log_bytes": 0,
+              "logical_bytes": 457145,
+              "allocated_bytes": 528384
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00036741599998890706,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011643766999981153,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 14,
+              "pid": 3992,
+              "rss_kib": 29304,
+              "children": 0,
+              "rows": {
+                "ops": 28,
+                "requests": 14,
+                "backups": 14,
+                "restores": 14,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 28,
+              "files": 36,
+              "catalog_bytes": 86016,
+              "log_bytes": 0,
+              "logical_bytes": 457218,
+              "allocated_bytes": 532480
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0002684279999982664,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010928153000008933,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 15,
+              "pid": 3992,
+              "rss_kib": 29304,
+              "children": 0,
+              "rows": {
+                "ops": 30,
+                "requests": 15,
+                "backups": 15,
+                "restores": 15,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 30,
+              "files": 38,
+              "catalog_bytes": 94208,
+              "log_bytes": 0,
+              "logical_bytes": 465479,
+              "allocated_bytes": 544768
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00029625999999893793,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011749734000005674,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 16,
+              "pid": 3992,
+              "rss_kib": 29304,
+              "children": 0,
+              "rows": {
+                "ops": 32,
+                "requests": 16,
+                "backups": 16,
+                "restores": 16,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 32,
+              "files": 40,
+              "catalog_bytes": 98304,
+              "log_bytes": 0,
+              "logical_bytes": 469648,
+              "allocated_bytes": 552960
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00026043099998673824,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010512363000003688,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 17,
+              "pid": 3992,
+              "rss_kib": 29316,
+              "children": 0,
+              "rows": {
+                "ops": 34,
+                "requests": 17,
+                "backups": 17,
+                "restores": 17,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 34,
+              "files": 42,
+              "catalog_bytes": 98304,
+              "log_bytes": 0,
+              "logical_bytes": 469723,
+              "allocated_bytes": 557056
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00034817299999190254,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011787390999984382,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 18,
+              "pid": 3992,
+              "rss_kib": 29316,
+              "children": 0,
+              "rows": {
+                "ops": 36,
+                "requests": 18,
+                "backups": 18,
+                "restores": 18,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 36,
+              "files": 44,
+              "catalog_bytes": 98304,
+              "log_bytes": 0,
+              "logical_bytes": 469792,
+              "allocated_bytes": 561152
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00038829499999337713,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010953882999984899,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 19,
+              "pid": 3992,
+              "rss_kib": 29320,
+              "children": 0,
+              "rows": {
+                "ops": 38,
+                "requests": 19,
+                "backups": 19,
+                "restores": 19,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 38,
+              "files": 46,
+              "catalog_bytes": 98304,
+              "log_bytes": 0,
+              "logical_bytes": 469863,
+              "allocated_bytes": 565248
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004092110000044613,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011196632999997291,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 20,
+              "pid": 3992,
+              "rss_kib": 29324,
+              "children": 0,
+              "rows": {
+                "ops": 40,
+                "requests": 20,
+                "backups": 20,
+                "restores": 20,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 40,
+              "files": 48,
+              "catalog_bytes": 98304,
+              "log_bytes": 0,
+              "logical_bytes": 469940,
+              "allocated_bytes": 569344
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003529740000089987,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011544603000004372,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 21,
+              "pid": 3992,
+              "rss_kib": 29332,
+              "children": 0,
+              "rows": {
+                "ops": 42,
+                "requests": 21,
+                "backups": 21,
+                "restores": 21,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 42,
+              "files": 50,
+              "catalog_bytes": 102400,
+              "log_bytes": 0,
+              "logical_bytes": 474113,
+              "allocated_bytes": 577536
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0004004829999928461,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010920006999981524,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 22,
+              "pid": 3992,
+              "rss_kib": 29332,
+              "children": 0,
+              "rows": {
+                "ops": 44,
+                "requests": 22,
+                "backups": 22,
+                "restores": 22,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 44,
+              "files": 52,
+              "catalog_bytes": 110592,
+              "log_bytes": 0,
+              "logical_bytes": 482376,
+              "allocated_bytes": 589824
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.0003135139999983494,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.011658218000007992,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 23,
+              "pid": 3992,
+              "rss_kib": 29332,
+              "children": 0,
+              "rows": {
+                "ops": 46,
+                "requests": 23,
+                "backups": 23,
+                "restores": 23,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 46,
+              "files": 54,
+              "catalog_bytes": 110592,
+              "log_bytes": 0,
+              "logical_bytes": 482449,
+              "allocated_bytes": 593920
+            },
+            {
+              "fds": 7,
+              "fd_quiescent": true,
+              "fd_observations": [
+                {
+                  "seconds": 0.00031145700000934085,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                },
+                {
+                  "seconds": 0.010573222999994414,
+                  "fds": 7,
+                  "non_listener_sockets": 0,
+                  "targets": {
+                    "0": "pipe:[20026]",
+                    "1": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "2": "/opt/keepweft/closeout/bounded_cycles/service.log",
+                    "3": "/opt/keepweft/closeout/bounded_cycles/store/.lock",
+                    "4": "/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite",
+                    "5": "anon_inode:[eventpoll]",
+                    "6": "socket:[19300]"
+                  },
+                  "unix_socket_flags": {
+                    "19300": 65536
+                  }
+                }
+              ],
+              "cycle": 24,
+              "pid": 3992,
+              "rss_kib": 29340,
+              "children": 0,
+              "rows": {
+                "ops": 48,
+                "requests": 24,
+                "backups": 24,
+                "restores": 24,
+                "readers": 0
+              },
+              "active_restores": 0,
+              "pins": 0,
+              "guards": 48,
+              "files": 56,
+              "catalog_bytes": 118784,
+              "log_bytes": 0,
+              "logical_bytes": 490716,
+              "allocated_bytes": 606208
+            }
+          ],
+          "cycle_seconds": [
+            5.138287098000006,
+            5.128613415999993,
+            5.138280152999982,
+            5.161957412999982,
+            5.160075053000014,
+            5.149675845000019,
+            5.146252860999994,
+            5.148249827000001,
+            5.214296173000008,
+            5.160836877999998,
+            5.175953852000021,
+            5.145434925000018,
+            5.169613771999991,
+            5.160477060000005,
+            5.154397751999994,
+            5.167887573000002,
+            5.141860019000006,
+            5.192579804000019,
+            5.166930100000002,
+            5.168202381000015,
+            5.154899141000016,
+            5.1547383109999885,
+            5.144888242999997,
+            5.150473419999997
+          ],
+          "seconds": 124.16347359,
+          "retained_metadata_explained": true,
+          "long_term_qualification": false
+        },
+        "seconds": 124.22912487500001
+      }
+    ]
+  },
+  "reboots": [
+    {
+      "kind": "serving",
+      "polls": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.30626862499048
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.25933850000728853
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3167869170138147
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.30975379201117903
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3709216249990277
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.24254808298428543
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26555329200346023
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.24209799998789094
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26067641598638147
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2830141670128796
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2492962499964051
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.24246933398535475
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.27677387499716133
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2418160840170458
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.35299020798993297
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3359908330021426
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.31386766699142754
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.23072133399546146
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2615773339930456
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3597900829918217
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26773550000507385
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2688313329999801
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.24227399998926558
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2783012919826433
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.31220675000804476
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3393892500025686
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.3006746250030119
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.32141470900387503
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2548490420158487
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.35218770799110644
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.301286333007738
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.2650273329927586
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.26958379201823846
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.32047308300388977
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.33668554201722145
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.33289954098290764
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "seconds": 0.27823762499610893
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 3.310210708004888
+        }
+      ],
+      "boot_changed": true,
+      "details": {
+        "kind": "serving",
+        "boot_before": "a41c53cd-3208-40e1-b861-ec1ed13ac517",
+        "boot_after": "19c2cd0e-7afb-42cd-a826-f62e19b6f954",
+        "journal_before": {
+          "sha256": "ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33",
+          "rows": {
+            "restores": [
+              [
+                "722a813ccc8840d596ba2d052d683052",
+                "e2ece8deaf9a45b0af06de229dab4188",
+                "SERVING"
+              ]
+            ],
+            "pins": [
+              [
+                "e2ece8deaf9a45b0af06de229dab4188",
+                1
+              ]
+            ],
+            "authority": [
+              [
+                1,
+                14
+              ]
+            ]
+          }
+        },
+        "journal_after_before_controller": {
+          "sha256": "ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33",
+          "rows": {
+            "restores": [
+              [
+                "722a813ccc8840d596ba2d052d683052",
+                "e2ece8deaf9a45b0af06de229dab4188",
+                "SERVING"
+              ]
+            ],
+            "pins": [
+              [
+                "e2ece8deaf9a45b0af06de229dab4188",
+                1
+              ]
+            ],
+            "authority": [
+              [
+                1,
+                14
+              ]
+            ]
+          }
+        },
+        "copy_hash_preserved_before_recovery": true,
+        "controller_killed_before_reboot": true,
+        "state_after_recovery": "READY",
+        "old_epoch_rejected": true,
+        "stale_epoch_only_rejected": true,
+        "stale_revision_only_rejected": true,
+        "stale_rejections_preserved_state": true,
+        "query_count": 40,
+        "pin_after_release": 0
+      }
+    },
+    {
+      "kind": "release_intent",
+      "polls": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.29730075001134537
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.34229908301495016
+        },
+        {
+          "exit_code": 1,
+          "timed_out": false,
+          "seconds": 3.300194042007206
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "seconds": 0.38449704201775603
+        }
+      ],
+      "boot_changed": true,
+      "details": {
+        "kind": "release_intent",
+        "boot_before": "19c2cd0e-7afb-42cd-a826-f62e19b6f954",
+        "boot_after": "379bc633-c886-4f26-8d74-32a60603411f",
+        "journal_before": {
+          "sha256": "908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565",
+          "rows": {
+            "restores": [
+              [
+                "f18acad1d7e74833bf0b4914f58c3d33",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
+                "RELEASING"
+              ]
+            ],
+            "pins": [
+              [
+                "64225ddd22774f19bbd1a1d4aee9a15f",
+                1
+              ]
+            ],
+            "authority": [
+              [
+                1,
+                17
+              ]
+            ]
+          }
+        },
+        "journal_after_before_controller": {
+          "sha256": "908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565",
+          "rows": {
+            "restores": [
+              [
+                "f18acad1d7e74833bf0b4914f58c3d33",
+                "64225ddd22774f19bbd1a1d4aee9a15f",
+                "RELEASING"
+              ]
+            ],
+            "pins": [
+              [
+                "64225ddd22774f19bbd1a1d4aee9a15f",
+                1
+              ]
+            ],
+            "authority": [
+              [
+                1,
+                17
+              ]
+            ]
+          }
+        },
+        "copy_hash_preserved_before_recovery": true,
+        "controller_killed_before_reboot": true,
+        "state_after_recovery": "RELEASED",
+        "old_epoch_rejected": true,
+        "stale_epoch_only_rejected": true,
+        "stale_revision_only_rejected": true,
+        "stale_rejections_preserved_state": true,
+        "query_count": null,
+        "pin_after_release": 0
+      }
+    }
+  ],
+  "closeout_cleanup": {
+    "no_product_processes_remaining": true
+  },
+  "limits": {
+    "normal_vm_reboot_tested": true,
+    "power_loss_tested": false,
+    "long_term_gc_tested": false,
+    "systemd_package_tested": false
+  },
+  "vm_final": "Deleted",
+  "data_disk_removed": true,
+  "preexisting_profiles_unchanged": true,
+  "controls": {
+    "passed": true,
+    "rejected": 33,
+    "baseline_rejected": 29
+  }
+}

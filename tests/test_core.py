@@ -195,3 +195,23 @@ class CoreTests(unittest.TestCase):
             self.assertTrue(c.blocked)
             with self.assertRaises(Degraded):c.backup()
             c.db.set_authorizer(None);c.db.rollback()
+
+    def test_null_transaction_item_parent_refuses_formal_backup(self):
+        with sqlite3.connect(self.source) as db:
+            db.execute('update item set seq=NULL where seq=1')
+            self.assertEqual(db.execute('pragma foreign_key_check').fetchall(),[])
+        with self.controller() as c:
+            with self.assertRaisesRegex(Refused,'Transaction item parent mismatch'):c.backup()
+            self.assertEqual(c.status()['backups'],[])
+            self.assertFalse(any((self.root/'staging').iterdir()))
+
+    def test_missing_fk_orphan_item_refuses_formal_backup(self):
+        with sqlite3.connect(self.source) as db:
+            db.execute('drop table item')
+            db.execute('create table item(seq integer,part integer,primary key(seq,part))')
+            db.executemany('insert into item values(?,?)',[(1000+seq,part) for seq in range(1,13) for part in (0,1)])
+            self.assertEqual(db.execute('pragma foreign_key_check').fetchall(),[])
+        with self.controller() as c:
+            with self.assertRaisesRegex(Refused,'Transaction item parent mismatch'):c.backup()
+            self.assertEqual(c.status()['backups'],[])
+            self.assertFalse(any((self.root/'staging').iterdir()))

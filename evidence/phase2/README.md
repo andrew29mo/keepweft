@@ -1,6 +1,9 @@
 # Guarded restore and reader qualification
 
-Current run: `e8fedba95aa877d3`, recorded 2026-10-24T07:46:28.017668+00:00.
+These receipts qualify their recorded source only. See [current bounded closeout
+evidence](../closeout/README.md) for the delivered version.
+
+Historical phase-two final run: `e8fedba95aa877d3`, recorded 2026-10-24T07:46:28.017668+00:00.
 Source fingerprint: `14caafa5374accbb5b87e68b9b22cf67b695e93ac795ca85fc5046d652a60ca0`.
 
 - [Complete JSON](latest.json) / [matching HTML](latest.html).

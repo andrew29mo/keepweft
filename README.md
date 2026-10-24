@@ -5,6 +5,8 @@ contains a bounded MVP: **a backup request service, conservative capacity and
 retention handling, and one guarded validated restored reader**. Earlier broader
 service designs remain a roadmap, not delivered capabilities.
 
+The fixed ledger verifier independently checks parent/item membership, including
+NULL or missing-FK cases that SQLite foreign-key diagnostics alone can miss.
 The core takes a bounded read snapshot, creates a standalone backup through
 SQLite's Online Backup API, verifies a fixed application contract, and publishes
 it through a persistent catalog. A restore creates a separate copy. It never
@@ -35,9 +37,16 @@ in the isolated Linux VM; a Python version alone does not qualify SQLite.
 
 ```sh
 python3.12 -m venv .venv
+.venv/bin/python -m pip install 'setuptools>=77' wheel
 .venv/bin/python -m pip install .
-.venv/bin/python -m tools.unit --output results-unit.json
+. .venv/bin/activate
+mkdir -p results
+.venv/bin/python -m tools.unit --output results/native-unit.json
 ```
+
+Run the test command from the repository checkout; `tools` and `tests` are not
+part of the installed runtime wheel. Keep generated results under the ignored
+`results/` directory.
 
 Use canonical absolute paths (resolve `/tmp` or `/var` aliases on macOS). The
 source must be outside the owner-only managed store. `init-source` creates only
@@ -62,15 +71,15 @@ future work; reader mutations require explicit current epoch/revision tokens.
 
 ## Current results
 
-The final bounded closeout passed **81 identical tests on each platform**, repeated
+The final bounded closeout passed **83 identical tests on each platform**, repeated
 **10 Linux reader/fault scenarios**, **four closeout scenarios** and **two normal
-VM reboots**, with **62 rejected report corruptions**. The clean no-host-mount VM
+VM reboots**, with **63 rejected report corruptions**. The clean no-host-mount VM
 installed the wheel and verified its module/runtime hashes before using it.
 
-Twenty-four complete cycles ran for **124.16 seconds** in one controller process,
+Twenty-four complete cycles ran for **124.69 seconds** in one controller process,
 including at least five seconds of live reader dwell per cycle. Controller RSS was
-21,088 KiB initially, 28,424 KiB after the declared four-cycle warmup, and 29,340 KiB
-at the maximum/end: a **916-KiB post-warmup increase**, within the predeclared
+21,096 KiB initially, 28,424 KiB after the declared four-cycle warmup, and 30,244 KiB
+at the maximum/end: a **1,820-KiB post-warmup increase**, within the predeclared
 4,096-KiB allowance. This is sampled Linux VM RSS, not a flat-memory claim,
 continuous peak, native measurement or long-term bound. FD quiescence is observed
 within 250 ms using retained kernel socket flags; all raw and quiescent FD counts
@@ -122,6 +131,7 @@ disk-accounting values and full receipts are retained below.
 
 ## Evidence and design
 
+- [Pre-publication review and application correctness repair](docs/PREPUBLIC_REVIEW.md)
 - [Closeout review and repaired validation gaps](docs/CLOSEOUT_REVIEW.md)
 - [Bounded closeout and operator workflow](docs/CLOSEOUT.md)
 - [Retained exploration evidence](evidence/README.md) (historical four explorations)

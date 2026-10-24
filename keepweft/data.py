@@ -117,6 +117,11 @@ def inspect(c, expected_uuid, guard=lambda: None):
         if seq != n or hashlib.sha256(payload).hexdigest() != digest:
             raise Refused('Invalid ledger sequence/content')
         h.update(seq.to_bytes(8, 'big') + len(payload).to_bytes(8, 'big') + payload)
+    # SQLite permits NULL child keys even with a declared FK, and an unknown
+    # schema may omit the FK entirely. Validate the application's actual relation
+    # independently: row counts/group shape alone do not prove parent membership.
+    if c.execute('select 1 from item left join tx on item.seq=tx.seq where tx.seq is null limit 1').fetchone():
+        raise Refused('Transaction item parent mismatch')
     if c.execute('select count(*) from item').fetchone()[0] != n * 2:
         raise Refused('Missing transaction items')
     if c.execute('select seq from item group by seq having count(*) != 2 or min(part) != 0 or max(part) != 1').fetchone():

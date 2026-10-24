@@ -1,0 +1,2784 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft bounded closeout</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: installed workflow, capacity and normal reboot</h1><p>Passed: True</p><p>Fresh isolated Linux VM, installed wheel with source imports removed. Documented CLI, separate receipt/soft-byte rejection, 24 same-controller cycles with 5-second reader dwell each, and two normal guest reboots. Persistent catalog is compared before reboot and after boot before controller recovery. RSS is sampled Linux VM process RSS, not peak/physical/native performance. Metadata intentionally grows with retained tombstones/guards; no unlimited endurance, automated GC, systemd packaging, sudden-power-loss or boot zero-gap qualification. Historical phase-two case-group flags apply only to that case group.</p><pre>{
+  &quot;passed&quot;: true,
+  &quot;run_id&quot;: &quot;9933e02c1ba18673&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T10:55:40.039018+00:00&quot;,
+  &quot;source&quot;: {
+    &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
+    &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+    &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
+    &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
+    &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+    &quot;keepweft/reader.py&quot;: &quot;e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d&quot;,
+    &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
+    &quot;keepweft/service.py&quot;: &quot;c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe&quot;,
+    &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
+    &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
+    &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
+    &quot;tests/test_closeout.py&quot;: &quot;989b09b1173aa74a9ee353f229740313fe474c428f55ce0b4707b2e97db62d10&quot;,
+    &quot;tests/test_core.py&quot;: &quot;0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a&quot;,
+    &quot;tests/test_readers.py&quot;: &quot;6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb&quot;,
+    &quot;tests/test_requests.py&quot;: &quot;fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc&quot;,
+    &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
+    &quot;tools/closeout_cases.py&quot;: &quot;aa3f269de6dd4b2f2857fd33176deb1d0096106998bd3b4fda54b3201959e94c&quot;,
+    &quot;tools/closeout_report.py&quot;: &quot;de880132e29efefd1ab6cee5340bcad3185d6fc26dddb9270239509a3aa3bc88&quot;,
+    &quot;tools/closeout_validate.py&quot;: &quot;78aec32937715421dd9413d84f51ac21f10693f98837f1e558716b180315ef44&quot;,
+    &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
+    &quot;tools/explore.py&quot;: &quot;123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a&quot;,
+    &quot;tools/phase1_cases.py&quot;: &quot;dc928df540412c6c42cf4562704103a4af598791646eb22b8019e2079eacfc45&quot;,
+    &quot;tools/phase1_report.py&quot;: &quot;8fa755b5bc92eab3d9dcd11171ee18e17e88f7b5ced550bc235812aad2790bca&quot;,
+    &quot;tools/phase1_validate.py&quot;: &quot;fb9fe830a883b155840978863a3a3f879d44e7a6f45ff75bef798cf34a2307e1&quot;,
+    &quot;tools/phase2_cases.py&quot;: &quot;a53935af1f682f4af246e58de7d7cda648afbe0d564442392156bf6d4cecc9d3&quot;,
+    &quot;tools/phase2_report.py&quot;: &quot;b06269abc3db74664ba28bf49e9a79a4872acc54aedc6fd78efffb190659de9d&quot;,
+    &quot;tools/phase2_validate.py&quot;: &quot;b8097f6b4745867a38269dbf1ddb87be658354dba2c692528c8e7bd08729e91c&quot;,
+    &quot;tools/report.py&quot;: &quot;29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23&quot;,
+    &quot;tools/testing.py&quot;: &quot;f8f35a5652fb714dace42f501bd554e6db58452716ec0afe8df812866f0d6cbd&quot;,
+    &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
+    &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
+  },
+  &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+  &quot;source_changed&quot;: false,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;initial&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3759549169917591
+    },
+    {
+      &quot;name&quot;: &quot;create&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 22.619183458999032
+    },
+    {
+      &quot;name&quot;: &quot;dependencies&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 27.774543042003643
+    },
+    {
+      &quot;name&quot;: &quot;upload&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3698715420032386
+    },
+    {
+      &quot;name&quot;: &quot;runtime&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 13.880837959004566
+    },
+    {
+      &quot;name&quot;: &quot;install&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.8084998340054881
+    },
+    {
+      &quot;name&quot;: &quot;provenance&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.34358987500309013
+    },
+    {
+      &quot;name&quot;: &quot;native&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 27.051729625003645
+    },
+    {
+      &quot;name&quot;: &quot;linux&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 24.489162625017343
+    },
+    {
+      &quot;name&quot;: &quot;linux-read&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.26933329200255685
+    },
+    {
+      &quot;name&quot;: &quot;explore&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 7.710015125019709
+    },
+    {
+      &quot;name&quot;: &quot;guest-read&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.27160374997765757
+    },
+    {
+      &quot;name&quot;: &quot;closeout&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 125.68501858299715
+    },
+    {
+      &quot;name&quot;: &quot;closeout-read&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.39752274999045767
+    },
+    {
+      &quot;name&quot;: &quot;prepare-serving&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.46911470900522545
+    },
+    {
+      &quot;name&quot;: &quot;prepare-read-serving&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.27409387499210425
+    },
+    {
+      &quot;name&quot;: &quot;schedule-serving&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.26320987500366755
+    },
+    {
+      &quot;name&quot;: &quot;finish-serving&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.40191395801957697
+    },
+    {
+      &quot;name&quot;: &quot;finish-read-serving&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.23178470798302442
+    },
+    {
+      &quot;name&quot;: &quot;prepare-release_intent&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.4080588750075549
+    },
+    {
+      &quot;name&quot;: &quot;prepare-read-release_intent&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.2336272920074407
+    },
+    {
+      &quot;name&quot;: &quot;schedule-release_intent&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.23281733397743665
+    },
+    {
+      &quot;name&quot;: &quot;finish-release_intent&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3092595410125796
+    },
+    {
+      &quot;name&quot;: &quot;finish-read-release_intent&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.21453525000833906
+    },
+    {
+      &quot;name&quot;: &quot;closeout-cleanup&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.24615783299668692
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.4437228329770733
+    },
+    {
+      &quot;name&quot;: &quot;final&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.1965782500046771
+    }
+  ],
+  &quot;wheel_sha256&quot;: &quot;56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d&quot;,
+  &quot;wheel_product_matches&quot;: true,
+  &quot;host_mounts&quot;: &quot;none&quot;,
+  &quot;fresh_profile&quot;: true,
+  &quot;initial_disk_absent&quot;: true,
+  &quot;sqlite_build&quot;: {
+    &quot;url&quot;: &quot;https://sqlite.org/2026/sqlite-amalgamation-3540100.zip&quot;,
+    &quot;archive_sha256&quot;: &quot;0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9&quot;,
+    &quot;source_sha3_256&quot;: &quot;e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81&quot;,
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;,
+    &quot;compiler&quot;: &quot;gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0&quot;,
+    &quot;flags&quot;: [
+      &quot;-O2&quot;,
+      &quot;-fPIC&quot;,
+      &quot;-shared&quot;,
+      &quot;-DSQLITE_THREADSAFE=1&quot;
+    ]
+  },
+  &quot;provenance&quot;: {
+    &quot;location&quot;: &quot;/usr/local/lib/python3.12/dist-packages/keepweft&quot;,
+    &quot;modules&quot;: {
+      &quot;keepweft/reader.py&quot;: &quot;e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d&quot;,
+      &quot;keepweft/service.py&quot;: &quot;c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe&quot;,
+      &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
+      &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
+      &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+      &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
+      &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+      &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
+      &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
+      &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;
+    },
+    &quot;source_package_absent&quot;: true,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;
+  },
+  &quot;native_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 81,
+    &quot;tests&quot;: [
+      &quot;test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release&quot;,
+      &quot;test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation&quot;,
+      &quot;test_closeout.CloseoutCases.test_documented_cli&quot;,
+      &quot;test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space&quot;,
+      &quot;test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release&quot;,
+      &quot;test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation&quot;,
+      &quot;test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects&quot;,
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_restored_copy_is_distinct_and_does_not_read_new_source&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_rollback_failure_still_retires_and_preserves_original_error&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure&quot;,
+      &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;,
+      &quot;test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader&quot;,
+      &quot;test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit&quot;,
+      &quot;test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release&quot;,
+      &quot;test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart&quot;,
+      &quot;test_readers.ReaderFailures.test_mismatching_query_is_not_ready&quot;,
+      &quot;test_readers.ReaderFailures.test_missing_copy_still_requires_parent_sync_before_unpin&quot;,
+      &quot;test_readers.ReaderFailures.test_service_status_bounds_history_and_keeps_active_reference&quot;,
+      &quot;test_readers.ReaderFailures.test_unlink_failure_keeps_pin_and_copy&quot;,
+      &quot;test_readers.ServiceReaderCases.test_after_spawn&quot;,
+      &quot;test_readers.ServiceReaderCases.test_before_spawn&quot;,
+      &quot;test_readers.ServiceReaderCases.test_controller_orphan&quot;,
+      &quot;test_readers.ServiceReaderCases.test_idle_header&quot;,
+      &quot;test_readers.ServiceReaderCases.test_missing_ready_crash&quot;,
+      &quot;test_readers.ServiceReaderCases.test_readiness_timeout&quot;,
+      &quot;test_readers.ServiceReaderCases.test_release_intent&quot;,
+      &quot;test_readers.ServiceReaderCases.test_roundtrip&quot;,
+      &quot;test_readers.ServiceReaderCases.test_stop_timeout&quot;,
+      &quot;test_requests.ClientTests.test_prepare_is_durable_and_never_overwrites_retry_identity&quot;,
+      &quot;test_requests.HarnessCleanupTests.test_stopped_service_timeout_kills_child_and_is_not_success&quot;,
+      &quot;test_requests.RecoveryTests.test_queued_restart_is_interrupted_not_replayed&quot;,
+      &quot;test_requests.RecoveryTests.test_retention_side_effect_is_reported_even_when_new_backup_fails&quot;,
+      &quot;test_requests.RequestTests.test_catalog_error_prevents_admission&quot;,
+      &quot;test_requests.RequestTests.test_dispatch_capacity_failure_terminalizes_without_prune&quot;,
+      &quot;test_requests.RequestTests.test_generation_cannot_retire_queued_work&quot;,
+      &quot;test_requests.RequestTests.test_nonfinite_boolean_and_unknown_commands_refused&quot;,
+      &quot;test_requests.RequestTests.test_payload_conflict_has_no_side_effect&quot;,
+      &quot;test_requests.RequestTests.test_queue_full_does_not_create_receipt&quot;,
+      &quot;test_requests.RequestTests.test_queued_cancel_needs_no_slot&quot;,
+      &quot;test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision&quot;,
+      &quot;test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying&quot;,
+      &quot;test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync&quot;,
+      &quot;test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_after_intent&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_before_intent&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_crash&quot;,
+      &quot;test_requests.ServiceCases.test_deadline&quot;,
+      &quot;test_requests.ServiceCases.test_dedup_restart&quot;,
+      &quot;test_requests.ServiceCases.test_generation_gc&quot;,
+      &quot;test_requests.ServiceCases.test_lost_admission&quot;,
+      &quot;test_requests.ServiceCases.test_lost_catalog&quot;,
+      &quot;test_requests.ServiceCases.test_lost_rename&quot;,
+      &quot;test_requests.ServiceCases.test_receipt_refusal&quot;,
+      &quot;test_requests.ServiceCases.test_retention_crash&quot;,
+      &quot;test_requests.ServiceCases.test_saturated_cancel&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;platform&quot;: &quot;Darwin&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
+      &quot;source_id&quot;: &quot;2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=clang-22.1.3&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;ENABLE_DBSTAT_VTAB&quot;,
+        &quot;ENABLE_FTS3&quot;,
+        &quot;ENABLE_FTS3_PARENTHESIS&quot;,
+        &quot;ENABLE_FTS4&quot;,
+        &quot;ENABLE_FTS5&quot;,
+        &quot;ENABLE_GEOPOLY&quot;,
+        &quot;ENABLE_MATH_FUNCTIONS&quot;,
+        &quot;ENABLE_PERCENTILE&quot;,
+        &quot;ENABLE_RTREE&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;linux_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 81,
+    &quot;tests&quot;: [
+      &quot;test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release&quot;,
+      &quot;test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation&quot;,
+      &quot;test_closeout.CloseoutCases.test_documented_cli&quot;,
+      &quot;test_closeout.CloseoutCases.test_owned_snapshot_ignores_only_shared_free_space&quot;,
+      &quot;test_closeout.CloseoutCases.test_receipt_exhaustion_preserves_stop_release&quot;,
+      &quot;test_closeout.CloseoutCases.test_resource_checks_reject_restart_leaks_and_missing_observation&quot;,
+      &quot;test_closeout.CloseoutCases.test_vm_socket_path_preflight_no_side_effects&quot;,
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_restored_copy_is_distinct_and_does_not_read_new_source&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_rollback_failure_still_retires_and_preserves_original_error&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure&quot;,
+      &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;,
+      &quot;test_readers.ReaderFailures.test_exec_failure_preserves_pin_without_reader&quot;,
+      &quot;test_readers.ReaderFailures.test_failed_deadline_kill_retains_unknown_reader_until_proven_exit&quot;,
+      &quot;test_readers.ReaderFailures.test_full_receipts_and_capacity_do_not_block_stop_release&quot;,
+      &quot;test_readers.ReaderFailures.test_guard_inode_never_replaced_on_release_restart&quot;,
+      &quot;test_readers.ReaderFailures.test_mismatching_query_is_not_ready&quot;,
+      &quot;test_readers.ReaderFailures.test_missing_copy_still_requires_parent_sync_before_unpin&quot;,
+      &quot;test_readers.ReaderFailures.test_service_status_bounds_history_and_keeps_active_reference&quot;,
+      &quot;test_readers.ReaderFailures.test_unlink_failure_keeps_pin_and_copy&quot;,
+      &quot;test_readers.ServiceReaderCases.test_after_spawn&quot;,
+      &quot;test_readers.ServiceReaderCases.test_before_spawn&quot;,
+      &quot;test_readers.ServiceReaderCases.test_controller_orphan&quot;,
+      &quot;test_readers.ServiceReaderCases.test_idle_header&quot;,
+      &quot;test_readers.ServiceReaderCases.test_missing_ready_crash&quot;,
+      &quot;test_readers.ServiceReaderCases.test_readiness_timeout&quot;,
+      &quot;test_readers.ServiceReaderCases.test_release_intent&quot;,
+      &quot;test_readers.ServiceReaderCases.test_roundtrip&quot;,
+      &quot;test_readers.ServiceReaderCases.test_stop_timeout&quot;,
+      &quot;test_requests.ClientTests.test_prepare_is_durable_and_never_overwrites_retry_identity&quot;,
+      &quot;test_requests.HarnessCleanupTests.test_stopped_service_timeout_kills_child_and_is_not_success&quot;,
+      &quot;test_requests.RecoveryTests.test_queued_restart_is_interrupted_not_replayed&quot;,
+      &quot;test_requests.RecoveryTests.test_retention_side_effect_is_reported_even_when_new_backup_fails&quot;,
+      &quot;test_requests.RequestTests.test_catalog_error_prevents_admission&quot;,
+      &quot;test_requests.RequestTests.test_dispatch_capacity_failure_terminalizes_without_prune&quot;,
+      &quot;test_requests.RequestTests.test_generation_cannot_retire_queued_work&quot;,
+      &quot;test_requests.RequestTests.test_nonfinite_boolean_and_unknown_commands_refused&quot;,
+      &quot;test_requests.RequestTests.test_payload_conflict_has_no_side_effect&quot;,
+      &quot;test_requests.RequestTests.test_queue_full_does_not_create_receipt&quot;,
+      &quot;test_requests.RequestTests.test_queued_cancel_needs_no_slot&quot;,
+      &quot;test_requests.RequestTests.test_queued_work_does_not_recheck_global_revision&quot;,
+      &quot;test_requests.RequestTests.test_unexpected_dispatch_failure_blocks_instead_of_replaying&quot;,
+      &quot;test_requests.RetentionFailureTests.test_parent_fsync_failure_remains_pending_until_recovery_sync&quot;,
+      &quot;test_requests.RetentionFailureTests.test_unlink_refusal_is_pending_not_completed_deletion&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_after_intent&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_before_intent&quot;,
+      &quot;test_requests.ServiceCases.test_cancel_crash&quot;,
+      &quot;test_requests.ServiceCases.test_deadline&quot;,
+      &quot;test_requests.ServiceCases.test_dedup_restart&quot;,
+      &quot;test_requests.ServiceCases.test_generation_gc&quot;,
+      &quot;test_requests.ServiceCases.test_lost_admission&quot;,
+      &quot;test_requests.ServiceCases.test_lost_catalog&quot;,
+      &quot;test_requests.ServiceCases.test_lost_rename&quot;,
+      &quot;test_requests.ServiceCases.test_receipt_refusal&quot;,
+      &quot;test_requests.ServiceCases.test_retention_crash&quot;,
+      &quot;test_requests.ServiceCases.test_saturated_cancel&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;guest&quot;: {
+    &quot;passed&quot;: true,
+    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;cases&quot;: [
+      {
+        &quot;name&quot;: &quot;roundtrip&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.1705001100000061,
+        &quot;details&quot;: {
+          &quot;count&quot;: 40,
+          &quot;hash_preserved&quot;: true,
+          &quot;pin_while_serving&quot;: 1,
+          &quot;pin_after_release&quot;: 0,
+          &quot;release_refused_while_serving&quot;: true,
+          &quot;stale_revision_rejected_with_free_guard&quot;: true,
+          &quot;missing_token_rejected&quot;: true,
+          &quot;start_to_query_seconds&quot;: 0.034644427000003475,
+          &quot;reader_rss_kib&quot;: 21060,
+          &quot;controller_rss_kib&quot;: 23952,
+          &quot;managed_logical_bytes_while_serving&quot;: 427316
+        }
+      },
+      {
+        &quot;name&quot;: &quot;controller_orphan&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.207120909000011,
+        &quot;details&quot;: {
+          &quot;controller_sigkill&quot;: true,
+          &quot;global_controller_recovered&quot;: true,
+          &quot;orphan_state&quot;: &quot;ORPHAN_BUSY&quot;,
+          &quot;reader_query_after_restart&quot;: 40,
+          &quot;paused_reader_retained&quot;: true,
+          &quot;stale_release_rejected&quot;: true,
+          &quot;unknown_pid_not_signalled&quot;: true,
+          &quot;pin_after_proven_exit&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;before_spawn&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.16361697100001038,
+        &quot;details&quot;: {
+          &quot;barrier_seen&quot;: &quot;reader_before_spawn&quot;,
+          &quot;state_after_restart&quot;: &quot;READY&quot;,
+          &quot;pin_after_restart&quot;: 1,
+          &quot;pin_after_release&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;after_spawn&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.169061506999995,
+        &quot;details&quot;: {
+          &quot;barrier_seen&quot;: &quot;reader_after_spawn&quot;,
+          &quot;state_after_restart&quot;: &quot;ORPHAN_BUSY&quot;,
+          &quot;pin_after_restart&quot;: 1,
+          &quot;pin_after_release&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;release_intent&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.1595775889999942,
+        &quot;details&quot;: {
+          &quot;barrier_seen&quot;: &quot;reader_release_intent&quot;,
+          &quot;copy_present_before_restart&quot;: true,
+          &quot;state_after_restart&quot;: &quot;RELEASED&quot;,
+          &quot;pin_after_restart&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;stop_timeout&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 2.1773351740000066,
+        &quot;details&quot;: {
+          &quot;stop_timeout_not_exit&quot;: true,
+          &quot;pin_after_timeout&quot;: 1,
+          &quot;release_refused&quot;: true,
+          &quot;pin_after_exit&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;missing_ready_crash&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.19956790700000226,
+        &quot;details&quot;: {
+          &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
+          &quot;ready_absent&quot;: true,
+          &quot;controller_crashed&quot;: true,
+          &quot;pin_before_exit&quot;: 1,
+          &quot;pin_after_release&quot;: 0,
+          &quot;deadline_error&quot;: null,
+          &quot;deadline_guard_free_before_stop&quot;: null,
+          &quot;deadline_pid_absent_before_stop&quot;: null
+        }
+      },
+      {
+        &quot;name&quot;: &quot;readiness_timeout&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 3.2028224050000063,
+        &quot;details&quot;: {
+          &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
+          &quot;ready_absent&quot;: true,
+          &quot;controller_crashed&quot;: false,
+          &quot;pin_before_exit&quot;: 1,
+          &quot;pin_after_release&quot;: 0,
+          &quot;deadline_error&quot;: &quot;TimeoutError&quot;,
+          &quot;deadline_guard_free_before_stop&quot;: true,
+          &quot;deadline_pid_absent_before_stop&quot;: true
+        }
+      },
+      {
+        &quot;name&quot;: &quot;idle_header&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.707755438999996,
+        &quot;details&quot;: {
+          &quot;incomplete_unauthenticated_header&quot;: true,
+          &quot;reader_closed_idle_connection&quot;: true,
+          &quot;query_after_idle&quot;: 40,
+          &quot;pin_before_release&quot;: 1,
+          &quot;pin_after_release&quot;: 0
+        }
+      },
+      {
+        &quot;name&quot;: &quot;readonly_release&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.21983451900000262,
+        &quot;details&quot;: {
+          &quot;os_errno&quot;: 30,
+          &quot;pin_before_repair&quot;: 1,
+          &quot;restart_refused&quot;: true,
+          &quot;pin_after_repair&quot;: 0,
+          &quot;readonly_mount_removed&quot;: true
+        }
+      }
+    ],
+    &quot;limits&quot;: {
+      &quot;vm_reboot_tested&quot;: false,
+      &quot;power_loss_tested&quot;: false,
+      &quot;reader_adoption_tested&quot;: false,
+      &quot;long_term_gc_tested&quot;: false
+    },
+    &quot;owned_service_count&quot;: 17,
+    &quot;owned_services_exited&quot;: true,
+    &quot;no_service_or_worker_processes_remaining&quot;: true
+  },
+  &quot;closeout&quot;: {
+    &quot;passed&quot;: true,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;cases&quot;: [
+      {
+        &quot;name&quot;: &quot;documented_cli&quot;,
+        &quot;passed&quot;: true,
+        &quot;details&quot;: {
+          &quot;installed_cli&quot;: true,
+          &quot;barriers&quot;: false,
+          &quot;query_count&quot;: 40,
+          &quot;pin_after_release&quot;: 0,
+          &quot;socket_mode&quot;: &quot;0600&quot;,
+          &quot;socket_removed&quot;: true,
+          &quot;independent_stale_fences&quot;: true
+        },
+        &quot;seconds&quot;: 0.3348938419999996
+      },
+      {
+        &quot;name&quot;: &quot;receipt_capacity&quot;,
+        &quot;passed&quot;: true,
+        &quot;details&quot;: {
+          &quot;refusal_witness_before_sha256&quot;: &quot;2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96&quot;,
+          &quot;refusal_witness_after_sha256&quot;: &quot;2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96&quot;,
+          &quot;all_backup_files_and_catalog_compared&quot;: true,
+          &quot;kind&quot;: &quot;receipts&quot;,
+          &quot;options&quot;: {
+            &quot;artifact_bytes&quot;: 262144,
+            &quot;headroom_bytes&quot;: 65536,
+            &quot;keep&quot;: 8,
+            &quot;max_receipts&quot;: 4
+          },
+          &quot;attempts&quot;: [
+            {
+              &quot;ok&quot;: true,
+              &quot;code&quot;: null
+            },
+            {
+              &quot;ok&quot;: true,
+              &quot;code&quot;: null
+            },
+            {
+              &quot;ok&quot;: true,
+              &quot;code&quot;: null
+            },
+            {
+              &quot;ok&quot;: false,
+              &quot;code&quot;: &quot;RECEIPT_FULL&quot;
+            }
+          ],
+          &quot;refusal_code&quot;: &quot;RECEIPT_FULL&quot;,
+          &quot;inventory_preserved_on_refusal&quot;: true,
+          &quot;receipts_preserved_on_refusal&quot;: true,
+          &quot;query_at_full&quot;: 40,
+          &quot;pin_before_stop&quot;: 1,
+          &quot;stop_exit_proven&quot;: true,
+          &quot;pin_after_release&quot;: 0,
+          &quot;logical_bytes_after_release&quot;: 797777
+        },
+        &quot;seconds&quot;: 0.5192792029999964
+      },
+      {
+        &quot;name&quot;: &quot;logical_capacity&quot;,
+        &quot;passed&quot;: true,
+        &quot;details&quot;: {
+          &quot;refusal_witness_before_sha256&quot;: &quot;c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2&quot;,
+          &quot;refusal_witness_after_sha256&quot;: &quot;c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2&quot;,
+          &quot;all_backup_files_and_catalog_compared&quot;: true,
+          &quot;kind&quot;: &quot;logical_bytes&quot;,
+          &quot;options&quot;: {
+            &quot;artifact_bytes&quot;: 262144,
+            &quot;headroom_bytes&quot;: 65536,
+            &quot;keep&quot;: 8,
+            &quot;budget_bytes&quot;: 1300000
+          },
+          &quot;attempts&quot;: [
+            {
+              &quot;ok&quot;: true,
+              &quot;code&quot;: null
+            },
+            {
+              &quot;ok&quot;: true,
+              &quot;code&quot;: null
+            },
+            {
+              &quot;ok&quot;: false,
+              &quot;code&quot;: &quot;Refused&quot;
+            }
+          ],
+          &quot;refusal_code&quot;: &quot;Refused&quot;,
+          &quot;inventory_preserved_on_refusal&quot;: true,
+          &quot;receipts_preserved_on_refusal&quot;: true,
+          &quot;query_at_full&quot;: 40,
+          &quot;pin_before_stop&quot;: 1,
+          &quot;stop_exit_proven&quot;: true,
+          &quot;pin_after_release&quot;: 0,
+          &quot;logical_bytes_after_release&quot;: 612687
+        },
+        &quot;seconds&quot;: 0.3006764340000103
+      },
+      {
+        &quot;name&quot;: &quot;bounded_cycles&quot;,
+        &quot;passed&quot;: true,
+        &quot;details&quot;: {
+          &quot;fd_quiescence_seconds&quot;: 0.25,
+          &quot;cycles&quot;: 24,
+          &quot;reader_dwell_seconds&quot;: 5,
+          &quot;ledger_rows&quot;: 40,
+          &quot;restarts&quot;: 0,
+          &quot;warmup_cycles&quot;: 4,
+          &quot;rss_drift_allowance_kib&quot;: 4096,
+          &quot;samples&quot;: [
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00024148200000695397,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010590247000010322,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 0,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 21088,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 0,
+                &quot;requests&quot;: 0,
+                &quot;backups&quot;: 0,
+                &quot;restores&quot;: 0,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 0,
+              &quot;files&quot;: 2,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 57344,
+              &quot;allocated_bytes&quot;: 61440
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003233419999872922,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010937692999988258,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 1,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 24912,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 2,
+                &quot;requests&quot;: 1,
+                &quot;backups&quot;: 1,
+                &quot;restores&quot;: 1,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 2,
+              &quot;files&quot;: 7,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 242507,
+              &quot;allocated_bytes&quot;: 258048
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00031219199999554803,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.01057870799999705,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 2,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 26580,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 4,
+                &quot;requests&quot;: 2,
+                &quot;backups&quot;: 2,
+                &quot;restores&quot;: 2,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 4,
+              &quot;files&quot;: 12,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 427670,
+              &quot;allocated_bytes&quot;: 454656
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00027921199998104385,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.01072353199998588,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 3,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 26592,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 6,
+                &quot;requests&quot;: 3,
+                &quot;backups&quot;: 3,
+                &quot;restores&quot;: 3,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 6,
+              &quot;files&quot;: 14,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 427743,
+              &quot;allocated_bytes&quot;: 458752
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00036178299998823604,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010772627999983797,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 4,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 28424,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 8,
+                &quot;requests&quot;: 4,
+                &quot;backups&quot;: 4,
+                &quot;restores&quot;: 4,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 8,
+              &quot;files&quot;: 16,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 427816,
+              &quot;allocated_bytes&quot;: 462848
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00034167100000104256,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010730617000007214,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 5,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 28428,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 10,
+                &quot;requests&quot;: 5,
+                &quot;backups&quot;: 5,
+                &quot;restores&quot;: 5,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 10,
+              &quot;files&quot;: 18,
+              &quot;catalog_bytes&quot;: 57344,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 427887,
+              &quot;allocated_bytes&quot;: 466944
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003825869999900533,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011402539999977535,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 6,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 28432,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 12,
+                &quot;requests&quot;: 6,
+                &quot;backups&quot;: 6,
+                &quot;restores&quot;: 6,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 12,
+              &quot;files&quot;: 20,
+              &quot;catalog_bytes&quot;: 65536,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 436150,
+              &quot;allocated_bytes&quot;: 479232
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003254810000044017,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010993613000010782,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 7,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 28440,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 14,
+                &quot;requests&quot;: 7,
+                &quot;backups&quot;: 7,
+                &quot;restores&quot;: 7,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 14,
+              &quot;files&quot;: 22,
+              &quot;catalog_bytes&quot;: 65536,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 436225,
+              &quot;allocated_bytes&quot;: 483328
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0004008059999875968,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.01161467199997901,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 8,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 28440,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 16,
+                &quot;requests&quot;: 8,
+                &quot;backups&quot;: 8,
+                &quot;restores&quot;: 8,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 16,
+              &quot;files&quot;: 24,
+              &quot;catalog_bytes&quot;: 81920,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 452684,
+              &quot;allocated_bytes&quot;: 503808
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00038618900001097245,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011244048000008888,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 9,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29288,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 18,
+                &quot;requests&quot;: 9,
+                &quot;backups&quot;: 9,
+                &quot;restores&quot;: 9,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 18,
+              &quot;files&quot;: 26,
+              &quot;catalog_bytes&quot;: 81920,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 452757,
+              &quot;allocated_bytes&quot;: 507904
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.000371612000009236,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010650759000014887,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 10,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29288,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 20,
+                &quot;requests&quot;: 10,
+                &quot;backups&quot;: 10,
+                &quot;restores&quot;: 10,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 20,
+              &quot;files&quot;: 28,
+              &quot;catalog_bytes&quot;: 81920,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 452830,
+              &quot;allocated_bytes&quot;: 512000
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003956959999982246,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011836611999996194,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 11,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29296,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 22,
+                &quot;requests&quot;: 11,
+                &quot;backups&quot;: 11,
+                &quot;restores&quot;: 11,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 22,
+              &quot;files&quot;: 30,
+              &quot;catalog_bytes&quot;: 86016,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 456999,
+              &quot;allocated_bytes&quot;: 520192
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00024600999998369844,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.01093965699999444,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 12,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29296,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 24,
+                &quot;requests&quot;: 12,
+                &quot;backups&quot;: 12,
+                &quot;restores&quot;: 12,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 24,
+              &quot;files&quot;: 32,
+              &quot;catalog_bytes&quot;: 86016,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 457072,
+              &quot;allocated_bytes&quot;: 524288
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0002513020000094457,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011314615999992839,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 13,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29304,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 26,
+                &quot;requests&quot;: 13,
+                &quot;backups&quot;: 13,
+                &quot;restores&quot;: 13,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 26,
+              &quot;files&quot;: 34,
+              &quot;catalog_bytes&quot;: 86016,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 457145,
+              &quot;allocated_bytes&quot;: 528384
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00036741599998890706,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011643766999981153,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 14,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29304,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 28,
+                &quot;requests&quot;: 14,
+                &quot;backups&quot;: 14,
+                &quot;restores&quot;: 14,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 28,
+              &quot;files&quot;: 36,
+              &quot;catalog_bytes&quot;: 86016,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 457218,
+              &quot;allocated_bytes&quot;: 532480
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0002684279999982664,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010928153000008933,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 15,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29304,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 30,
+                &quot;requests&quot;: 15,
+                &quot;backups&quot;: 15,
+                &quot;restores&quot;: 15,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 30,
+              &quot;files&quot;: 38,
+              &quot;catalog_bytes&quot;: 94208,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 465479,
+              &quot;allocated_bytes&quot;: 544768
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00029625999999893793,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011749734000005674,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 16,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29304,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 32,
+                &quot;requests&quot;: 16,
+                &quot;backups&quot;: 16,
+                &quot;restores&quot;: 16,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 32,
+              &quot;files&quot;: 40,
+              &quot;catalog_bytes&quot;: 98304,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 469648,
+              &quot;allocated_bytes&quot;: 552960
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00026043099998673824,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010512363000003688,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 17,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29316,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 34,
+                &quot;requests&quot;: 17,
+                &quot;backups&quot;: 17,
+                &quot;restores&quot;: 17,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 34,
+              &quot;files&quot;: 42,
+              &quot;catalog_bytes&quot;: 98304,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 469723,
+              &quot;allocated_bytes&quot;: 557056
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00034817299999190254,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011787390999984382,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 18,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29316,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 36,
+                &quot;requests&quot;: 18,
+                &quot;backups&quot;: 18,
+                &quot;restores&quot;: 18,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 36,
+              &quot;files&quot;: 44,
+              &quot;catalog_bytes&quot;: 98304,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 469792,
+              &quot;allocated_bytes&quot;: 561152
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00038829499999337713,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010953882999984899,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 19,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29320,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 38,
+                &quot;requests&quot;: 19,
+                &quot;backups&quot;: 19,
+                &quot;restores&quot;: 19,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 38,
+              &quot;files&quot;: 46,
+              &quot;catalog_bytes&quot;: 98304,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 469863,
+              &quot;allocated_bytes&quot;: 565248
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0004092110000044613,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011196632999997291,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 20,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29324,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 40,
+                &quot;requests&quot;: 20,
+                &quot;backups&quot;: 20,
+                &quot;restores&quot;: 20,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 40,
+              &quot;files&quot;: 48,
+              &quot;catalog_bytes&quot;: 98304,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 469940,
+              &quot;allocated_bytes&quot;: 569344
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003529740000089987,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011544603000004372,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 21,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29332,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 42,
+                &quot;requests&quot;: 21,
+                &quot;backups&quot;: 21,
+                &quot;restores&quot;: 21,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 42,
+              &quot;files&quot;: 50,
+              &quot;catalog_bytes&quot;: 102400,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 474113,
+              &quot;allocated_bytes&quot;: 577536
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0004004829999928461,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010920006999981524,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 22,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29332,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 44,
+                &quot;requests&quot;: 22,
+                &quot;backups&quot;: 22,
+                &quot;restores&quot;: 22,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 44,
+              &quot;files&quot;: 52,
+              &quot;catalog_bytes&quot;: 110592,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 482376,
+              &quot;allocated_bytes&quot;: 589824
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.0003135139999983494,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.011658218000007992,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 23,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29332,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 46,
+                &quot;requests&quot;: 23,
+                &quot;backups&quot;: 23,
+                &quot;restores&quot;: 23,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 46,
+              &quot;files&quot;: 54,
+              &quot;catalog_bytes&quot;: 110592,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 482449,
+              &quot;allocated_bytes&quot;: 593920
+            },
+            {
+              &quot;fds&quot;: 7,
+              &quot;fd_quiescent&quot;: true,
+              &quot;fd_observations&quot;: [
+                {
+                  &quot;seconds&quot;: 0.00031145700000934085,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                },
+                {
+                  &quot;seconds&quot;: 0.010573222999994414,
+                  &quot;fds&quot;: 7,
+                  &quot;non_listener_sockets&quot;: 0,
+                  &quot;targets&quot;: {
+                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
+                    &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
+                    &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
+                    &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
+                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                  },
+                  &quot;unix_socket_flags&quot;: {
+                    &quot;19300&quot;: 65536
+                  }
+                }
+              ],
+              &quot;cycle&quot;: 24,
+              &quot;pid&quot;: 3992,
+              &quot;rss_kib&quot;: 29340,
+              &quot;children&quot;: 0,
+              &quot;rows&quot;: {
+                &quot;ops&quot;: 48,
+                &quot;requests&quot;: 24,
+                &quot;backups&quot;: 24,
+                &quot;restores&quot;: 24,
+                &quot;readers&quot;: 0
+              },
+              &quot;active_restores&quot;: 0,
+              &quot;pins&quot;: 0,
+              &quot;guards&quot;: 48,
+              &quot;files&quot;: 56,
+              &quot;catalog_bytes&quot;: 118784,
+              &quot;log_bytes&quot;: 0,
+              &quot;logical_bytes&quot;: 490716,
+              &quot;allocated_bytes&quot;: 606208
+            }
+          ],
+          &quot;cycle_seconds&quot;: [
+            5.138287098000006,
+            5.128613415999993,
+            5.138280152999982,
+            5.161957412999982,
+            5.160075053000014,
+            5.149675845000019,
+            5.146252860999994,
+            5.148249827000001,
+            5.214296173000008,
+            5.160836877999998,
+            5.175953852000021,
+            5.145434925000018,
+            5.169613771999991,
+            5.160477060000005,
+            5.154397751999994,
+            5.167887573000002,
+            5.141860019000006,
+            5.192579804000019,
+            5.166930100000002,
+            5.168202381000015,
+            5.154899141000016,
+            5.1547383109999885,
+            5.144888242999997,
+            5.150473419999997
+          ],
+          &quot;seconds&quot;: 124.16347359,
+          &quot;retained_metadata_explained&quot;: true,
+          &quot;long_term_qualification&quot;: false
+        },
+        &quot;seconds&quot;: 124.22912487500001
+      }
+    ]
+  },
+  &quot;reboots&quot;: [
+    {
+      &quot;kind&quot;: &quot;serving&quot;,
+      &quot;polls&quot;: [
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.30626862499048
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.25933850000728853
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3167869170138147
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.30975379201117903
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3709216249990277
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.24254808298428543
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.26555329200346023
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.24209799998789094
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.26067641598638147
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2830141670128796
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2492962499964051
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.24246933398535475
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.27677387499716133
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2418160840170458
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.35299020798993297
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3359908330021426
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.31386766699142754
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.23072133399546146
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2615773339930456
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3597900829918217
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.26773550000507385
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2688313329999801
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.24227399998926558
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2783012919826433
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.31220675000804476
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3393892500025686
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.3006746250030119
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.32141470900387503
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2548490420158487
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.35218770799110644
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.301286333007738
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.2650273329927586
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.26958379201823846
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.32047308300388977
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.33668554201722145
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.33289954098290764
+        },
+        {
+          &quot;exit_code&quot;: 1,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.27823762499610893
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 3.310210708004888
+        }
+      ],
+      &quot;boot_changed&quot;: true,
+      &quot;details&quot;: {
+        &quot;kind&quot;: &quot;serving&quot;,
+        &quot;boot_before&quot;: &quot;a41c53cd-3208-40e1-b861-ec1ed13ac517&quot;,
+        &quot;boot_after&quot;: &quot;19c2cd0e-7afb-42cd-a826-f62e19b6f954&quot;,
+        &quot;journal_before&quot;: {
+          &quot;sha256&quot;: &quot;ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33&quot;,
+          &quot;rows&quot;: {
+            &quot;restores&quot;: [
+              [
+                &quot;722a813ccc8840d596ba2d052d683052&quot;,
+                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;SERVING&quot;
+              ]
+            ],
+            &quot;pins&quot;: [
+              [
+                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                1
+              ]
+            ],
+            &quot;authority&quot;: [
+              [
+                1,
+                14
+              ]
+            ]
+          }
+        },
+        &quot;journal_after_before_controller&quot;: {
+          &quot;sha256&quot;: &quot;ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33&quot;,
+          &quot;rows&quot;: {
+            &quot;restores&quot;: [
+              [
+                &quot;722a813ccc8840d596ba2d052d683052&quot;,
+                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;SERVING&quot;
+              ]
+            ],
+            &quot;pins&quot;: [
+              [
+                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                1
+              ]
+            ],
+            &quot;authority&quot;: [
+              [
+                1,
+                14
+              ]
+            ]
+          }
+        },
+        &quot;copy_hash_preserved_before_recovery&quot;: true,
+        &quot;controller_killed_before_reboot&quot;: true,
+        &quot;state_after_recovery&quot;: &quot;READY&quot;,
+        &quot;old_epoch_rejected&quot;: true,
+        &quot;stale_epoch_only_rejected&quot;: true,
+        &quot;stale_revision_only_rejected&quot;: true,
+        &quot;stale_rejections_preserved_state&quot;: true,
+        &quot;query_count&quot;: 40,
+        &quot;pin_after_release&quot;: 0
+      }
+    },
+    {
+      &quot;kind&quot;: &quot;release_intent&quot;,
+      &quot;polls&quot;: [
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.29730075001134537
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.34229908301495016
+        },
+        {
+          &quot;exit_code&quot;: 1,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 3.300194042007206
+        },
+        {
+          &quot;exit_code&quot;: 0,
+          &quot;timed_out&quot;: false,
+          &quot;seconds&quot;: 0.38449704201775603
+        }
+      ],
+      &quot;boot_changed&quot;: true,
+      &quot;details&quot;: {
+        &quot;kind&quot;: &quot;release_intent&quot;,
+        &quot;boot_before&quot;: &quot;19c2cd0e-7afb-42cd-a826-f62e19b6f954&quot;,
+        &quot;boot_after&quot;: &quot;379bc633-c886-4f26-8d74-32a60603411f&quot;,
+        &quot;journal_before&quot;: {
+          &quot;sha256&quot;: &quot;908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565&quot;,
+          &quot;rows&quot;: {
+            &quot;restores&quot;: [
+              [
+                &quot;f18acad1d7e74833bf0b4914f58c3d33&quot;,
+                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;RELEASING&quot;
+              ]
+            ],
+            &quot;pins&quot;: [
+              [
+                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                1
+              ]
+            ],
+            &quot;authority&quot;: [
+              [
+                1,
+                17
+              ]
+            ]
+          }
+        },
+        &quot;journal_after_before_controller&quot;: {
+          &quot;sha256&quot;: &quot;908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565&quot;,
+          &quot;rows&quot;: {
+            &quot;restores&quot;: [
+              [
+                &quot;f18acad1d7e74833bf0b4914f58c3d33&quot;,
+                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;RELEASING&quot;
+              ]
+            ],
+            &quot;pins&quot;: [
+              [
+                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                1
+              ]
+            ],
+            &quot;authority&quot;: [
+              [
+                1,
+                17
+              ]
+            ]
+          }
+        },
+        &quot;copy_hash_preserved_before_recovery&quot;: true,
+        &quot;controller_killed_before_reboot&quot;: true,
+        &quot;state_after_recovery&quot;: &quot;RELEASED&quot;,
+        &quot;old_epoch_rejected&quot;: true,
+        &quot;stale_epoch_only_rejected&quot;: true,
+        &quot;stale_revision_only_rejected&quot;: true,
+        &quot;stale_rejections_preserved_state&quot;: true,
+        &quot;query_count&quot;: null,
+        &quot;pin_after_release&quot;: 0
+      }
+    }
+  ],
+  &quot;closeout_cleanup&quot;: {
+    &quot;no_product_processes_remaining&quot;: true
+  },
+  &quot;limits&quot;: {
+    &quot;normal_vm_reboot_tested&quot;: true,
+    &quot;power_loss_tested&quot;: false,
+    &quot;long_term_gc_tested&quot;: false,
+    &quot;systemd_package_tested&quot;: false
+  },
+  &quot;vm_final&quot;: &quot;Deleted&quot;,
+  &quot;data_disk_removed&quot;: true,
+  &quot;preexisting_profiles_unchanged&quot;: true,
+  &quot;controls&quot;: {
+    &quot;passed&quot;: true,
+    &quot;rejected&quot;: 33,
+    &quot;baseline_rejected&quot;: 29
+  }
+}</pre></html>

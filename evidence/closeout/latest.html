@@ -1,13 +1,13 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft bounded closeout</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: installed workflow, capacity and normal reboot</h1><p>Passed: True</p><p>Fresh isolated Linux VM, installed wheel with source imports removed. Documented CLI, separate receipt/soft-byte rejection, 24 same-controller cycles with 5-second reader dwell each, and two normal guest reboots. Persistent catalog is compared before reboot and after boot before controller recovery. RSS is sampled Linux VM process RSS, not peak/physical/native performance. Metadata intentionally grows with retained tombstones/guards; no unlimited endurance, automated GC, systemd packaging, sudden-power-loss or boot zero-gap qualification. Historical phase-two case-group flags apply only to that case group.</p><pre>{
   &quot;passed&quot;: true,
-  &quot;run_id&quot;: &quot;9933e02c1ba18673&quot;,
-  &quot;recorded_at_utc&quot;: &quot;2026-10-24T10:55:40.039018+00:00&quot;,
+  &quot;run_id&quot;: &quot;21c52afcecce99d5&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T11:23:53.838632+00:00&quot;,
   &quot;source&quot;: {
     &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
     &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
     &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
     &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
-    &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+    &quot;keepweft/data.py&quot;: &quot;3dcc66fa4814b0ba6b39610d4fb44e728d2797233e0c8f2d268d2942be4d7f13&quot;,
     &quot;keepweft/reader.py&quot;: &quot;e483e911d368f78f550787f857ca14ba1ad6753c50e7ca5b5d90e92bde44716d&quot;,
     &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
     &quot;keepweft/service.py&quot;: &quot;c196aab5cc4d639e64f08c6282989d0842da757bea02e047fd7f60121c72a9fe&quot;,
@@ -15,13 +15,13 @@
     &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
     &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
     &quot;tests/test_closeout.py&quot;: &quot;989b09b1173aa74a9ee353f229740313fe474c428f55ce0b4707b2e97db62d10&quot;,
-    &quot;tests/test_core.py&quot;: &quot;0a1b13f6579c0537681cc0e3441a9f97f4194743bcae5a3c27b7ccdcac98059a&quot;,
+    &quot;tests/test_core.py&quot;: &quot;54c818101d8d06cd2fb966fb3a5131033acb8895f570218dde5033ecb731137b&quot;,
     &quot;tests/test_readers.py&quot;: &quot;6385672233044cb577f6a7520c32ecfed6951b17153f0b448034387ac521d8bb&quot;,
     &quot;tests/test_requests.py&quot;: &quot;fa044131fb081d2a53e90bf20a51b55581f0f084e6e2832b7610fa45d8dc64cc&quot;,
     &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
     &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
     &quot;tools/closeout_cases.py&quot;: &quot;aa3f269de6dd4b2f2857fd33176deb1d0096106998bd3b4fda54b3201959e94c&quot;,
-    &quot;tools/closeout_report.py&quot;: &quot;de880132e29efefd1ab6cee5340bcad3185d6fc26dddb9270239509a3aa3bc88&quot;,
+    &quot;tools/closeout_report.py&quot;: &quot;6ec898d5f3883ef53f7695fbb2f812486c741006f9bd38b5d73cf90aad2ac8ee&quot;,
     &quot;tools/closeout_validate.py&quot;: &quot;78aec32937715421dd9413d84f51ac21f10693f98837f1e558716b180315ef44&quot;,
     &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
     &quot;tools/explore.py&quot;: &quot;123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a&quot;,
@@ -36,173 +36,173 @@
     &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
     &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
   },
-  &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+  &quot;source_sha256&quot;: &quot;2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478&quot;,
   &quot;source_changed&quot;: false,
   &quot;stages&quot;: [
     {
       &quot;name&quot;: &quot;initial&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3759549169917591
+      &quot;seconds&quot;: 0.4231388329935726
     },
     {
       &quot;name&quot;: &quot;create&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 22.619183458999032
+      &quot;seconds&quot;: 22.12924437498441
     },
     {
       &quot;name&quot;: &quot;dependencies&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 27.774543042003643
+      &quot;seconds&quot;: 28.557964999985415
     },
     {
       &quot;name&quot;: &quot;upload&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3698715420032386
+      &quot;seconds&quot;: 0.32007920800242573
     },
     {
       &quot;name&quot;: &quot;runtime&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 13.880837959004566
+      &quot;seconds&quot;: 13.781713124975795
     },
     {
       &quot;name&quot;: &quot;install&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.8084998340054881
+      &quot;seconds&quot;: 0.39889295800821856
     },
     {
       &quot;name&quot;: &quot;provenance&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.34358987500309013
+      &quot;seconds&quot;: 0.2366254160006065
     },
     {
       &quot;name&quot;: &quot;native&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 27.051729625003645
+      &quot;seconds&quot;: 27.822753165994072
     },
     {
       &quot;name&quot;: &quot;linux&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 24.489162625017343
+      &quot;seconds&quot;: 24.63417804200435
     },
     {
       &quot;name&quot;: &quot;linux-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.26933329200255685
+      &quot;seconds&quot;: 0.30612287498661317
     },
     {
       &quot;name&quot;: &quot;explore&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 7.710015125019709
+      &quot;seconds&quot;: 7.827381207986036
     },
     {
       &quot;name&quot;: &quot;guest-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.27160374997765757
+      &quot;seconds&quot;: 0.3340154580073431
     },
     {
       &quot;name&quot;: &quot;closeout&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 125.68501858299715
+      &quot;seconds&quot;: 126.17977700001211
     },
     {
       &quot;name&quot;: &quot;closeout-read&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.39752274999045767
+      &quot;seconds&quot;: 0.4848677499976475
     },
     {
       &quot;name&quot;: &quot;prepare-serving&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.46911470900522545
+      &quot;seconds&quot;: 0.5220622920023743
     },
     {
       &quot;name&quot;: &quot;prepare-read-serving&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.27409387499210425
+      &quot;seconds&quot;: 0.24257095798384398
     },
     {
       &quot;name&quot;: &quot;schedule-serving&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.26320987500366755
+      &quot;seconds&quot;: 0.25661366697750054
     },
     {
       &quot;name&quot;: &quot;finish-serving&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.40191395801957697
+      &quot;seconds&quot;: 0.4286747500009369
     },
     {
       &quot;name&quot;: &quot;finish-read-serving&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.23178470798302442
+      &quot;seconds&quot;: 0.3082065829948988
     },
     {
       &quot;name&quot;: &quot;prepare-release_intent&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.4080588750075549
+      &quot;seconds&quot;: 0.5005048750026617
     },
     {
       &quot;name&quot;: &quot;prepare-read-release_intent&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.2336272920074407
+      &quot;seconds&quot;: 0.2626590410072822
     },
     {
       &quot;name&quot;: &quot;schedule-release_intent&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.23281733397743665
+      &quot;seconds&quot;: 0.3431948749930598
     },
     {
       &quot;name&quot;: &quot;finish-release_intent&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.3092595410125796
+      &quot;seconds&quot;: 0.33778170798905194
     },
     {
       &quot;name&quot;: &quot;finish-read-release_intent&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.21453525000833906
+      &quot;seconds&quot;: 0.25295783299952745
     },
     {
       &quot;name&quot;: &quot;closeout-cleanup&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.24615783299668692
+      &quot;seconds&quot;: 0.3522308749961667
     },
     {
       &quot;name&quot;: &quot;delete&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 1.4437228329770733
+      &quot;seconds&quot;: 1.6074199589784257
     },
     {
       &quot;name&quot;: &quot;final&quot;,
       &quot;exit_code&quot;: 0,
       &quot;timed_out&quot;: false,
-      &quot;seconds&quot;: 0.1965782500046771
+      &quot;seconds&quot;: 0.19175520801218227
     }
   ],
-  &quot;wheel_sha256&quot;: &quot;56c5f243ea2ca6cadad0afe809499b4fb9f9fbf9fdeeab46062c47650796a59d&quot;,
+  &quot;wheel_sha256&quot;: &quot;7453f8489610c271d9e7c9dc52012890f44e6412192c202c4969ef73408d6175&quot;,
   &quot;wheel_product_matches&quot;: true,
   &quot;host_mounts&quot;: &quot;none&quot;,
   &quot;fresh_profile&quot;: true,
@@ -229,7 +229,7 @@
       &quot;keepweft/core.py&quot;: &quot;e6ed0dccd35c69700c3e7bbc9f8dd5e5e941b90c0c64458425307df29d199541&quot;,
       &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
       &quot;keepweft/view.py&quot;: &quot;3410f54a34e42e8a642654877c571631b70f5e9eb018ae541ee4a07744847947&quot;,
-      &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+      &quot;keepweft/data.py&quot;: &quot;3dcc66fa4814b0ba6b39610d4fb44e728d2797233e0c8f2d268d2942be4d7f13&quot;,
       &quot;keepweft/requests.py&quot;: &quot;9a22e02e0be63be6fc87be035a3c1e4c87a863a17c6da237bab210682561f836&quot;,
       &quot;keepweft/client.py&quot;: &quot;c58c9ece6dcfb39318c1aa6617019282929f4ac29c018c286f6aeacf6ea026d0&quot;,
       &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;
@@ -283,7 +283,7 @@
   },
   &quot;native_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 81,
+    &quot;count&quot;: 83,
     &quot;tests&quot;: [
       &quot;test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release&quot;,
       &quot;test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation&quot;,
@@ -300,8 +300,10 @@
       &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
       &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
       &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_fk_orphan_item_refuses_formal_backup&quot;,
       &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
       &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_null_transaction_item_parent_refuses_formal_backup&quot;,
       &quot;test_core.CoreTests.test_one_restored_instance&quot;,
       &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
       &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
@@ -370,7 +372,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;source_sha256&quot;: &quot;2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478&quot;,
     &quot;platform&quot;: &quot;Darwin&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
@@ -427,7 +429,7 @@
   },
   &quot;linux_unit&quot;: {
     &quot;passed&quot;: true,
-    &quot;count&quot;: 81,
+    &quot;count&quot;: 83,
     &quot;tests&quot;: [
       &quot;test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release&quot;,
       &quot;test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation&quot;,
@@ -444,8 +446,10 @@
       &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
       &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
       &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_fk_orphan_item_refuses_formal_backup&quot;,
       &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
       &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_null_transaction_item_parent_refuses_formal_backup&quot;,
       &quot;test_core.CoreTests.test_one_restored_instance&quot;,
       &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
       &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
@@ -514,7 +518,7 @@
     &quot;failures&quot;: 0,
     &quot;errors&quot;: 0,
     &quot;skipped&quot;: 0,
-    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;source_sha256&quot;: &quot;2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478&quot;,
     &quot;platform&quot;: &quot;Linux&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
@@ -563,7 +567,7 @@
   },
   &quot;guest&quot;: {
     &quot;passed&quot;: true,
-    &quot;source_sha256&quot;: &quot;cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9&quot;,
+    &quot;source_sha256&quot;: &quot;2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478&quot;,
     &quot;runtime&quot;: {
       &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
       &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
@@ -612,7 +616,7 @@
       {
         &quot;name&quot;: &quot;roundtrip&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.1705001100000061,
+        &quot;seconds&quot;: 0.20690819800000781,
         &quot;details&quot;: {
           &quot;count&quot;: 40,
           &quot;hash_preserved&quot;: true,
@@ -621,16 +625,16 @@
           &quot;release_refused_while_serving&quot;: true,
           &quot;stale_revision_rejected_with_free_guard&quot;: true,
           &quot;missing_token_rejected&quot;: true,
-          &quot;start_to_query_seconds&quot;: 0.034644427000003475,
-          &quot;reader_rss_kib&quot;: 21060,
-          &quot;controller_rss_kib&quot;: 23952,
+          &quot;start_to_query_seconds&quot;: 0.04669780000000401,
+          &quot;reader_rss_kib&quot;: 21052,
+          &quot;controller_rss_kib&quot;: 23948,
           &quot;managed_logical_bytes_while_serving&quot;: 427316
         }
       },
       {
         &quot;name&quot;: &quot;controller_orphan&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.207120909000011,
+        &quot;seconds&quot;: 0.2347712739999963,
         &quot;details&quot;: {
           &quot;controller_sigkill&quot;: true,
           &quot;global_controller_recovered&quot;: true,
@@ -645,7 +649,7 @@
       {
         &quot;name&quot;: &quot;before_spawn&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.16361697100001038,
+        &quot;seconds&quot;: 0.18516225399999087,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_spawn&quot;,
           &quot;state_after_restart&quot;: &quot;READY&quot;,
@@ -656,7 +660,7 @@
       {
         &quot;name&quot;: &quot;after_spawn&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.169061506999995,
+        &quot;seconds&quot;: 0.20422548599999857,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_after_spawn&quot;,
           &quot;state_after_restart&quot;: &quot;ORPHAN_BUSY&quot;,
@@ -667,7 +671,7 @@
       {
         &quot;name&quot;: &quot;release_intent&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.1595775889999942,
+        &quot;seconds&quot;: 0.16476127900000392,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_release_intent&quot;,
           &quot;copy_present_before_restart&quot;: true,
@@ -678,7 +682,7 @@
       {
         &quot;name&quot;: &quot;stop_timeout&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 2.1773351740000066,
+        &quot;seconds&quot;: 2.1861915550000077,
         &quot;details&quot;: {
           &quot;stop_timeout_not_exit&quot;: true,
           &quot;pin_after_timeout&quot;: 1,
@@ -689,7 +693,7 @@
       {
         &quot;name&quot;: &quot;missing_ready_crash&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.19956790700000226,
+        &quot;seconds&quot;: 0.21364459699999827,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
           &quot;ready_absent&quot;: true,
@@ -704,7 +708,7 @@
       {
         &quot;name&quot;: &quot;readiness_timeout&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 3.2028224050000063,
+        &quot;seconds&quot;: 3.1295210469999972,
         &quot;details&quot;: {
           &quot;barrier_seen&quot;: &quot;reader_before_ready&quot;,
           &quot;ready_absent&quot;: true,
@@ -719,7 +723,7 @@
       {
         &quot;name&quot;: &quot;idle_header&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.707755438999996,
+        &quot;seconds&quot;: 0.7510646909999963,
         &quot;details&quot;: {
           &quot;incomplete_unauthenticated_header&quot;: true,
           &quot;reader_closed_idle_connection&quot;: true,
@@ -731,7 +735,7 @@
       {
         &quot;name&quot;: &quot;readonly_release&quot;,
         &quot;passed&quot;: true,
-        &quot;seconds&quot;: 0.21983451900000262,
+        &quot;seconds&quot;: 0.22686585900000011,
         &quot;details&quot;: {
           &quot;os_errno&quot;: 30,
           &quot;pin_before_repair&quot;: 1,
@@ -810,14 +814,14 @@
           &quot;socket_removed&quot;: true,
           &quot;independent_stale_fences&quot;: true
         },
-        &quot;seconds&quot;: 0.3348938419999996
+        &quot;seconds&quot;: 0.342409210999989
       },
       {
         &quot;name&quot;: &quot;receipt_capacity&quot;,
         &quot;passed&quot;: true,
         &quot;details&quot;: {
-          &quot;refusal_witness_before_sha256&quot;: &quot;2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96&quot;,
-          &quot;refusal_witness_after_sha256&quot;: &quot;2c79a1172a57151e3d33eb072cda7dbec75576af4bcb5be4db08f5ac93344f96&quot;,
+          &quot;refusal_witness_before_sha256&quot;: &quot;c58ec719b42868874e8b7f396f0babaaa9093f96e298f2ef5b16fe0d9b526196&quot;,
+          &quot;refusal_witness_after_sha256&quot;: &quot;c58ec719b42868874e8b7f396f0babaaa9093f96e298f2ef5b16fe0d9b526196&quot;,
           &quot;all_backup_files_and_catalog_compared&quot;: true,
           &quot;kind&quot;: &quot;receipts&quot;,
           &quot;options&quot;: {
@@ -851,16 +855,16 @@
           &quot;pin_before_stop&quot;: 1,
           &quot;stop_exit_proven&quot;: true,
           &quot;pin_after_release&quot;: 0,
-          &quot;logical_bytes_after_release&quot;: 797777
+          &quot;logical_bytes_after_release&quot;: 797775
         },
-        &quot;seconds&quot;: 0.5192792029999964
+        &quot;seconds&quot;: 0.33484858899998926
       },
       {
         &quot;name&quot;: &quot;logical_capacity&quot;,
         &quot;passed&quot;: true,
         &quot;details&quot;: {
-          &quot;refusal_witness_before_sha256&quot;: &quot;c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2&quot;,
-          &quot;refusal_witness_after_sha256&quot;: &quot;c79d3204e25269ab9e7b098893e3fa0448e98d85ad28bcb53c7e96e9e7824db2&quot;,
+          &quot;refusal_witness_before_sha256&quot;: &quot;aca64c81517370d5c6cc954662c939ee7111d39526f980ecee18ccb5956c920f&quot;,
+          &quot;refusal_witness_after_sha256&quot;: &quot;aca64c81517370d5c6cc954662c939ee7111d39526f980ecee18ccb5956c920f&quot;,
           &quot;all_backup_files_and_catalog_compared&quot;: true,
           &quot;kind&quot;: &quot;logical_bytes&quot;,
           &quot;options&quot;: {
@@ -892,7 +896,7 @@
           &quot;pin_after_release&quot;: 0,
           &quot;logical_bytes_after_release&quot;: 612687
         },
-        &quot;seconds&quot;: 0.3006764340000103
+        &quot;seconds&quot;: 0.3216764279999893
       },
       {
         &quot;name&quot;: &quot;bounded_cycles&quot;,
@@ -911,43 +915,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00024148200000695397,
+                  &quot;seconds&quot;: 0.0021266359999998485,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010590247000010322,
+                  &quot;seconds&quot;: 0.012829214000007028,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 0,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 21088,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 21096,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 0,
@@ -963,50 +967,50 @@
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
               &quot;logical_bytes&quot;: 57344,
-              &quot;allocated_bytes&quot;: 61440
+              &quot;allocated_bytes&quot;: 57344
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003233419999872922,
+                  &quot;seconds&quot;: 0.0004022380000208159,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010937692999988258,
+                  &quot;seconds&quot;: 0.011106110000014269,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 1,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 24912,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 24916,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 2,
@@ -1021,51 +1025,51 @@
               &quot;files&quot;: 7,
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 242507,
-              &quot;allocated_bytes&quot;: 258048
+              &quot;logical_bytes&quot;: 242505,
+              &quot;allocated_bytes&quot;: 253952
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00031219199999554803,
+                  &quot;seconds&quot;: 0.0003735470000094665,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.01057870799999705,
+                  &quot;seconds&quot;: 0.010920446999989508,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 2,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 26580,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 26588,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 4,
@@ -1080,51 +1084,51 @@
               &quot;files&quot;: 12,
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 427670,
-              &quot;allocated_bytes&quot;: 454656
+              &quot;logical_bytes&quot;: 427668,
+              &quot;allocated_bytes&quot;: 450560
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00027921199998104385,
+                  &quot;seconds&quot;: 0.00036393299998849216,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.01072353199998588,
+                  &quot;seconds&quot;: 0.010819677000000638,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 3,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 26592,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 26600,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 6,
@@ -1139,50 +1143,50 @@
               &quot;files&quot;: 14,
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 427743,
-              &quot;allocated_bytes&quot;: 458752
+              &quot;logical_bytes&quot;: 427739,
+              &quot;allocated_bytes&quot;: 454656
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00036178299998823604,
+                  &quot;seconds&quot;: 0.0004637570000056712,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010772627999983797,
+                  &quot;seconds&quot;: 0.011047509999997374,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 4,
-              &quot;pid&quot;: 3992,
+              &quot;pid&quot;: 4010,
               &quot;rss_kib&quot;: 28424,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
@@ -1198,50 +1202,50 @@
               &quot;files&quot;: 16,
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 427816,
-              &quot;allocated_bytes&quot;: 462848
+              &quot;logical_bytes&quot;: 427810,
+              &quot;allocated_bytes&quot;: 458752
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00034167100000104256,
+                  &quot;seconds&quot;: 0.00031357799997522307,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010730617000007214,
+                  &quot;seconds&quot;: 0.012088656999992509,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 5,
-              &quot;pid&quot;: 3992,
+              &quot;pid&quot;: 4010,
               &quot;rss_kib&quot;: 28428,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
@@ -1258,49 +1262,49 @@
               &quot;catalog_bytes&quot;: 57344,
               &quot;log_bytes&quot;: 0,
               &quot;logical_bytes&quot;: 427887,
-              &quot;allocated_bytes&quot;: 466944
+              &quot;allocated_bytes&quot;: 462848
             },
             {
               &quot;fds&quot;: 7,
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003825869999900533,
+                  &quot;seconds&quot;: 0.00028954399999747693,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011402539999977535,
+                  &quot;seconds&quot;: 0.010693011999990176,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 6,
-              &quot;pid&quot;: 3992,
+              &quot;pid&quot;: 4010,
               &quot;rss_kib&quot;: 28432,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
@@ -1316,7 +1320,7 @@
               &quot;files&quot;: 20,
               &quot;catalog_bytes&quot;: 65536,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 436150,
+              &quot;logical_bytes&quot;: 436154,
               &quot;allocated_bytes&quot;: 479232
             },
             {
@@ -1324,42 +1328,42 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003254810000044017,
+                  &quot;seconds&quot;: 0.000353997999980038,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010993613000010782,
+                  &quot;seconds&quot;: 0.011635520999988103,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 7,
-              &quot;pid&quot;: 3992,
+              &quot;pid&quot;: 4010,
               &quot;rss_kib&quot;: 28440,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
@@ -1383,43 +1387,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0004008059999875968,
+                  &quot;seconds&quot;: 0.00036941600001227926,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.01161467199997901,
+                  &quot;seconds&quot;: 0.01064195800000789,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 8,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 28440,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 28444,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 16,
@@ -1434,7 +1438,7 @@
               &quot;files&quot;: 24,
               &quot;catalog_bytes&quot;: 81920,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 452684,
+              &quot;logical_bytes&quot;: 452682,
               &quot;allocated_bytes&quot;: 503808
             },
             {
@@ -1442,43 +1446,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00038618900001097245,
+                  &quot;seconds&quot;: 0.0003729199999895627,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011244048000008888,
+                  &quot;seconds&quot;: 0.01080600699998513,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 9,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29288,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30148,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 18,
@@ -1501,43 +1505,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.000371612000009236,
+                  &quot;seconds&quot;: 0.00027263999999149746,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010650759000014887,
+                  &quot;seconds&quot;: 0.010722633000000314,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 10,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29288,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30148,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 20,
@@ -1552,7 +1556,7 @@
               &quot;files&quot;: 28,
               &quot;catalog_bytes&quot;: 81920,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 452830,
+              &quot;logical_bytes&quot;: 452828,
               &quot;allocated_bytes&quot;: 512000
             },
             {
@@ -1560,43 +1564,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003956959999982246,
+                  &quot;seconds&quot;: 0.000326137000001836,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011836611999996194,
+                  &quot;seconds&quot;: 0.011439340999999104,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 11,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29296,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30152,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 22,
@@ -1611,7 +1615,7 @@
               &quot;files&quot;: 30,
               &quot;catalog_bytes&quot;: 86016,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 456999,
+              &quot;logical_bytes&quot;: 456997,
               &quot;allocated_bytes&quot;: 520192
             },
             {
@@ -1619,43 +1623,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00024600999998369844,
+                  &quot;seconds&quot;: 0.0002901010000186943,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.01093965699999444,
+                  &quot;seconds&quot;: 0.010818620000009105,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 12,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29296,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30152,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 24,
@@ -1670,7 +1674,7 @@
               &quot;files&quot;: 32,
               &quot;catalog_bytes&quot;: 86016,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 457072,
+              &quot;logical_bytes&quot;: 457070,
               &quot;allocated_bytes&quot;: 524288
             },
             {
@@ -1678,43 +1682,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0002513020000094457,
+                  &quot;seconds&quot;: 0.0006313240000110909,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011314615999992839,
+                  &quot;seconds&quot;: 0.011694137999995746,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 13,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29304,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30156,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 26,
@@ -1729,7 +1733,7 @@
               &quot;files&quot;: 34,
               &quot;catalog_bytes&quot;: 86016,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 457145,
+              &quot;logical_bytes&quot;: 457141,
               &quot;allocated_bytes&quot;: 528384
             },
             {
@@ -1737,43 +1741,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00036741599998890706,
+                  &quot;seconds&quot;: 0.0003778039999815519,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011643766999981153,
+                  &quot;seconds&quot;: 0.011359172999988232,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 14,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29304,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30156,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 28,
@@ -1788,7 +1792,7 @@
               &quot;files&quot;: 36,
               &quot;catalog_bytes&quot;: 86016,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 457218,
+              &quot;logical_bytes&quot;: 457216,
               &quot;allocated_bytes&quot;: 532480
             },
             {
@@ -1796,43 +1800,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0002684279999982664,
+                  &quot;seconds&quot;: 0.00020086000000674176,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010928153000008933,
+                  &quot;seconds&quot;: 0.01050293700001248,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 15,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29304,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30160,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 30,
@@ -1847,7 +1851,7 @@
               &quot;files&quot;: 38,
               &quot;catalog_bytes&quot;: 94208,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 465479,
+              &quot;logical_bytes&quot;: 465483,
               &quot;allocated_bytes&quot;: 544768
             },
             {
@@ -1855,43 +1859,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00029625999999893793,
+                  &quot;seconds&quot;: 0.0002993529999741895,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011749734000005674,
+                  &quot;seconds&quot;: 0.01072382399999583,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 16,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29304,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30160,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 32,
@@ -1906,7 +1910,7 @@
               &quot;files&quot;: 40,
               &quot;catalog_bytes&quot;: 98304,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 469648,
+              &quot;logical_bytes&quot;: 469652,
               &quot;allocated_bytes&quot;: 552960
             },
             {
@@ -1914,43 +1918,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00026043099998673824,
+                  &quot;seconds&quot;: 0.0002753560000030575,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010512363000003688,
+                  &quot;seconds&quot;: 0.011428051000024197,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 17,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29316,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30164,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 34,
@@ -1965,7 +1969,7 @@
               &quot;files&quot;: 42,
               &quot;catalog_bytes&quot;: 98304,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 469723,
+              &quot;logical_bytes&quot;: 469725,
               &quot;allocated_bytes&quot;: 557056
             },
             {
@@ -1973,43 +1977,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00034817299999190254,
+                  &quot;seconds&quot;: 0.0003450600000007853,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011787390999984382,
+                  &quot;seconds&quot;: 0.011620601000004172,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 18,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29316,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30164,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 36,
@@ -2024,7 +2028,7 @@
               &quot;files&quot;: 44,
               &quot;catalog_bytes&quot;: 98304,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 469792,
+              &quot;logical_bytes&quot;: 469796,
               &quot;allocated_bytes&quot;: 561152
             },
             {
@@ -2032,43 +2036,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00038829499999337713,
+                  &quot;seconds&quot;: 0.0003996830000119189,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010953882999984899,
+                  &quot;seconds&quot;: 0.011881523999988985,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 19,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29320,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30168,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 38,
@@ -2083,7 +2087,7 @@
               &quot;files&quot;: 46,
               &quot;catalog_bytes&quot;: 98304,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 469863,
+              &quot;logical_bytes&quot;: 469869,
               &quot;allocated_bytes&quot;: 565248
             },
             {
@@ -2091,43 +2095,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0004092110000044613,
+                  &quot;seconds&quot;: 0.00042293200002063713,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011196632999997291,
+                  &quot;seconds&quot;: 0.011661512000017638,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 20,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29324,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30232,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 40,
@@ -2142,7 +2146,7 @@
               &quot;files&quot;: 48,
               &quot;catalog_bytes&quot;: 98304,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 469940,
+              &quot;logical_bytes&quot;: 469944,
               &quot;allocated_bytes&quot;: 569344
             },
             {
@@ -2150,43 +2154,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003529740000089987,
+                  &quot;seconds&quot;: 0.00039191999999843574,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011544603000004372,
+                  &quot;seconds&quot;: 0.011051831000003176,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 21,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29332,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30240,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 42,
@@ -2209,43 +2213,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0004004829999928461,
+                  &quot;seconds&quot;: 0.00040458600000192746,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010920006999981524,
+                  &quot;seconds&quot;: 0.011109481999994841,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 22,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29332,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30240,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 44,
@@ -2260,7 +2264,7 @@
               &quot;files&quot;: 52,
               &quot;catalog_bytes&quot;: 110592,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 482376,
+              &quot;logical_bytes&quot;: 482378,
               &quot;allocated_bytes&quot;: 589824
             },
             {
@@ -2268,43 +2272,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.0003135139999983494,
+                  &quot;seconds&quot;: 0.00045466599999599566,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.011658218000007992,
+                  &quot;seconds&quot;: 0.011651419000003216,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 23,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29332,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30240,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 46,
@@ -2319,7 +2323,7 @@
               &quot;files&quot;: 54,
               &quot;catalog_bytes&quot;: 110592,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 482449,
+              &quot;logical_bytes&quot;: 482451,
               &quot;allocated_bytes&quot;: 593920
             },
             {
@@ -2327,43 +2331,43 @@
               &quot;fd_quiescent&quot;: true,
               &quot;fd_observations&quot;: [
                 {
-                  &quot;seconds&quot;: 0.00031145700000934085,
+                  &quot;seconds&quot;: 0.00024118600001088453,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 },
                 {
-                  &quot;seconds&quot;: 0.010573222999994414,
+                  &quot;seconds&quot;: 0.011661494000009043,
                   &quot;fds&quot;: 7,
                   &quot;non_listener_sockets&quot;: 0,
                   &quot;targets&quot;: {
-                    &quot;0&quot;: &quot;pipe:[20026]&quot;,
+                    &quot;0&quot;: &quot;pipe:[19198]&quot;,
                     &quot;1&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;2&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/service.log&quot;,
                     &quot;3&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/.lock&quot;,
                     &quot;4&quot;: &quot;/opt/keepweft/closeout/bounded_cycles/store/catalog.sqlite&quot;,
                     &quot;5&quot;: &quot;anon_inode:[eventpoll]&quot;,
-                    &quot;6&quot;: &quot;socket:[19300]&quot;
+                    &quot;6&quot;: &quot;socket:[19440]&quot;
                   },
                   &quot;unix_socket_flags&quot;: {
-                    &quot;19300&quot;: 65536
+                    &quot;19440&quot;: 65536
                   }
                 }
               ],
               &quot;cycle&quot;: 24,
-              &quot;pid&quot;: 3992,
-              &quot;rss_kib&quot;: 29340,
+              &quot;pid&quot;: 4010,
+              &quot;rss_kib&quot;: 30244,
               &quot;children&quot;: 0,
               &quot;rows&quot;: {
                 &quot;ops&quot;: 48,
@@ -2378,41 +2382,41 @@
               &quot;files&quot;: 56,
               &quot;catalog_bytes&quot;: 118784,
               &quot;log_bytes&quot;: 0,
-              &quot;logical_bytes&quot;: 490716,
+              &quot;logical_bytes&quot;: 490714,
               &quot;allocated_bytes&quot;: 606208
             }
           ],
           &quot;cycle_seconds&quot;: [
-            5.138287098000006,
-            5.128613415999993,
-            5.138280152999982,
-            5.161957412999982,
-            5.160075053000014,
-            5.149675845000019,
-            5.146252860999994,
-            5.148249827000001,
-            5.214296173000008,
-            5.160836877999998,
-            5.175953852000021,
-            5.145434925000018,
-            5.169613771999991,
-            5.160477060000005,
-            5.154397751999994,
-            5.167887573000002,
-            5.141860019000006,
-            5.192579804000019,
-            5.166930100000002,
-            5.168202381000015,
-            5.154899141000016,
-            5.1547383109999885,
-            5.144888242999997,
-            5.150473419999997
+            5.173586103000005,
+            5.149984746000001,
+            5.15108269800001,
+            5.313962423000021,
+            5.139221786000007,
+            5.152887018000001,
+            5.150270849999998,
+            5.14590595300001,
+            5.1440524859999925,
+            5.148522696000015,
+            5.145779114000021,
+            5.160082502000023,
+            5.19920214199999,
+            5.221548858999995,
+            5.262354080999984,
+            5.181457939000012,
+            5.1462777200000005,
+            5.174921455999993,
+            5.176643855999998,
+            5.166204933999978,
+            5.165065704999989,
+            5.180318951999993,
+            5.168621829999978,
+            5.185099808999979
           ],
-          &quot;seconds&quot;: 124.16347359,
+          &quot;seconds&quot;: 124.687208338,
           &quot;retained_metadata_explained&quot;: true,
           &quot;long_term_qualification&quot;: false
         },
-        &quot;seconds&quot;: 124.22912487500001
+        &quot;seconds&quot;: 124.827679201
       }
     ]
   },
@@ -2423,212 +2427,202 @@
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.30626862499048
+          &quot;seconds&quot;: 0.3069676249870099
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.25933850000728853
+          &quot;seconds&quot;: 0.23195429099723697
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3167869170138147
+          &quot;seconds&quot;: 0.24843283300288022
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.30975379201117903
+          &quot;seconds&quot;: 0.333791040990036
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3709216249990277
+          &quot;seconds&quot;: 0.26353829199797474
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.24254808298428543
+          &quot;seconds&quot;: 0.28796008400968276
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.26555329200346023
+          &quot;seconds&quot;: 0.24657650000881404
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.24209799998789094
+          &quot;seconds&quot;: 0.3355847500206437
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.26067641598638147
+          &quot;seconds&quot;: 0.27345412501017563
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2830141670128796
+          &quot;seconds&quot;: 0.25442116701742634
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2492962499964051
+          &quot;seconds&quot;: 0.25126854100381024
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.24246933398535475
+          &quot;seconds&quot;: 0.29259958397597075
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.27677387499716133
+          &quot;seconds&quot;: 0.27164029199047945
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2418160840170458
+          &quot;seconds&quot;: 0.25009425001917407
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.35299020798993297
+          &quot;seconds&quot;: 0.2882941669959109
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3359908330021426
+          &quot;seconds&quot;: 0.35847770899999887
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.31386766699142754
+          &quot;seconds&quot;: 0.281967958988389
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.23072133399546146
+          &quot;seconds&quot;: 0.29973600001540035
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2615773339930456
+          &quot;seconds&quot;: 0.25371491600526497
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3597900829918217
+          &quot;seconds&quot;: 0.2705688749847468
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.26773550000507385
+          &quot;seconds&quot;: 0.4397798749851063
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2688313329999801
+          &quot;seconds&quot;: 0.22742987499805167
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.24227399998926558
+          &quot;seconds&quot;: 0.31790937497862615
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2783012919826433
+          &quot;seconds&quot;: 0.3999980000080541
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.31220675000804476
+          &quot;seconds&quot;: 0.35470154200447723
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3393892500025686
+          &quot;seconds&quot;: 0.4411203339986969
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.3006746250030119
+          &quot;seconds&quot;: 0.2665487909980584
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.32141470900387503
+          &quot;seconds&quot;: 0.2728036670014262
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2548490420158487
+          &quot;seconds&quot;: 0.25381312498939224
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.35218770799110644
+          &quot;seconds&quot;: 0.3481063329963945
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.301286333007738
+          &quot;seconds&quot;: 0.2373968329920899
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.2650273329927586
+          &quot;seconds&quot;: 0.26277033297810704
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.26958379201823846
+          &quot;seconds&quot;: 0.28335037498618476
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.32047308300388977
+          &quot;seconds&quot;: 0.26275720799458213
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.33668554201722145
+          &quot;seconds&quot;: 0.2660286669852212
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.33289954098290764
-        },
-        {
-          &quot;exit_code&quot;: 1,
-          &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.27823762499610893
-        },
-        {
-          &quot;exit_code&quot;: 0,
-          &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 3.310210708004888
+          &quot;seconds&quot;: 3.5269650000263937
         }
       ],
       &quot;boot_changed&quot;: true,
       &quot;details&quot;: {
         &quot;kind&quot;: &quot;serving&quot;,
-        &quot;boot_before&quot;: &quot;a41c53cd-3208-40e1-b861-ec1ed13ac517&quot;,
-        &quot;boot_after&quot;: &quot;19c2cd0e-7afb-42cd-a826-f62e19b6f954&quot;,
+        &quot;boot_before&quot;: &quot;4d94b994-f89a-452f-8bbe-db73538a594e&quot;,
+        &quot;boot_after&quot;: &quot;09899d85-45a0-43ad-8184-36a1902ad7a5&quot;,
         &quot;journal_before&quot;: {
-          &quot;sha256&quot;: &quot;ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33&quot;,
+          &quot;sha256&quot;: &quot;e6fd0328f68ade06966ea416a545887ce752216b14f69cfc1016f3cd98eae886&quot;,
           &quot;rows&quot;: {
             &quot;restores&quot;: [
               [
-                &quot;722a813ccc8840d596ba2d052d683052&quot;,
-                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;33c54718ca934bf2826d5cea0165191d&quot;,
+                &quot;cdddac0838a54384a87606530ca6fd08&quot;,
                 &quot;SERVING&quot;
               ]
             ],
             &quot;pins&quot;: [
               [
-                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;cdddac0838a54384a87606530ca6fd08&quot;,
                 1
               ]
             ],
@@ -2641,18 +2635,18 @@
           }
         },
         &quot;journal_after_before_controller&quot;: {
-          &quot;sha256&quot;: &quot;ef0075d42856a045916fd0f8069cc397144d8a02450f6a8aee9fd530e506cd33&quot;,
+          &quot;sha256&quot;: &quot;e6fd0328f68ade06966ea416a545887ce752216b14f69cfc1016f3cd98eae886&quot;,
           &quot;rows&quot;: {
             &quot;restores&quot;: [
               [
-                &quot;722a813ccc8840d596ba2d052d683052&quot;,
-                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;33c54718ca934bf2826d5cea0165191d&quot;,
+                &quot;cdddac0838a54384a87606530ca6fd08&quot;,
                 &quot;SERVING&quot;
               ]
             ],
             &quot;pins&quot;: [
               [
-                &quot;e2ece8deaf9a45b0af06de229dab4188&quot;,
+                &quot;cdddac0838a54384a87606530ca6fd08&quot;,
                 1
               ]
             ],
@@ -2681,42 +2675,37 @@
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.29730075001134537
+          &quot;seconds&quot;: 0.2293777080194559
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.34229908301495016
-        },
-        {
-          &quot;exit_code&quot;: 1,
-          &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 3.300194042007206
+          &quot;seconds&quot;: 0.3280018749937881
         },
         {
           &quot;exit_code&quot;: 0,
           &quot;timed_out&quot;: false,
-          &quot;seconds&quot;: 0.38449704201775603
+          &quot;seconds&quot;: 3.5304620420210995
         }
       ],
       &quot;boot_changed&quot;: true,
       &quot;details&quot;: {
         &quot;kind&quot;: &quot;release_intent&quot;,
-        &quot;boot_before&quot;: &quot;19c2cd0e-7afb-42cd-a826-f62e19b6f954&quot;,
-        &quot;boot_after&quot;: &quot;379bc633-c886-4f26-8d74-32a60603411f&quot;,
+        &quot;boot_before&quot;: &quot;09899d85-45a0-43ad-8184-36a1902ad7a5&quot;,
+        &quot;boot_after&quot;: &quot;071732d1-8c61-43ed-a15d-70ef5e4c88e3&quot;,
         &quot;journal_before&quot;: {
-          &quot;sha256&quot;: &quot;908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565&quot;,
+          &quot;sha256&quot;: &quot;a5540b63d7308bf515aee74ffee02d74fc23ffb46fed7ec4ed8e3ebcc14261c6&quot;,
           &quot;rows&quot;: {
             &quot;restores&quot;: [
               [
-                &quot;f18acad1d7e74833bf0b4914f58c3d33&quot;,
-                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;1340140d184442c1b65ddd8b93983674&quot;,
+                &quot;c781dc4af91541439084585d34c93882&quot;,
                 &quot;RELEASING&quot;
               ]
             ],
             &quot;pins&quot;: [
               [
-                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;c781dc4af91541439084585d34c93882&quot;,
                 1
               ]
             ],
@@ -2729,18 +2718,18 @@
           }
         },
         &quot;journal_after_before_controller&quot;: {
-          &quot;sha256&quot;: &quot;908d8732b2dd5f14495760c56e35845c0e52c49fda5d40bbc80f75c752b5f565&quot;,
+          &quot;sha256&quot;: &quot;a5540b63d7308bf515aee74ffee02d74fc23ffb46fed7ec4ed8e3ebcc14261c6&quot;,
           &quot;rows&quot;: {
             &quot;restores&quot;: [
               [
-                &quot;f18acad1d7e74833bf0b4914f58c3d33&quot;,
-                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;1340140d184442c1b65ddd8b93983674&quot;,
+                &quot;c781dc4af91541439084585d34c93882&quot;,
                 &quot;RELEASING&quot;
               ]
             ],
             &quot;pins&quot;: [
               [
-                &quot;64225ddd22774f19bbd1a1d4aee9a15f&quot;,
+                &quot;c781dc4af91541439084585d34c93882&quot;,
                 1
               ]
             ],
@@ -2778,7 +2767,7 @@
   &quot;preexisting_profiles_unchanged&quot;: true,
   &quot;controls&quot;: {
     &quot;passed&quot;: true,
-    &quot;rejected&quot;: 33,
+    &quot;rejected&quot;: 34,
     &quot;baseline_rejected&quot;: 29
   }
 }</pre></html>

@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "count": 81,
+  "count": 83,
   "tests": [
     "test_closeout.CloseoutCases.test_byte_exhaustion_preserves_stop_release",
     "test_closeout.CloseoutCases.test_capacity_observer_detects_manifest_catalog_and_receipt_mutation",
@@ -17,8 +17,10 @@
     "test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation",
     "test_core.CoreTests.test_metadata_failure_prevents_worker_start",
     "test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory",
+    "test_core.CoreTests.test_missing_fk_orphan_item_refuses_formal_backup",
     "test_core.CoreTests.test_missing_source_does_not_create",
     "test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock",
+    "test_core.CoreTests.test_null_transaction_item_parent_refuses_formal_backup",
     "test_core.CoreTests.test_one_restored_instance",
     "test_core.CoreTests.test_pin_blocks_deletion_and_rotation",
     "test_core.CoreTests.test_pin_corruption_not_silently_repaired",
@@ -87,7 +89,7 @@
   "failures": 0,
   "errors": 0,
   "skipped": 0,
-  "source_sha256": "cb3e6cf2614a571abe25e7c5e9a244296d5baf90bd26126e1f3a6c03ffa45ef9",
+  "source_sha256": "2e021cf36ce897de501d1325879dccefdf42e07f3ec394a5f5390740acea4478",
   "platform": "Darwin",
   "runtime": {
     "python_sqlite": "3.53.1",

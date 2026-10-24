@@ -1,5 +1,9 @@
 # Closeout review and evidence repair
 
+This is the historical closeout review. The later [pre-publication review](PREPUBLIC_REVIEW.md)
+adds an application-relation repair and new qualification; it does not retroactively
+change the historical observations below.
+
 Two independent read-only reviewers examined commit `04dcb7d` against the formal
 controller/service/reader, installed-wheel provenance, raw ignored VM logs,
 published receipts and documentation. Their findings concern validation coverage,
@@ -121,10 +125,10 @@ increase, and reject inconsistent or pending socket witnesses. This improves the
 observability contract; a later pass cannot explain the old unobserved failure or
 prove all future executions safe.
 
-## New qualification outcome
+## Historical qualification outcome after that review
 
-Run `9933e02c1ba18673` qualifies the current source fingerprint recorded in the
-latest receipt. Native macOS and installed Linux passed the same 81 test IDs,
+Run `9933e02c1ba18673` qualified its recorded source fingerprint, now preserved
+in `evidence/closeout/attempt-06.json/html`. Native macOS and installed Linux passed the same 81 test IDs,
 zero skips/errors/failures; 10 baseline VM cases, four closeout cases and two
 normal VM reboots passed. The 24-cycle trial lasted 124.16 seconds, all raw and
 quiet FD observations were 7, and sampled RSS rose 916 KiB after the unchanged

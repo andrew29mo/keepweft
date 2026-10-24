@@ -18,7 +18,9 @@ def verify(v):
     require(tuple(s['name'] for s in v['stages'])==STAGES,'Missing closeout stage')
     require(all(s['exit_code']==0 and s['timed_out'] is False and not s.get('interrupted',False) and math.isfinite(s['seconds']) and s['seconds']>=0 for s in v['stages']),'Closeout failure/timeout')
     for k in ('native_unit','linux_unit'):
-        require(v[k]['count']>=81 and all('test_closeout.CloseoutCases.'+name in v[k]['tests'] for name in ('test_documented_cli','test_receipt_exhaustion_preserves_stop_release','test_byte_exhaustion_preserves_stop_release','test_resource_checks_reject_restart_leaks_and_missing_observation','test_owned_snapshot_ignores_only_shared_free_space','test_capacity_observer_detects_manifest_catalog_and_receipt_mutation','test_vm_socket_path_preflight_no_side_effects')),'Closeout portable tests missing')
+        require(v[k]['count']>=83 and all('test_closeout.CloseoutCases.'+name in v[k]['tests'] for name in ('test_documented_cli','test_receipt_exhaustion_preserves_stop_release','test_byte_exhaustion_preserves_stop_release','test_resource_checks_reject_restart_leaks_and_missing_observation','test_owned_snapshot_ignores_only_shared_free_space','test_capacity_observer_detects_manifest_catalog_and_receipt_mutation','test_vm_socket_path_preflight_no_side_effects')),'Closeout portable tests missing')
+    for k in ('native_unit','linux_unit'):
+        require(all(name in v[k]['tests'] for name in ('test_core.CoreTests.test_null_transaction_item_parent_refuses_formal_backup','test_core.CoreTests.test_missing_fk_orphan_item_refuses_formal_backup')),'Application parent-relation tests missing')
     c=v['closeout'];require(c['passed'] is True and c['runtime']==v['provenance']['runtime'],'Closeout/runtime failed')
     require(tuple(x['name'] for x in c['cases'])==('documented_cli','receipt_capacity','logical_capacity','bounded_cycles') and all(x['passed'] is True and math.isfinite(x['seconds']) and x['seconds']>=0 for x in c['cases']),'Missing case')
     d={x['name']:x['details'] for x in c['cases']}
@@ -49,6 +51,7 @@ def controls(v):
     for field,value in [('pid',-1),('fds',-1),('rss_kib',-1),('rss_kib',0),('rss_kib',float('nan')),('rss_kib',True),('logical_bytes',-1),('catalog_bytes',-1)]:
         mutations.append(lambda x,field=field,value=value:[s.update({field:value}) for s in x['closeout']['cases'][3]['details']['samples']])
     mutations += [lambda x:x['closeout']['cases'][3]['details']['samples'][-1].update(fd_quiescent=False),lambda x:x['closeout']['cases'][3]['details']['samples'][-1]['fd_observations'][-1].update(non_listener_sockets=1)]
+    mutations += [lambda x:[r['tests'].__setitem__(r['tests'].index('test_core.CoreTests.test_null_transaction_item_parent_refuses_formal_backup'),'test_core.CoreTests.omitted_parent_relation') for r in (x['native_unit'],x['linux_unit'])]]
     for mutate in mutations:
         b=copy.deepcopy(v);mutate(b)
         try:verify(b)

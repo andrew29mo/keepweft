@@ -2,9 +2,10 @@
 
 These receipts qualify the exploration source at commit `b3ab630`, not every later
 revision. See [phase-one request-service evidence](phase1/README.md) for the new
-backup request protocol. Historical JSON/HTML have not been overwritten.
+backup request protocol. Historical JSON/HTML have not been overwritten. Current qualification is in
+[the bounded closeout evidence](closeout/README.md).
 
-# Four technical explorations: current evidence
+## Final qualified run of the historical exploration
 
 Run `a22b4aab1b7182ce`, source
 `4dcf53a7f4e6cd3e353fe15cc25da28a52dde2684c02aff713aae4156662ff7c`.
