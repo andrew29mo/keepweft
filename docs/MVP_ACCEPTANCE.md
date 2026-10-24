@@ -36,19 +36,43 @@ After explicit repair, formal recovery and new backups succeed. Loop mount,
 worker/view processes, VM and data disk must be removed. Soft admission, pin and
 receipt caps are also challenged by portable tests.
 
-## Full MVP still requires
+## Reviewed service MVP: phased qualification
 
-- Persistent local controller socket and bounded queue, request IDs/dedup window,
-  phase/status/cancellation API, without replay after bounded history eviction.
-- Coalescing fixed-interval scheduler and count-plus-age policy with explicit
-  stale/retention exceptions and a bounded tombstone lifecycle.
-- Supervised restored readers and pin-release protocol; no caller may delete an
-  in-use instance merely because a controller restarted.
-- Hardened readiness/repair CLI and installation/service lifecycle documentation.
-- Wider repeated load and resource-growth qualification with declared limits.
-- A defined application-profile interface; current fixed ledger is the only
-  application contract tested. Multi-DB atomicity, NFS, generic arbitrary SQL,
-  production replacement and failover are excluded.
+Design authority: [decisions](MVP_DESIGN.md), [states/recovery](MVP_STATE_RECOVERY.md).
+The following remain full-MVP acceptance targets. The backup-request subset is
+implemented and separately qualified in [PHASE1.md](PHASE1.md); a subset pass does
+not mark the broader row complete. Existing 30-test/platform exploration receipts
+do not qualify a persistent service. Scheduling, managed readers, time retention,
+artifact GC and installation/systemd remain pending. Source/config mutations are
+unsupported; phase one does not qualify dynamic source prevalidation before prune.
+
+| Gate | Required challenge and acceptance evidence |
+|---|---|
+| Admission before side effects | Queue/receipt full, stale token, digest conflict and invalid source reject without deletion/reservation/child. Specifically keep=2/max_receipts=2: a rejected third request must not prune; if rollover permits admission, a new durable receipt must precede pruning. Accepted pruning reports deletions even when copy later fails. |
+| Lost responses and dedup | Drop responses after admission, intent, rename and AVAILABLE commit; exact retry returns same operation, at most one artifact, no repeat prune. Different payload under same key conflicts. |
+| Receipt rollover | Fill current generation; unresolved operation blocks rollover. Crash before/after durable generation advance and during GC; forgotten old keys never execute, retained old receipt is queryable. CLI never silently replaces stale/GONE envelope. Bound retained generations/bytes. |
+| Queue and revisions | Queue work while another operation advances revision; accepted work uses its own attempt authority. Changed source/policy/target refuses explicitly at dispatch. Slow copy does not block bounded status/cancel; fill queue and receipts simultaneously and confirm cancel needs no new slot. |
+| Cancel versus publication | Force both serialized orderings around durable intent, then crash. Cancel wins => no publication and CANCELLED only after exit/cleanup; intent wins => TOO_LATE and same-ID reconciliation. Client disconnect alone does not cancel. |
+| Reader handoff | Kill controller before spawn, after exec, before/after real HTTP readiness and during release. Live reader still answers exact snapshot; no second reader, deletion or pin release. SIGSTOP reader keeps guard busy; only actual exit allows cleanup. Exec failure and missing handshake must eventually clean after proven child exit without restarting controller or retaining its own FD. Test real cross-process locks, not just mocked booleans. |
+| Orphan occupancy | Restart near byte cap with busy reader guard. Bytes/pin/reservation remain counted, no excess admission. Separate reader guard allows global controller recovery. No stale-PID kill. |
+| Capacity and repair | Formal service on finite VM filesystem: ENOSPC, EROFS, SQLite FULL and sync/delete/release failure. No false success/new mutation; protected backup survives, explicit repair/restart reconciles. Software policy and filesystem faults reported separately. |
+| Retention and freshness | Pinned older backup + latest blocks new backup; source continues changing. Service reports stale/blocked, bounded retries. Release pin triggers at most one coalesced retry. Count/age cannot override latest/pins. |
+| Time | Forward/backward wall-clock changes and restart do not reorder latest, mass-prune, present old data as fresh, or flood queue. Monotonic age restarts conservatively; freshness unknown until established. |
+| Bounded metadata | Exercise at least three receipt-generation rollovers and repeated object/guard cleanup with files, rows, bytes and locks counted. After guard/row GC and restart, allocator never reuses an ID and old operations cannot recreate a guard. Failed cleanup remains charged. No unbounded logs or tombstones; capped exhaustion visible. This is bounded evidence, not long-term proof. |
+| Verification contract | ledger-v1 only: exact snapshot identity/watermark/content, structure/FK and distinct restore query required. Wrong/unsupported profile refuses, NOT_RUN cannot become application PASSED. |
+| Service lifecycle | Clean isolated VM installs the built package by documented procedure, starts/stops/restarts service; socket permissions, paused state, children, inherited locks and recovery match design. Native portable tests and Linux service results stay separate. |
+| Reports | JSON/HTML derive from same typed receipt; include installed source/runtime fingerprints, actual fault/cleanup, each assertion and failed attempt. Timeout/skip/missing evidence never passes. Timing/RSS sampling method and VM scope explicit. |
+
+Resource limits in MVP_DESIGN.md are proposed bounds, not measured recommendations.
+Choose and declare workload/duration before each resource trial. Report starting,
+maximum and ending RSS, catalog/log/guard/file counts and allocated/logical bytes;
+do not restart processes mid-trial to hide growth. A trial stopped by a capacity
+limit reports that limit, not successful continuous operation.
+
+Implementation order: admission/dedup/cancel; guarded reader lifecycle;
+scheduler/retention/metadata; packaged service and isolated fault qualification.
+No generic schema mode, external reader supervision, live production replacement,
+remote storage or multi-database atomicity is part of this service MVP.
 
 Record actual SQLite runtime/source ID/build options. Python >=3.12 alone is not
 qualification. Use a runtime with the official WAL-reset fix; unsupported

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "sandbox-preflight.json",
+    "status": "FAIL_ENVIRONMENT",
+    "scope": "49 tests; ten actual service binds denied by host sandbox; later rerun with socket permissions"
+  },
+  {
+    "file": "attempt-01.json",
+    "status": "FAIL_SETUP",
+    "scope": "180-second VM creation timeout; no product qualification; VM/data deleted"
+  },
+  {
+    "file": "attempt-02.json",
+    "status": "SUPERSEDED_PASS",
+    "scope": "52 tests/platform, 11 scenarios, earlier source/contract; not final qualification"
+  },
+  {
+    "file": "attempt-03.json",
+    "status": "SUPERSEDED_PASS",
+    "scope": "54 tests/platform, 12 scenarios; before harness-timeout cleanup control"
+  },
+  {
+    "file": "latest.json",
+    "status": "CURRENT_PASS",
+    "scope": "55 tests/platform, 12 scenarios, 21 report corruption controls"
+  }
+]

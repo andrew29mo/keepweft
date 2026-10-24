@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft phase one</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft phase one: requests, generations and cancellation</h1><p>Passed: False</p><p>Actual installed service/worker processes in a fresh isolated Linux VM. Controlled SIGKILL and scheduling barriers, not VM reboot or power loss. Timings are observations, not performance/SLO claims. Managed readers and scheduling remain unimplemented. Historical four-exploration evidence is separate.</p><pre>{
+  &quot;passed&quot;: false,
+  &quot;run_id&quot;: &quot;fc79517e6c0dfa06&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T06:06:27.569606+00:00&quot;,
+  &quot;source&quot;: {
+    &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
+    &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+    &quot;keepweft/client.py&quot;: &quot;7f2044107daf2c29d8cf40b73fb25d5764c26c41181f8f519df353f96928ee22&quot;,
+    &quot;keepweft/core.py&quot;: &quot;0e6ec0c0f1d53cae7688de7977004014f20868e9572344a089ce1a0ea1a2f617&quot;,
+    &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+    &quot;keepweft/requests.py&quot;: &quot;eaa76f7b28e82d3086405b10278d1d7a8a514eabd3bde1215d58dc4c1807d12c&quot;,
+    &quot;keepweft/service.py&quot;: &quot;5027affcc6645873622e195091f0c68103a9380d59216b891c485b7ded47de7c&quot;,
+    &quot;keepweft/view.py&quot;: &quot;40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308&quot;,
+    &quot;keepweft/worker.py&quot;: &quot;b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a&quot;,
+    &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
+    &quot;tests/test_core.py&quot;: &quot;3d9fa9da8aaf51589d669f5288a9d8ffcba94c71fe458945078ff12312fa8dec&quot;,
+    &quot;tests/test_requests.py&quot;: &quot;0f5e0e7f1141df94a3d119ff421b058c1863264e3acde5722d8735e5b055de35&quot;,
+    &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
+    &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
+    &quot;tools/explore.py&quot;: &quot;123cada7ded733ab9730bbc532bf1fb998b270be779f2ab216291b29c359c95a&quot;,
+    &quot;tools/phase1_cases.py&quot;: &quot;c52eda088cb6070f5fbce96c0bec6ea7dc1e9d12dabf7cd8940b2e091bf33e36&quot;,
+    &quot;tools/phase1_report.py&quot;: &quot;54f70a483cac8823219d22a4373dec635c1b58c033bd6a9bc938d3fbe01e426e&quot;,
+    &quot;tools/phase1_validate.py&quot;: &quot;20468f9db78461102207ad0a7555ae2592f7ec280503befaaacaadb26ad722bd&quot;,
+    &quot;tools/report.py&quot;: &quot;29b22cd146a339e75b682dc66e9e3575d7231348c02059d8323c57dbd3743b23&quot;,
+    &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
+    &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
+  },
+  &quot;source_sha256&quot;: &quot;aad4cc0f62270bef7430a94a947edd4987b9fda38cc0d85b33071d10f1ee3d38&quot;,
+  &quot;source_changed&quot;: false,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;initial&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.428058042016346
+    },
+    {
+      &quot;name&quot;: &quot;create&quot;,
+      &quot;exit_code&quot;: -9,
+      &quot;timed_out&quot;: true,
+      &quot;seconds&quot;: 180.00617716601118
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 5.723858957993798
+    },
+    {
+      &quot;name&quot;: &quot;final&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.20565408398397267
+    }
+  ],
+  &quot;wheel_sha256&quot;: &quot;7553f133880d21d80226f9af102d764b6b52107c30876bb381e715133a8af21e&quot;,
+  &quot;wheel_product_matches&quot;: true,
+  &quot;host_mounts&quot;: &quot;none&quot;,
+  &quot;fresh_profile&quot;: true,
+  &quot;initial_disk_absent&quot;: true,
+  &quot;error&quot;: &quot;RuntimeError: create failed or timed out&quot;,
+  &quot;vm_final&quot;: &quot;Deleted&quot;,
+  &quot;data_disk_removed&quot;: false,
+  &quot;preexisting_profiles_unchanged&quot;: true
+}</pre></html>

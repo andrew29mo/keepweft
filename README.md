@@ -1,8 +1,8 @@
 # Keepweft
 
 A local SQLite backup and validated-restore controller. This repository currently
-contains a **minimal production core and four technical explorations**, not the
-complete operational MVP.
+contains a **minimal production core, four technical explorations and the first
+request-service slice**, not the complete operational MVP.
 
 The core takes a bounded read snapshot, creates a standalone backup through
 SQLite's Online Backup API, verifies a fixed application contract, and publishes
@@ -51,29 +51,40 @@ python -m keepweft.cli restore --root /absolute/path/store --id BACKUP_ID
 python -m keepweft.cli diagnose --root /absolute/path/store
 ```
 
-Each CLI invocation acquires a new authority epoch; the current exploration CLI
-is synchronous. A future persistent control socket and scheduler are separate
-MVP work. Repeating an operation after a lost response requires status inspection;
-this slice does not implement a general client retry/deduplication API.
+Each exploration CLI invocation acquires a new authority epoch and is synchronous.
+For durable backup request deduplication, bounded generation history and
+cancellation/publication semantics, use the separate [phase-one service and
+saved-envelope CLI](docs/PHASE1.md). Scheduling and managed readers remain future
+MVP work; the service currently accepts backup requests only.
 
 ## Current results
 
-The final installed-core exploration passed all four probe groups. Native macOS
+The current backup-request slice passed **55 tests on each platform**, **12 Linux
+fault scenarios** and **21 report corruption controls**. Exact retries, generation
+GC, cancellation on both sides of publication intent, and retention attribution
+after a crash use the actual service/worker implementation. See [phase-one
+JSON/HTML evidence](evidence/phase1/README.md). These results do not qualify the
+remaining full-service MVP.
+
+The historical installed-core exploration passed all four probe groups. Native macOS
 and isolated Linux each passed the same **30 portable tests**, with **24 rejected
 report corruptions**. A source that advanced from 192 to 224 committed entries
 still produced the exact earlier snapshot; restored application queries distinguish
 the old snapshot from the newer live source. Real ENOSPC, readonly bind-mount and
 SQLite FULL faults fail safely and permit new work after explicit repair.
 
-The ordinary small-ledger trial took 28.98 ms to back up and 36.71 ms to restore
+The historical exploration small-ledger trial took 28.98 ms to back up and 36.71 ms to restore
 through the first loopback HTTP query. These are single controlled VM observations,
 not performance comparisons, SLOs or physical-storage guarantees. Failures, RSS,
 disk-accounting values and full receipts are retained below.
 
 ## Evidence and design
 
-- [Retained exploration evidence](evidence/README.md)
+- [Retained exploration evidence](evidence/README.md) (historical four explorations)
+- [Phase-one implementation and qualification](docs/PHASE1.md)
 - [Architecture and state machines](docs/ARCHITECTURE.md)
+- [Reviewed service design decisions](docs/MVP_DESIGN.md) (design only)
+- [Planned state machines and recovery matrix](docs/MVP_STATE_RECOVERY.md)
 - [MVP acceptance and remaining work](docs/MVP_ACCEPTANCE.md)
 - [Reproduction and measurement boundaries](docs/VALIDATION.md)
 

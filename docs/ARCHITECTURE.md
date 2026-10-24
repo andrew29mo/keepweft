@@ -1,5 +1,12 @@
 # Architecture: exploration core and intended MVP
 
+This page describes the implemented exploration core. The reviewed next-service
+design is in [MVP decisions](MVP_DESIGN.md) and [state/recovery matrix](MVP_STATE_RECOVERY.md).
+Those documents supersede earlier prospective MVP sketches, not the implementation
+claims below. The first backup-request slice is implemented in [PHASE1.md](PHASE1.md); scheduling
+and managed restored-reader ownership remain unimplemented. Historical core details
+below must be read with that explicit scope.
+
 ## Trust and ownership
 
 The source is one existing, registered local SQLite main database. Its path and
@@ -92,9 +99,10 @@ readers before release; the exploration CLI does not yet manage reader leases.
 
 Deletion refuses pinned and last/latest backups. DELETING intent is durable
 before unlink; absence during recovery is idempotent. Persistent operations and
-backups retain tombstones. Receipt capacity is explicit (128 by default); there
-is no silent eviction and no unlimited longevity claim. Bounded receipt GC and
-client-idempotency semantics are remaining MVP work.
+backups retain tombstones. The exploration CLI retains its explicit receipt-capacity refusal. The separate
+phase-one backup service implements generation-based bounded receipt GC and saved
+request idempotency; general artifact/tombstone GC remains future work. No unlimited
+longevity claim applies.
 
 ## Capacity and policy
 

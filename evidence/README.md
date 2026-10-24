@@ -1,3 +1,9 @@
+# Historical four-exploration evidence
+
+These receipts qualify the exploration source at commit `b3ab630`, not every later
+revision. See [phase-one request-service evidence](phase1/README.md) for the new
+backup request protocol. Historical JSON/HTML have not been overwritten.
+
 # Four technical explorations: current evidence
 
 Run `a22b4aab1b7182ce`, source

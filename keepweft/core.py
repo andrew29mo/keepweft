@@ -68,6 +68,8 @@ class Controller:
         self.db = None
         self.barriers = barriers
         self.blocked = False
+        self.progress = lambda: None
+        self.cancelled = lambda: False
         try:
             try:
                 fcntl.flock(self.fd, fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -160,10 +162,13 @@ class Controller:
     def _revision(self):
         self.db.execute('update authority set revision=revision+1 where id=1')
 
-    def _new(self, kind, details, token=None):
-        self._check(token)
+    def _receipt_room(self):
         if self.db.execute('select count(*) from ops').fetchone()[0] >= self.cfg['max_receipts']:
             raise Refused('Receipt capacity exhausted; no silent dedup eviction')
+
+    def _new(self, kind, details, token=None):
+        self._check(token)
+        self._receipt_room()
         ident = uuid.uuid4().hex
         with self.tx():
             self.db.execute('insert into ops values(?,?,?,?,?)', (ident,self.token['epoch'],kind,'RESERVED',json.dumps(details)))
@@ -175,6 +180,10 @@ class Controller:
             old = self.db.execute('select epoch,details from ops where id=?',(ident,)).fetchone()
             if old is None or old[0] != self.token['epoch']:
                 raise Refused('Retired attempt')
+            if details is not None:
+                details=dict(details)
+                details.setdefault('retention_deleted',json.loads(old[1]).get('retention_deleted',[]))
+                details.setdefault('retention_planned',json.loads(old[1]).get('retention_planned',[]))
             self.db.execute('update ops set state=?,details=? where id=?',(state,json.dumps(details) if details is not None else old[1],ident))
             self._revision()
 
@@ -193,7 +202,17 @@ class Controller:
         return reserve
 
     def _barrier(self, name, deadline):
-        checkpoint(self.barriers, name, deadline)
+        if self.barriers is None:
+            return
+        p = Path(self.barriers)
+        if not (p/(name+'.arm')).exists():return
+        (p/(name+'.seen')).write_text(str(os.getpid()))
+        while not (p/(name+'.release')).exists():
+            self.progress()
+            if name not in ('publish_intent','after_rename','after_catalog') and self.cancelled():
+                raise InterruptedError('CANCELLED')
+            if time.monotonic() >= deadline:raise TimeoutError('Fault barrier deadline')
+            time.sleep(.01)
 
     def _directory(self, area, ident):
         if len(ident) != 32 or any(c not in '0123456789abcdef' for c in ident):
@@ -218,6 +237,8 @@ class Controller:
         reason = None
         try:
             while proc.poll() is None:
+                self.progress()
+                if self.cancelled():reason = 'CANCELLED'
                 if cancel_path and Path(cancel_path).exists():
                     reason = 'CANCELLED'
                 if time.monotonic() >= deadline:
@@ -249,17 +270,38 @@ class Controller:
         # Publication cannot race a live writer holding db.sqlite open.
         return json.loads((stage/'result.json').read_text())
 
-    def backup(self, token=None, timeout=10., cancel_path=None):
+    def backup(self, token=None, timeout=10., cancel_path=None, operation_id=None):
         self._check(token)
         if not 0 < timeout <= 60:
             raise Refused('Deadline must be in (0,60] seconds')
-        self.prune(need_slot=True)
-        reserved = self._reserve()
-        ident = self._new('backup',dict(reserved=reserved))
+        # Predictable refusals must happen before retention can delete anything.
+        if operation_id is None:
+            self._receipt_room()
+            reserved = self._reserve()
+            ident = self._new('backup',dict(reserved=reserved))
+        else:
+            ident = operation_id
+            row = self.db.execute('select epoch,kind,state from ops where id=?',(ident,)).fetchone()
+            if row != (self.token['epoch'],'backup','QUEUED'):
+                raise Refused('Operation not dispatchable')
+            reserved = 0
         stage = self._directory('staging',ident)
-        stage.mkdir(mode=0o700)
         deadline = time.monotonic()+timeout
+        deleted = []
         try:
+            self.progress()
+            if self.cancelled() or (cancel_path and Path(cancel_path).exists()):
+                raise InterruptedError('CANCELLED')
+            reserved = self._reserve()
+            self._phase(ident,'RESERVED',dict(reserved=reserved))
+            before = {r[0] for r in self.db.execute("select id from backups where state='AVAILABLE'")}
+            try:self.prune(need_slot=True,operation_id=ident)
+            finally:
+                after = {r[0] for r in self.db.execute("select id from backups where state='AVAILABLE'")}
+                deleted = sorted(before-after)
+            self._phase(ident,'RESERVED',dict(reserved=reserved,retention_deleted=deleted))
+            self._barrier('admitted',deadline)
+            stage.mkdir(mode=0o700)
             result = self._worker(ident,deadline,cancel_path)
             (stage/'job.json').unlink()
             self._phase(ident,'SEALED')
@@ -274,7 +316,13 @@ class Controller:
                 try:os.fsync(fd)
                 finally:os.close(fd)
             sync_dir(stage)
-            self._phase(ident,'PUBLISHING',dict(manifest=manifest,reserved=reserved))
+            self._barrier('before_publish',deadline)
+            self.progress()
+            if self.cancelled() or (cancel_path and Path(cancel_path).exists()):
+                raise InterruptedError('CANCELLED')
+            if time.monotonic() >= deadline:raise TimeoutError('Backup deadline before publication')
+            # No event pump between the cancellation check and durable intent.
+            self._phase(ident,'PUBLISHING',dict(manifest=manifest,reserved=reserved,retention_deleted=deleted))
             self._barrier('publish_intent',deadline)
             final = self._directory('backups',ident)
             if final.exists():
@@ -285,7 +333,7 @@ class Controller:
             self._barrier('after_rename',deadline)
             with self.tx():
                 self.db.execute('insert into backups values(?,?,?,0)',(ident,json.dumps(manifest),'AVAILABLE'))
-                self.db.execute('update ops set state=?,details=? where id=?',('AVAILABLE',json.dumps(dict(manifest=manifest,reserved=0)),ident))
+                self.db.execute('update ops set state=?,details=? where id=?',('AVAILABLE',json.dumps(dict(manifest=manifest,reserved=0,retention_deleted=deleted)),ident))
                 self._revision()
             self._barrier('after_catalog',deadline)
             return manifest
@@ -294,9 +342,9 @@ class Controller:
             # Ambiguous publication/storage failures stay recoverable, never erased.
             if state not in ('PUBLISHING','AVAILABLE','CLEANUP_PENDING'):
                 try:
-                    self._phase(ident,'CLEANUP_PENDING',dict(error=type(exc).__name__+': '+str(exc),reserved=reserved))
+                    self._phase(ident,'CLEANUP_PENDING',dict(error=type(exc).__name__+': '+str(exc),reserved=reserved,retention_deleted=deleted))
                     if stage.exists():shutil.rmtree(stage);sync_dir(stage.parent)
-                    self._phase(ident,'CANCELLED' if isinstance(exc,InterruptedError) and str(exc)=='CANCELLED' else 'FAILED',dict(error=type(exc).__name__+': '+str(exc),reserved=0))
+                    self._phase(ident,'CANCELLED' if isinstance(exc,InterruptedError) and str(exc)=='CANCELLED' else 'FAILED',dict(error=type(exc).__name__+': '+str(exc),reserved=0,retention_deleted=deleted))
                 except BaseException:
                     self.blocked = True
             if isinstance(exc,(sqlite3.Error,OSError)) or state in ('PUBLISHING','CLEANUP_PENDING'):
@@ -372,14 +420,25 @@ class Controller:
         with self.tx():
             self.db.execute("update backups set state='DELETED' where id=?",(bid,));self._revision()
 
-    def prune(self, token=None, need_slot=False):
+    def prune(self, token=None, need_slot=False, operation_id=None):
         self._check(token)
         rows=self.db.execute("select id,pins from backups where state='AVAILABLE' order by rowid").fetchall()
         desired=self.cfg['keep']-(1 if need_slot else 0)
         while len(rows)>desired:
             eligible=[i for i,p in rows[:-1] if p==0]
             if not eligible:raise Refused('Retention blocked by pins/latest backup')
-            self.delete(eligible[0]);rows=[r for r in rows if r[0]!=eligible[0]]
+            candidate=eligible[0]
+            if operation_id is not None:
+                # Persist attribution before deletion; recovery can derive actual
+                # effects even if the owner dies before its in-memory diff is saved.
+                row=self.db.execute('select details from ops where id=?',(operation_id,)).fetchone()
+                details=json.loads(row[0]);planned=details.setdefault('retention_planned',[])
+                if candidate not in planned:planned.append(candidate)
+                self._phase(operation_id,'RESERVED',details)
+                self._barrier('retention_intent',time.monotonic()+60)
+            self.delete(candidate)
+            if operation_id is not None:self._barrier('retention_done',time.monotonic()+60)
+            rows=[r for r in rows if r[0]!=candidate]
 
     def recover(self):
         """Only after kernel lifetime-lock acquisition; never trusts presence alone."""
@@ -394,8 +453,11 @@ class Controller:
             with self.tx():
                 self.db.execute("update restores set state='RELEASED' where id=?",(ident,))
                 self.db.execute('update backups set pins=pins-1 where id=? and pins>0',(bid,))
-        for ident,kind,state,details in self.db.execute("select id,kind,state,details from ops where state not in ('AVAILABLE','READY','FAILED','CANCELLED')").fetchall():
+        for ident,kind,state,details in self.db.execute("select id,kind,state,details from ops where state not in ('AVAILABLE','READY','FAILED','CANCELLED','INTERRUPTED')").fetchall():
             d=json.loads(details)
+            if state=='QUEUED':
+                with self.tx():self.db.execute("update ops set state='INTERRUPTED',details=? where id=?",(json.dumps(dict(reason='Queued request interrupted by restart',reserved=0)),ident))
+                continue
             if kind=='backup':
                 stage=self._directory('staging',ident);final=self._directory('backups',ident)
                 if state=='PUBLISHING':
@@ -405,11 +467,11 @@ class Controller:
                     if p==stage:stage.rename(final);sync_dir(final.parent);sync_dir(stage.parent)
                     with self.tx():
                         self.db.execute('insert or ignore into backups values(?,?,?,0)',(ident,json.dumps(m),'AVAILABLE'))
-                        self.db.execute("update ops set state='AVAILABLE',details=? where id=?",(json.dumps(dict(manifest=m,reserved=0,recovered=True)),ident))
+                        self.db.execute("update ops set state='AVAILABLE',details=? where id=?",(json.dumps(dict(manifest=m,reserved=0,recovered=True,retention_deleted=d.get('retention_deleted',[]),retention_planned=d.get('retention_planned',[]))),ident))
                 else:
                     if final.exists():raise Degraded('Unexplained published object')
                     if stage.exists():shutil.rmtree(stage);sync_dir(stage.parent)
-                    with self.tx():self.db.execute("update ops set state='FAILED',details=? where id=?",(json.dumps(dict(reason='Interrupted before publication',reserved=0)),ident))
+                    with self.tx():self.db.execute("update ops set state='FAILED',details=? where id=?",(json.dumps(dict(reason='Interrupted before publication',reserved=0,retention_deleted=d.get('retention_deleted',[]),retention_planned=d.get('retention_planned',[]))),ident))
             else:
                 with self.tx():self.db.execute("update ops set state='FAILED',details=? where id=?",(json.dumps(dict(reason='Interrupted restore',reserved=0)),ident))
         # Missing catalog entries/unknown directories never become deletion candidates.
