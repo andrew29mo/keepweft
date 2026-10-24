@@ -1,0 +1,780 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft technical explorations</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: four technical explorations</h1><p>Passed: False</p><p>Installed minimal core in an isolated Linux VM. Barriers deliberately control snapshot/crash timing. Recorded RSS values are process snapshots, not peaks; timings are single controlled observations, not outage guarantees or performance comparisons. No VM reboot, abrupt power loss, hardware or production cutover qualification.</p><h2>Complete evidence</h2><pre>{
+  &quot;passed&quot;: false,
+  &quot;run_id&quot;: &quot;cd77c6cdaf82c312&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T04:33:05.258468+00:00&quot;,
+  &quot;source&quot;: {
+    &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
+    &quot;keepweft/cli.py&quot;: &quot;472f1605b7a46777a60dd62eb4f94d806bee06cbd2ca239bd9d2383c093c54e4&quot;,
+    &quot;keepweft/core.py&quot;: &quot;c71ed295e30dc198303f1eaabfaa93face41990c16f5e4ecb33791b76cd90627&quot;,
+    &quot;keepweft/data.py&quot;: &quot;6715e2a56a6d996ddd7d2908bb9562609e710cee8d0b1c821647a26a12d26613&quot;,
+    &quot;keepweft/view.py&quot;: &quot;e6a79acaea62b726e82525f2ef2be255f695b2bdba9370126106ff1ddc0b31b2&quot;,
+    &quot;keepweft/worker.py&quot;: &quot;e8dd38f7b2bf7f465544b7218227806085c0816aa06bc89efcc208bdd0b0f149&quot;,
+    &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
+    &quot;tests/test_core.py&quot;: &quot;b01b696b9f7ce87fb08367ec3445bbdbf908655c6419c58220145b07ef0103de&quot;,
+    &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
+    &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
+    &quot;tools/explore.py&quot;: &quot;313034dba88db1d7012341523654d04ea8efbae052ec98e4ea5e72ae192cc048&quot;,
+    &quot;tools/report.py&quot;: &quot;06fcc24ccf7254b96f01d70ea73e4883946d0ede0ef1b8ec63c3f5804b76dc34&quot;,
+    &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
+    &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
+  },
+  &quot;source_sha256&quot;: &quot;3d9c8dfa3a09387895a59bf056de3153529ee17af10ef3c46bf121f1d94c48b9&quot;,
+  &quot;source_changed&quot;: false,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;initial&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.47801245900336653
+    },
+    {
+      &quot;name&quot;: &quot;create&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 21.35949862501002
+    },
+    {
+      &quot;name&quot;: &quot;dependencies&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 31.62960462499177
+    },
+    {
+      &quot;name&quot;: &quot;upload&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.38121487500029616
+    },
+    {
+      &quot;name&quot;: &quot;runtime&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 12.6415031250217
+    },
+    {
+      &quot;name&quot;: &quot;install&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.5119545420166105
+    },
+    {
+      &quot;name&quot;: &quot;provenance&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.23619966601836495
+    },
+    {
+      &quot;name&quot;: &quot;native&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.7680337080091704
+    },
+    {
+      &quot;name&quot;: &quot;linux&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.606474000000162
+    },
+    {
+      &quot;name&quot;: &quot;linux-read&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3213071670033969
+    },
+    {
+      &quot;name&quot;: &quot;explore&quot;,
+      &quot;exit_code&quot;: 1,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 3.318004208005732
+    },
+    {
+      &quot;name&quot;: &quot;failed-guest&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3314830000163056
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.4066841249878053
+    },
+    {
+      &quot;name&quot;: &quot;final&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.18932150001637638
+    }
+  ],
+  &quot;wheel_sha256&quot;: &quot;89ddbdd0e6ebca2342069231b497149bb8dbb0974e4c18bd4f3348627eb8ebdb&quot;,
+  &quot;wheel_product_matches&quot;: true,
+  &quot;host_mounts&quot;: &quot;none&quot;,
+  &quot;fresh_profile&quot;: true,
+  &quot;initial_disk_absent&quot;: true,
+  &quot;sqlite_build&quot;: {
+    &quot;url&quot;: &quot;https://sqlite.org/2026/sqlite-amalgamation-3540100.zip&quot;,
+    &quot;archive_sha256&quot;: &quot;0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9&quot;,
+    &quot;source_sha3_256&quot;: &quot;e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81&quot;,
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;,
+    &quot;compiler&quot;: &quot;gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0&quot;,
+    &quot;flags&quot;: [
+      &quot;-O2&quot;,
+      &quot;-fPIC&quot;,
+      &quot;-shared&quot;,
+      &quot;-DSQLITE_THREADSAFE=1&quot;
+    ]
+  },
+  &quot;provenance&quot;: {
+    &quot;location&quot;: &quot;/usr/local/lib/python3.12/dist-packages/keepweft&quot;,
+    &quot;modules&quot;: {
+      &quot;keepweft/worker.py&quot;: &quot;e8dd38f7b2bf7f465544b7218227806085c0816aa06bc89efcc208bdd0b0f149&quot;,
+      &quot;keepweft/core.py&quot;: &quot;c71ed295e30dc198303f1eaabfaa93face41990c16f5e4ecb33791b76cd90627&quot;,
+      &quot;keepweft/cli.py&quot;: &quot;472f1605b7a46777a60dd62eb4f94d806bee06cbd2ca239bd9d2383c093c54e4&quot;,
+      &quot;keepweft/view.py&quot;: &quot;e6a79acaea62b726e82525f2ef2be255f695b2bdba9370126106ff1ddc0b31b2&quot;,
+      &quot;keepweft/data.py&quot;: &quot;6715e2a56a6d996ddd7d2908bb9562609e710cee8d0b1c821647a26a12d26613&quot;,
+      &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;
+    },
+    &quot;source_package_absent&quot;: true,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;
+  },
+  &quot;native_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 24,
+    &quot;tests&quot;: [
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;3d9c8dfa3a09387895a59bf056de3153529ee17af10ef3c46bf121f1d94c48b9&quot;,
+    &quot;platform&quot;: &quot;Darwin&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
+      &quot;source_id&quot;: &quot;2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=clang-22.1.3&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;ENABLE_DBSTAT_VTAB&quot;,
+        &quot;ENABLE_FTS3&quot;,
+        &quot;ENABLE_FTS3_PARENTHESIS&quot;,
+        &quot;ENABLE_FTS4&quot;,
+        &quot;ENABLE_FTS5&quot;,
+        &quot;ENABLE_GEOPOLY&quot;,
+        &quot;ENABLE_MATH_FUNCTIONS&quot;,
+        &quot;ENABLE_PERCENTILE&quot;,
+        &quot;ENABLE_RTREE&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;linux_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 24,
+    &quot;tests&quot;: [
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;3d9c8dfa3a09387895a59bf056de3153529ee17af10ef3c46bf121f1d94c48b9&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;error&quot;: &quot;RuntimeError: explore failed or timed out&quot;,
+  &quot;guest&quot;: {
+    &quot;passed&quot;: false,
+    &quot;source_sha256&quot;: &quot;3d9c8dfa3a09387895a59bf056de3153529ee17af10ef3c46bf121f1d94c48b9&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;platform&quot;: &quot;Linux-6.8.0-117-generic-aarch64-with-glibc2.39&quot;,
+    &quot;cases&quot;: [
+      {
+        &quot;name&quot;: &quot;A_snapshot_cancel&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 1.3748764799999975,
+        &quot;details&quot;: {
+          &quot;snapshot&quot;: {
+            &quot;profile&quot;: &quot;ledger-v1&quot;,
+            &quot;expected&quot;: {
+              &quot;content_sha256&quot;: &quot;eb88f5bc94af241a50d13219a40c3e75d02860bf205289e0376d9e6a78bd3a0a&quot;,
+              &quot;count&quot;: 192,
+              &quot;max_seq&quot;: 192,
+              &quot;profile&quot;: &quot;ledger-v1&quot;,
+              &quot;uuid&quot;: &quot;e044dddbc32d40c5aeb0a1e25c6a86ef&quot;
+            },
+            &quot;bytes&quot;: 1691648,
+            &quot;sha256&quot;: &quot;8d4c81efd885a17ae5c29bc4bedb7ad4e6f2ef64d90710384469ab6b3729f4c9&quot;,
+            &quot;id&quot;: &quot;5cfb46f6931b43349e0435c04b3ca48d&quot;,
+            &quot;epoch&quot;: 2,
+            &quot;attempt&quot;: &quot;5cfb46f6931b43349e0435c04b3ca48d&quot;,
+            &quot;snapshot_established&quot;: 65.96811915,
+            &quot;copy_completed&quot;: 66.008293281
+          },
+          &quot;source_count_after&quot;: 224,
+          &quot;uncommitted_excluded&quot;: true,
+          &quot;worker_at_snapshot&quot;: {
+            &quot;pid&quot;: 3809,
+            &quot;start_ticks&quot;: &quot;6595&quot;,
+            &quot;state&quot;: &quot;S (sleeping)&quot;,
+            &quot;rss_kib&quot;: 16188,
+            &quot;exited&quot;: false
+          },
+          &quot;barrier_controlled_seconds&quot;: 1.2221137639999995,
+          &quot;writer_commits&quot;: 32,
+          &quot;writer_commit_p50_seconds&quot;: 0.0003224379999906546,
+          &quot;writer_commit_p95_seconds&quot;: 0.003009673000008206,
+          &quot;wal_before_bytes&quot;: 0,
+          &quot;wal_while_reader_bytes&quot;: 824032,
+          &quot;reader_released&quot;: true,
+          &quot;cancellations&quot;: [
+            {
+              &quot;kind&quot;: &quot;cancel&quot;,
+              &quot;answer&quot;: {
+                &quot;ok&quot;: false,
+                &quot;error&quot;: &quot;InterruptedError&quot;,
+                &quot;detail&quot;: &quot;CANCELLED&quot;
+              },
+              &quot;worker_exited&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;timeout&quot;,
+              &quot;answer&quot;: {
+                &quot;ok&quot;: false,
+                &quot;error&quot;: &quot;InterruptedError&quot;,
+                &quot;detail&quot;: &quot;FAILED_TIMEOUT&quot;
+              },
+              &quot;worker_exited&quot;: true,
+              &quot;staging_empty&quot;: true
+            }
+          ]
+        }
+      },
+      {
+        &quot;name&quot;: &quot;B_sealed_restore&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.4353256899999991,
+        &quot;details&quot;: {
+          &quot;backup_seconds&quot;: 0.033837566999991964,
+          &quot;restore_to_first_HTTP_seconds&quot;: 0.03617782099999545,
+          &quot;application&quot;: {
+            &quot;uuid&quot;: &quot;44a7da73009e457596b094aabf4f0c90&quot;,
+            &quot;count&quot;: 80,
+            &quot;max_seq&quot;: 80
+          },
+          &quot;read_only_write_rejected&quot;: true,
+          &quot;standalone_main_file&quot;: true,
+          &quot;resources&quot;: {
+            &quot;controller&quot;: {
+              &quot;pid&quot;: 3806,
+              &quot;start_ticks&quot;: &quot;6575&quot;,
+              &quot;state&quot;: &quot;R (running)&quot;,
+              &quot;rss_kib&quot;: 27564,
+              &quot;exited&quot;: false
+            },
+            &quot;view&quot;: {
+              &quot;pid&quot;: 3815,
+              &quot;start_ticks&quot;: &quot;6726&quot;,
+              &quot;state&quot;: &quot;S (sleeping)&quot;,
+              &quot;rss_kib&quot;: 21096,
+              &quot;exited&quot;: false
+            },
+            &quot;store&quot;: {
+              &quot;logical_bytes&quot;: 730341,
+              &quot;allocated_bytes&quot;: 741376,
+              &quot;filesystem_free_bytes&quot;: 17983811584
+            }
+          },
+          &quot;negatives&quot;: [
+            {
+              &quot;kind&quot;: &quot;missing&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;wrong-uuid&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;foreign-key&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;schema&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;truncated&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;wrong-watermark&quot;,
+              &quot;rejected&quot;: true
+            }
+          ]
+        }
+      },
+      {
+        &quot;name&quot;: &quot;C_publication_takeover&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.7278171429999958,
+        &quot;details&quot;: {
+          &quot;cases&quot;: [
+            {
+              &quot;point&quot;: &quot;copy_complete&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: true,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 0,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 4
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;publish_intent&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 6
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_rename&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 6
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_catalog&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;restore_materialized&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 2,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;delete_intent&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 14
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_unlink&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 14
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            }
+          ]
+        }
+      }
+    ],
+    &quot;limits&quot;: {
+      &quot;power_loss_tested&quot;: false,
+      &quot;vm_reboot_tested&quot;: false,
+      &quot;hardware_tested&quot;: false,
+      &quot;production_switch_tested&quot;: false
+    },
+    &quot;error&quot;: &quot;ValueError: Loop filesystem cleanup failed&quot;,
+    &quot;owned_children_exited&quot;: true,
+    &quot;no_worker_processes_remaining&quot;: true
+  },
+  &quot;vm_final&quot;: &quot;Deleted&quot;,
+  &quot;data_disk_removed&quot;: true,
+  &quot;preexisting_profiles_unchanged&quot;: true
+}</pre></html>

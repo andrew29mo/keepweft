@@ -1,0 +1,78 @@
+[
+  {
+    "attempt": 1,
+    "run_id": "cd77c6cdaf82c312",
+    "passed": false,
+    "source_sha256": "3d9c8dfa3a09387895a59bf056de3153529ee17af10ef3c46bf121f1d94c48b9",
+    "error": "RuntimeError: explore failed or timed out",
+    "verification_error": null,
+    "cases_completed": 3,
+    "tests_per_platform": 24,
+    "controls": null,
+    "vm_final": "Deleted",
+    "data_disk_removed": true,
+    "explanation": "Failed: all A/B/C probes completed, but capacity filesystem unmount failed. SQLite connection context managers did not close file handles. D has no complete retained details and is not qualified."
+  },
+  {
+    "attempt": 2,
+    "run_id": "9984f004b52631b8",
+    "passed": true,
+    "source_sha256": "9e0fd710ed593a7b22b71685e897dc527f23223c4b64dbef2f0ad3119e414139",
+    "error": null,
+    "verification_error": null,
+    "cases_completed": 4,
+    "tests_per_platform": 26,
+    "controls": {
+      "passed": true,
+      "rejected": 21
+    },
+    "vm_final": "Deleted",
+    "data_disk_removed": true,
+    "explanation": "Passed the then-current gate (26 tests/platform, 21 controls), now superseded. Raw ENOSPC returned JSONDecodeError because an empty error file masked the worker pipe; no success was faked, but classification was inadequate. Later gate requires actual storage failure classification."
+  },
+  {
+    "attempt": 3,
+    "run_id": "0c1d36ce34612f83",
+    "passed": false,
+    "source_sha256": "27baaa2c41336860d95434dee09dfa717b91096a3f667d4afbaa312024d9322a",
+    "error": "RuntimeError: explore failed or timed out",
+    "verification_error": null,
+    "cases_completed": 3,
+    "tests_per_platform": 28,
+    "controls": null,
+    "vm_final": "Deleted",
+    "data_disk_removed": true,
+    "explanation": "Failed: whole-filesystem readonly remount was rejected with a live writable controller. Original failure and loop cleanup were preserved; ENOSPC already had correct SQLITE_FULL classification."
+  },
+  {
+    "attempt": 4,
+    "run_id": "7fcd2f69f0cd6132",
+    "passed": false,
+    "source_sha256": "adc196998672f5e3a052935daa06d1594c987a35972d50ccbac637e7cab392b8",
+    "error": "RuntimeError: explore failed or timed out",
+    "verification_error": null,
+    "cases_completed": 3,
+    "tests_per_platform": 28,
+    "controls": null,
+    "vm_final": "Deleted",
+    "data_disk_removed": true,
+    "explanation": "Failed: a real readonly bind fault occurred, but the probe incorrectly accepted only SQLITE_READONLY. The diagnostic showed EROFS may map to SQLITE_CANTOPEN for journal creation. No failed run was relabelled."
+  },
+  {
+    "attempt": 5,
+    "run_id": "a22b4aab1b7182ce",
+    "passed": true,
+    "source_sha256": "4dcf53a7f4e6cd3e353fe15cc25da28a52dde2684c02aff713aae4156662ff7c",
+    "error": null,
+    "verification_error": null,
+    "cases_completed": 4,
+    "tests_per_platform": 30,
+    "controls": {
+      "passed": true,
+      "rejected": 24
+    },
+    "vm_final": "Deleted",
+    "data_disk_removed": true,
+    "explanation": "Current full qualification: unchanged scope, actual errno/SQLite storage failure evidence, distinct restored copy after source advances, close/atexit lifetime lock checks, all four installed-core probes, complete cleanup."
+  }
+]

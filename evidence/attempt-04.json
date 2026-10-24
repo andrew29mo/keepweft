@@ -1,0 +1,817 @@
+{
+  "passed": false,
+  "run_id": "7fcd2f69f0cd6132",
+  "recorded_at_utc": "2026-10-24T04:43:03.185881+00:00",
+  "source": {
+    "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187",
+    "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+    "keepweft/core.py": "d213c26754cad7a70c6eb21aded01058a0311d61e3a46c3defd2f04ed7deccc5",
+    "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+    "keepweft/view.py": "40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308",
+    "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+    "pyproject.toml": "5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef",
+    "tests/test_core.py": "8a3dfe059ac9e374543a32fbc485ba641cb27d949f0976fb6f94e29f8eb1bf52",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/build_sqlite.py": "e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa",
+    "tools/evidence.py": "9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6",
+    "tools/explore.py": "806041e8d392496c0702700d369e3abf97898eae6910e1f3b2d2835016520fbc",
+    "tools/report.py": "c9a4a7ff09e082e11fe7dedeb5ceff39eb68c4fb5eae883b5235dedbfca006bb",
+    "tools/unit.py": "10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43",
+    "tools/validate.py": "491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034"
+  },
+  "source_sha256": "adc196998672f5e3a052935daa06d1594c987a35972d50ccbac637e7cab392b8",
+  "source_changed": false,
+  "stages": [
+    {
+      "name": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.33786550001241267
+    },
+    {
+      "name": "create",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 40.582748332992196
+    },
+    {
+      "name": "dependencies",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 20.46495166697423
+    },
+    {
+      "name": "upload",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.27120987500529736
+    },
+    {
+      "name": "runtime",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 15.245984250010224
+    },
+    {
+      "name": "install",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.40148183298879303
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.23922854097327217
+    },
+    {
+      "name": "native",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 2.012877458008006
+    },
+    {
+      "name": "linux",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.5256564999872353
+    },
+    {
+      "name": "linux-read",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.2306074580119457
+    },
+    {
+      "name": "explore",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 3.212647125008516
+    },
+    {
+      "name": "failed-guest",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.2630092920153402
+    },
+    {
+      "name": "delete",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.4085844999935944
+    },
+    {
+      "name": "final",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 0.2523560839763377
+    }
+  ],
+  "wheel_sha256": "53cdb5f9dae52bdfeb7d5536ddd7a8ee5a9a99c8f93636c80e45b6178d7b5d24",
+  "wheel_product_matches": true,
+  "host_mounts": "none",
+  "fresh_profile": true,
+  "initial_disk_absent": true,
+  "sqlite_build": {
+    "url": "https://sqlite.org/2026/sqlite-amalgamation-3540100.zip",
+    "archive_sha256": "0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9",
+    "source_sha3_256": "e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81",
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-DSQLITE_THREADSAFE=1"
+    ]
+  },
+  "provenance": {
+    "location": "/usr/local/lib/python3.12/dist-packages/keepweft",
+    "modules": {
+      "keepweft/worker.py": "b0f68db8d9a460ff3622ac6e32b8b6dc2f1c23ff8c7cb6e250efd0188dd1de4a",
+      "keepweft/core.py": "d213c26754cad7a70c6eb21aded01058a0311d61e3a46c3defd2f04ed7deccc5",
+      "keepweft/cli.py": "fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860",
+      "keepweft/view.py": "40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308",
+      "keepweft/data.py": "30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90",
+      "keepweft/__init__.py": "34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187"
+    },
+    "source_package_absent": true,
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "library_sha256": "a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab"
+  },
+  "native_unit": {
+    "passed": true,
+    "count": 28,
+    "tests": [
+      "test_core.CoreTests.test_artifact_limit_rejects",
+      "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
+      "test_core.CoreTests.test_epoch_and_revision_independent",
+      "test_core.CoreTests.test_foreign_key_error_rejected",
+      "test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed",
+      "test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation",
+      "test_core.CoreTests.test_metadata_failure_prevents_worker_start",
+      "test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory",
+      "test_core.CoreTests.test_missing_source_does_not_create",
+      "test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock",
+      "test_core.CoreTests.test_one_restored_instance",
+      "test_core.CoreTests.test_pin_blocks_deletion_and_rotation",
+      "test_core.CoreTests.test_pin_corruption_not_silently_repaired",
+      "test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready",
+      "test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction",
+      "test_core.CoreTests.test_retention_and_latest_protection",
+      "test_core.CoreTests.test_roundtrip_and_restart",
+      "test_core.CoreTests.test_schema_change_rejected",
+      "test_core.CoreTests.test_second_writer_is_busy",
+      "test_core.CoreTests.test_soft_capacity_refusal_preserves_backup",
+      "test_core.CoreTests.test_source_cannot_be_inside_store",
+      "test_core.CoreTests.test_symlink_store_and_object_rejected",
+      "test_core.CoreTests.test_timeout_and_deadline_validation",
+      "test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted",
+      "test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified",
+      "test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure",
+      "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
+      "test_core.CoreTests.test_wrong_source_uuid_rejected"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "source_sha256": "adc196998672f5e3a052935daa06d1594c987a35972d50ccbac637e7cab392b8",
+    "platform": "Darwin",
+    "runtime": {
+      "python_sqlite": "3.53.1",
+      "source_id": "2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=clang-22.1.3",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "ENABLE_DBSTAT_VTAB",
+        "ENABLE_FTS3",
+        "ENABLE_FTS3_PARENTHESIS",
+        "ENABLE_FTS4",
+        "ENABLE_FTS5",
+        "ENABLE_GEOPOLY",
+        "ENABLE_MATH_FUNCTIONS",
+        "ENABLE_PERCENTILE",
+        "ENABLE_RTREE",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    }
+  },
+  "linux_unit": {
+    "passed": true,
+    "count": 28,
+    "tests": [
+      "test_core.CoreTests.test_artifact_limit_rejects",
+      "test_core.CoreTests.test_cancellation_reaps_before_cleanup",
+      "test_core.CoreTests.test_epoch_and_revision_independent",
+      "test_core.CoreTests.test_foreign_key_error_rejected",
+      "test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed",
+      "test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation",
+      "test_core.CoreTests.test_metadata_failure_prevents_worker_start",
+      "test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory",
+      "test_core.CoreTests.test_missing_source_does_not_create",
+      "test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock",
+      "test_core.CoreTests.test_one_restored_instance",
+      "test_core.CoreTests.test_pin_blocks_deletion_and_rotation",
+      "test_core.CoreTests.test_pin_corruption_not_silently_repaired",
+      "test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready",
+      "test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction",
+      "test_core.CoreTests.test_retention_and_latest_protection",
+      "test_core.CoreTests.test_roundtrip_and_restart",
+      "test_core.CoreTests.test_schema_change_rejected",
+      "test_core.CoreTests.test_second_writer_is_busy",
+      "test_core.CoreTests.test_soft_capacity_refusal_preserves_backup",
+      "test_core.CoreTests.test_source_cannot_be_inside_store",
+      "test_core.CoreTests.test_symlink_store_and_object_rejected",
+      "test_core.CoreTests.test_timeout_and_deadline_validation",
+      "test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted",
+      "test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified",
+      "test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure",
+      "test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file",
+      "test_core.CoreTests.test_wrong_source_uuid_rejected"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "source_sha256": "adc196998672f5e3a052935daa06d1594c987a35972d50ccbac637e7cab392b8",
+    "platform": "Linux",
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    }
+  },
+  "error": "RuntimeError: explore failed or timed out",
+  "guest": {
+    "passed": false,
+    "source_sha256": "adc196998672f5e3a052935daa06d1594c987a35972d50ccbac637e7cab392b8",
+    "runtime": {
+      "python_sqlite": "3.54.1",
+      "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+      "compile_options": [
+        "ATOMIC_INTRINSICS=1",
+        "COMPILER=gcc-13.3.0",
+        "DEFAULT_AUTOVACUUM",
+        "DEFAULT_CACHE_SIZE=-2000",
+        "DEFAULT_FILE_FORMAT=4",
+        "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+        "DEFAULT_MMAP_SIZE=0",
+        "DEFAULT_PAGE_SIZE=4096",
+        "DEFAULT_PCACHE_INITSZ=20",
+        "DEFAULT_RECURSIVE_TRIGGERS",
+        "DEFAULT_SECTOR_SIZE=4096",
+        "DEFAULT_SYNCHRONOUS=2",
+        "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+        "DEFAULT_WAL_SYNCHRONOUS=2",
+        "DEFAULT_WORKER_THREADS=0",
+        "DIRECT_OVERFLOW_READ",
+        "MALLOC_SOFT_LIMIT=1024",
+        "MAX_ATTACHED=10",
+        "MAX_COLUMN=2000",
+        "MAX_COMPOUND_SELECT=500",
+        "MAX_DEFAULT_PAGE_SIZE=8192",
+        "MAX_EXPR_DEPTH=1000",
+        "MAX_FUNCTION_ARG=1000",
+        "MAX_LENGTH=1000000000",
+        "MAX_LIKE_PATTERN_LENGTH=50000",
+        "MAX_MMAP_SIZE=0x7fff0000",
+        "MAX_PAGE_COUNT=0xfffffffe",
+        "MAX_PAGE_SIZE=65536",
+        "MAX_SCHEMA=10000000",
+        "MAX_SQL_LENGTH=1000000000",
+        "MAX_TRIGGER_DEPTH=1000",
+        "MAX_VARIABLE_NUMBER=32766",
+        "MAX_VDBE_OP=250000000",
+        "MAX_WORKER_THREADS=8",
+        "MUTEX_PTHREADS",
+        "SYSTEM_MALLOC",
+        "TEMP_STORE=1",
+        "THREADSAFE=1"
+      ]
+    },
+    "platform": "Linux-6.8.0-117-generic-aarch64-with-glibc2.39",
+    "cases": [
+      {
+        "name": "A_snapshot_cancel",
+        "passed": true,
+        "seconds": 1.263381373999998,
+        "details": {
+          "snapshot": {
+            "profile": "ledger-v1",
+            "expected": {
+              "content_sha256": "eb88f5bc94af241a50d13219a40c3e75d02860bf205289e0376d9e6a78bd3a0a",
+              "count": 192,
+              "max_seq": 192,
+              "profile": "ledger-v1",
+              "uuid": "4935a1079fe045f589f397bea2f6c953"
+            },
+            "bytes": 1691648,
+            "sha256": "bd3404547734dd3a492bd37a123c78903da0da6a694e0f2a484c09b0ec565344",
+            "id": "3fc9b3a2e8d74b678cf1f34bcf1dbd28",
+            "epoch": 2,
+            "attempt": "3fc9b3a2e8d74b678cf1f34bcf1dbd28",
+            "snapshot_established": 54.725263798,
+            "copy_completed": 54.764597318
+          },
+          "source_count_after": 224,
+          "uncommitted_excluded": true,
+          "worker_at_snapshot": {
+            "pid": 3558,
+            "start_ticks": "5471",
+            "state": "S (sleeping)",
+            "rss_kib": 16288,
+            "exited": false
+          },
+          "barrier_controlled_seconds": 1.1777922269999976,
+          "writer_commits": 32,
+          "writer_commit_p50_seconds": 0.00030851449999858005,
+          "writer_commit_p95_seconds": 0.0013855550000059225,
+          "wal_before_bytes": 0,
+          "wal_while_reader_bytes": 824032,
+          "reader_released": true,
+          "cancellations": [
+            {
+              "kind": "cancel",
+              "answer": {
+                "ok": false,
+                "error": "InterruptedError",
+                "detail": "CANCELLED",
+                "sqlite_errorcode": null
+              },
+              "worker_exited": true,
+              "staging_empty": true
+            },
+            {
+              "kind": "timeout",
+              "answer": {
+                "ok": false,
+                "error": "InterruptedError",
+                "detail": "FAILED_TIMEOUT",
+                "sqlite_errorcode": null
+              },
+              "worker_exited": true,
+              "staging_empty": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "B_sealed_restore",
+        "passed": true,
+        "seconds": 0.3630916249999956,
+        "details": {
+          "backup_seconds": 0.030417367999994838,
+          "restore_to_first_HTTP_seconds": 0.03558822599999445,
+          "application": {
+            "uuid": "4b8b0ad7e8d341f48230f5d364e9dd7c",
+            "count": 80,
+            "max_seq": 80
+          },
+          "read_only_write_rejected": true,
+          "standalone_main_file": true,
+          "resources": {
+            "controller": {
+              "pid": 3555,
+              "start_ticks": "5459",
+              "state": "R (running)",
+              "rss_kib": 24300,
+              "exited": false
+            },
+            "view": {
+              "pid": 3564,
+              "start_ticks": "5595",
+              "state": "S (sleeping)",
+              "rss_kib": 20952,
+              "exited": false
+            },
+            "store": {
+              "logical_bytes": 730341,
+              "allocated_bytes": 741376,
+              "filesystem_free_bytes": 17979813888
+            }
+          },
+          "negatives": [
+            {
+              "kind": "missing",
+              "rejected": true
+            },
+            {
+              "kind": "wrong-uuid",
+              "rejected": true
+            },
+            {
+              "kind": "foreign-key",
+              "rejected": true
+            },
+            {
+              "kind": "schema",
+              "rejected": true
+            },
+            {
+              "kind": "truncated",
+              "rejected": true
+            },
+            {
+              "kind": "wrong-watermark",
+              "rejected": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "C_publication_takeover",
+        "passed": true,
+        "seconds": 0.7588196230000008,
+        "details": {
+          "cases": [
+            {
+              "point": "copy_complete",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": true,
+              "recovered": true,
+              "available": 0,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 2,
+                    "revision": 5
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 5
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 4
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 5
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "publish_intent",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 1,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 2,
+                    "revision": 7
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 7
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 6
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 7
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "after_rename",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 1,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 2,
+                    "revision": 7
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 7
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 6
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 7
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "after_catalog",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 1,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 2,
+                    "revision": 8
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 8
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 7
+                  },
+                  "current": {
+                    "epoch": 3,
+                    "revision": 8
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "restore_materialized",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 2,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 16
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 16
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 4,
+                    "revision": 15
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 16
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "delete_intent",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 1,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 15
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 15
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 4,
+                    "revision": 14
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 15
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            },
+            {
+              "point": "after_unlink",
+              "owner_killed": true,
+              "worker_lock_blocked_takeover": false,
+              "recovered": true,
+              "available": 1,
+              "stale": [
+                {
+                  "token": {
+                    "epoch": 3,
+                    "revision": 15
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 15
+                  },
+                  "rejected": true
+                },
+                {
+                  "token": {
+                    "epoch": 4,
+                    "revision": 14
+                  },
+                  "current": {
+                    "epoch": 4,
+                    "revision": 15
+                  },
+                  "rejected": true
+                }
+              ],
+              "retired_attempt_rejected": true,
+              "staging_empty": true
+            }
+          ]
+        }
+      }
+    ],
+    "limits": {
+      "power_loss_tested": false,
+      "vm_reboot_tested": false,
+      "hardware_tested": false,
+      "production_switch_tested": false
+    },
+    "error": "ValueError: In-flight readonly error not observed/retired",
+    "failed_progress": [
+      {
+        "enospc": {
+          "real_errno": 28,
+          "filler_bytes": 55824384,
+          "failed_command": {
+            "ok": false,
+            "error": "Refused",
+            "detail": "OperationalError: database or disk is full",
+            "sqlite_errorcode": 13
+          },
+          "startup_refused": true,
+          "previous_hash_preserved": true,
+          "diagnostic_mode": "READ_ONLY_DIAGNOSTIC",
+          "at_full": {
+            "logical_bytes": 1447060,
+            "allocated_bytes": 1458176,
+            "filesystem_free_bytes": 0
+          },
+          "repair_backup_count": 160,
+          "stale_rejected": true
+        },
+        "failure": "ValueError: In-flight readonly error not observed/retired",
+        "readonly_bind_removed": true,
+        "loop_unmounted": true
+      }
+    ],
+    "owned_children_exited": true,
+    "no_worker_processes_remaining": true
+  },
+  "vm_final": "Deleted",
+  "data_disk_removed": true,
+  "preexisting_profiles_unchanged": true
+}

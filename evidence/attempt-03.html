@@ -1,0 +1,816 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Keepweft technical explorations</title><style>body{font:16px system-ui;max-width:1050px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>Keepweft: four technical explorations</h1><p>Passed: False</p><p>Installed minimal core in an isolated Linux VM. Barriers deliberately control snapshot/crash timing. Recorded RSS values are process snapshots, not peaks; timings are single controlled observations, not outage guarantees or performance comparisons. No VM reboot, abrupt power loss, hardware or production cutover qualification.</p><h2>Complete evidence</h2><pre>{
+  &quot;passed&quot;: false,
+  &quot;run_id&quot;: &quot;0c1d36ce34612f83&quot;,
+  &quot;recorded_at_utc&quot;: &quot;2026-10-24T04:40:39.547097+00:00&quot;,
+  &quot;source&quot;: {
+    &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;,
+    &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+    &quot;keepweft/core.py&quot;: &quot;d213c26754cad7a70c6eb21aded01058a0311d61e3a46c3defd2f04ed7deccc5&quot;,
+    &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+    &quot;keepweft/view.py&quot;: &quot;40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308&quot;,
+    &quot;keepweft/worker.py&quot;: &quot;e8dd38f7b2bf7f465544b7218227806085c0816aa06bc89efcc208bdd0b0f149&quot;,
+    &quot;pyproject.toml&quot;: &quot;5d6023e29534aa1124bda3e97fd8e3ca9166ca95102efc00c027f88b406766ef&quot;,
+    &quot;tests/test_core.py&quot;: &quot;8d89c89701ab58a3ea5ec68d1b5a10225ab036c1faa2bbed5a4d093a18f97747&quot;,
+    &quot;tools/__init__.py&quot;: &quot;e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855&quot;,
+    &quot;tools/build_sqlite.py&quot;: &quot;e03ef47c0decdf3e7e073ae6c64884539e82d24f657444ae317d897615ba46aa&quot;,
+    &quot;tools/evidence.py&quot;: &quot;9baa5dc95ba0b6b94a1ef3f28270177a70246063488de272c303add53d6e9fa6&quot;,
+    &quot;tools/explore.py&quot;: &quot;6cd55d07119701608ac659e15018e2cdd41a756bda9ffa5324df4c6adb87c630&quot;,
+    &quot;tools/report.py&quot;: &quot;91628f1e5d813a44f1600654a652fc28f06a94bb2db89666c6aa4c5dfb4e4f1e&quot;,
+    &quot;tools/unit.py&quot;: &quot;10194fdbe16ee1abfea90fc41fb5bcdf92ac0d7f2c094b7dca4264a3c7ca7e43&quot;,
+    &quot;tools/validate.py&quot;: &quot;491881beb7ccdd01ed23ea18f7a34107ac45f125937e58a06c1464cf54cf6034&quot;
+  },
+  &quot;source_sha256&quot;: &quot;27baaa2c41336860d95434dee09dfa717b91096a3f667d4afbaa312024d9322a&quot;,
+  &quot;source_changed&quot;: false,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;initial&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3638849169947207
+    },
+    {
+      &quot;name&quot;: &quot;create&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 20.76135041701491
+    },
+    {
+      &quot;name&quot;: &quot;dependencies&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 24.942978082981426
+    },
+    {
+      &quot;name&quot;: &quot;upload&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.28555037500336766
+    },
+    {
+      &quot;name&quot;: &quot;runtime&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 12.534638709010324
+    },
+    {
+      &quot;name&quot;: &quot;install&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.3950304579921067
+    },
+    {
+      &quot;name&quot;: &quot;provenance&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.34236999999848194
+    },
+    {
+      &quot;name&quot;: &quot;native&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.9512442910054233
+    },
+    {
+      &quot;name&quot;: &quot;linux&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.617538708000211
+    },
+    {
+      &quot;name&quot;: &quot;linux-read&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.24568341701524332
+    },
+    {
+      &quot;name&quot;: &quot;explore&quot;,
+      &quot;exit_code&quot;: 1,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 2.913041666994104
+    },
+    {
+      &quot;name&quot;: &quot;failed-guest&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.21795537500292994
+    },
+    {
+      &quot;name&quot;: &quot;delete&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 1.4616917079838458
+    },
+    {
+      &quot;name&quot;: &quot;final&quot;,
+      &quot;exit_code&quot;: 0,
+      &quot;timed_out&quot;: false,
+      &quot;seconds&quot;: 0.2705091660027392
+    }
+  ],
+  &quot;wheel_sha256&quot;: &quot;de73292ce27a7fa70868edd0e22985785e4f90152bcf652751b3bcc2d91b3b1c&quot;,
+  &quot;wheel_product_matches&quot;: true,
+  &quot;host_mounts&quot;: &quot;none&quot;,
+  &quot;fresh_profile&quot;: true,
+  &quot;initial_disk_absent&quot;: true,
+  &quot;sqlite_build&quot;: {
+    &quot;url&quot;: &quot;https://sqlite.org/2026/sqlite-amalgamation-3540100.zip&quot;,
+    &quot;archive_sha256&quot;: &quot;0a9c8e34352dad46006aa82836d5383bff9dc6bc9ce5a60553c05aa30e6ad1f9&quot;,
+    &quot;source_sha3_256&quot;: &quot;e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81&quot;,
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;,
+    &quot;compiler&quot;: &quot;gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0&quot;,
+    &quot;flags&quot;: [
+      &quot;-O2&quot;,
+      &quot;-fPIC&quot;,
+      &quot;-shared&quot;,
+      &quot;-DSQLITE_THREADSAFE=1&quot;
+    ]
+  },
+  &quot;provenance&quot;: {
+    &quot;location&quot;: &quot;/usr/local/lib/python3.12/dist-packages/keepweft&quot;,
+    &quot;modules&quot;: {
+      &quot;keepweft/worker.py&quot;: &quot;e8dd38f7b2bf7f465544b7218227806085c0816aa06bc89efcc208bdd0b0f149&quot;,
+      &quot;keepweft/core.py&quot;: &quot;d213c26754cad7a70c6eb21aded01058a0311d61e3a46c3defd2f04ed7deccc5&quot;,
+      &quot;keepweft/cli.py&quot;: &quot;fa53856643068b9bae6b78b412568ded10c558c44182c26c9b0823a221473860&quot;,
+      &quot;keepweft/view.py&quot;: &quot;40884a5b9555c09edaa1dc99deeabd64e8d340fe9731679ee36d8dd09b7c5308&quot;,
+      &quot;keepweft/data.py&quot;: &quot;30d4452b77c024f5807211a11d15c0076a617aefc8c25c79dc3b50cc64100b90&quot;,
+      &quot;keepweft/__init__.py&quot;: &quot;34ec470149dde8301a6e6a7522d047d7ed03a5857ad50e8983b32771f6a2f187&quot;
+    },
+    &quot;source_package_absent&quot;: true,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;library_sha256&quot;: &quot;a9ee6c1d1d6929afee6fb3d086f9ba3651972e95656a405e44dce43ccba245ab&quot;
+  },
+  &quot;native_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 28,
+    &quot;tests&quot;: [
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure&quot;,
+      &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;27baaa2c41336860d95434dee09dfa717b91096a3f667d4afbaa312024d9322a&quot;,
+    &quot;platform&quot;: &quot;Darwin&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.53.1&quot;,
+      &quot;source_id&quot;: &quot;2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=clang-22.1.3&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;ENABLE_DBSTAT_VTAB&quot;,
+        &quot;ENABLE_FTS3&quot;,
+        &quot;ENABLE_FTS3_PARENTHESIS&quot;,
+        &quot;ENABLE_FTS4&quot;,
+        &quot;ENABLE_FTS5&quot;,
+        &quot;ENABLE_GEOPOLY&quot;,
+        &quot;ENABLE_MATH_FUNCTIONS&quot;,
+        &quot;ENABLE_PERCENTILE&quot;,
+        &quot;ENABLE_RTREE&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;linux_unit&quot;: {
+    &quot;passed&quot;: true,
+    &quot;count&quot;: 28,
+    &quot;tests&quot;: [
+      &quot;test_core.CoreTests.test_artifact_limit_rejects&quot;,
+      &quot;test_core.CoreTests.test_cancellation_reaps_before_cleanup&quot;,
+      &quot;test_core.CoreTests.test_epoch_and_revision_independent&quot;,
+      &quot;test_core.CoreTests.test_foreign_key_error_rejected&quot;,
+      &quot;test_core.CoreTests.test_hash_and_manifest_mismatch_fail_closed&quot;,
+      &quot;test_core.CoreTests.test_metadata_error_retires_controller_before_new_mutation&quot;,
+      &quot;test_core.CoreTests.test_metadata_failure_prevents_worker_start&quot;,
+      &quot;test_core.CoreTests.test_missing_catalog_never_reconstructs_inventory&quot;,
+      &quot;test_core.CoreTests.test_missing_source_does_not_create&quot;,
+      &quot;test_core.CoreTests.test_normal_close_retains_real_worker_lifetime_lock&quot;,
+      &quot;test_core.CoreTests.test_one_restored_instance&quot;,
+      &quot;test_core.CoreTests.test_pin_blocks_deletion_and_rotation&quot;,
+      &quot;test_core.CoreTests.test_pin_corruption_not_silently_repaired&quot;,
+      &quot;test_core.CoreTests.test_ready_restore_missing_after_restart_is_not_ready&quot;,
+      &quot;test_core.CoreTests.test_receipts_are_bounded_without_silent_eviction&quot;,
+      &quot;test_core.CoreTests.test_retention_and_latest_protection&quot;,
+      &quot;test_core.CoreTests.test_roundtrip_and_restart&quot;,
+      &quot;test_core.CoreTests.test_schema_change_rejected&quot;,
+      &quot;test_core.CoreTests.test_second_writer_is_busy&quot;,
+      &quot;test_core.CoreTests.test_soft_capacity_refusal_preserves_backup&quot;,
+      &quot;test_core.CoreTests.test_source_cannot_be_inside_store&quot;,
+      &quot;test_core.CoreTests.test_symlink_store_and_object_rejected&quot;,
+      &quot;test_core.CoreTests.test_timeout_and_deadline_validation&quot;,
+      &quot;test_core.CoreTests.test_unknown_inventory_is_retained_not_deleted&quot;,
+      &quot;test_core.CoreTests.test_valid_sqlite_wrong_content_is_not_verified&quot;,
+      &quot;test_core.CoreTests.test_validation_closes_read_connection_on_success_and_failure&quot;,
+      &quot;test_core.CoreTests.test_worker_error_pipe_survives_empty_durable_error_file&quot;,
+      &quot;test_core.CoreTests.test_wrong_source_uuid_rejected&quot;
+    ],
+    &quot;failures&quot;: 0,
+    &quot;errors&quot;: 0,
+    &quot;skipped&quot;: 0,
+    &quot;source_sha256&quot;: &quot;27baaa2c41336860d95434dee09dfa717b91096a3f667d4afbaa312024d9322a&quot;,
+    &quot;platform&quot;: &quot;Linux&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    }
+  },
+  &quot;error&quot;: &quot;RuntimeError: explore failed or timed out&quot;,
+  &quot;guest&quot;: {
+    &quot;passed&quot;: false,
+    &quot;source_sha256&quot;: &quot;27baaa2c41336860d95434dee09dfa717b91096a3f667d4afbaa312024d9322a&quot;,
+    &quot;runtime&quot;: {
+      &quot;python_sqlite&quot;: &quot;3.54.1&quot;,
+      &quot;source_id&quot;: &quot;2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76&quot;,
+      &quot;compile_options&quot;: [
+        &quot;ATOMIC_INTRINSICS=1&quot;,
+        &quot;COMPILER=gcc-13.3.0&quot;,
+        &quot;DEFAULT_AUTOVACUUM&quot;,
+        &quot;DEFAULT_CACHE_SIZE=-2000&quot;,
+        &quot;DEFAULT_FILE_FORMAT=4&quot;,
+        &quot;DEFAULT_JOURNAL_SIZE_LIMIT=-1&quot;,
+        &quot;DEFAULT_MMAP_SIZE=0&quot;,
+        &quot;DEFAULT_PAGE_SIZE=4096&quot;,
+        &quot;DEFAULT_PCACHE_INITSZ=20&quot;,
+        &quot;DEFAULT_RECURSIVE_TRIGGERS&quot;,
+        &quot;DEFAULT_SECTOR_SIZE=4096&quot;,
+        &quot;DEFAULT_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WAL_AUTOCHECKPOINT=1000&quot;,
+        &quot;DEFAULT_WAL_SYNCHRONOUS=2&quot;,
+        &quot;DEFAULT_WORKER_THREADS=0&quot;,
+        &quot;DIRECT_OVERFLOW_READ&quot;,
+        &quot;MALLOC_SOFT_LIMIT=1024&quot;,
+        &quot;MAX_ATTACHED=10&quot;,
+        &quot;MAX_COLUMN=2000&quot;,
+        &quot;MAX_COMPOUND_SELECT=500&quot;,
+        &quot;MAX_DEFAULT_PAGE_SIZE=8192&quot;,
+        &quot;MAX_EXPR_DEPTH=1000&quot;,
+        &quot;MAX_FUNCTION_ARG=1000&quot;,
+        &quot;MAX_LENGTH=1000000000&quot;,
+        &quot;MAX_LIKE_PATTERN_LENGTH=50000&quot;,
+        &quot;MAX_MMAP_SIZE=0x7fff0000&quot;,
+        &quot;MAX_PAGE_COUNT=0xfffffffe&quot;,
+        &quot;MAX_PAGE_SIZE=65536&quot;,
+        &quot;MAX_SCHEMA=10000000&quot;,
+        &quot;MAX_SQL_LENGTH=1000000000&quot;,
+        &quot;MAX_TRIGGER_DEPTH=1000&quot;,
+        &quot;MAX_VARIABLE_NUMBER=32766&quot;,
+        &quot;MAX_VDBE_OP=250000000&quot;,
+        &quot;MAX_WORKER_THREADS=8&quot;,
+        &quot;MUTEX_PTHREADS&quot;,
+        &quot;SYSTEM_MALLOC&quot;,
+        &quot;TEMP_STORE=1&quot;,
+        &quot;THREADSAFE=1&quot;
+      ]
+    },
+    &quot;platform&quot;: &quot;Linux-6.8.0-117-generic-aarch64-with-glibc2.39&quot;,
+    &quot;cases&quot;: [
+      {
+        &quot;name&quot;: &quot;A_snapshot_cancel&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 1.250627441000006,
+        &quot;details&quot;: {
+          &quot;snapshot&quot;: {
+            &quot;profile&quot;: &quot;ledger-v1&quot;,
+            &quot;expected&quot;: {
+              &quot;content_sha256&quot;: &quot;eb88f5bc94af241a50d13219a40c3e75d02860bf205289e0376d9e6a78bd3a0a&quot;,
+              &quot;count&quot;: 192,
+              &quot;max_seq&quot;: 192,
+              &quot;profile&quot;: &quot;ledger-v1&quot;,
+              &quot;uuid&quot;: &quot;eb9c16deb379433e9095457655c5c802&quot;
+            },
+            &quot;bytes&quot;: 1691648,
+            &quot;sha256&quot;: &quot;135e4b6fc46e99493e694ca9b228cd89224afed23fd9c1c0428a2dfd7c478b40&quot;,
+            &quot;id&quot;: &quot;f62c242338254313ae7028ebfafa00ab&quot;,
+            &quot;epoch&quot;: 2,
+            &quot;attempt&quot;: &quot;f62c242338254313ae7028ebfafa00ab&quot;,
+            &quot;snapshot_established&quot;: 58.633390191,
+            &quot;copy_completed&quot;: 58.658539994
+          },
+          &quot;source_count_after&quot;: 224,
+          &quot;uncommitted_excluded&quot;: true,
+          &quot;worker_at_snapshot&quot;: {
+            &quot;pid&quot;: 3780,
+            &quot;start_ticks&quot;: &quot;5862&quot;,
+            &quot;state&quot;: &quot;S (sleeping)&quot;,
+            &quot;rss_kib&quot;: 16272,
+            &quot;exited&quot;: false
+          },
+          &quot;barrier_controlled_seconds&quot;: 1.1746816240000015,
+          &quot;writer_commits&quot;: 32,
+          &quot;writer_commit_p50_seconds&quot;: 0.00025818349999795487,
+          &quot;writer_commit_p95_seconds&quot;: 0.0024394649999948115,
+          &quot;wal_before_bytes&quot;: 0,
+          &quot;wal_while_reader_bytes&quot;: 824032,
+          &quot;reader_released&quot;: true,
+          &quot;cancellations&quot;: [
+            {
+              &quot;kind&quot;: &quot;cancel&quot;,
+              &quot;answer&quot;: {
+                &quot;ok&quot;: false,
+                &quot;error&quot;: &quot;InterruptedError&quot;,
+                &quot;detail&quot;: &quot;CANCELLED&quot;,
+                &quot;sqlite_errorcode&quot;: null
+              },
+              &quot;worker_exited&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;timeout&quot;,
+              &quot;answer&quot;: {
+                &quot;ok&quot;: false,
+                &quot;error&quot;: &quot;InterruptedError&quot;,
+                &quot;detail&quot;: &quot;FAILED_TIMEOUT&quot;,
+                &quot;sqlite_errorcode&quot;: null
+              },
+              &quot;worker_exited&quot;: true,
+              &quot;staging_empty&quot;: true
+            }
+          ]
+        }
+      },
+      {
+        &quot;name&quot;: &quot;B_sealed_restore&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.3685258470000008,
+        &quot;details&quot;: {
+          &quot;backup_seconds&quot;: 0.026405266999994126,
+          &quot;restore_to_first_HTTP_seconds&quot;: 0.036112383999999054,
+          &quot;application&quot;: {
+            &quot;uuid&quot;: &quot;bf138600d1614f679a8c3585ff0e3e14&quot;,
+            &quot;count&quot;: 80,
+            &quot;max_seq&quot;: 80
+          },
+          &quot;read_only_write_rejected&quot;: true,
+          &quot;standalone_main_file&quot;: true,
+          &quot;resources&quot;: {
+            &quot;controller&quot;: {
+              &quot;pid&quot;: 3777,
+              &quot;start_ticks&quot;: &quot;5851&quot;,
+              &quot;state&quot;: &quot;R (running)&quot;,
+              &quot;rss_kib&quot;: 24300,
+              &quot;exited&quot;: false
+            },
+            &quot;view&quot;: {
+              &quot;pid&quot;: 3786,
+              &quot;start_ticks&quot;: &quot;5986&quot;,
+              &quot;state&quot;: &quot;S (sleeping)&quot;,
+              &quot;rss_kib&quot;: 20960,
+              &quot;exited&quot;: false
+            },
+            &quot;store&quot;: {
+              &quot;logical_bytes&quot;: 730341,
+              &quot;allocated_bytes&quot;: 741376,
+              &quot;filesystem_free_bytes&quot;: 17985531904
+            }
+          },
+          &quot;negatives&quot;: [
+            {
+              &quot;kind&quot;: &quot;missing&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;wrong-uuid&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;foreign-key&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;schema&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;truncated&quot;,
+              &quot;rejected&quot;: true
+            },
+            {
+              &quot;kind&quot;: &quot;wrong-watermark&quot;,
+              &quot;rejected&quot;: true
+            }
+          ]
+        }
+      },
+      {
+        &quot;name&quot;: &quot;C_publication_takeover&quot;,
+        &quot;passed&quot;: true,
+        &quot;seconds&quot;: 0.6935040480000012,
+        &quot;details&quot;: {
+          &quot;cases&quot;: [
+            {
+              &quot;point&quot;: &quot;copy_complete&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: true,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 0,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 4
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 5
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;publish_intent&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 6
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_rename&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 6
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_catalog&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 2,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 7
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 8
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;restore_materialized&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 2,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 16
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;delete_intent&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 14
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            },
+            {
+              &quot;point&quot;: &quot;after_unlink&quot;,
+              &quot;owner_killed&quot;: true,
+              &quot;worker_lock_blocked_takeover&quot;: false,
+              &quot;recovered&quot;: true,
+              &quot;available&quot;: 1,
+              &quot;stale&quot;: [
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 3,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                },
+                {
+                  &quot;token&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 14
+                  },
+                  &quot;current&quot;: {
+                    &quot;epoch&quot;: 4,
+                    &quot;revision&quot;: 15
+                  },
+                  &quot;rejected&quot;: true
+                }
+              ],
+              &quot;retired_attempt_rejected&quot;: true,
+              &quot;staging_empty&quot;: true
+            }
+          ]
+        }
+      }
+    ],
+    &quot;limits&quot;: {
+      &quot;power_loss_tested&quot;: false,
+      &quot;vm_reboot_tested&quot;: false,
+      &quot;hardware_tested&quot;: false,
+      &quot;production_switch_tested&quot;: false
+    },
+    &quot;error&quot;: &quot;ValueError: Readonly remount failed&quot;,
+    &quot;failed_progress&quot;: [
+      {
+        &quot;enospc&quot;: {
+          &quot;real_errno&quot;: 28,
+          &quot;filler_bytes&quot;: 55824384,
+          &quot;failed_command&quot;: {
+            &quot;ok&quot;: false,
+            &quot;error&quot;: &quot;Refused&quot;,
+            &quot;detail&quot;: &quot;OperationalError: database or disk is full&quot;,
+            &quot;sqlite_errorcode&quot;: 13
+          },
+          &quot;startup_refused&quot;: true,
+          &quot;previous_hash_preserved&quot;: true,
+          &quot;diagnostic_mode&quot;: &quot;READ_ONLY_DIAGNOSTIC&quot;,
+          &quot;at_full&quot;: {
+            &quot;logical_bytes&quot;: 1447059,
+            &quot;allocated_bytes&quot;: 1458176,
+            &quot;filesystem_free_bytes&quot;: 0
+          },
+          &quot;repair_backup_count&quot;: 160,
+          &quot;stale_rejected&quot;: true
+        },
+        &quot;failure&quot;: &quot;ValueError: Readonly remount failed&quot;,
+        &quot;loop_unmounted&quot;: true
+      }
+    ],
+    &quot;owned_children_exited&quot;: true,
+    &quot;no_worker_processes_remaining&quot;: true
+  },
+  &quot;vm_final&quot;: &quot;Deleted&quot;,
+  &quot;data_disk_removed&quot;: true,
+  &quot;preexisting_profiles_unchanged&quot;: true
+}</pre></html>

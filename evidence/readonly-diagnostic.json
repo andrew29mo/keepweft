@@ -1,0 +1,14 @@
+{
+  "purpose": "Readonly SQLite error-mapping diagnostic only; not product qualification",
+  "qualified_runtime": false,
+  "guest_code": "import os,sqlite3,subprocess,json\nfrom pathlib import Path\np=Path('/var/tmp/kw-ro');p.mkdir(mode=0o700);db=p/'db.sqlite';c=sqlite3.connect(db,isolation_level=None);c.execute('pragma journal_mode=delete');c.execute('create table t(x)');c.execute('insert into t values(1)')\nsubprocess.run(['mount','--bind',str(p),str(p)],check=True)\ntry:\n subprocess.run(['mount','-o','remount,bind,ro',str(p)],check=True)\n result=dict(sqlite=sqlite3.sqlite_version)\n try:(p/'write-probe').write_text('x')\n except OSError as e:result['os_errno']=e.errno\n try:\n  c.execute('begin immediate');c.execute('insert into t values(2)');c.execute('commit');result['sqlite_success']=True\n except sqlite3.Error as e:result.update(sqlite_error=str(e),sqlite_errorcode=e.sqlite_errorcode,in_transaction=c.in_transaction)\n print(json.dumps(result))\nfinally:\n c.close();subprocess.run(['umount',str(p)],check=True)\n",
+  "guest_code_sha256": "14b340210a8e04b691adfeb398d101bb7f95617abc46476259550bc8da2827ec",
+  "result": {
+    "sqlite": "3.45.1",
+    "os_errno": 30,
+    "sqlite_error": "unable to open database file",
+    "sqlite_errorcode": 14,
+    "in_transaction": true
+  },
+  "owned_vm_and_data_disk_absent": true
+}
